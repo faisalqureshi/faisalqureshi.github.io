@@ -6,7 +6,17 @@
 #landing {
   margin: 50px;
   margin-top: 75px;
-  font-size: large;
+  font-size: xx-large;
+  font-family: 'Forum'
+}
+
+.landing-address {
+    font-size: 64%;
+    font-weight: light;
+}
+
+.nav-text {
+    font-size: 60%;
 }
 
 #logo {
@@ -93,8 +103,17 @@ strong,
     font-style: italic;
 }
 
+.vcenter {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  resize: both;
+  overflow: auto;
+}
+
 h1, h2, h3, h4 {
-  font-family: 'Baloo', sans-serif;
+  font-family: 'Forum', serif;
 }
 
 h1 {
