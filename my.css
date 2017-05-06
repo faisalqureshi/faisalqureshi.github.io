@@ -191,16 +191,18 @@ td.lineNumbers {
 }
 
 .blog-list {
+    margin-top: 50px;
 }
 
 .blog-list-item {
-    margin-top: 12px;
-    margin-bottom: 12px;
+    margin-top: 2px;
+    margin-bottom: 2px;
 }
 
 .blog-list-date {
-    width: 150px;
+    font-size: large;
 }
 
 .blog-list-title {
+    font-size: large;
 }
