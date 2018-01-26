@@ -1,0 +1,112 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="../../site.css" />
+	<link rel="stylesheet" type="text/css" href="../../project.css" />
+	<title>Autonomous Satellite Rendezvous &amp; Docking for On-orbit Servicing</title>
+	<meta name="keywords" content="on-orbit servicing, satellite servicing, rendezvous and docking">
+
+<link href="http://fonts.googleapis.com/css?family=Ubuntu:bold" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Vollkorn" rel="stylesheet" type="text/css">
+ <link href="http://fonts.googleapis.com/css?family=Molengo"
+    rel="stylesheet" type="text/css">
+	
+</head>
+    
+
+<body class="oneColElsCtr">
+<div id="container">
+  <div id="mainContent">
+
+<div class="title">
+<h1>Intelligent Perception and Control for Space Robotics:
+	Autonomous Satellite Rendezvous and Docking</h1>
+	<h2>        <a href="http://faculty.uoit.ca/qureshi/">Faisal Z. Qureshi</a> and <a href="http://cs.ucla.edu/~dt">Demetri Terzopoulos</a></h2>
+
+    
+    </div>
+    
+<!--		<p align="left"><img src="images2.jpg" alt="" height="135" width="572" border="0"><br>
+			(Courtesy: NASA)</p> -->
+<h2>CoCo in Action</h2>
+<center>
+<iframe width="560" height="315" src="//www.youtube.com/embed/videoseries?list=PL0822EDCB16ED9AAE" frameborder="0" allowfullscreen></iframe></center>
+
+<p align="left">The videos show how CoCo exhibited robust completion of goal in spite of repeated induced 'failures', showing the CoCo-controlled robotic arm capturing a free-flying satellite. The capture procedure is initiated by a single high-level command from the ground station. Upon receiving the command, the system initializes the long-range vision module to commence a visual search procedure. Once the satellite is found, and its identity confirmed, the systems guides the robotic arm to move closer to the satellite. The performance of the long-range vision module deteriorates as the separation between the robotic arm and the satellite becomes smaller; this is due to the fact that the cameras are mounted on top of the end-effector. The cognitive vision system, therefore, turns on the medium range vision module. The long-range vision processing is turned off (to conserve the power consumption) once the medium range system is fully initialized and is &quot;reliably&quot; tracking the satellite. At this stage the robotic is arm tries to match satellite's linear and angular velocities, a procedure known is station keeping. Short-range vision processing is initiated, and a message is sent to the ground station to turn off the satellite's attitude control system. The robotic arm should not capture a satellite whose attitude control system is functioning, as that might destroy the satellite, or the robotic arm, or both. When the attitude control system is not active, the satellite begins to drift; however, the robotic arm still follows it by relying upon the short-range vision system. Upon receiving a confirmation from the ground station that the attitude control system is off, the robotic arm goes in for the kill.</p>
+		<p align="left">When there is an error, such as a vision system failure, the reactive system responds immediately and tries to increase its separation from the satellite. In the absence any new perceptual information, the system relies upon its time-aware and context-sensitive mental state. Meanwhile, the deliberation module is using its knowledge base to 1) explain the error and 2) suggest a recovery.</p>
+		<p align="left">In the videos below, the inlay shows the view from Autonomous Agent Design &amp; Simulation Testbed---a software framework for designing cognitive vision systems. The wireframe represents the position of the satellite as estimated by the robotic arm. Notice, the estimated position of the satellite is more accurate when the satellite is closer to the robotic arm. Furthermore, the estimated position is maintained when no new perceptual information is available.</p>
+
+		<div align="left">
+		  <ul>
+		    <li><a href="failure%201.mp4">Video 1 (Handling vision failure)</a></li>
+	        <li><a href="failure%202.mp4">Video 2 (Handling vision failure)</a></li>
+            <li><a href="no%20failure.mp4">Video 3</a></li>
+            <li><a href="satcapture-19Dec01.mp4">Virtual satellite capture</a></li>
+          </ul>
+
+		<h2 align="left"><a id="background" name="background"></a>Background</h2>
+		<p align="left">The work presented here was done as part of the ROSA (Remote Operation with Supervised Autonomy) project at <a href="http://www.mdrobotics.ca">MacDonald Dettwiler Space and Advanced Robotics Limited</a> (then called MDRobotics, now MDA Corporation). MDRobotics is a Canadian company that specializes in space missions, and that has been supporting human space flight since early 1980s through advanced robotic systems, such as Space Shuttle's Canadarm and Mobile Servicing System for the International Space Station. Other partners included <a href="http://iit-iti.nrc-cnrc.gc.ca/index_e.html">National Research Council of Canada--Institute for Information Technology</a> (NRC-IIT), and <a href="http://www.space.gc.ca/asc/eng/default.asp">Canadian Space Agency</a> (CSA), and the University of Toronto and Saikl technologies (through MDRobotics). The project was funded in part by <a href="http://www.precarn.ca/home/index.html">Precarn</a> Inc.</p>
+		<h2 align="left"><a id="servicing" name="servicing"></a>On-orbit satellite servicing</h2>
+		<p align="left">On-orbit satellite servicing is the task of maintaining and repairing a satellite in orbit.</p>
+		<div align="left">
+		  <ul>
+		    <li>It extends the operational life of the satellite
+	        <li>Mitigates technical risks
+	        <li>Reduces on-orbit losses
+            <li>Helps manage orbital debris
+          </ul>
+    </div>
+		<p align="left">As early as the 1980s, the National Aeronautics and Space Administration realized the importance of on-orbit servicing for protecting their assets in space.</p>
+		<h3 align="left">The Need for Autonomy</h3>
+		<p align="left">Currently, on-orbit satellite servicing operations are carried out manually; i.e., by an astronaut. However, manned missions are usually very costly and there are human safety concerns. Furthermore, it is currently impracticable to carry out manned on-orbit servicing missions for satellites in geosynchronous equatorial orbit (GEO), as the space shuttle can not reach them. Unmanned, tele-operated, ground-controlled missions are infeasible due to communications delays, intermittence, and limited bandwidth between the ground and the servicer. A viable alternative is to develop the capability of autonomous on-orbit satellite servicing.</p>
+		<p align="left">Autonomy entails that the on-board controller be capable of estimating and tracking the pose (position and orientation) of the target satellite and guiding the robotic manipulator as it 1) approaches the<br>satellite, 2) maneuvers itself to get into docking position, and 3) docks with the satellite. The controller should also be able to handle anomalous situations, which might arise during an AR&amp;D operation, without jeopardizing its own safety or that of the satellite.</p>
+		<h2 align="left"><a id="solution" name="solution"></a>Solution: Cognitive Controller (CoCo) Architecture</h2>
+		<p align="left">We proposed CoCo architecture that combines an ethologically-inspired, reactive module with a deliberative unit to automatically capture a non-cooperative, free-flying satellite using only computer vision. </p>
+		<div align="left">
+		  <ul>
+		    <li><font color="#990000"><i>Autonomous satellite capture controller developed in ROSA is the first of its kind.</i></font> Other satellite capture controllers typically require other sensing modalities, such as GPS, radar, and laser range finders, and assume a cooperative target satellite. 
+	        <li><font color="#990000"><i>Besides, to the best of our knowledge, it is the only satellite capture controller capable of deliberative activity to resolve anomalous situations.</i> </font>Rosa is a large research effort and it uses target satellite pose estimation and servo routines developed by other partners.
+          </ul>
+    </div>
+		<h2 align="left"><a id="success" name="success"></a>Success Stories</h2>
+		<p align="left"><i><font color="#990000">Rosa helped <a href="http://www.boeing.com">Boeing</a> win the 12 million dollars <a href="http://www.darpa.mil/tto/programs/oe.htm">Orbital Express</a> contract!</font></i></p>
+		<div align="left">
+		  <ul>
+		    <li>News Item: MDA Supports Boeing Team in Contract Win to Demonstrate Satellite Repair in Space (<a href="http://www.mdacorporation.com/news/pr/pr2002051301.html">http://www.mdacorporation.com/news/pr/pr2002051301.html</a>)
+          </ul>
+    </div>
+		<p align="left">Other related links are</p>
+		<div align="left">
+		  <ul>
+		    <li><a href="http://iit-iti.nrc-cnrc.gc.ca/successes-reussites/rosa-mdr-print_e.html">http://iit-iti.nrc-cnrc.gc.ca/successes-reussites/rosa-mdr-print_e.html</a>
+	        <li><a href="http://webpal.net/precarn/web/pressroom/SuccessStories/MDRobotics_ROSA_Nov04/index_en.html">http://webpal.net/precarn/web/pressroom/SuccessStories/MDRobotics_ROSA_Nov04/index_en.html</a>
+            <li><a href="http://www.exn.ca/ai/readstory.asp?story_id=2001070555">http://www.exn.ca/ai/readstory.asp?story_id=2001070555</a>
+            <li><a href="http://www.futurescanada.ca/space.html">http://www.futurescanada.ca/space.html</a>
+          </ul>
+    </div>
+		<p align="left"><font color="#990000"><i>About the CoCo satellite capture controller, says Ross Gillette, ROSA Project Leader, &quot;It was just plain stubborn!&quot; </i></font></p>
+		<h2 align="left"><a id="pubs" name="pubs"></a>Publications</h2>
+		<p align="left">For technical details please look at the following publications</p>
+		<div align="left">
+		  <ol>
+		    <li><span class="papertitle">Intelligent Perception and Control for Space Robotics: Autonomous Satellite Rendezvous and Docking</span>, in Journal of Machine Vision Applications, vol. 19, iss. 3, pp. 141-161, 2008, with <a href="http://www.cs.ucla.edu/%7edt">D. Terzopoulos</a>
+	        [<a href="http://vclab.ca/wp-content/papercite-data/pdf/08-mva-j.pdf">pdf</a>]
+<!--		    <li><span class="papertitle">The Cognitive Controller: A Hybrid, Deliberative/Reactive Control Architecture for Autonomous Robots</span> <span class="paperdescription">in <i>Proc. Innovations in Applied Artificial Intelligence and Expert Systems, 2004, Ottawa, Canada</i> with <a href="http://www.cs.ucla.edu/%7edt">D. Terzopoulos</a> and R. Gillette [<a href="../pubs/papers/ieaaie-04.pdf">pdf</a>]</span>
+            <li><span class="papertitle">A Cognitive Vision System for Space Robotics</span> in Applications of Computer Vision Workshop. European Conference of Computer Vision, 2004, Prague, Czech Republic with <a href="http://www.cs.ucla.edu/%7edt">D. Terzopoulos</a> and P. Jasiobedzki [<a href="../pubs/papers/acv-04.pdf">pdf</a>]
+            <li><span class="papertitle">Cognitive Vision for Autonomous Satellite Rendezvous and Docking</span> in Proc. IAPR&nbsp;Conference on Machine Vision Applications, May 2005, Tsukuba Science City, Japan with <a href="http://www.cs.ucla.edu/%7edt">D. Terzopoulos</a> and P. Jasiobedzki [<a href="../pubs/papers/mva-05.pdf">pdf</a>]           --> 
+	      </ol>
+    </div>
+		<p align="left">We have also applied CoCo to a somewhat related problem of space-bourne visual monitoring</p>
+		<div align="left">
+		  <ol>
+		    <li><span class="papertitle">A Computer Vision System for Spacebourne Safety Monitoring</span> <span class="paperdescription">in <i>Proc. 8th International Symposium on Artificial Intelligence, Robotics and Automation in Space, September, 2005, Munich, Germany</i> with <a href="http://www.cs.toronto.edu/%7edmac">D. Macrini</a>, D. Chung, <a href="http://www.eecg.toronto.edu/%7emaclean/">J. Maclean</a>, <a href="http://www.cs.toronto.edu/%7esven">S. Dickinson</a>, and P. Jasiobedzki [<a href="http://vclab.ca/wp-content/papercite-data/pdf/05-isairas-c.pdf">pdf</a>]</span>
+          </ol>
+    </div>
+		<h2 align="left"><a id="stills" name="stills"></a>Stills</h2>
+		<p align="left">In the following figure despite a simulated vision system failure, the servicer robot captures the satellite using vision by making use of its cognitive abilities. On the right of each frame, we show the view from the simulation environment that runs the controller code. The simulation environment communicates with the physical robots over the network. Here, the wireframe represents the position of the satellite as estimated by the robotic arm. The 3D model of the satellite represents the actual position of the satellite according to the sensors on the Fanuc robot arm. The gray cylinder represents the position of the chaser robot end-effector according to the telemetry information. Note that the estimated position is maintained in the absence new perceptual information (Frame 3 and 4). A vision failure was induced by shutting off the ambient light.</p>
+		<p align="left"><img src="coco-seq.jpg" alt="" height="627" width="604" border="0"></p>
+	
+    </div>
+    </div>
+    </body>
+
+</html>
