@@ -122,29 +122,29 @@ strong,
   overflow: auto;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5 {
   font-family: 'Averia Serif Libre', serif;
 }
 
 h1 {
-  font-size: 36;
+  font-size: 36px;
 }
 
 h2 {
-  font-size: 32;
+  font-size: 32px;
 }
 
 h3 {
-  font-size: 28;
+  font-size: 28px;
 }
 
 h4 {
-  font-size: 24;
+  font-size: 24px;
 }
 
 h5 {
     font-weight: bolder;
-  font-size: 24;
+  font-size: 24px;
 }
 
 .footer {

@@ -4,14 +4,14 @@
     <meta charset="utf-8">
     <meta name="generator" content="pandoc">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>An index structure for fast range search in Hamming space</title>
-    <meta name="author" content="Qureshi, Faisal">
-    <meta name="author" content="Pu, Ken">
-    <meta name="author" content="Reina, Ernesto">
+    <title>Constructing mosaics using near ground UAVs in the presence of strong parallax effects</title>
+    <meta name="author" content="">
+    <meta name="author" content="">
 
     <!-- css -->
     <link rel="stylesheet" href="../../style/bootstrap-3.3.7-dist/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../../style/my.css" type="text/css" />
+    <link rel="stylesheet" href="../../style/projects.css" type="text/css" />
 
     <!-- Google Fonts -->
     <link href='https://fonts.googleapis.com/css?family=BioRhyme:200,300,400,700,800' rel='stylesheet' type='text/css'> 
@@ -26,8 +26,23 @@
   </head>
   <body style="background-color: white;">
     <div class="container" style="background: white;">
-      <h1 id="mosaic-of-near-ground-uav-videos-under-parallax-effects">Mosaic of Near Ground UAV Videos Under Parallax Effects</h1>
-<p><em>M.A. Helala, L.A. Zarrabeitia, F.Z. Qureshi</em></p>
+
+      <h1 class="project-title">Constructing mosaics using near ground UAVs in the presence of strong parallax effects</h1>
+
+      <hr>
+      <div class="row">
+      <div class="project-member">Mohammad A. Helala </div>
+      </div>
+      <div class="row">
+      <div class="project-member">Faisal Z. Qureshi (<a class="project-member-link" href="http://faculty.uoit.ca/qureshi">http://faculty.uoit.ca/qureshi</a>)</div>
+      </div>
+      <hr>
+      
+      <!--
+# Mosaic of Near Ground UAV Videos Under Parallax Effects
+
+*M.A. Helala, L.A. Zarrabeitia, F.Z. Qureshi*
+-->
 <div>
 <hr>
 <div class="row">
@@ -49,7 +64,7 @@
 <!--
 ![(Fig. 1) Mosaic view construction: (a) A moving camera, or a set of cameras, capture different, overlapping views of the scene. (b) A virtual camera is placed near the center of the captured scene and a mosaic view is computed as if it is taken by the virtual camera. The plane sweep algorithm allows us to resolve the ambiguities introduced by the motion parallax in the overlapping regions.](Virtual-View-Reconstruction.png)
 -->
-<h2 id="introduction">Introduction</h2>
+<h1 id="introduction">Introduction</h1>
 <p>Unmanned aerial vehicles (UAVs) have gained a lot of interest in several applications nowadays. They are used in tasks such as rural search and rescue, forest fire monitoring, estimating the biomass of forests, agricultural information gathering, monitoring land use changes and many others. These applications greatly benefit from extending the field of view (FOV) from the taken images and also, from depth information. This requires generating a mosaic for the captured video frames.</p>
 <p>This work presents a technique that extends previous work to perform the mosaic of near ground UAV video sequences under parallax effects. The technique starts by registering a sequence of video frames to detect the camera parameters (trajectory, internal and external parameters) for each frame. Then, a virtual camera location is determined and all frames are projected to this location at different depth levels using a plane sweep algorithm. In order to generate the final mosaic, we perform an energy minimization step on the intermediate depth images.</p>
 <p>The work provides several contributions:</p>
@@ -59,9 +74,9 @@
 <li>The paper introduces the use of simulated UAV video datasets taken from the Google Earth software package.</li>
 </ul>
 <p>The experimental results show promising results for our technique where the mosaic is reconstructed from the tested sequences. One possible line of work to improve the quality of the generated mosaic is to make better use of the edge information from the source images. More research is needed in this direction.</p>
-<h2 id="publication">Publication</h2>
-<p>Mohamed A. Helala, Luis A. Zarrabeitia, Faisal Z. Qureshi, Mosaic of Near Ground UAV Videos Under Parallax Effects. Proc. 6th ACM/IEEE International Conference on Distributed Smart Cameras (ICDSC), Hong Kong, China, October, 2012, 6pp.</p>
-<h2 id="acknowledgements">Acknowledgements</h2>
+<h1 id="publications">Publications</h1>
+<script src="https://bibbase.org/show?bib=http%3A%2F%2Felf.science.uoit.ca%2F%7Efaisal%2Ffaisal-qureshi.bib&jsonp=1&filter=keywords:aerial-mosaics&group0=type"></script>
+<h1 id="acknowledgements">Acknowledgements</h1>
 <p>The authors would like to thank Natural Science and Engineering Research Council of Canada for their generous financial support of this research.</p>
 
     </div>

@@ -4,11 +4,15 @@
     <meta charset="utf-8">
     <meta name="generator" content="pandoc">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+    <title>Road Boundary Detection in Challenging Scenarios</title>
+    <meta name="author" content="">
+    <meta name="author" content="">
+    <meta name="author" content="">
 
     <!-- css -->
     <link rel="stylesheet" href="../../style/bootstrap-3.3.7-dist/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../../style/my.css" type="text/css" />
+    <link rel="stylesheet" href="../../style/projects.css" type="text/css" />
 
     <!-- Google Fonts -->
     <link href='https://fonts.googleapis.com/css?family=BioRhyme:200,300,400,700,800' rel='stylesheet' type='text/css'> 
@@ -23,20 +27,44 @@
   </head>
   <body style="background-color: white;">
     <div class="container" style="background: white;">
-      <h1 id="road-boundary-detection-in-challenging-scenarios">Road Boundary Detection in Challenging Scenarios</h1>
-<p><em>M.H. Helala, K.Q. Pu, F.Z. Qureshi</em></p>
-<hr>
-<img src="stages.png" alt="">
-<hr>
-<img src="results.png" alt="">
-<hr>
+
+      <h1 class="project-title">Road Boundary Detection in Challenging Scenarios</h1>
+
+      <hr>
+      <div class="row">
+      <div class="project-member">Mohammad H. Helala </div>
+      </div>
+      <div class="row">
+      <div class="project-member">Ken Q. Pu </div>
+      </div>
+      <div class="row">
+      <div class="project-member">Faisal Z. Qureshi (<a class="project-member-link" href="http://faculty.uoit.ca/qureshi">http://faculty.uoit.ca/qureshi</a>)</div>
+      </div>
+      <hr>
+      
+      <!--
+# Road Boundary Detection in Challenging Scenarios
+
+*M.H. Helala, K.Q. Pu, [F.Z. Qureshi](http://faculty.uoit.ca/qureshi)*
+-->
+<h1 id="introduction">Introduction</h1>
 <p>This work proposes a new technique to detect the dominant road boundary and estimate the vanishing point in images captured by traffic cameras under a wide range of lighting and environmental conditions. The technique starts by dividing each input image (a) into homogeneous regions through superpixel segmentation (b). Then, the technique performs polygon approximation on superpixel contours to get edges (c). The edges are clustered using bottom up hierarchical clustering (d, e, f) and statistical measures are used to identify the top-ranked clusters; each cluster represents a candidate road boundary in the image (g). The top-ranked clusters are then paired and filtered according to image perspective and road-activity (h). Finally, the technique returns the top-ranked cluster pair as the dominant road boundary.</p>
-<h2 id="publications">Publications</h2>
-<ul>
-<li>Mohamed A. Helala, Ken Q. Pu, Faisal Z. Qureshi, Road Boundary Detection in Challenging Scenarios. Proc. 9th IEEE International Conference on Advanced Video and Signal-Based Surveillance (AVSS), Beijing, China, September, 2012, 6pp.</li>
-<li>Automatic Parsing of Lane and Road Boundaries in Challenging Traffic Scenes. Helala, M.H., Qureshi, F.Z., and Pu, K.Q. SPIE Journal on Electronic Imaging, . 2015.</li>
-</ul>
-<h2 id="acknowledgements">Acknowledgements</h2>
+<h1 id="vision-pipeline">Vision pipeline</h1>
+<div class="container">
+<div class="row">
+<p><img class="img-fluid" src="stages.png" alt=""></p>
+</div>
+</div>
+<h1 id="results">Results</h1>
+<div class="container">
+<div class="row">
+<p><img class="img-fluid" src="results.png" alt=""></p>
+</div>
+</div>
+<h1 id="publications">Publications</h1>
+<p>For technical details please look at the following publications</p>
+<script src="https://bibbase.org/show?bib=http%3A%2F%2Felf.science.uoit.ca%2F%7Efaisal%2Ffaisal-qureshi.bib&jsonp=1&filter=keywords:road-boundary&group0=type"></script>
+<h1 id="acknowledgements">Acknowledgements</h1>
 <p>The authors would like to thank Natural Science and Engineering Research Council of Canada for their generous financial support of this research.</p>
 
     </div>
