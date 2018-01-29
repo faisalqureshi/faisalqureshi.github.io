@@ -1,0 +1,97 @@
+<html>
+	<head>
+		<title>A Distributed Virtual Vision Simulator</title>
+		<meta name="author" content="Wiktor Starzyk, Faisal Z. Qureshi"/>
+		<meta name="description" content="We present a distributed, customizable
+virtual vision simulator capable of simulating pedestrian traffic
+in a variety of 3D environments. Virtual cameras deployed in
+this synthetic environment generate synthetic imagery—boasting
+realistic lighting effects, shadows, etc.—using the state-of-the-art
+computer graphics techniques. The synthetic imagery is fed into
+a “real-world” vision pipeline that performs visual analysis—
+e.g., blob detection and tracking, facial detection, etc.—and
+returns the results of this analysis to our simulated cameras
+for subsequent higher level processing. It is important to bear
+in mind that our vision pipeline is designed to handle real
+world imagery without any modifications. Consequently, it closely
+mimics the performance of a vision pipeline that one might deploy
+on physical cameras. Our virtual vision simulator is realized
+as a collection of modules that communicate with each other
+over the network. Consequently, we can deploy our simulator
+over a network of computers, allowing us to simulate much
+larger networks and much more complex scenes then is otherwise
+possible.
+"/>
+        <link rel="stylesheet" type="text/css" href="../../site.css" />
+    	<link rel="stylesheet" type="text/css" href="../../project.css" />
+
+    <link href="http://fonts.googleapis.com/css?family=Ubuntu:bold" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Vollkorn" rel="stylesheet" type="text/css">
+ <link href="http://fonts.googleapis.com/css?family=Molengo"
+    rel="stylesheet" type="text/css">
+	
+        
+    	<link href="js/google-code-prettify/prettify.css" type="text/css" rel="stylesheet" />
+    	<script type="text/javascript" src="js/google-code-prettify/prettify.js"></script>
+	</head>
+
+	<body class="oneColElsCtr" onLoad="prettyPrint()">
+        <div id="container">
+            <div id="mainContent">
+	    
+        	<div class="title">
+	             <h1>Getting Started Guide</h1>
+
+			</div>
+                <h2>First Run</h2>
+
+                <h3>Starting the Virtual Vision Simulator</h3>
+                <ol>
+                    <li>Open up a Terminal and change to the Virtual Vision Simulator directory. 
+                    Here you will see four directories: config, dependencies, media and src.</li>
+                    <li>Now change to the src directory which contains three different applications.</li>
+                    <li>We want to run the Virtual Vision Simulator. This can be done by executingthe following command.<br />
+                    <div class="execute">python 3D_Simulator.py -d ../config/sample</div>
+                    You should now see a window showing a view of the Virtual Vision Simulator. The <em>d</em> flag is used to specify the location of the scenario configuration files. A sample scenario is provided in the <em>config/sample</em> directory.</li>
+                    <img width=75% src="media/simulator_topdown.png"/>
+                    <li>Press the left and right arrow keys on the keyboard to toggle between the different cameras. The sample scenario comes with three cameras. A top down view of the scene is also provided.</li>
+                    <img width=75% src="media/simulator_cam1.png"/>
+
+                    <li>We will now move on to starting the sample client and connecting to the Virtual Vision Simulator.</li>
+                </ol>
+                <h3>Starting the sample client</h3>
+                <ol>
+                    <li>Use the left or right arrow keys to change to camera 2. The camera that is being displayed is shown at the top of the image.</li>
+                    <li>Open another Terminal window and change to the Virtual Vision Simulator directory.</li>
+                    <li>Now change to the <em>src</em> directory.</li>
+                    <li>Start a sample client by executing the following command:
+                    <div class="execute">python sample_client.py</div>
+                    You should now see a window showing the sample clients interface.</li>
+                    <img src="media/Sample_Client.png"/>
+                    <li>Try pressing some of the buttons to see what happens.</li>
+                    NOTE: By default, the sample client tries to connect to an active PTZ camera.
+                    <li>Open up a third Terminal window</li>
+                    <li>Now change to the <em>src</em> directory</li>
+                    <li>Start a sample client that connects to a static camera by executing the following command
+                    <div class="execute">python sample_client.py --static</div></li>
+                    <li>A new window will open up with the same interface as before, however pressing the pan/til/zoom buttons will have no effect on the camera. You can only get an image or set the resolution.
+                </ol>
+                <h2>Connecting to a Virtual Vision Simulator that is running on a different machine</h2>
+                <ol>
+                    <li>Follow the instructions above to start a Virtual Vision Simulator.</li>
+                    <li>Press the <em>i</em> button on your keyboard.</li>
+                    <li>You should now see an overlay that shows information about the ip address and port the Virtual Vision Simulator is using as well as information about the cameras that are available.</li>
+                    NOTE: Your computer may have multiple IP addresses, so the right one might not be displayed.
+                    <li>Open up another Terminal window and change to the Virtual Vision Simulator directory.</li>
+                    <li>Now change to the <em>src</em> directory.</li>
+                    <li>Start a sample client by executing the following command:
+                    <div class="execute">python sample_client.py -a 192.168.1.100 -p 9099</div>
+                    The <em>a</em> flag is used to specify the ip address of the simulation server, while the <em>p</em> flag is used to specify the port.</li>
+
+                </ol>
+
+                
+            </div> <!-- Main Content -->
+        </div> <!-- Container -->
+    </body>
+</html>
