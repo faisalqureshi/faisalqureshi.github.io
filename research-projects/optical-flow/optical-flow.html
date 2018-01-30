@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="pandoc">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fast Estimation of Large Displacement Optical Flow using Dominant Motion Patterns and Sub-volume PatchMatch Filtering</title>
+    <meta name="author" content="">
+    <meta name="author" content="">
+
+    <!-- css -->
+    <link rel="stylesheet" href="../../style/bootstrap-3.3.7-dist/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../style/my.css" type="text/css" />
+    <link rel="stylesheet" href="../../style/projects.css" type="text/css" />
+
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=BioRhyme:200,300,400,700,800' rel='stylesheet' type='text/css'> 
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'> 
+    <link href='https://fonts.googleapis.com/css?family=VT323:400,300,700' rel='stylesheet' type='text/css'> 
+    <link href='https://fonts.googleapis.com/css?family=Baloo:400,300,700' rel='stylesheet' type='text/css'> 
+    <link href="https://fonts.googleapis.com/css?family=Averia+Serif+Libre" rel="stylesheet">
+    
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="../../style/my.js"></script>
+  </head>
+  <body style="background-color: white;">
+    <div class="container" style="background: white;">
+
+      <h1 class="project-title">Fast Estimation of Large Displacement Optical Flow using Dominant Motion Patterns and Sub-volume PatchMatch Filtering</h1>
+
+      <hr>
+      <div class="row">
+      <div class="project-member">Faisal Z. Qureshi (<a class="project-member-link" href="http://faculty.uoit.ca/qureshi">http://faculty.uoit.ca/qureshi</a>)</div>
+      </div>
+      <div class="row">
+      <div class="project-member">Mohamed A. Helala (<a class="project-member-link" href="http://mohamed-helala.github.io/">http://mohamed-helala.github.io/</a>)</div>
+      </div>
+      <hr>
+      
+      <h1 id="best-computer-vision-paper-crv-2017">Best computer vision paper, CRV 2017!</h1>
+<div class="row">
+<div class="col-lg-4">
+<div class="embed-responsive embed-responsive-16by9">
+<iframe class="embed-responsive-item" src="media/media6.mp4">
+</iframe>
+</div>
+</div>
+<div class="col-lg-4">
+<div class="embed-responsive embed-responsive-16by9">
+<iframe class="embed-responsive-item" src="media/media1.mp4">
+</iframe>
+</div>
+</div>
+<div class="col-lg-4">
+<div class="embed-responsive embed-responsive-16by9">
+<iframe class="embed-responsive-item" src="media/media3.mp4">
+</iframe>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-lg-4">
+<div class="embed-responsive embed-responsive-16by9">
+<iframe class="embed-responsive-item" src="media/media5.mp4">
+</iframe>
+</div>
+</div>
+<div class="col-lg-4">
+<div class="embed-responsive embed-responsive-16by9">
+<iframe class="embed-responsive-item" src="media/media4.mp4">
+</iframe>
+</div>
+</div>
+<div class="col-lg-4">
+<div class="embed-responsive embed-responsive-16by9">
+<iframe class="embed-responsive-item" src="media/media3.mp4">
+</iframe>
+</div>
+</div>
+</div>
+<hr>
+<p>Some results on MPI Sintel PERTURBED_MARKET_3 sequence. Top row (L2R): clean pass, 2 frames/sec (ours EPE 0.99), 4 frames/sec (EPPM-CVPR14 EPE 1.369). Bottom row (L2R): final pass, 2 frames/sec (ours EPE 1.846), 4 frames/sec (EPPM-CVPR14 EPE 2.368).</p>
+<h1 id="abstract">Abstract</h1>
+<p>This paper presents a new method for efficiently computing large-displacement optical flow. The method uses dominant motion patterns to identify a sparse set of sub- volumes within the cost volume and restricts subsequent Edge- Aware Filtering (EAF) to these sub-volumes. The method uses an extension of PatchMatch to filter these sub-volumes. The fact that our method only applies EAF to a small fraction of the entire cost volume boosts runtime performance. We also show that computational complexity is linear in the size of the images and does not depend upon the size of the label space. We evaluate the proposed technique on MPI Sintel, Middlebury and KITTI benchmarks and show that our method achieves accuracy comparable to those of several recent state-of-the-art methods, while posting significantly faster runtimes.</p>
+<!--
+
+# Results
+
+<div class="row">
+<div class="col-lg-4">
+<figure class="figure">
+<a href="1.png">
+<img src="1.png" class="figure-img img-fluid rounded img-responsive">
+</a>
+<figcaption class="figure-caption">Middlebury</figcaption>
+</figure>
+</div>
+<div class="col-lg-4">
+<figure class="figure">
+<a href="2.png">
+<img src="2.png" class="figure-img img-fluid rounded  img-responsive">
+</a>
+<figcaption class="figure-caption">MPI Sintel clean pass</figcaption>
+</figure>
+</div>
+<div class="col-lg-4">
+<figure class="figure">
+<a href="3.png">
+<img src="3.png" class="figure-img img-fluid rounded  img-responsive">
+</a>
+<figcaption class="figure-caption">MPI Sintel final pass</figcaption>
+</figure>
+</div>
+</div>
+<hr>
+
+-->
+<h1 id="publication">Publication</h1>
+<p>For technical details please look at the following publications</p>
+<script src="https://bibbase.org/show?bib=http%3A%2F%2Felf.science.uoit.ca%2F%7Efaisal%2Ffaisal-qureshi.bib&jsonp=1&filter=keywords:cost-volume-optical-flow&group0=type"></script>
+
+    </div>
+
+  </body>
+</html>
