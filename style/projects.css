@@ -6,6 +6,15 @@
     margin-bottom: 25px;
 }
 
+.project-subtitle {
+    font-size: 30px;
+    font-weight: bolder;
+    color: #ff7c00;
+    text-align: center;
+    margin-top: -20px;
+    margin-bottom: 25px;
+}
+
 .project-members {
     margin-bottom: 40px;
 }
