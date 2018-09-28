@@ -1,6 +1,6 @@
 .project-title {
-    font-size: 40px;
-    color: #ff7c00;
+    font-size: 36px;
+    color: #000000;
     text-align: center;
     margin-top: 35px;
     margin-bottom: 25px;
@@ -9,7 +9,7 @@
 .project-subtitle {
     font-size: 30px;
     font-weight: bolder;
-    color: #ff7c00;
+    color: #A9A9A9;
     text-align: center;
     margin-top: -20px;
     margin-bottom: 25px;
@@ -21,9 +21,9 @@
 
 .project-member {
     font-size: 20px;
-    color: #black;
+    color: #808080;
     margin-left: 40px;
-    font-family: 'Averia Serif Libre', serif;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .project-member-link {
@@ -31,7 +31,7 @@
 }
 
 h1, h2, h3, h4, h5 {
-  font-family: 'Averia Serif Libre', serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 h1 {

@@ -14,12 +14,12 @@
     <link rel="stylesheet" href="../../style/projects.css" type="text/css" />
 
     <!-- Google Fonts -->
-    <link href='https://fonts.googleapis.com/css?family=BioRhyme:200,300,400,700,800' rel='stylesheet' type='text/css'> 
-    <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'> 
-    <link href='https://fonts.googleapis.com/css?family=VT323:400,300,700' rel='stylesheet' type='text/css'> 
-    <link href='https://fonts.googleapis.com/css?family=Baloo:400,300,700' rel='stylesheet' type='text/css'> 
+    <link href='https://fonts.googleapis.com/css?family=BioRhyme:200,300,400,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=VT323:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Baloo:400,300,700' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Averia+Serif+Libre" rel="stylesheet">
-    
+
     <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="../../style/my.js"></script>
@@ -29,7 +29,7 @@
 
       <h1 class="project-title">Intelligent Perception and Control for Space Robotics - Autonomous Satellite Rendezvous and Docking</h1>
       
-      
+
       <hr>
       <div class="row">
       <div class="project-member">Faisal Z. Qureshi (<a class="project-member-link" href="http://faculty.uoit.ca/qureshi">http://faculty.uoit.ca/qureshi</a>)</div>
@@ -38,16 +38,16 @@
       <div class="project-member">Demetri Terzopoulos (<a class="project-member-link" href="http://cs.ucla.edu/~dt">http://cs.ucla.edu/~dt</a>)</div>
       </div>
       <hr>
-      
+
       <!--
 # Intelligent Perception and Control for Space Robotics: Autonomous Satellite Rendezvous and Docking
 
 *F.Z. Qureshi and D. Terzopoulos*
 -->
 <h1 id="coco-in-action">CoCo in Action</h1>
-<p>The videos show how CoCo exhibited robust completion of goal in spite of repeated induced 'failures', showing the CoCo-controlled robotic arm capturing a free-flying satellite. The capture procedure is initiated by a single high-level command from the ground station. Upon receiving the command, the system initializes the long-range vision module to commence a visual search procedure. Once the satellite is found, and its identity confirmed, the systems guides the robotic arm to move closer to the satellite. The performance of the long-range vision module deteriorates as the separation between the robotic arm and the satellite becomes smaller; this is due to the fact that the cameras are mounted on top of the end-effector. The cognitive vision system, therefore, turns on the medium range vision module. The long-range vision processing is turned off (to conserve the power consumption) once the medium range system is fully initialized and is &quot;reliably&quot; tracking the satellite. At this stage the robotic is arm tries to match satellite's linear and angular velocities, a procedure known is station keeping. Short-range vision processing is initiated, and a message is sent to the ground station to turn off the satellite's attitude control system. The robotic arm should not capture a satellite whose attitude control system is functioning, as that might destroy the satellite, or the robotic arm, or both. When the attitude control system is not active, the satellite begins to drift; however, the robotic arm still follows it by relying upon the short-range vision system. Upon receiving a confirmation from the ground station that the attitude control system is off, the robotic arm goes in for the kill.</p>
+<p>The videos show how CoCo exhibited robust completion of goal in spite of repeated induced ‘failures’, showing the CoCo-controlled robotic arm capturing a free-flying satellite. The capture procedure is initiated by a single high-level command from the ground station. Upon receiving the command, the system initializes the long-range vision module to commence a visual search procedure. Once the satellite is found, and its identity confirmed, the systems guides the robotic arm to move closer to the satellite. The performance of the long-range vision module deteriorates as the separation between the robotic arm and the satellite becomes smaller; this is due to the fact that the cameras are mounted on top of the end-effector. The cognitive vision system, therefore, turns on the medium range vision module. The long-range vision processing is turned off (to conserve the power consumption) once the medium range system is fully initialized and is “reliably” tracking the satellite. At this stage the robotic is arm tries to match satellite’s linear and angular velocities, a procedure known is station keeping. Short-range vision processing is initiated, and a message is sent to the ground station to turn off the satellite’s attitude control system. The robotic arm should not capture a satellite whose attitude control system is functioning, as that might destroy the satellite, or the robotic arm, or both. When the attitude control system is not active, the satellite begins to drift; however, the robotic arm still follows it by relying upon the short-range vision system. Upon receiving a confirmation from the ground station that the attitude control system is off, the robotic arm goes in for the kill.</p>
 <p>When there is an error, such as a vision system failure, the reactive system responds immediately and tries to increase its separation from the satellite. In the absence any new perceptual information, the system relies upon its time-aware and context-sensitive mental state. Meanwhile, the deliberation module is using its knowledge base to 1) explain the error and 2) suggest a recovery.</p>
-<p>In the videos below, the inlay shows the view from Autonomous Agent Design &amp; Simulation Testbed---a software framework for designing cognitive vision systems. The wireframe represents the position of the satellite as estimated by the robotic arm. Notice, the estimated position of the satellite is more accurate when the satellite is closer to the robotic arm. Furthermore, the estimated position is maintained when no new perceptual information is available.</p>
+<p>In the videos below, the inlay shows the view from Autonomous Agent Design &amp; Simulation Testbed—a software framework for designing cognitive vision systems. The wireframe represents the position of the satellite as estimated by the robotic arm. Notice, the estimated position of the satellite is more accurate when the satellite is closer to the robotic arm. Furthermore, the estimated position is maintained when no new perceptual information is available.</p>
 <div class="row">
 <div class="col-lg-6">
 <div class="embed-responsive embed-responsive-16by9">
@@ -78,7 +78,7 @@
 </div>
 </div>
 <h1 id="background">Background</h1>
-<p>The work presented here was done as part of the ROSA (Remote Operation with Supervised Autonomy) project at MacDonald Dettwiler Space and Advanced Robotics Limited (then called MDRobotics, now MDA Corporation). MDRobotics is a Canadian company that specializes in space missions, and that has been supporting human space flight since early 1980s through advanced robotic systems, such as Space Shuttle's Canadarm and Mobile Servicing System for the International Space Station. Other partners included National Research Council of Canada--Institute for Information Technology (NRC-IIT), and Canadian Space Agency (CSA), and the University of Toronto and Saikl technologies (through MDRobotics). The project was funded in part by Precarn Inc.</p>
+<p>The work presented here was done as part of the ROSA (Remote Operation with Supervised Autonomy) project at MacDonald Dettwiler Space and Advanced Robotics Limited (then called MDRobotics, now MDA Corporation). MDRobotics is a Canadian company that specializes in space missions, and that has been supporting human space flight since early 1980s through advanced robotic systems, such as Space Shuttle’s Canadarm and Mobile Servicing System for the International Space Station. Other partners included National Research Council of Canada–Institute for Information Technology (NRC-IIT), and Canadian Space Agency (CSA), and the University of Toronto and Saikl technologies (through MDRobotics). The project was funded in part by Precarn Inc.</p>
 <h2 id="on-orbit-satellite-servicing">On-orbit satellite servicing</h2>
 <p>On-orbit satellite servicing is the task of maintaining and repairing a satellite in orbit.</p>
 <p>It extends the operational life of the satellite</p>
@@ -102,25 +102,23 @@
 <ul>
 <li>News Item: MDA Supports Boeing Team in Contract Win to Demonstrate Satellite Repair in Space <a href="http://www.mdacorporation.com/news/pr/pr2002051301.html">https://mdacorporation.com/news/pr/pr2002051301.html</a></li>
 </ul>
-<p>Other related links are (<em>this link don't work anymore</em>)</p>
+<p>Other related links are (<em>this link don’t work anymore</em>)</p>
 <ul>
 <li>http://iit-iti.nrc-cnrc.gc.ca/successes-reussites/rosa-mdr-print_e.html</li>
 <li>http://webpal.net/precarn/web/pressroom/SuccessStories/MDRobotics_ROSA_Nov04/index_en.html</li>
 <li>http://www.exn.ca/ai/readstory.asp?story_id=2001070555</li>
 <li>http://www.futurescanada.ca/space.html</li>
 </ul>
-<p><em>About the CoCo satellite capture controller, says Ross Gillette, ROSA Project Leader, &quot;It was just plain stubborn!&quot;</em></p>
+<p><em>About the CoCo satellite capture controller, says Ross Gillette, ROSA Project Leader, “It was just plain stubborn!”</em></p>
 <h1 id="stills">Stills</h1>
-<figure class="figure">
-<img src="coco-seq.jpg" class="figure-img img-fluid rounded img-responsive" alt="Coco">
-<figcaption class="figure-caption">
-Coco
-</figcaption>
+<figure>
+<img src="coco-seq.jpg" alt="Coco" /><figcaption>Coco</figcaption>
 </figure>
 <p>In the abve figure despite a simulated vision system failure, the servicer robot captures the satellite using vision by making use of its cognitive abilities. On the right of each frame, we show the view from the simulation environment that runs the controller code. The simulation environment communicates with the physical robots over the network. Here, the wireframe represents the position of the satellite as estimated by the robotic arm. The 3D model of the satellite represents the actual position of the satellite according to the sensors on the Fanuc robot arm. The gray cylinder represents the position of the chaser robot end-effector according to the telemetry information. Note that the estimated position is maintained in the absence new perceptual information (Frame 3 and 4). A vision failure was induced by shutting off the ambient light.</p>
 <h1 id="publications">Publications</h1>
 <p>For technical details please look at the following publications</p>
-<script src="https://bibbase.org/show?bib=http%3A%2F%2Felf.science.uoit.ca%2F%7Efaisal%2Ffaisal-qureshi.bib&jsonp=1&filter=keywords:coco&group0=type"></script>
+<script src="https://bibbase.org/show?bib=http%3A%2F%2Felf.science.uoit.ca%2F%7Efqureshi%2Ffaisal-qureshi.bib&jsonp=1&filter=keywords:coco&group0=type"></script>
+
 
     </div>
 

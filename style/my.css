@@ -8,12 +8,12 @@
   margin: 50px;
   margin-top: 75px;
   font-size: xx-large;
-  font-family: 'Averia Serif Libre'
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .me {
     font-size: 83%;
-    font-style: bold;
+    font-weight: 900;
 }
 
 .my-pos {
@@ -31,9 +31,9 @@
 }
 
 #logo {
-  height: 200px; 
-  width: 200px; 
-  overflow: hidden; 
+  height: 200px;
+  width: 200px;
+  overflow: hidden;
   padding: 10px;
 }
 
@@ -66,7 +66,7 @@ strong,
 
 .bib-entry {
   margin-top: 9px;
-  margin-bottom: 9px;  
+  margin-bottom: 9px;
 }
 
 .container {
@@ -124,7 +124,7 @@ strong,
 }
 
 h1, h2, h3, h4, h5 {
-  font-family: 'Averia Serif Libre', serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 h1 {
@@ -149,7 +149,7 @@ h5 {
 }
 
 .footer {
-  text-align: center;  
+  text-align: center;
 }
 
 td.lineNumbers {
@@ -161,24 +161,24 @@ td.lineNumbers {
 }
 
 .blog-title {
-    font-family: 'Averia Serif Libre';
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: xx-large;
 }
 
 .blog-subtitle {
     margin-top: -10px;
-    font-family: 'Averia Serif Libre';
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: large;
 }
 
 .blog-author {
-    font-family: 'Averia Serif Libre';
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: medium;
     font-color: DimGrey;
 }
 
 .blog-date {
-    font-family: 'Averia Serif Libre';
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: medium;
     font-style: italic;
     font-color: DimGrey;
