@@ -1,0 +1,71 @@
+.organizers {
+	font-size: 22px; 
+	margin-top: 25px;
+	line-height: 27px;
+}
+
+.organizers p {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.header h1 {
+	font-size: 50px;
+	line-height: 55px;
+}
+.header {
+	margin-top: 75px;
+	margin-bottom: 50px;
+}	
+.footer {
+	margin-top: 50px;
+	margin-bottom: 20px;
+}
+div#container {
+	margin: 0 auto;
+	width: 1000px;
+	text-align: left;
+}
+.oneColElsCtr #container {
+	width: 1000px;
+	background: #FFFFFF;
+	margin: 0 auto; /* the auto margins (in conjunction with a width) center the page */
+	text-align: left; /* this overrides the text-align: center on the body element. */
+}
+.oneColElsCtr #mainContent {
+	padding: 0 20px; /* remember that padding is the space inside the div box and margin is the space outside the div box */
+}
+.oneColElsCtr #footer {
+	padding: 0 20px; /* remember that padding is the space inside the div box and margin is the space outside the div box */
+	background:#03F;
+}
+.oneColElsCtr #footer p {
+	margin: 0; /* zeroing the margins of the first element in the footer will avoid the possibility of margin collapse - a space between divs */
+	padding: 20px 0; /* padding on this element will create space, just as the the margin would have, without the margin collapse issue */
+}
+
+#navcontainer
+{
+	padding-top: 10px;
+	font-size: 18px;
+}
+
+#navcontainer ul
+{
+margin: 0;
+list-style-type: none;
+}
+
+#navcontainer a
+{
+display: block;
+width: 90%;
+text-decoration: none;
+margin-bottom: 15px;
+}
+
+#navcontainer a:hover
+{
+color: #555;
+margin-bottom: 15px;
+}

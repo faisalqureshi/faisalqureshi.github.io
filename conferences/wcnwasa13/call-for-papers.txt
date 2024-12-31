@@ -1,0 +1,99 @@
+Call for Papers
+
+3rd IEEE Workshop on Camera Networks and Wide Area Scene Analysis
+
+28 June 2013
+
+CVPR2013, Portland, Oregon, USA
+
+http://faculty.uoit.ca/qureshi/conferences/wcnwasa13/
+
+
+A number of application domains, including security and surveillance, urban sensing and traffic planning, intelligent homes for the elderly, environmental monitoring and disaster response, etc., are increasingly relying upon large corpus of imagery captured using camera networks or mobile imaging platforms, such as aerial reconnaissance vehicles and in-orbit satellites. Traditionally, camera networks consisted of fixed Closed-Circuit-Television (CCTV) cameras that are connected via a high-bandwidth communication channel. The recent advances in camera hardware and communication technologies indicate an evolution of traditional camera networks into ad hoc networks of smart cameras and highly capable mobile imaging systems. These open up new fronts for scientific discovery along a number of disciplines, including wide area scene analysis. Wide area scene analysis using imagery captured via camera networks or mobile platforms has its own unique challenges, including the ability to integrate information over a wide area, cooperation between cameras, active control of the network, robustness to network constraints, resource aware in-network processing, scalability, etc. This workshop will bring together researchers from multiple disciplines, including video analysis, signal processing, graphics, machine learning, and statistics, with interests in the fields of camera networks and wide area scene analysis. The focus of papers in this workshop should be on scene analysis using 1) camera networks or 2) imagery captured using mobile platforms, such as aerial reconnaissance vehicles, in-orbit satellites, mobile phones, etc. While this is a broad area and encompasses almost all sub-areas of CVPR, there must be a very strong aspect of camera networks or mobile platform imagery for a paper to be suitable for this venue. An important criterion for deciding whether a paper relates to camera networks should be whether it is scalable to large numbers of cameras and/or whether it can deal with mobile platform imagery.
+
+This workshop calls for original, high-quality paper submissions that address innovative research and development methods in the area of camera networks and wide-area scene analysis. Topics of interest include but are not limited to the following:
+
+Wide-area scene analysis using mobile platform imagery; satellite imagery, aerial reconnaissance vehicle imager, etc.;
+Tracking in Camera Networks;
+Active Camera Networks;
+Distributed Processing in Camera Networks;
+Analysis of Traffic Patterns;
+Smart Network Cameras;
+Simulations/Computer Graphics in Camera Networks and Mobile Platform Imagery;
+Applications of Wide-area Scene Analysis;
+Scene Analysis with Network Constraints; and
+Architecture and System Development.
+Paper Formatting
+Papers are limited to eight pages. Please use the CVPR author kit to format the papers. The workshop chairs reserve the right to reject papers violating the paper length and formatting instructions outright, without review.
+
+
+Paper Formatting
+----------------
+
+Papers are limited to eight pages. Please use the CVPR author kit to format the papers. The workshop chairs reserve the right to reject papers violating the paper length and formatting instructions outright, without review.
+
+Submission
+----------
+WCNWASA 2013 Online Submission System (https://cmt.research.microsoft.com/WCNWASA2013/)
+
+Supplemental Material
+---------------------
+The submission of supplemental material is optional. Such material may include videos of results that cannot be included in the main paper, anonymized related submissions to other conferences and journals, and appendices or technical reports containing extended proofs and mathematical derivations that are not essential for the understanding of the paper. The contents of the supplemental material should be referred to appropriately in the paper and authors should note that reviewers are not obliged to peruse it. For further details refer to CVPR author guidelines.
+
+Blind Review
+------------
+WCNWASA2013 reviewing will be double blind: authors do not know the names of the reviewers of their papers, and reviewers do not know the names of the authors. Please see the author kit for detailed explanations of how to ensure this.
+
+Simultaneous Submissions
+------------------------
+In submitting a paper, authors implicitly acknowledge that no paper of substantially similar content has been or will be submitted to another conference or workshop until decisions are made.
+
+Dates
+-----
+Paper Submission
+29 March 2013, 11:59 pm PST (Extended)
+
+Supplementary Material Submission
+29 March 2013, 11:59 pm PST
+
+Review Decisions
+27 April 2013 (Revised)
+
+Camera Ready Papers
+1 May 2013 (No Extensions)
+
+Workshop Date
+28 June 2013 (co-located with CVPR 2013.)
+
+Organizers
+----------
+Faisal Z. Qureshi
+Univeristy of Ontario Institute of Technology
+
+Amit K. Roy-Chowdhury
+University of California, Riverside
+
+Christian Micheloni
+University of Udine, Italy
+
+Bi Song
+Sony Corporation
+
+Program Committee
+-----------------
+Andrea Cavallaro (Queen Mary University of London, UK)
+Andrea Prati (University IUAV of Venice, Italy)
+Anthony Hoogs (Kitware Inc., USA)
+Bernhard Rinner (Klagenfurt University, Austria)
+Bir Bhanu (University of California Riverside, USA)
+Christian Micheloni (University of Udine, Italy)
+Edmund Lam (University of Hong Kong)
+Gerard Medioni (University of Southern California, USA)
+Gian Foresti (University of Udine, Italy)
+Hamid Aghajan (Stanford University, USA and Ghent University, Belgium)
+James Davis (Ohio State University, USA)
+Kleihorst Richard (VITO NV, Belgium and Ghent University, Belgium)
+Pradeep Atrey (University of Winnipeg, Canada)
+Rama Chellappa (University of Maryland College Park, USA)
+Stan Sclaroff (Boston University, USA)
+Janusz K. Konrad (Boston University, USA)
