@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G9CWRQBRB0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-G9CWRQBRB0');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="pandoc">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {{#title}}<title>{{title}}</title>{{/title}}
+    {{#authors}}
+    <meta name="author" content="{{author}}">
+    {{/authors}}
+
+    <!-- css -->
+    <link rel="stylesheet" href="{{__root__}}/style/bootstrap-3.3.7-dist/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="{{__root__}}/style/my.css" type="text/css" />
+    <link rel="stylesheet" href="{{__root__}}/style/projects.css" type="text/css" />
+
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=BioRhyme:200,300,400,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=VT323:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Baloo:400,300,700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Averia+Serif+Libre" rel="stylesheet">
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="{{root}}/style/my.js"></script>
+  </head>
+  <body style="background-color: white;">
+    <div class="container" style="background: white;">
+
+      <h1 class="project-title">{{title}}</h1>
+      {{#subtitle}}<div class="project-subtitle">{{subtitle}}<div>{{/subtitle}}
+
+      <!-- <hr> -->
+      <!-- {{#authors}} -->
+      <!-- <div class="row"> -->
+      <!--   <div class="project-member">{{#link}}<a href="{{link}}">{{/link}}{{name}}{{#link}}</a>{{/link}}{{#affiliation}}<sup>{{affiliation}}</sup>{{/affiliation}}</div> -->
+      <!-- </div> -->
+      <!-- {{/authors}} -->
+      <!-- <div class="row"> -->
+      <!--   <div class="project-lab-address"> -->
+      <!--     {{#show-labs}} -->
+      <!--     {{#other-labs}} -->
+      <!--     {{#link}}<a href="{{link}}">{{/link}}{{name}}{{#link}}</a>{{/link}}{{#affiliation}}<sup>{{affiliation}}</sup>{{/affiliation}} -->
+      <!--     {{/other-labs}} -->
+      <!--     {{/show-labs}} -->
+      <!--     {{#institutions}} -->
+      <!--     <div class="project-institute"> -->
+      <!--     {{#link}}<a href="{{link}}">{{/link}}{{line1}}{{#link}}</a>{{/link}}{{#affiliation}}<sup>{{affiliation}}</sup>{{/affiliation}}<br>{{#line2-opt}}{{line2-opt}}<br>{{/line2-opt}}{{name}}{{#address}}<br>{{address}}{{/address}}</div> -->
+      <!--     {{/institutions}} -->
+      <!--   </div> -->
+      <!-- </div> -->
+      <!-- <hr> -->
+
+      {{{body}}}
+
+      <!-- {{{project_footer_html}}} -->
+      
+    </div>
+
+  </body>
+</html>
