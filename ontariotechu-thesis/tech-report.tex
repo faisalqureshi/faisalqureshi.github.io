@@ -1,0 +1,87 @@
+% note that the "draftcls" or "draftclsnofoot", not "draft", option
+% should be used if it is desired that the figures are to be displayed in
+% draft mode.
+
+\documentclass[12pt,letterpaper]{article}
+
+% Some useful packages
+\usepackage{lipsum} 
+\usepackage{changepage}
+\usepackage{setspace}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\usepackage{subcaption}
+\usepackage{rotating}
+\usepackage{footnote}
+\usepackage{caption}
+\usepackage{amsmath,amssymb}
+\usepackage{algorithm}
+\usepackage{listings}
+\usepackage[noend]{algpseudocode}
+\usepackage[shortcuts]{extdash}
+\usepackage{ctable}
+\usepackage{dcolumn}
+\usepackage{multirow}
+\usepackage{color} 
+\usepackage{cite}
+\usepackage{url}
+\usepackage[utf8]{inputenc} 
+\usepackage{booktabs}
+\usepackage[toc,page]{appendix}
+\usepackage{setspace}
+% Page layout
+% Final submission
+\usepackage[top=1in, bottom=1in, left=.75in, right=.75in]{geometry}
+% Draft mode that allows for larger space on the right margin
+% for notes etc.
+% \usepackage[top=1in, bottom=1.5in, left=.75in, right=3.25in]{geometry}
+
+\begin{document}
+
+\title{Tech Report}
+
+\author{Thing 1 and Thing 2\\
+Faculty of Science\\
+Ontario Tech University\\
+}
+\date{\today}
+
+\maketitle
+
+% Often do not need the following.  Leave them commented.
+%% \tableofcontents \newpage
+%% \listoffigures \newpage
+%% \listoftables \newpage
+
+% Uncomment the following if you want more space between the 
+% lines.  This is useful in the draft mode.
+% \setstretch{2.5}
+
+
+\begin{abstract}
+  \lipsum[1]
+\end{abstract}
+
+\section{Introduction}
+\lipsum[2-4]
+
+\section{Another Section}
+\lipsum[2-4]
+
+\newpage
+\begin{appendices}
+
+\section{A Section in the Appendix}
+\lipsum[2-5]
+
+\end{appendices}
+\newpage
+
+\addcontentsline{toc}{chapter}{Bibliography}
+
+\bibliographystyle{plain}
+
+\bibliography{thesis} % A dummy thesis.bib file.
+
+\end{document}
