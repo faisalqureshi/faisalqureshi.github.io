@@ -7,13 +7,13 @@ $(document).ready(function(){
     $("#toggle-news").click( function() {
         
         if ( $("#toggle-news").text() == "more >>>" ) {
-            $(".old-news").each( function(){
+            $([id="old-news"]).each( function(){
                 $(this).show()
             });
             $("#toggle-news").text("<<< less");
         }
         else {
-            $(".old-news").each( function(){
+            $([id="old-news"]).each( function(){
                 $(this).hide()
             });
             $("#toggle-news").text("more >>>");

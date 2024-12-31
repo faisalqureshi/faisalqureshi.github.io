@@ -128,7 +128,9 @@ h1, h2, h3, h4, h5 {
 }
 
 h1 {
-  font-size: 36px;
+    font-size: 36px;
+    color: darkgray;
+    line-height: 1.5em;
 }
 
 h2 {
@@ -206,4 +208,8 @@ td.lineNumbers {
 
 .blog-list-title {
     font-size: large;
+}
+
+.news-highlight {
+  color: red;
 }
