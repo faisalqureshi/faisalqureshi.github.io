@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G9CWRQBRB0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-G9CWRQBRB0');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="pandoc">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Structure Guided Image Inpainting using Edge Prediction</title>
+    <meta name="author" content="">
+    <meta name="author" content="">
+    <meta name="author" content="">
+    <meta name="author" content="">
+    <meta name="author" content="">
+
+    <!-- css -->
+    <link rel="stylesheet" href="../../style/bootstrap-3.3.7-dist/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../style/my.css" type="text/css" />
+    <link rel="stylesheet" href="../../style/projects.css" type="text/css" />
+
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=BioRhyme:200,300,400,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=VT323:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Baloo:400,300,700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Averia+Serif+Libre" rel="stylesheet">
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="/style/my.js"></script>
+  </head>
+  <body style="background-color: white;">
+    <div class="container" style="background: white;">
+
+      <h1 class="project-title">Structure Guided Image Inpainting using Edge Prediction</h1>
+      
+
+      <hr>
+      <div class="row">
+        <div class="project-member"><a href="https://knazeri.github.io/">Kamyar Nazeri</a><sup>1</sup></div>
+      </div>
+      <div class="row">
+        <div class="project-member">Eric Ng<sup>1</sup></div>
+      </div>
+      <div class="row">
+        <div class="project-member"><a href="https://tonyjo.github.io/tony/">Tony Joseph</a><sup>2</sup></div>
+      </div>
+      <div class="row">
+        <div class="project-member"><a href="http://faculty.uoit.ca/qureshi">Faisal Z. Qureshi</a><sup>2</sup></div>
+      </div>
+      <div class="row">
+        <div class="project-member"><a href="http://www.ImagingLab.ca">Mehran Ebrahimi</a><sup>1</sup></div>
+      </div>
+      <div class="row">
+        <div class="project-lab-address">
+          <a href="http://www.ImagingLab.ca">Imaging Lab</a><sup>1</sup>
+          <a href="http://vclab.science.uoit.ca">Visual Computing Lab</a><sup>2</sup>
+          <div class="project-institute">Faculty of Science<sup>1,2</sup><br>University of Ontario Institute of Technology<br>2000 Simcoe St. N., Oshawa ON L1G 0C5</div>
+        </div>
+      </div>
+      <hr>
+
+      <h1 id="abstract">Abstract</h1>
+<p>We propose a two-stage model that separates the inpainting problem
+into structure prediction and image completion. Similar to sketch art,
+our model first predicts the image structure of the missing region in
+the form of edge maps. Predicted edge maps are passed to the second
+stage to guide the inpainting process. We evaluate our model end- to-end
+over publicly available datasets CelebA, CelebHQ, Places2, and Paris
+StreetView on images up to a resolution of 512 x 512. We demonstrate
+that this approach outper- forms current state-of-the-art techniques
+quantitatively and qualitatively.</p>
+<div class="row">
+<div class="col-lg-12">
+<figure class="figure">
+<a href="gan.png"><img class="img-responsive" width="100%" src="gan.png" alt="Proposed Generative Adversarial Network for structure guided image completion using edge maps.  Incomplete grayscale image and edge map, and mask are the inputs of G1 to predict the full edge map. Predicted edge map and incomplete color image are passed to G2 to perform the inpainting task."></a>
+<figcaption class="figure-caption">
+Proposed Generative Adversarial Network for structure guided image
+completion using edge maps. Incomplete grayscale image and edge map, and
+mask are the inputs of G1 to predict the full edge map. Predicted edge
+map and incomplete color image are passed to G2 to perform the
+inpainting task.
+</figcaption>
+</figure>
+</div>
+</div>
+<h1 id="some-results">Some results</h1>
+<p>The proposed network is able to use color and edge information from
+different sources to create unique images.</p>
+<div class="row">
+<div class="col-lg-12">
+<figure class="figure">
+<a href="fig7.png"><img class="img-responsive" width="100%" src="fig7.png" alt="Edge-map (3rd column) generated using the left-half of (1st column) (shown in black) and right-half of (2nd column) (shown in red). Input is (1st column) with the right-half removed, producing the output (last column)."></a>
+<figcaption class="figure-caption">
+Edge-map (3rd column) generated using the left-half of (1st column)
+(shown in black) and right-half of (2nd column) (shown in red). Input is
+(1st column) with the right-half removed, producing the output (last
+column).
+</figcaption>
+</figure>
+</div>
+</div>
+<p>The proposed method can also be used for photo editing as seen
+below.</p>
+<div class="row">
+<div class="col-lg-12">
+<figure class="figure">
+<a href="fig8.png"><img class="img-responsive" width="100%" src="fig8.png" alt="Examples of object removal and image editing us- ing our EdgeConnect model. (Left) Original image. (Cen- ter) Unwanted object removed with optional edge informa- tion to guide inpainting. (Right) Generated image."></a>
+<figcaption class="figure-caption">
+Examples of object removal and image editing us- ing our EdgeConnect
+model. (Left) Original image. (Cen- ter) Unwanted object removed with
+optional edge informa- tion to guide inpainting. (Right) Generated
+image.
+</figcaption>
+</figure>
+</div>
+</div>
+<h1 id="supplementary-material">Supplementary Material</h1>
+<p>More information is available <a
+href="edge-connect-supp.pdf">here</a>.</p>
+<h1 id="publication">Publication</h1>
+<p>For technical details please look at the following publications</p>
+<script src="https://bibbase.org/show?bib=http://vclab.science.uoit.ca/faisal-qureshi.bib&jsonp=1&filter=keywords:edge-connect&group0=type"></script>
+
+
+      <footer style="margin-top: 50px;">
+  <div class="container footer">
+    <div class="row">
+      <hr>
+      <div class="col-md-6 col-sm-12">
+        <img src="http://vclab.science.uoit.ca/imgs/vclab-ontariotech.png">
+      </div>
+      <div class="col-md-6 col-sm-12">
+        &copy; Faisal Qureshi<br>
+        Last updated <br>
+        Site generated using &copy; Webify (Ver. 4.1)
+      </div>
+</footer>
+      
+    </div>
+
+  </body>
+</html>

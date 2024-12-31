@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G9CWRQBRB0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-G9CWRQBRB0');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="pandoc">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Improving hyperspectral image segmentation by applying inverse noise weighting and outlier removal for optimal scale selection</title>
+    <meta name="author" content="">
+    <meta name="author" content="">
+    <meta name="author" content="">
+    <meta name="author" content="">
+
+    <!-- css -->
+    <link rel="stylesheet" href="../../style/bootstrap-3.3.7-dist/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../style/my.css" type="text/css" />
+    <link rel="stylesheet" href="../../style/projects.css" type="text/css" />
+
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=BioRhyme:200,300,400,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=VT323:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Baloo:400,300,700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Averia+Serif+Libre" rel="stylesheet">
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="/style/my.js"></script>
+  </head>
+  <body style="background-color: white;">
+    <div class="container" style="background: white;">
+
+      <h1 class="project-title">Improving hyperspectral image segmentation by applying inverse noise weighting and outlier removal for optimal scale selection</h1>
+      
+
+      <hr>
+      <div class="row">
+        <div class="project-member">Phuong D. Dao<sup>1</sup></div>
+      </div>
+      <div class="row">
+        <div class="project-member">Kiran Mantripragada<sup>2</sup></div>
+      </div>
+      <div class="row">
+        <div class="project-member">Yuhong He<sup>1</sup></div>
+      </div>
+      <div class="row">
+        <div class="project-member"><a href="http://faculty.uoit.ca/qureshi">Faisal Z. Qureshi</a><sup>2</sup></div>
+      </div>
+      <div class="row">
+        <div class="project-lab-address">
+          <div class="project-institute">
+          <a href="http://sites.utm.utoronto.ca/yuhong/content/welcome-prof-yuhong-hes-webpage-rssem-lab">Remote Sensing and Spatial Ecosystem Modeling Laboratory</a><sup>1</sup><br>Department of Geography, Geomatics and Environment<br>University of Toronto<br>3359 Mississauga Road, Mississauga ON L5L 1C6</div>
+          <div class="project-institute">
+          <a href="http://vclab.science.uoit.ca">Visual Computing Lab</a><sup>2</sup><br>Faculty of Science<br>University of Ontario Institute of Technology<br>2000 Simcoe St. N., Oshawa ON L1G 0C5</div>
+        </div>
+      </div>
+      <hr>
+
+      <h1 id="abstract">Abstract</h1>
+<p>Optimal scale selection for image segmentation is an essential
+component of the Object-Based Image Analysis (OBIA) and interpretation.
+An optimal segmentation scale is a scale at which image objects,
+overall, best rep- resent real-world ground objects and features across
+the entire image. At this scale, the intra-object variance is ideally
+lowest and the inter-object spatial autocorrelation is ideally highest,
+and a change in the scale could cause an abrupt change in these
+measures. Unsupervised parameter optimization methods typically use
+global measures of spatial and spectral properties calculated from all
+image objects in all bands as the target criteria to determine the
+optimal segmentation scale. However, no studies consider the effect of
+noise in image spectral bands on the segmentation assessment and scale
+selection. Furthermore, these global measures could be affected by
+outliers or extreme values from a small number of objects. These issues
+may lead to incorrect assessment and selection of optimal scales and
+cause the uncertainties in subsequent segmentation and classification
+results. These issues be- come more pronounced when segmenting
+hyperspectral data with large spectral variability across the spectrum.
+In this study, we propose an enhanced method that 1) incorporates the
+band’s inverse noise weighting in the seg- mentation and 2) detects and
+removes outliers before determining segmentation scale parameters. The
+proposed method is evaluated on three well-established segmentation
+approaches – k-means, mean-shift, and watershed. The generated segments
+are validated by comparing them with reference polygons using normalized
+over-seg- mentation (OS), under-segmentation (US), and the Euclidean
+Distance (ED) indices. The results demonstrate that this proposed scale
+selection method produces more accurate and reliable segmentation
+results. The approach can be applied to other segmentation selection
+criteria and are useful for automatic multi-parameter tuning and optimal
+scale parameter selections in OBIA methods in remote sensing.</p>
+<hr>
+<div class="row">
+<div class="col-lg-12">
+<figure class="figure">
+<p><a href="seg.gif"><img class="img-responsive" width="100%" src="seg.gif" alt=""></a></p>
+</figure>
+</div>
+</div>
+<h1 id="publication">Publication</h1>
+<p>For technical details please look at the following publications</p>
+<script src="https://bibbase.org/show?bib=http://vclab.science.uoit.ca/faisal-qureshi.bib&jsonp=1&filter=keywords:hyperspectral-segmentation&group0=type"></script>
+
+
+      <footer style="margin-top: 50px;">
+  <div class="container footer">
+    <div class="row">
+      <hr>
+      <div class="col-md-6 col-sm-12">
+        <img src="http://vclab.science.uoit.ca/imgs/vclab-ontariotech.png">
+      </div>
+      <div class="col-md-6 col-sm-12">
+        &copy; Faisal Qureshi<br>
+        Last updated <br>
+        Site generated using &copy; Webify (Ver. 4.1)
+      </div>
+</footer>
+      
+    </div>
+
+  </body>
+</html>

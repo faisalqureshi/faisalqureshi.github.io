@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G9CWRQBRB0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-G9CWRQBRB0');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="pandoc">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>An index structure for fast range search in Hamming space</title>
+    <meta name="author" content="">
+    <meta name="author" content="">
+    <meta name="author" content="">
+
+    <!-- css -->
+    <link rel="stylesheet" href="../../style/bootstrap-3.3.7-dist/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../style/my.css" type="text/css" />
+    <link rel="stylesheet" href="../../style/projects.css" type="text/css" />
+
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=BioRhyme:200,300,400,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=VT323:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Baloo:400,300,700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Averia+Serif+Libre" rel="stylesheet">
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="/style/my.js"></script>
+  </head>
+  <body style="background-color: white;">
+    <div class="container" style="background: white;">
+
+      <h1 class="project-title">An index structure for fast range search in Hamming space</h1>
+      
+
+      <hr>
+      <div class="row">
+        <div class="project-member">Faisal Z. Qureshi<sup>1</sup></div>
+      </div>
+      <div class="row">
+        <div class="project-member">Ken Q. Pu<sup>2</sup></div>
+      </div>
+      <div class="row">
+        <div class="project-member">Ernesto Reina<sup>1,2</sup></div>
+      </div>
+      <div class="row">
+        <div class="project-lab-address">
+          <a href="http://vclab.science.uoit.ca">Visual Computing Lab</a><sup>1</sup>
+          <a href="http://db.science.uoit.ca/">Database Research Group</a><sup>2</sup>
+          <div class="project-institute">
+          Faculty of Science<br>University of Ontario Institute of Technology<br>2000 Simcoe St. N., Oshawa ON L1G 0C5</div>
+        </div>
+      </div>
+      <hr>
+
+      <h1 id="abstract">Abstract</h1>
+<p>This paper addresses the problem of indexing and querying very large
+databases of binary vectors. Such databases of binary vectors are a
+common occurrence in domains such as information retrieval and computer
+vision. We propose an indexing structure consisting of a compressed
+bitwise trie and a hash table for supporting range queries in Hamming
+space. The index structure, which can be updated incrementally, is able
+to solve the range queries for any radius. Our approach significantly
+outperforms state-of-the-art approaches.</p>
+<div class="row">
+<div class="col-lg-12">
+<figure class="figure">
+<p><a href="trie-indexing.gif"><img class="img-responsive" width="100%" src="trie-indexing.gif" alt=""></a></p>
+</figure>
+</div>
+</div>
+<h1 id="publication">Publication</h1>
+<p>For technical details please look at the following publications</p>
+<script src="https://bibbase.org/show?bib=http://vclab.science.uoit.ca/faisal-qureshi.bib&jsonp=1&filter=keywords:trie-indexing&group0=type"></script>
+
+
+      <footer style="margin-top: 50px;">
+  <div class="container footer">
+    <div class="row">
+      <hr>
+      <div class="col-md-6 col-sm-12">
+        <img src="http://vclab.science.uoit.ca/imgs/vclab-ontariotech.png">
+      </div>
+      <div class="col-md-6 col-sm-12">
+        &copy; Faisal Qureshi<br>
+        Last updated <br>
+        Site generated using &copy; Webify (Ver. 4.1)
+      </div>
+</footer>
+      
+    </div>
+
+  </body>
+</html>

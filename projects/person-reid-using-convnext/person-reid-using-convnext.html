@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G9CWRQBRB0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-G9CWRQBRB0');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="pandoc">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>On Using ConvNeXt within the IICS/IIDS Framework for Person Re-ID</title>
+    <meta name="author" content="">
+    <meta name="author" content="">
+
+    <!-- css -->
+    <link rel="stylesheet" href="../../style/bootstrap-3.3.7-dist/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../style/my.css" type="text/css" />
+    <link rel="stylesheet" href="../../style/projects.css" type="text/css" />
+
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=BioRhyme:200,300,400,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=VT323:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Baloo:400,300,700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Averia+Serif+Libre" rel="stylesheet">
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="/style/my.js"></script>
+  </head>
+  <body style="background-color: white;">
+    <div class="container" style="background: white;">
+
+      <h1 class="project-title">On Using ConvNeXt within the IICS/IIDS Framework for Person Re-ID</h1>
+      
+
+      <hr>
+      <div class="row">
+        <div class="project-member">Roya Dehghani<sup>1</sup></div>
+      </div>
+      <div class="row">
+        <div class="project-member"><a href="http://faculty.uoit.ca/qureshi">Faisal Z. Qureshi</a><sup>1</sup></div>
+      </div>
+      <div class="row">
+        <div class="project-lab-address">
+          <div class="project-institute">
+          <a href="http://vclab.science.uoit.ca">Visual Computing Lab</a><sup>1</sup><br>Faculty of Science<br>University of Ontario Institute of Technology<br>2000 Simcoe St. N., Oshawa ON L1G 0C5</div>
+        </div>
+      </div>
+      <hr>
+
+      <h1 id="introduction">Introduction</h1>
+<p>This project explores the integration of ConvNeXt, a CNN-based
+network inspired by vision transformers, into the Intra and Inter Camera
+Similarity (IICS) and Intra and Inter Domain Similarity (IIDS)
+frameworks for unsupervised person Re-ID. Building upon IICS/IIDS
+framework that generates pseudo labels through intra and inter stages
+and utilizing techniques such as Adaptive Instance and Batch
+Normalization (AIBN) and Transform Normalization (TNorm) to minimize
+intra-camera and inter-camera variations respectively, our work
+emphasizes the application of ConvNeXt as a feature extractor. ConvNeXt
+gets higher mAP and CMC on the Market1501 and MSMT17 datasets than most
+unsupervised learning methods. Furthermore, we explored the effect of
+AIBN and TNorm normalization techniques in ConvNeXt. We showed their
+effectiveness in reducing intra-camera and inter-camera variations if
+AIBN is inserted in the final stages (Stage 3 and stage 4) and TNorm
+layers are included after stage 1, stage 2, and stage 3. We also
+examined the effects of four ConvNeXt variants within the IICS/IIDS
+framework, emphasizing the advantages of using larger variants of
+ConvNeXt as a feature extractor for person Re-ID.</p>
+<center>
+<a href="talk.gif"><img src="talk.gif" width="80%"></a>
+</center>
+<h1 id="results">Results</h1>
+<h1 id="publication">Publication</h1>
+<p>For technical details please look at the following publication(s)</p>
+<script src="https://bibbase.org/show?bib=http://vclab.science.uoit.ca/student-theses/student-theses.bib&jsonp=1&filter=keywords:matting&group0=type"></script>
+<!-- <script src="https://bibbase.org/show?bib=http://vclab.science.uoit.ca/faisal-qureshi.bib&jsonp=1&filter=keywords:mesh-error&group0=type"></script> -->
+
+
+      <footer style="margin-top: 50px;">
+  <div class="container footer">
+    <div class="row">
+      <hr>
+      <div class="col-md-6 col-sm-12">
+        <img src="http://vclab.science.uoit.ca/imgs/vclab-ontariotech.png">
+      </div>
+      <div class="col-md-6 col-sm-12">
+        &copy; Faisal Qureshi<br>
+        Last updated <br>
+        Site generated using &copy; Webify (Ver. 4.1)
+      </div>
+</footer>
+      
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G9CWRQBRB0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-G9CWRQBRB0');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="pandoc">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Video Summarization</title>
+    <meta name="author" content="">
+    <meta name="author" content="">
+
+    <!-- css -->
+    <link rel="stylesheet" href="../../style/bootstrap-3.3.7-dist/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../style/my.css" type="text/css" />
+    <link rel="stylesheet" href="../../style/projects.css" type="text/css" />
+
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=BioRhyme:200,300,400,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=VT323:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Baloo:400,300,700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Averia+Serif+Libre" rel="stylesheet">
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="/style/my.js"></script>
+  </head>
+  <body style="background-color: white;">
+    <div class="container" style="background: white;">
+
+      <h1 class="project-title">Video Summarization</h1>
+      
+
+      <hr>
+      <div class="row">
+        <div class="project-member"><a href="http://faculty.uoit.ca/qureshi">Faisal Z. Qureshi</a></div>
+      </div>
+      <div class="row">
+        <div class="project-member">Wesley Taylor</div>
+      </div>
+      <div class="row">
+        <div class="project-lab-address">
+          <div class="project-institute">
+          Visual Computing Lab<sup>1</sup><br>Faculty of Science<br>University of Ontario Institute of Technology<br>2000 Simcoe St. N., Oshawa ON L1G 0C5</div>
+        </div>
+      </div>
+      <hr>
+
+      <p>Cameras are now ubiquitous. This has resulted in an explosive growth
+in user-generated images and videos. In the case of videos, at least,
+our ability to record videos has far outpaced methods and tools to
+manage these videos. A skier, for example, can easily record many hours
+of video footage using an action camera, such as a Go-Pro. Raw video
+footage, in general, is unviewable—the recorded video needs to be
+summarized or edited in some manner before it can be shared with others.
+Clearly, no one is interested in watching many hours of skiing video
+when most of it is bound to be highly repetitive. Manual video editing
+and summarizing is painstakingly slow and tedious. Consequently a large
+fraction of recorded footage is never shared or even viewed. We
+desperately need one-touch video editing tools capable of generating
+video summarizes that capture the meaningful and interesting portions of
+the video, dis- carding sections that are boring, repetitive or poorly
+recorded. Such tools will revolutionize how we share video stories with
+friends and family via social media.</p>
+<p>These observations has led us to explore new theory and methods for
+video summarization.</p>
+<h2 id="real-time-video-summarization-on-commodity-hardware">Real-time
+Video Summarization on Commodity Hardware</h2>
+<div class="row">
+<div class="col-lg-12">
+<div class="embed-responsive embed-responsive-16by9">
+<video controls autoplay loop playsinline preload="auto" muted>
+<source src="icdsc-2018-video-summarization.mp4" type="video/mp4">
+<p>
+Sorry, this video cannot be displayed in your browser.
+</p>
+</video>
+</div>
+</div>
+</div>
+<p>
+If you have trouble seeing this video, you can download it <a
+href="./icdsc-2018-video-summarization.mp4">here</a>.
+</p>
+<h3 id="abstract">Abstract</h3>
+<p>We present a method for creating video summaries in real-time on
+commodity hardware. Real-time here refers to the fact that the time
+required for video summarization is less than the duration of the input
+video. First, low-level features are use to discard undesirable frames.
+Next, video is divided into segments, and segment-level features are
+extracted for each segment. Tree-based models trained on widely
+available video summarization and computational aesthetics datasets are
+then used to rank individual segments, and top-ranked segments are
+selected to generate the final video summary. We evaluate the proposed
+method on The SumMe Video Summarization (SumMe) dataset and show that
+our method is able to achieve summarization accuracy that is comparable
+to that of a current state-of-the-art deep learning method, while
+posting significantly faster run-times. Our method on average is able to
+generate a video summary in time that is shorter than the duration of
+the video.</p>
+<h3 id="publication">Publication</h3>
+<script src="https://bibbase.org/show?bib=http://vclab.science.uoit.ca/faisal-qureshi.bib&jsonp=1&filter=keywords:video-summarization-icdsc&group0=type"></script>
+<h2 id="automatic-video-editing-for-sensor-rich-videos">Automatic Video
+Editing for Sensor-Rich Videos</h2>
+<div class="row">
+<div class="col-lg-12">
+<figure class="figure">
+<p><a href="sensor-rich.png"><img class="img-responsive" width="100%" src="sensor-rich.png" alt=""></a></p>
+</figure>
+</div>
+</div>
+<p>You can check out the sensor data recorded for a number of videos
+below. Each file is a PDF containing sample frames for each final cut,
+along with plots of all available data.</p>
+<ul>
+<li><a href="ferris-wheel.pdf">Ferris Wheel</a></li>
+<li><a href="concert.pdf">Concert</a></li>
+<li><a href="lab.pdf">Lab</a></li>
+</ul>
+<h3 id="abstract-1">Abstract</h3>
+<p>We present a new framework for capturing videos using sensor-rich
+mobile devices, such as smartphones, tablets, etc. Many of today’s
+mobile devices are equipped with a variety of sensors, including
+accelerometers, magnetometers and gyroscopes, which are rarely used
+during video capture for anything more than video stabilization. We
+demonstrate that these sensors, together with the information that can
+be extracted from the recorded video via computer vi- sion techniques,
+provide a rich source of data that can be leveraged to automatically
+edit and “clean up” the captured video. Sensor data, for example, can be
+used to identify un- desirable video segments that are then hidden from
+view. We showcase an Android video recording app that captures sensor
+data during video recording and is capable of automatically constructing
+final-cuts from the recorded video. The app uses the captured sensor
+data plus computer vision algorithms, such as focus analysis, face
+detection, etc., to filter out undesirable segments and keep visually
+appealing portions of the captured video to create a final cut. We also
+show how information from various sensors and computer vision routines
+can be combined to create different final cuts with little or no user
+input.</p>
+<h3 id="publication-1">Publication</h3>
+<script src="https://bibbase.org/show?bib=http://vclab.science.uoit.ca/faisal-qureshi.bib&jsonp=1&filter=keywords:video-summarization-wacv&group0=type"></script>
+</div>
+</div>
+</div>
+
+
+      <footer style="margin-top: 50px;">
+  <div class="container footer">
+    <div class="row">
+      <hr>
+      <div class="col-md-6 col-sm-12">
+        <img src="http://vclab.science.uoit.ca/imgs/vclab-ontariotech.png">
+      </div>
+      <div class="col-md-6 col-sm-12">
+        &copy; Faisal Qureshi<br>
+        Last updated <br>
+        Site generated using &copy; Webify (Ver. 4.1)
+      </div>
+</footer>
+      
+    </div>
+
+  </body>
+</html>

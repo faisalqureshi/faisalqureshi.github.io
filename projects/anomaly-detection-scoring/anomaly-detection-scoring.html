@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G9CWRQBRB0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-G9CWRQBRB0');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="pandoc">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Improving Deep Learning Based Anomaly Detection on Multivariate Time Series Through Separated Anomaly Scoring</title>
+    <meta name="author" content="">
+    <meta name="author" content="">
+    <meta name="author" content="">
+    <meta name="author" content="">
+
+    <!-- css -->
+    <link rel="stylesheet" href="../../style/bootstrap-3.3.7-dist/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../style/my.css" type="text/css" />
+    <link rel="stylesheet" href="../../style/projects.css" type="text/css" />
+
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=BioRhyme:200,300,400,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=VT323:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Baloo:400,300,700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Averia+Serif+Libre" rel="stylesheet">
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="/style/my.js"></script>
+  </head>
+  <body style="background-color: white;">
+    <div class="container" style="background: white;">
+
+      <h1 class="project-title">Improving Deep Learning Based Anomaly Detection on Multivariate Time Series Through Separated Anomaly Scoring</h1>
+      
+
+      <hr>
+      <div class="row">
+        <div class="project-member">Adam Lundstorm<sup>1</sup></div>
+      </div>
+      <div class="row">
+        <div class="project-member"><a href="https://www.miun.se/Personal/mattiasonils/">Mattias O&#x27;Nils</a><sup>1</sup></div>
+      </div>
+      <div class="row">
+        <div class="project-member"><a href="http://faculty.uoit.ca/qureshi">Faisal Z. Qureshi</a><sup>1,3</sup></div>
+      </div>
+      <div class="row">
+        <div class="project-member">Axel Jantsch<sup>1,2</sup></div>
+      </div>
+      <div class="row">
+        <div class="project-lab-address">
+          <div class="project-institute">Department of Electronics Design<sup>1</sup><br>Mid Sweden University<br>Holmgatan 10, 85170 Sundsvall, Sweden</div>
+          <div class="project-institute">TU Wien<sup>2</sup><br>Institute of Comptuer Technology<br>Vienna, Austria</div>
+          <div class="project-institute">Visual Computing Lab<sup>3</sup><br>Faculty of Science<br>University of Ontario Institute of Technology<br>2000 Simcoe St. N., Oshawa ON L1G 0C5, Canada</div>
+        </div>
+      </div>
+      <hr>
+
+      <h1 id="abstract">Abstract</h1>
+<p>The importance of anomaly detection in multivariate time series has
+led to the development of several prominent deep learning solutions. As
+a part of the anomaly detection process, the scoring method has shown to
+be of significant importance when separating non-anomalous points from
+anomalous ones. At this time, most of the solutions utilize an
+aggregated score which means that relevant information created by the
+anomaly detection model might be lost. Therefore, this study has set out
+to examine to what extent anomaly detection in multivariate time series
+based on deep learning can be improved if all the residuals from each
+individual channel is considered in the anomaly score. To achieve this,
+an aggregated and separated scoring method has been applied with a
+simple denoising convolutional autoencoder. In addition, the performance
+has been compared with other state-of-the-art methods. The result showed
+that the separated approach has the potential to generate a
+significantly higher performance than the aggregated one. At the same
+time, there were some indications suggesting that an aggregated scoring
+is better at generalizing when no labels are available to select the
+anomaly thresholds. Therefore, the result should serve as an
+encouragement to use a separated scoring approach together with a small
+sample of labeled anomalies to optimize the thresholds. Lastly, due to
+the impact of the anomaly score, the result suggests that future
+research within this field should consider applying the same anomaly
+scoring method when comparing the performance of deep learning
+algorithms.</p>
+<h1 id="synopsis">Synopsis</h1>
+<p>This study aims to address the following question:</p>
+<blockquote>
+<p>To what extent can the performance of multivariate anomaly detection
+on time series data based on deep learning be improved by constructing
+an anomaly score considering the residuals of each individual channel
+separately?</p>
+</blockquote>
+<p>This study explores this question by setting up a convolutional
+autoencoder based anomaly detection method that is evaluated on standard
+benchmarks using both separated scoring and aggregated scoring
+techniques. We find that separated approach significantly outperforms
+the aggregated approach on the three datasets that we have used.</p>
+<!-- <div class="row">
+<div class="col-lg-12">
+<figure class="figure" style="margin-top: 15px; margin-bottom: 20px;">
+<center>
+<a href="fig1.png"><img class="img-responsive" width="90%"src="fig1.png" alt=""></a>
+
+</center>
+</figure>
+</div>
+</div>
+ -->
+<hr>
+<div class="row">
+<div class="col-lg-12">
+<figure class="figure" style="margin-top: 15px; margin-bottom: 20px;">
+<center>
+<a href="fig1.png"><img class="img-responsive" width="75%"src="fig1.png" alt="Framework for the anomaly detection method"></a>
+<figcaption class="figure-caption" style="font-style: italic; font-weight: bold;">
+Framework for the anomaly detection method
+</figcaption>
+</center>
+</figure>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-12">
+<figure class="figure" style="margin-top: 15px; margin-bottom: 20px;">
+<center>
+<a href="fig2.png"><img class="img-responsive" width="75%"src="fig2.png" alt="The model is trained using non-anomalous training data and is then used to generate channel-wise residuals. Together with labels and a optimization procedure a combined score can be produced considering each individual channel."></a>
+<figcaption class="figure-caption" style="font-style: italic; font-weight: bold;">
+The model is trained using non-anomalous training data and is then used
+to generate channel-wise residuals. Together with labels and a
+optimization procedure a combined score can be produced considering each
+individual channel.
+</figcaption>
+</center>
+</figure>
+</div>
+</div>
+<hr>
+<!-- <div class="row">
+<div class="col-lg-12">
+<figure class="figure" style="margin-top: 15px; margin-bottom: 20px;">
+<center>
+<a href="fig4.png"><img class="img-responsive" width="75%"src="fig4.png" alt="Some images from the dataset that we collected for this project."></a>
+<figcaption class="figure-caption" style="font-style: italic; font-weight: bold;">Some images from the dataset that we collected for this project.</figcaption>
+</center>
+</figure>
+</div>
+</div>
+
+
+<hr> -->
+<!-- # Dataset
+
+The datasets is available at [https://snd.gu.se/sv/catalogue/study/2021-303/1/1#dataset](https://snd.gu.se/sv/catalogue/study/2021-303/1/1#dataset). -->
+<h1 id="publication">Publication</h1>
+<p>For technical details please look at the following publications</p>
+<script src="https://bibbase.org/show?bib=http://vclab.science.uoit.ca/faisal-qureshi.bib&jsonp=1&filter=keywords:anomaly-scoring&group0=type"></script>
+
+
+      <footer style="margin-top: 50px;">
+  <div class="container footer">
+    <div class="row">
+      <hr>
+      <div class="col-md-6 col-sm-12">
+        <img src="http://vclab.science.uoit.ca/imgs/vclab-ontariotech.png">
+      </div>
+      <div class="col-md-6 col-sm-12">
+        &copy; Faisal Qureshi<br>
+        Last updated <br>
+        Site generated using &copy; Webify (Ver. 4.1)
+      </div>
+</footer>
+      
+    </div>
+
+  </body>
+</html>

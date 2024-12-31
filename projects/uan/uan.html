@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G9CWRQBRB0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-G9CWRQBRB0');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="pandoc">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Joint Spatial and Layer Attention for Convolutional Networks</title>
+    <meta name="author" content="">
+    <meta name="author" content="">
+    <meta name="author" content="">
+
+    <!-- css -->
+    <link rel="stylesheet" href="../../style/bootstrap-3.3.7-dist/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../style/my.css" type="text/css" />
+    <link rel="stylesheet" href="../../style/projects.css" type="text/css" />
+
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=BioRhyme:200,300,400,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=VT323:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Baloo:400,300,700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Averia+Serif+Libre" rel="stylesheet">
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="/style/my.js"></script>
+  </head>
+  <body style="background-color: white;">
+    <div class="container" style="background: white;">
+
+      <h1 class="project-title">Joint Spatial and Layer Attention for Convolutional Networks</h1>
+      
+
+      <hr>
+      <div class="row">
+        <div class="project-member">Tony Joseph<sup>1</sup></div>
+      </div>
+      <div class="row">
+        <div class="project-member"><a href="http://faculty.uoit.ca/qureshi">Faisal Z. Qureshi</a><sup>1</sup></div>
+      </div>
+      <div class="row">
+        <div class="project-member"><a href="http://www.scs.ryerson.ca/kosta/">Kosta G. Derpanis</a><sup>2</sup></div>
+      </div>
+      <div class="row">
+        <div class="project-lab-address">
+          <div class="project-institute">
+          <a href="http://vclab.science.uoit.ca">Visual Computing Lab</a><sup>1</sup><br>Faculty of Science<br>University of Ontario Institute of Technology<br>2000 Simcoe St. N., Oshawa ON L1G 0C5</div>
+          <div class="project-institute">
+          <a href="https://ryersonvisionlab.github.io">Ryerson Vision Lab</a><sup>2</sup><br>Department of Computer Science<br>Ryerson University<br>350 Victoria St, Toronto, ON M5B 2K3</div>
+        </div>
+      </div>
+      <hr>
+
+      <div class="row">
+<div class="col-lg-12">
+<figure class="figure">
+<p><a href="Intro.png"><img class="img-responsive" width="100%" src="Intro.png" alt=""></a></p>
+</figure>
+</div>
+</div>
+<h1 id="abstract">Abstract</h1>
+<p>In this paper, we propose a novel approach that learns to
+sequentially attend to differentConvolutional Neural Networks (CNN)
+layers (i.e., “what” feature abstraction to attend to) and different
+spatial locations of the selected feature map (i.e., “where”) to
+performthe task at hand. Specifically, at each Recurrent Neural Network
+(RNN) step, both a CNN layer and localized spatial region within it are
+selected for further processing. We demonstrate the effectiveness of
+this approach on two computer vision tasks: (i) image-basedsix degree of
+freedom camera pose regression and (ii) indoor scene classification.
+Em-pirically, we show that combining the “what” and “where” aspects of
+attention improvesnetwork performance on both tasks. We evaluate our
+method on standard benchmarks forcamera localization (Cambridge,
+7-Scenes, and TUM-LSI) and for scene classification(MIT-67 Indoor
+Scenes). For camera localization our approach reduces the median errorby
+18.8% for position and 8.2% for orientation (averaged over all scenes),
+and for sceneclassification it improves the mean accuracy by 3.4% over
+previous methods.</p>
+<h1 id="bmvc-2019-poster">BMVC 2019 Poster</h1>
+<div class="row">
+<div class="col-lg-12">
+<figure class="figure">
+<p><a href="bmvc_2019_poster.png"><img class="img-responsive" width="100%" src="bmvc_2019_poster.png" alt=""></a></p>
+</figure>
+</div>
+</div>
+<h1 id="supplementary-material">Supplementary Material</h1>
+<p>Supplementary material is available <a
+href="BMVC2019_SUPP_0258.pdf">here</a>.</p>
+<!--
+
+# Results
+
+<div class="row">
+<div class="col-lg-4">
+<figure class="figure">
+<a href="1.png">
+<img src="1.png" class="figure-img img-fluid rounded img-responsive">
+</a>
+<figcaption class="figure-caption">Middlebury</figcaption>
+</figure>
+</div>
+<div class="col-lg-4">
+<figure class="figure">
+<a href="2.png">
+<img src="2.png" class="figure-img img-fluid rounded  img-responsive">
+</a>
+<figcaption class="figure-caption">MPI Sintel clean pass</figcaption>
+</figure>
+</div>
+<div class="col-lg-4">
+<figure class="figure">
+<a href="3.png">
+<img src="3.png" class="figure-img img-fluid rounded  img-responsive">
+</a>
+<figcaption class="figure-caption">MPI Sintel final pass</figcaption>
+</figure>
+</div>
+</div>
+<hr>
+
+-->
+<h1 id="publication">Publication</h1>
+<p>For technical details please look at the following publications</p>
+<script src="https://bibbase.org/show?bib=http://vclab.science.uoit.ca/faisal-qureshi.bib&jsonp=1&filter=keywords:uan&group0=type"></script>
+
+
+      <footer style="margin-top: 50px;">
+  <div class="container footer">
+    <div class="row">
+      <hr>
+      <div class="col-md-6 col-sm-12">
+        <img src="http://vclab.science.uoit.ca/imgs/vclab-ontariotech.png">
+      </div>
+      <div class="col-md-6 col-sm-12">
+        &copy; Faisal Qureshi<br>
+        Last updated <br>
+        Site generated using &copy; Webify (Ver. 4.1)
+      </div>
+</footer>
+      
+    </div>
+
+  </body>
+</html>

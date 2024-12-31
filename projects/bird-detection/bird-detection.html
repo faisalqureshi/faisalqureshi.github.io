@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G9CWRQBRB0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-G9CWRQBRB0');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="pandoc">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>A Temporal Boosted YOLO-Based Model for Birds Detection around Wind Farms</title>
+    <meta name="author" content="">
+    <meta name="author" content="">
+    <meta name="author" content="">
+    <meta name="author" content="">
+
+    <!-- css -->
+    <link rel="stylesheet" href="../../style/bootstrap-3.3.7-dist/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../style/my.css" type="text/css" />
+    <link rel="stylesheet" href="../../style/projects.css" type="text/css" />
+
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=BioRhyme:200,300,400,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=VT323:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Baloo:400,300,700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Averia+Serif+Libre" rel="stylesheet">
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="/style/my.js"></script>
+  </head>
+  <body style="background-color: white;">
+    <div class="container" style="background: white;">
+
+      <h1 class="project-title">A Temporal Boosted YOLO-Based Model for Birds Detection around Wind Farms</h1>
+      
+
+      <hr>
+      <div class="row">
+        <div class="project-member">Hiba Alqaysi<sup>1</sup></div>
+      </div>
+      <div class="row">
+        <div class="project-member">Igor Fedorov<sup>2</sup></div>
+      </div>
+      <div class="row">
+        <div class="project-member"><a href="http://faculty.uoit.ca/qureshi">Faisal Z. Qureshi</a><sup>1,3</sup></div>
+      </div>
+      <div class="row">
+        <div class="project-member"><a href="https://www.miun.se/Personal/mattiasonils/">Mattias O&#x27;Nils</a><sup>1</sup></div>
+      </div>
+      <div class="row">
+        <div class="project-lab-address">
+          <div class="project-institute">Department of Electronics Design<sup>1</sup><br>Mid Sweden University<br>Holmgatan 10, 85170 Sundsvall, Sweden</div>
+          <div class="project-institute">Department of Science and Technology<sup>2</sup><br>Linköping University<br>58183 Linköping, Sweden</div>
+          <div class="project-institute">Visual Computing Lab<sup>3</sup><br>Faculty of Science<br>University of Ontario Institute of Technology<br>2000 Simcoe St. N., Oshawa ON L1G 0C5, Canada</div>
+        </div>
+      </div>
+      <hr>
+
+      <h1 id="abstract">Abstract</h1>
+<p>Object detection for sky surveillance is a challenging problem due to
+having small objects in a large volume and a constantly changing
+background which requires high resolution frames. For example, detecting
+flying birds in wind farms to prevent their collision with the wind
+turbines. This paper proposes a YOLOv4-based ensemble model for bird
+detection in grayscale videos captured around wind turbines in wind
+farms. In order to tackle this problem, we introduce two datasets—(1)
+Klim and (2) Skagen—collected at two locations in Denmark. We use Klim
+training set to train three increasingly capable YOLOv4 based models.
+Model 1 uses YOLOv4 trained on the Klim dataset, Model 2 introduces
+tiling to improve small bird detection, and the last model uses tiling
+and temporal stacking and achieves the best mAP values on both Klim and
+Skagen datasets. We used this model to set up an ensemble detector,
+which further improves mAP values on both datasets. The three models
+achieve testing mAP values of 82%, 88%, and 90% on the Klim dataset. mAP
+values for Model 1 and Model 3 on the Skagen dataset are 60% and 92%.
+Improving object detection accuracy could mitigate birds’ mortality rate
+by choosing the locations for such establishment and the turbines
+location. It can also be used to improve the collision avoidance systems
+used in wind energy facilities.</p>
+<h1 id="synopsis">Synopsis</h1>
+<p>This work is part of a large effort at analyzing bird movements
+around wind farms. The primary motivation is to use this information to
+make wind farms safer to migrating birds. The following figure shows
+bird detections using Model 1 (middle) and Model 2 (right). Input is
+shown on the left. The frontal image shows a small region—blue
+rectangle—from the input image.</p>
+<div class="row">
+<div class="col-lg-12">
+<figure class="figure" style="margin-top: 15px; margin-bottom: 20px;">
+<center>
+<a href="fig2.png"><img class="img-responsive" width="90%" src="fig2.png" alt="Bird detections"></a>
+<figcaption class="figure-caption" style="font-style: italic; font-weight: bold;">
+Bird detections
+</figcaption>
+</center>
+</figure>
+</div>
+</div>
+<p>As a part of this work, we also collected two datasets: Skagen and
+Klim. The figure below shows frames from Skagen (left) and Klim (middle)
+datasets. The right image shows manually cropped birds that are used to
+train the bird detector. Next to each bird is its size in pixels.</p>
+<div class="row">
+<div class="col-lg-12">
+<figure class="figure" style="margin-top: 15px; margin-bottom: 20px;">
+<center>
+<a href="fig5.png"><img class="img-responsive" width="90%" src="fig5.png" alt="Skagen and Klim datasets"></a>
+<figcaption class="figure-caption" style="font-style: italic; font-weight: bold;">
+Skagen and Klim datasets
+</figcaption>
+</center>
+</figure>
+</div>
+</div>
+<p>The following figure suggests that the proposed <em>temporal boosted
+YOLOv4</em> model for bird detection exhibits better performance as
+compared to the background subtraction based method, especially in
+cluttered scenes (i.e., in the presence of clouds).</p>
+<div class="row">
+<div class="col-lg-12">
+<figure class="figure" style="margin-top: 15px; margin-bottom: 20px;">
+<center>
+<a href="fig3.png"><img class="img-responsive" width="90%" src="fig3.png" alt="Background subtraction vs. temporal boosted YOLOv4 model for bird detections"></a>
+<figcaption class="figure-caption" style="font-style: italic; font-weight: bold;">
+Background subtraction vs. temporal boosted YOLOv4 model for bird
+detections
+</figcaption>
+</center>
+</figure>
+</div>
+</div>
+<h1 id="dataset">Dataset</h1>
+<p>The datasets will be available at <a
+href="https://github.com/STCResearchCentre/datasets">https://github.com/STCResearchCentre/datasets</a>.</p>
+<h1 id="publication">Publication</h1>
+<p>For technical details please look at the following publications</p>
+<script src="https://bibbase.org/show?bib=http://vclab.science.uoit.ca/faisal-qureshi.bib&jsonp=1&filter=keywords:bird-detection&group0=type"></script>
+
+
+      <footer style="margin-top: 50px;">
+  <div class="container footer">
+    <div class="row">
+      <hr>
+      <div class="col-md-6 col-sm-12">
+        <img src="http://vclab.science.uoit.ca/imgs/vclab-ontariotech.png">
+      </div>
+      <div class="col-md-6 col-sm-12">
+        &copy; Faisal Qureshi<br>
+        Last updated <br>
+        Site generated using &copy; Webify (Ver. 4.1)
+      </div>
+</footer>
+      
+    </div>
+
+  </body>
+</html>

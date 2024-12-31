@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G9CWRQBRB0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-G9CWRQBRB0');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="pandoc">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Neural Networks Trained to Solve Differential Equations Learn General Representations</title>
+    <meta name="author" content="">
+    <meta name="author" content="">
+    <meta name="author" content="">
+
+    <!-- css -->
+    <link rel="stylesheet" href="../../style/bootstrap-3.3.7-dist/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../style/my.css" type="text/css" />
+    <link rel="stylesheet" href="../../style/projects.css" type="text/css" />
+
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=BioRhyme:200,300,400,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=VT323:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Baloo:400,300,700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Averia+Serif+Libre" rel="stylesheet">
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="/style/my.js"></script>
+  </head>
+  <body style="background-color: white;">
+    <div class="container" style="background: white;">
+
+      <h1 class="project-title">Neural Networks Trained to Solve Differential Equations Learn General Representations</h1>
+      
+
+      <hr>
+      <div class="row">
+        <div class="project-member"><a href="https://martinmagill.netlify.com/">Martin Magill</a><sup>1</sup></div>
+      </div>
+      <div class="row">
+        <div class="project-member"><a href="http://faculty.uoit.ca/qureshi">Faisal Z. Qureshi</a><sup>2</sup></div>
+      </div>
+      <div class="row">
+        <div class="project-member"><a href="https://faculty.uoit.ca/dehaan">Hendrick W. de Haan</a><sup>1</sup></div>
+      </div>
+      <div class="row">
+        <div class="project-lab-address">
+          <a href="https://faculty.uoit.ca/dehaan/cNAB.LAB/about.shtml">Computational NanoBiophysics Lab</a><sup>1</sup>
+          <a href="http://vclab.science.uoit.ca">Visual Computing Lab</a><sup>2</sup>
+          <div class="project-institute">Faculty of Science<br>University of Ontario Institute of Technology<br>2000 Simcoe St. N., Oshawa ON L1G 0C5</div>
+        </div>
+      </div>
+      <hr>
+
+      <h1 id="introduction">Introduction</h1>
+<p>This work studies the <em>generality</em> of layers across a
+continuously-parametrized set of tasks: a group of similar problems
+whose details are changed by varying a real number. We found the
+transfer learning method for measuring generality prohibitively
+expensive for this task. Instead, by relating generality to similarity,
+we develop a computationally efficient measure of generality that uses
+the singular vector canonical correlation analysis (SVCCA). We
+demonstrate our method by measuring layer generality in neural networks
+trained to solve differential equations.</p>
+<h2 id="layer-generality-in-denns-using-svcca">Layer generality in DENNs
+using SVCCA</h2>
+<div class="row">
+<div class="col-lg-12">
+<figure class="figure">
+<a href="fig1-nuerips2018.png"><img class="img-responsive" width="100%" src="fig1-nuerips2018.png" alt="Matrices of layer-wise SVCCA similarities between the first, third, and fourth hidden layers of networks of width 20 trained at various x&#x27; values, with four random seeds per position. The black lines group layers on each axis by the x&#x27; values at which they were trained. For each x&#x27; value, the four entries correspond to four distinct random seeds. Thus the matrix diagonals contain self-similarities, the block diagonals formed by black lines contain similarities across random seeds at a fixed x&#x27;, and the remaining entries correspond to comparisons between distinct x&#x27; values."></a>
+<figcaption class="figure-caption">
+Matrices of layer-wise SVCCA similarities between the first, third, and
+fourth hidden layers of networks of width 20 trained at various x'
+values, with four random seeds per position. The black lines group
+layers on each axis by the x' values at which they were trained. For
+each x' value, the four entries correspond to four distinct random
+seeds. Thus the matrix diagonals contain self-similarities, the block
+diagonals formed by black lines contain similarities across random seeds
+at a fixed x', and the remaining entries correspond to comparisons
+between distinct x' values.
+</figcaption>
+</figure>
+</div>
+</div>
+<h2
+id="intrinsic-dimensionality-reproducibility-and-specificity">Intrinsic
+dimensionality, reproducibility, and specificity</h2>
+<div class="row">
+<div class="col-lg-12">
+<figure class="figure">
+<a href="fig3-nuerips2018.png"><img class="img-responsive" width="100%" src="fig3-nuerips2018.png" alt="The intrinsic dimensionality, reproducibility, and specificity of the four layers at varying width. The lines indicate mean values. The error bars on intrinsic dimensionality indicate maxima and minima, whereas the error bars on reproducibility and specificity indicate estimated uncertainty on the means (discussed in the supplemental material). Numbers indicate layer numbers. The inset in (a) shows the limiting dimensionalities of the four layers at width 192."></a>
+<figcaption class="figure-caption">
+The intrinsic dimensionality, reproducibility, and specificity of the
+four layers at varying width. The lines indicate mean values. The error
+bars on intrinsic dimensionality indicate maxima and minima, whereas the
+error bars on reproducibility and specificity indicate estimated
+uncertainty on the means (discussed in the supplemental material).
+Numbers indicate layer numbers. The inset in (a) shows the limiting
+dimensionalities of the four layers at width 192.
+</figcaption>
+</figure>
+</div>
+</div>
+<h3 id="mnist-dataset">MNIST Dataset</h3>
+<div class="row">
+<div class="col-lg-12">
+<figure class="figure">
+<a href="fig6-nuerips2018.png"><img class="img-responsive" width="100%" src="fig6-nuerips2018.png" alt="Test accuracies, intrinsic dimensionalities and reproducibilities of networks trained on the MNIST dataset for various L2 regularization weights $\lambda$ and network widths. The error bars in (a) and (b) show maxima and minima; those in (c) show the estimated standard error."></a>
+<figcaption class="figure-caption">
+Test accuracies, intrinsic dimensionalities and reproducibilities of
+networks trained on the MNIST dataset for various L2 regularization
+weights <span class="math inline">\(\lambda\)</span> and network widths.
+The error bars in (a) and (b) show maxima and minima; those in (c) show
+the estimated standard error.
+</figcaption>
+</figure>
+</div>
+</div>
+<h4 id="canonical-components">Canonical components</h4>
+<div class="row">
+<div class="col-lg-12">
+<figure class="figure">
+<a href="fig3-nuerips2018-sup.png"><img class="img-responsive" width="100%" src="fig3-nuerips2018-sup.png" alt="Each row shows plots of the first nine canonical components found by applying the SVCCA between the first layer of a network trained on x&#x27;=x&#x27;_1 and the first layer of a network trained on a different random seed at x&#x27;=x&#x27;_2, as indexed to the left of the plots. The number above each plot shows the correlation between the layers in the direction corresponding to that component."></a>
+<figcaption class="figure-caption">
+Each row shows plots of the first nine canonical components found by
+applying the SVCCA between the first layer of a network trained on
+x'=x'_1 and the first layer of a network trained on a different random
+seed at x'=x'_2, as indexed to the left of the plots. The number above
+each plot shows the correlation between the layers in the direction
+corresponding to that component.
+</figcaption>
+</figure>
+</div>
+</div>
+<h1 id="posters">Posters</h1>
+<h2 id="neurips-2018-poster">NeurIPS 2018 Poster</h2>
+<div class="row">
+<div class="col-lg-12">
+<figure class="figure">
+<p><a href="MM_DLRL2018-preview.png"><img class="img-responsive" width="100%" src="MM_DLRL2018-preview.png" alt=""></a></p>
+</figure>
+</div>
+</div>
+<p>Full resolution version is avaialable <a
+href="MM_DLRL2018.pdf">here</a>.</p>
+<h2
+id="neurips-2018-workshop-on-compact-deep-neural-networks-with-industrial-applications-poster">NeurIPS
+2018 Workshop on Compact Deep Neural Networks with Industrial
+Applications Poster</h2>
+<div class="row">
+<div class="col-lg-12">
+<figure class="figure">
+<p><a href="MM_CDNNRIA2018-preview.png"><img class="img-responsive" width="100%" src="MM_CDNNRIA2018-preview.png" alt=""></a></p>
+</figure>
+</div>
+</div>
+<p>Full resolution version is avaialable <a
+href="MM_CDNNRIA2018.pdf">here</a>.</p>
+<!-- # Fun at NeurIPS 2018 -->
+<!-- <div class="row">
+<div class="col-lg-4"  style="padding: 15px; margin: 0px;">
+<figure class="figure"><a href=neurips2.jpg><img src="neurips2.jpg" class="figure-img img-fluid rounded img-responsive"></a></figure>
+</div>
+<div class="col-lg-4"  style="padding: 15px; margin: 0px;">
+<figure class="figure"><a href=neurips1.jpg><img src="neurips1.jpg" class="figure-img img-fluid rounded img-responsive"></a></figure>
+</div>
+</div> -->
+<!-- <div class="row">
+<div class="col-lg-12">
+<figure class="figure">
+<a href="neurips1.jpg"><img class="img-responsive" width="100%" src="neurips1.jpg" alt="Martin explaining his poster.  He was surrounded like this for 4 hours!"></a>
+<figcaption class="figure-caption">Martin explaining his poster.  He was surrounded like this for 4 hours!</figcaption>
+</figure>
+</div>
+</div>
+ -->
+<h1 id="publications">Publications</h1>
+<script src="https://bibbase.org/show?bib=http://vclab.science.uoit.ca/faisal-qureshi.bib&jsonp=1&filter=keywords:dnn&group0=type"></script>
+
+
+      <footer style="margin-top: 50px;">
+  <div class="container footer">
+    <div class="row">
+      <hr>
+      <div class="col-md-6 col-sm-12">
+        <img src="http://vclab.science.uoit.ca/imgs/vclab-ontariotech.png">
+      </div>
+      <div class="col-md-6 col-sm-12">
+        &copy; Faisal Qureshi<br>
+        Last updated <br>
+        Site generated using &copy; Webify (Ver. 4.1)
+      </div>
+</footer>
+      
+    </div>
+
+  </body>
+</html>

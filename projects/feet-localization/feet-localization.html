@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G9CWRQBRB0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-G9CWRQBRB0');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="pandoc">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Evaluation of 2D-/3D-Feet-Detection Methods for Semi-Autonomous Powered Wheelchair Navigation</title>
+    <meta name="author" content="">
+    <meta name="author" content="">
+    <meta name="author" content="">
+    <meta name="author" content="">
+
+    <!-- css -->
+    <link rel="stylesheet" href="../../style/bootstrap-3.3.7-dist/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../style/my.css" type="text/css" />
+    <link rel="stylesheet" href="../../style/projects.css" type="text/css" />
+
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=BioRhyme:200,300,400,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=VT323:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Baloo:400,300,700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Averia+Serif+Libre" rel="stylesheet">
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="/style/my.js"></script>
+  </head>
+  <body style="background-color: white;">
+    <div class="container" style="background: white;">
+
+      <h1 class="project-title">Evaluation of 2D-/3D-Feet-Detection Methods for Semi-Autonomous Powered Wheelchair Navigation</h1>
+      
+
+      <hr>
+      <div class="row">
+        <div class="project-member">Cristian Gimenez<sup>1</sup></div>
+      </div>
+      <div class="row">
+        <div class="project-member">Silvia Krug<sup>2</sup></div>
+      </div>
+      <div class="row">
+        <div class="project-member"><a href="http://faculty.uoit.ca/qureshi">Faisal Z. Qureshi</a><sup>1,3</sup></div>
+      </div>
+      <div class="row">
+        <div class="project-member"><a href="https://www.miun.se/Personal/mattiasonils/">Mattias O&#x27;Nils</a><sup>1</sup></div>
+      </div>
+      <div class="row">
+        <div class="project-lab-address">
+          <div class="project-institute">Department of Electronics Design<sup>1</sup><br>Mid Sweden University<br>Holmgatan 10, 85170 Sundsvall, Sweden</div>
+          <div class="project-institute">System Design Department<sup>2</sup><br>IMMS Institut für Mikroelektronik- und Mechatronik-Systeme Gemeinnützige GmbH<br>Ehrenbergstraße 27, 98693 Ilmenau, Germany</div>
+          <div class="project-institute">Visual Computing Lab<sup>3</sup><br>Faculty of Science<br>University of Ontario Institute of Technology<br>2000 Simcoe St. N., Oshawa ON L1G 0C5, Canada</div>
+        </div>
+      </div>
+      <hr>
+
+      <h1 id="abstract">Abstract</h1>
+<p>Powered wheelchairs have enhanced the mobility and quality of life of
+people with special needs. The next step in the development of powered
+wheelchairs is to incorporate sensors and electronic systems for new
+control applications and capabilities to improve their usability and the
+safety of their operation, such as obstacle avoidance or autonomous
+driving. However, autonomous powered wheelchairs require safe navigation
+in different environments and scenarios, making their development
+complex. In our research, we propose, instead, to develop contactless
+control for powered wheelchairs where the position of the caregiver is
+used as a control reference. Hence, we used a depth camera to recognize
+the caregiver and measure at the same time their relative distance from
+the powered wheelchair. In this paper, we compared two different
+approaches for real-time object recognition using a 3DHOG hand-crafted
+object descriptor based on a 3D extension of the histogram of oriented
+gradients (HOG) and a convolutional neural network based on YOLOv4-Tiny.
+To evaluate both approaches, we constructed Miun-Feet—a custom dataset
+of images of labeled caregiver’s feet in different scenarios, with
+backgrounds, objects, and lighting conditions. The experimental results
+showed that the YOLOv4-Tiny approach outperformed 3DHOG in all the
+analyzed cases. In addition, the results showed that the recognition
+accuracy was not improved using the depth channel, enabling the use of a
+monocular RGB camera only instead of a depth camera and reducing the
+computational cost and heat dissipation limitations. Hence, the paper
+proposes an additional method to compute the caregiver’s distance and
+angle from the Powered Wheelchair (PW) using only the RGB data. This
+work shows that it is feasible to use the location of the caregiver’s
+feet as a control signal for the control of a powered wheelchair and
+that it is possible to use a monocular RGB camera to compute their
+relative positions.</p>
+<h1 id="synopsis">Synopsis</h1>
+<p>This work is part of a larger effort at developing a powered
+wheelchair that autonomously follows a caregiver. RGB cameras mounted on
+the wheelchair identify and localize caregiver feet. We plan to use the
+location and heading of the feet are used as the control signal to
+locomote the wheelchair next to the caregiver. This work shows that it
+is possible to estimate the location and direction of caregiver feet
+(using a wheelchair mounted RGB camera) with sufficient accuracy to
+design a controller for moving the wheelchair next to the caregiver.</p>
+<!-- <div class="row">
+<div class="col-lg-12">
+<figure class="figure" style="margin-top: 15px; margin-bottom: 20px;">
+<center>
+<a href="fig1.png"><img class="img-responsive" width="90%"src="fig1.png" alt=""></a>
+
+</center>
+</figure>
+</div>
+</div>
+ -->
+<hr>
+<div class="row">
+<div class="col-lg-12">
+<figure class="figure" style="margin-top: 15px; margin-bottom: 20px;">
+<center>
+<a href="fig2.png"><img class="img-responsive" width="75%"src="fig2.png" alt="Feet identification in images captured by a wheelchair mounted cameras.  Top left shows a false positive.  The control system will have to deal with both spurious detections and missed detections."></a>
+<figcaption class="figure-caption" style="font-style: italic; font-weight: bold;">
+Feet identification in images captured by a wheelchair mounted cameras.
+Top left shows a false positive. The control system will have to deal
+with both spurious detections and missed detections.
+</figcaption>
+</center>
+</figure>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-12">
+<figure class="figure" style="margin-top: 15px; margin-bottom: 20px;">
+<center>
+<a href="fig3.png"><img class="img-responsive" width="50%"src="fig3.png" alt="A figure illustrating the wheelchair/camera setup."></a>
+<figcaption class="figure-caption" style="font-style: italic; font-weight: bold;">
+A figure illustrating the wheelchair/camera setup.
+</figcaption>
+</center>
+</figure>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-12">
+<figure class="figure" style="margin-top: 15px; margin-bottom: 20px;">
+<center>
+<a href="fig4.png"><img class="img-responsive" width="75%"src="fig4.png" alt="Some images from the dataset that we collected for this project."></a>
+<figcaption class="figure-caption" style="font-style: italic; font-weight: bold;">
+Some images from the dataset that we collected for this project.
+</figcaption>
+</center>
+</figure>
+</div>
+</div>
+<hr>
+<h1 id="dataset">Dataset</h1>
+<p>The datasets is available at <a
+href="https://snd.gu.se/sv/catalogue/study/2021-303/1/1#dataset">https://snd.gu.se/sv/catalogue/study/2021-303/1/1#dataset</a>.</p>
+<h1 id="publication">Publication</h1>
+<p>For technical details please look at the following publications</p>
+<script src="https://bibbase.org/show?bib=http://vclab.science.uoit.ca/faisal-qureshi.bib&jsonp=1&filter=keywords:feet-localization&group0=type"></script>
+
+
+      <footer style="margin-top: 50px;">
+  <div class="container footer">
+    <div class="row">
+      <hr>
+      <div class="col-md-6 col-sm-12">
+        <img src="http://vclab.science.uoit.ca/imgs/vclab-ontariotech.png">
+      </div>
+      <div class="col-md-6 col-sm-12">
+        &copy; Faisal Qureshi<br>
+        Last updated <br>
+        Site generated using &copy; Webify (Ver. 4.1)
+      </div>
+</footer>
+      
+    </div>
+
+  </body>
+</html>

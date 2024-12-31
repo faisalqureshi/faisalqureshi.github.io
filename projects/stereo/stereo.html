@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G9CWRQBRB0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-G9CWRQBRB0');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="pandoc">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Accelerated Cost Volume Filtering for Stereo Estimation</title>
+    <meta name="author" content="">
+    <meta name="author" content="">
+
+    <!-- css -->
+    <link rel="stylesheet" href="../../style/bootstrap-3.3.7-dist/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../style/my.css" type="text/css" />
+    <link rel="stylesheet" href="../../style/projects.css" type="text/css" />
+
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=BioRhyme:200,300,400,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=VT323:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Baloo:400,300,700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Averia+Serif+Libre" rel="stylesheet">
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="/style/my.js"></script>
+  </head>
+  <body style="background-color: white;">
+    <div class="container" style="background: white;">
+
+      <h1 class="project-title">Accelerated Cost Volume Filtering for Stereo Estimation</h1>
+      
+
+      <hr>
+      <div class="row">
+        <div class="project-member"><a href="http://mohamed-helala.github.io/">Mohamed A. Helala</a></div>
+      </div>
+      <div class="row">
+        <div class="project-member"><a href="http://faculty.uoit.ca/qureshi">Faisal Z. Qureshi</a></div>
+      </div>
+      <div class="row">
+        <div class="project-lab-address">
+          <div class="project-institute">
+          Visual Computing Lab<sup>1</sup><br>Faculty of Science<br>University of Ontario Institute of Technology<br>2000 Simcoe St. N., Oshawa ON L1G 0C5</div>
+        </div>
+      </div>
+      <hr>
+
+      <div class="row">
+<div class="col-lg-12">
+<div class="embed-responsive embed-responsive-16by9">
+<video controls autoplay loop playsinline preload="auto" muted>
+<source src="./accv-supplementary.mp4" type="video/mp4">
+<p>
+Sorry, this video cannot be displayed in your browser.
+</p>
+</video>
+</div>
+</div>
+</div>
+<hr>
+<p>
+If you have trouble seeing this video, you can download it <a
+href="./accv-supplementary.mp4">here</a>.
+</p>
+<h1 id="abstract">Abstract</h1>
+<p>We propose the Accelerated Cost Volume Filtering (ACF) method, which
+speeds up the traditional Cost Volume Filtering (CF) method. ACf
+identifies salient subvolumes in the cost volume. Filtering is
+restricted to these subvolumes, resulting in significant performance
+gains. We applied our method to disparity estimation from a stereo image
+pair and developed an occlusion handling method, which acts as a
+post-processing step that refines the disparity maps computed via
+filtering. Currently, we are exploring the use of slanted surfaces
+during the detection of salient subvolumes and we are implementing an
+efficient version of ACF for optical flow computation.</p>
+<h1 id="poster">Poster</h1>
+<div class="row">
+<div class="col-lg-12">
+<figure class="figure">
+<p><a href="Poster.png"><img class="img-responsive" width="100%" src="Poster.png" alt=""></a></p>
+</figure>
+</div>
+</div>
+<h1 id="source">Source</h1>
+<p>Source code is available at <a
+href="https://github.com/vclab/SVFilter-V1">https://github.com/vclab/SVFilter-V1</a>.</p>
+<h1 id="publication">Publication</h1>
+<p>For technical details please look at the following publications</p>
+<script src="https://bibbase.org/show?bib=http://vclab.science.uoit.ca/faisal-qureshi.bib&jsonp=1&filter=keywords:stereo-cost-volume&group0=type"></script>
+</div>
+</div>
+</div>
+
+
+      <footer style="margin-top: 50px;">
+  <div class="container footer">
+    <div class="row">
+      <hr>
+      <div class="col-md-6 col-sm-12">
+        <img src="http://vclab.science.uoit.ca/imgs/vclab-ontariotech.png">
+      </div>
+      <div class="col-md-6 col-sm-12">
+        &copy; Faisal Qureshi<br>
+        Last updated <br>
+        Site generated using &copy; Webify (Ver. 4.1)
+      </div>
+</footer>
+      
+    </div>
+
+  </body>
+</html>

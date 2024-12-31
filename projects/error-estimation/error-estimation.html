@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G9CWRQBRB0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-G9CWRQBRB0');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="pandoc">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Error Estimation for Single-Image Human Body Mesh Reconstruction</title>
+    <meta name="author" content="">
+    <meta name="author" content="">
+
+    <!-- css -->
+    <link rel="stylesheet" href="../../style/bootstrap-3.3.7-dist/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../style/my.css" type="text/css" />
+    <link rel="stylesheet" href="../../style/projects.css" type="text/css" />
+
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=BioRhyme:200,300,400,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=VT323:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Baloo:400,300,700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Averia+Serif+Libre" rel="stylesheet">
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="/style/my.js"></script>
+  </head>
+  <body style="background-color: white;">
+    <div class="container" style="background: white;">
+
+      <h1 class="project-title">Error Estimation for Single-Image Human Body Mesh Reconstruction</h1>
+      
+
+      <hr>
+      <div class="row">
+        <div class="project-member"><a href="https://github.com/Hamoon1987">Hamoon Jafarian</a></div>
+      </div>
+      <div class="row">
+        <div class="project-member"><a href="http://vclab.science.uoit.ca/">Faisal Z. Qureshi</a></div>
+      </div>
+      <div class="row">
+        <div class="project-lab-address">
+          <div class="project-institute">
+          Visual Computing Lab<br>Faculty of Science<br>University of Ontario Institute of Technology<br>2000 Simcoe St. N., Oshawa ON L1G 0C5</div>
+        </div>
+      </div>
+      <hr>
+
+      <div
+style="text-align: center; margin-left: auto; margin-right: auto; margin-top: 1.25cm;">
+<figure>
+<img width="70%" src="media/walking-occ.gif">
+<figcaption>
+Our method detects the unreliable mesh estimates, and highlights the
+least reliable parts of the mesh.
+</figcaption>
+</figure>
+</div>
+<h1 id="introduction">Introduction</h1>
+<p>Human pose and shape estimation methods often struggle in situations
+where body parts are occluded, and they lack the ability to recognize
+when their predictions are incorrect. This limitation poses significant
+challenges in human-robot interaction scenarios, where reliable pose
+estimation is crucial. In our research, we address this problem by
+proposing a method that combines information from popular methods like
+OpenPose and SPIN. Our approach effectively identifies the least
+reliable regions on the predicted human body mesh, providing valuable
+insights. We have evaluated our method on multiple datasets, including
+3DPW, 3DOH, and Human3.6M, demonstrating its effectiveness in
+identifying inaccurate regions. Confidence scoring for recovered meshes
+is an essential aspect of human-robot interaction scenarios, enabling
+robots to make informed decisions. By detecting unreliable regions, a
+robot can halt its operation or adjust its viewpoint for better
+reconstruction. Our method offers a comprehensive solution by
+highlighting these unreliable parts, as shown in Figure 1.</p>
+<h1 id="model-architecture">Model Architecture</h1>
+<p>Figure 2 depicts the proposed method for assigning an error estimate
+to different regions of the reconstructed human body mesh. The process
+consists of three steps: 1) utilizing the SPIN model to estimate “2D”
+joint locations, 2) employing the OpenPose model to recover 2D joint
+locations, and 3) calculating the difference between the 2D joint
+estimates from SPIN and OpenPose to derive a confidence score for the
+mesh. When both models accurately estimate a joint position, the
+estimated coordinates are close to each other and adjacent to the ground
+truth. Conversely, when the models’ estimations are inaccurate, we
+anticipate dissimilar joint position estimates, resulting in a greater
+difference between the models’ outputs. Leveraging this disparity, we
+can estimate the mesh error. Our proposed approach simultaneously
+examines all joints to classify the mesh and identify the most
+problematic joint. To achieve this, we employ two multi-linear
+perceptron networks that utilize the Euclidean distance (ED) metric for
+mesh classification and worst joint identification, respectively.</p>
+<div style="text-align: center; margin: auto;">
+<figure>
+<img width="80%" src="media/framework.png">
+<figcaption>
+Proposed framework.
+</figcaption>
+</figure>
+</div>
+<h1 id="results">Results</h1>
+<p>Our model is versatile and can be applied to both image and video
+inputs. To further showcase its capabilities, we provide additional
+outputs. In the GIF below, the dancer’s fast movements cause blurriness
+in the frames, leading to inaccurate hand estimations by the SPIN model.
+However, our model, as depicted in Figure 3, successfully detects the
+erroneous mesh and consistently identifies the hands as the least
+reliable part. In the final example, the presence of a moving occluder
+introduces complexity, yet our model excels in detecting inaccurate
+meshes and accurately pinpointing the least reliable regions in most
+cases.</p>
+<div style="text-align: center; margin: auto;">
+<figure>
+<div class="row">
+<p><img width="40%" src="media/dance.gif">
+<img width="40%" src="media/moving-occluder.gif"></p>
+</div>
+<figcaption>
+Video Analysis. The first column shows the input video frames. The
+second column shows mesh reliability classification results. Light pink
+indicates an unreliable mesh. The last column shows least reliable
+joints. The second row shows the slowed down version of the video.
+</figcaption>
+</figure>
+</div>
+<h1 id="code">Code</h1>
+<p>Code is available at <a
+href="https://github.com/Hamoon1987/meshConfidence">https://github.com/Hamoon1987/meshConfidence</a>.
+Please cite the following article if you use this code. Thank you.</p>
+<h1 id="publication">Publication</h1>
+<p>For technical details please look at the following arXiv
+manuscript</p>
+<script src="https://bibbase.org/show?bib=http://vclab.science.uoit.ca/faisal-qureshi.bib&jsonp=1&filter=keywords:mesh-error&group0=type"></script>
+
+
+      <footer style="margin-top: 50px;">
+  <div class="container footer">
+    <div class="row">
+      <hr>
+      <div class="col-md-6 col-sm-12">
+        <img src="http://vclab.science.uoit.ca/imgs/vclab-ontariotech.png">
+      </div>
+      <div class="col-md-6 col-sm-12">
+        &copy; Faisal Qureshi<br>
+        Last updated <br>
+        Site generated using &copy; Webify (Ver. 4.1)
+      </div>
+</footer>
+      
+    </div>
+
+  </body>
+</html>

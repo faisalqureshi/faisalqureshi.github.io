@@ -1,0 +1,262 @@
+.title {
+	padding-top: 7px;
+	padding-bottom: 15px;
+}
+.title h1{
+    font-family: 'Molengo', Georgia, Times, serif;
+	font-size: 36px;
+	line-height: 40px;
+	font-weight: bold;
+}
+.title h2{
+    font-family: 'Molengo', Georgia, Times, serif;
+	font-size: 25px;
+	font-variant:normal;
+}
+
+h1 {
+  font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+	font-size: 24px;
+	line-height: 29px;
+	font-style: normal;
+	font-weight: bold;
+	color: #036;
+	font: Helvetica;
+}
+h2 {
+  font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+	font-size: 24px;
+	line-height: 29px;
+	font-style: normal;
+	font-weight: normal;
+	color: #036;
+	font: Helvetica;
+}
+h4 {
+font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+	color:#039;
+	font-size: 20px;
+	line-height: 24px;
+	font-weight: normal;
+	margin: 1.33em 0;
+	font: Helvetica;
+}
+h3 {
+font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+	font-size: 20px;
+	line-height: 24px;
+	font-style: bold;
+	color: #000;
+	font-weight: lighter;
+	font: Helvetica;
+	margin-top: 20px;
+}
+h5 {
+font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+	color:#336;
+	font-size: 20px;
+	line-height: 24px;
+	font-weight:lighter;
+	background-color: #fff;
+	margin: 1.67em 0;
+	font: Helvetica;
+}
+p {
+}
+body {
+font-family: 'Vollkorn', Georgia, Times, serif;
+    font-size: 16px;
+    line-height: 25px;
+	background: #FFFFFF;
+	margin: 0; /* it's good practice to zero the margin and padding of the body element to account for differing browser defaults */
+	padding: 0;
+	text-align: center; /* this centers the container in IE 5* browsers. The text is then set to the left aligned default in the #container selector */
+	color: #000000;
+}
+.papertitle {
+	color: maroon;
+	font-stretch: semi-expanded
+}
+a.papertitle:link {
+	color: maroon; 
+	text-decoration: 
+	underline; 
+}
+a.papertitle:visited {
+	color: maroon; 
+	text-decoration: none; 
+}
+a.papertitle:hover {
+	color: orange; 
+	text-decoration: underline; 
+}
+a.papertitle:active {
+	color: blue; 
+}
+.paperdescription {
+	color: black;
+}
+.papervenue {
+	color: black;
+	font-style: italic;
+}
+.paperaward {
+	color: red;
+	font-weight: bold
+}
+.emphasize {
+	color: red;
+	font-weight: bold
+}
+.paperauthfzq {
+	text-decoration: underline;
+}
+#table-pubs
+{
+	margin-top:10px;
+	margin-bottom:15px;
+	width: 100%;
+	text-align: left;
+	border-collapse: collapse;
+}
+#table-pubs th
+{
+	padding: 20px 8px;
+	color: #000;
+}
+#table-pubs td
+{
+	padding: 8px;
+	color: #000;
+}
+#table-pubs .odd
+{
+	background: #e8edff; 
+}
+.fzqname {
+    font-family: 'Molengo', Georgia, Times, serif;
+	font-size:xx-large;
+	padding-top: 5px;
+	font-weight: bold;
+	font-variant: small-caps;
+}
+.fzqtitle {
+    font-family: 'Molengo', Georgia, Times, serif;
+	font-size: medium;
+	font-weight: bold;
+	font-stretch:expanded;
+	font-variant:normal;
+	margin-top: 2px;
+}
+tr.project
+{
+	height: 100px;
+	border:thin;
+}
+td.project-image
+{
+	vertical-align: top;
+	text-align: right;
+	width: 200px;
+	height: 100px;
+}
+td.project-info
+{
+	vertical-align: top;
+	border-top:thin;
+	border-top-color:#C30;
+	padding-left: 20px;
+}
+.project-spacing {
+	padding-bottom: 12px;
+}
+.project-title {
+  font-family: 'Ubuntu', Helvetica, Arial, sans-serif;    
+	color:#C30;
+  font-size: medium;
+}
+.project-page-link {
+	font-size: small;
+	color:#999999;
+}
+li.selected-pubs-list {
+	margin-top: 10px;
+}
+.research-interest {
+	color: #C30;
+}
+div#container {
+	margin: 0 auto;
+	width: 900px;
+	text-align: left;
+}
+.oneColElsCtr #container {
+	width: 900px;
+	background: #FFFFFF;
+	margin: 0 auto; /* the auto margins (in conjunction with a width) center the page */
+	text-align: left; /* this overrides the text-align: center on the body element. */
+}
+.oneColElsCtr #mainContent {
+	padding: 0 20px; /* remember that padding is the space inside the div box and margin is the space outside the div box */
+}
+.oneColElsCtr #footer {
+	padding: 0 20px; /* remember that padding is the space inside the div box and margin is the space outside the div box */
+	background:#03F;
+}
+.oneColElsCtr #footer p {
+	margin: 0; /* zeroing the margins of the first element in the footer will avoid the possibility of margin collapse - a space between divs */
+	padding: 20px 0; /* padding on this element will create space, just as the the margin would have, without the margin collapse issue */
+}
+div#pic {
+	width: auto;
+	float: left;
+}
+div#main-header {
+	margin-left: 203px;
+	height: 272;
+}
+#table-nav {
+	width: 100%;
+	background-color: #FFEAD4;
+}
+#table-nav td {
+	margin: 5px;
+}
+.nav {
+	font-style: italic;
+}
+.comments {
+	margin-top: 25px;
+	background-color:#FFFFFF;
+}
+a.nav:link {
+	color: red; 
+	text-decoration: 
+	none; 
+}
+a.nav:visited {
+	color: red; 
+	text-decoration: none; 
+}
+a.nav:hover {
+	color: orange; 
+	text-decoration: underline; 
+}
+a.nav:active {
+	color: blue; 
+}
+a img {
+	border: none; 
+}
+.old-news {
+  color: #808080;
+}
+a.old-news:link {
+  color:  #808080;
+}
+a.old-news:active {
+  color:  #808080;
+}
+a.old-news:visited {
+  color:  #808080;
+}

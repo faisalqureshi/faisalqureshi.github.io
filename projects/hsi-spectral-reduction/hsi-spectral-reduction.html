@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G9CWRQBRB0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-G9CWRQBRB0');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="pandoc">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Effects of Spectral Dimensionality Reduction on Hyperspectral Image Classification. A Case Study</title>
+    <meta name="author" content="">
+    <meta name="author" content="">
+    <meta name="author" content="">
+    <meta name="author" content="">
+
+    <!-- css -->
+    <link rel="stylesheet" href="../../style/bootstrap-3.3.7-dist/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../style/my.css" type="text/css" />
+    <link rel="stylesheet" href="../../style/projects.css" type="text/css" />
+
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=BioRhyme:200,300,400,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=VT323:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Baloo:400,300,700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Averia+Serif+Libre" rel="stylesheet">
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="/style/my.js"></script>
+  </head>
+  <body style="background-color: white;">
+    <div class="container" style="background: white;">
+
+      <h1 class="project-title">The Effects of Spectral Dimensionality Reduction on Hyperspectral Image Classification. A Case Study</h1>
+      
+
+      <hr>
+      <div class="row">
+        <div class="project-member">Phuong D. Dao<sup>1</sup></div>
+      </div>
+      <div class="row">
+        <div class="project-member">Kiran Mantripragada<sup>2</sup></div>
+      </div>
+      <div class="row">
+        <div class="project-member">Yuhong He<sup>1</sup></div>
+      </div>
+      <div class="row">
+        <div class="project-member"><a href="http://faculty.uoit.ca/qureshi">Faisal Z. Qureshi</a><sup>2</sup></div>
+      </div>
+      <div class="row">
+        <div class="project-lab-address">
+          <div class="project-institute">
+          <a href="http://sites.utm.utoronto.ca/yuhong/content/welcome-prof-yuhong-hes-webpage-rssem-lab">Remote Sensing and Spatial Ecosystem Modeling Laboratory</a><sup>1</sup><br>Department of Geography, Geomatics and Environment<br>University of Toronto<br>3359 Mississauga Road, Mississauga ON L5L 1C6</div>
+          <div class="project-institute">
+          <a href="http://vclab.science.uoit.ca">Visual Computing Lab</a><sup>2</sup><br>Faculty of Science<br>University of Ontario Institute of Technology<br>2000 Simcoe St. N., Oshawa ON L1G 0C5</div>
+        </div>
+      </div>
+      <hr>
+
+      <h1 id="abstract">Abstract</h1>
+<p>This paper presents a systematic study of the effects of
+hyperspectral pixel dimensionality reduction on the pixel classification
+task. We use five dimensionality reduction methods—PCA, KPCA, ICA, AE,
+and DAE—to compress 301-dimensional hyperspectral pixels. Compressed
+pixels are subsequently used to perform pixel classifications. Pixel
+classification accuracies together with compression method, compression
+rates, and reconstruction errors provide a new lens to study the
+suitability of a compression method for the task of pixel
+classification. We use three high-resolution hyperspectral image
+datasets, representing three common landscape types (i.e. urban,
+transitional suburban, and forests) collected by the Remote Sensing and
+Spatial Ecosystem Modeling laboratory of the University of Toronto. We
+found that PCA, KPCA, and ICA post greater signal reconstruction
+capability; however, when compression rates are more than 90% these
+methods show lower classification scores. AE and DAE methods post better
+classification accuracy at 95% compression rate, however their
+performance drops as compression rate approaches 97%. Our results
+suggest that both the compression method and the compression rate are
+important considerations when designing a hyperspectral pixel
+classification pipeline.</p>
+<hr>
+<center>
+<img src="setup.png" width="90%">
+</center>
+<h1 id="dataset">Dataset</h1>
+<p>Datasets used in this study are available <a
+href="../../datasets/ut-hsi301/">here</a>.</p>
+<h1 id="publication">Publication</h1>
+<p>For technical details please look at the following publications</p>
+<script src="https://bibbase.org/show?bib=http://vclab.science.uoit.ca/faisal-qureshi.bib&jsonp=1&filter=keywords:hsi&group0=type"></script>
+
+
+      <footer style="margin-top: 50px;">
+  <div class="container footer">
+    <div class="row">
+      <hr>
+      <div class="col-md-6 col-sm-12">
+        <img src="http://vclab.science.uoit.ca/imgs/vclab-ontariotech.png">
+      </div>
+      <div class="col-md-6 col-sm-12">
+        &copy; Faisal Qureshi<br>
+        Last updated <br>
+        Site generated using &copy; Webify (Ver. 4.1)
+      </div>
+</footer>
+      
+    </div>
+
+  </body>
+</html>

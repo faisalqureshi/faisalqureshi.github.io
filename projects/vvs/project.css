@@ -1,0 +1,72 @@
+.texthighlight {
+	color:#C60;
+	font-size: bold;
+	font-style:italic;
+}
+.options{
+	padding-left:30px;
+}
+li{
+	padding:5px 0;
+}
+.instructions li{
+	padding:5px 0;
+}
+.caption{
+	width:100%;
+}
+.centered
+{
+	text-align:center;
+}
+table.message {
+	color: black;
+	font-size: x-small;
+	font: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	border-width: 1px;
+	border-style: solid;
+	border-color: lightgrey;
+	border-collapse: collapse;
+}
+table.message th {
+	border-width: 1px;
+	padding: 5px;
+	border-style: solid;
+	border-color: lightgrey;
+	background-color:lightgrey;
+}
+table.message td {
+	border-width: 1px;
+	padding: 5px;
+	border-style: solid;
+	border-color: lightgrey;
+}
+td.name{
+	width:100px;
+}
+td.type{
+	width:25px;
+}
+td.description{
+	width:200px;
+}
+
+span.execute, div.execute{
+	font-weight:bold;
+	font-family:"Helvetica Neue", Arial, Helvetica, sans-serif;
+	font-size: small;
+}
+div.execute{
+	padding:10px;
+}
+img{
+	vertical-align: middle;
+	/*width:200px;*/
+	display:block;
+	margin:auto;
+}
+pre.prettyprint {
+	border:none;
+	font-size:medium;
+}

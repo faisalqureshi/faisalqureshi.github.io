@@ -1,0 +1,106 @@
+<html>
+	<link rel="stylesheet" type="text/css" href="../../site.css" />
+	<link rel="stylesheet" type="text/css" href="../../project.css" />
+    
+    <link href="http://fonts.googleapis.com/css?family=Ubuntu:bold" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Vollkorn" rel="stylesheet" type="text/css">
+   <link href="http://fonts.googleapis.com/css?family=Molengo"
+    rel="stylesheet" type="text/css">
+	
+    
+<title>Extraction of Blood Droplet Flight Trajectories from Videos for Forensic Analysis</title>
+		
+	<head>
+    <meta name="keywords" content="Stereo Reconstruction : Tracking : Droplets : Blood flight : Multi-target Tracking">
+	<script type="text/javascript">
+
+ var _gaq = _gaq || [];
+ _gaq.push(['_setAccount', 'UA-28175853-1']);
+ _gaq.push(['_trackPageview']);
+
+ (function() {
+   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+ })();
+
+</script></head>
+    
+    
+<body class="oneColElsCtr">
+<div id="container">
+  <div id="mainContent">
+	<div class="title">
+		<h1>Extraction of Blood Droplet Flight Trajectories from Videos for Forensic Analysis</h1>
+		<h2>Luis A. Zarrabietia, Dhavide A. Aruliah and <a href="http://faculty.uoit.ca/qureshi">Faisal Z. Qureshi</a></h2>
+        </div>
+
+	<center>    	
+        <table>
+        <tr>
+        <td>
+        <img src="shot.png"
+        alt="" width="250" height="150"
+        border="0"></td>
+        <td>
+        <img src="tracking.png"
+        alt="" width="250" height="150"
+        border="0"></td>
+        <td>
+        <img src="3dview.png"
+        alt="" width="250" height="150"
+        border="0"></td>
+        
+        </tr>
+        </table>
+        </center>                
+  <p>Figure 1. Left: a pellet impacts ballistic gel
+    containing transfer blood. Center: tracking individual blood droplets
+    in high-speed video (1300 frames per second). Right: reconstructed
+    blood droplet trajectories. Notice the effects of gravity and viscous drag forces
+    even for short trajectories.</p>
+    
+    <h2>Publication</h2>
+    <p>&quot;<span class="papertitle">Stereo reconstruction of droplet flight trajectories.</span>,'' <span>L.A. Zarrabeitia</span>, <span>F.Z. Qureshi</span>, <span>D.A. Aruliah</span>, <span class="papervenue"> IEEE Transactions on Machine Intelligence and Pattern Analysis (PAMI)</span>, accepted to appear.</p>
+    <h2>Abstract</h2>
+    <p>We present a method for extracting three-dimensional flight trajectories of liquid droplets from video data.
+    A high-speed stereo camera pair records videos of experimental reconstructions of projectile impacts and ensuing droplet scattering.
+    After background removal and segmentation of individual droplets in each video frame, we introduce a model-based matching technique to accumulate image paths for individual droplets.
+    Our motion detection algorithm is designed to deal gracefully with the lack of feature points, with the similarity of droplets in shape, size, and color, and with incomplete droplet paths due to noise, occlusions, etc.
+    The final reconstruction algorithm pairs two-dimensional paths accumulated from each of the two cameras' videos to reconstruct trajectories in three dimensions.
+    The reconstructed droplet trajectories constitute a starting point for a physically accurate model of blood droplet flight for forensic bloodstain pattern analysis.
+    </p>
+    <h2>Movies</h2>
+    <h3>Input</h3>
+    <p>[<a href="videos/porcine-blood-experiment.mp4">porcine-blood-experiment.mp4</a>]</p>
+    <p>Input videos captured from two high-speed stereo camera pair that are used to estimate the 3D trajectories of 100s of blood droplets.</p>
+    <center>
+        <iframe width="420" height="315" src="//www.youtube.com/embed/XhWzaxV2MDY" frameborder="0" allowfullscreen></iframe></center>
+    <h3>Background removal</h3>
+    <p>[<a href="videos/blood-droplet-tracking-background-removal.avi">removal.avi</a>]</p>
+    <p>Upper left: a high speed capture of the impact. Upper right: dynamic background estimation. Lower left: foreground, computed as the absolute difference between the pixel intensities of the image and the corresponding background estimation. Lower right: thresholding.
+        <p align="center"><iframe width="420" height="315" src="http://www.youtube-nocookie.com/embed/RWBHAWB9irk" frameborder="0" allowfullscreen></iframe></p>
+    </p>
+    <h3>Blob tracking</h3>
+    <p>[<a href="videos/blood-droplet-tracking.avi">tracking.avi</a>]</p>
+    <p>Upper left: a high speed capture of the impact. Upper right: foreground mask. Lower left: model based tracking of the droplets. Lower right: filtered paths overlayed on the original video.
+        <p align="center"><iframe width="420" height="315" src="http://www.youtube-nocookie.com/embed/Q50kuMEYocU" frameborder="0" allowfullscreen></iframe></p>
+    </p>
+    <h2>3D reconstruction</h2>
+    	<p align="center">
+        <img src="wolverine_paths_matched.png"
+        alt="" width="500" height="300"
+        border="0"> &nbsp;&nbsp;
+        <img src="batman_paths_matched.png"
+        alt="" width="500" height="300"
+        border="0"> &nbsp;&nbsp;
+        </p>
+      <p>Figure 2: 2d paths from the lateral and frontal cameras. These paths are used to reconstruct the 3D trajectories of the droplets.</p>
+    
+    <p class="comments"><a href="mailto:faisal.qureshi@uoit.ca">F.Z. Qureshi</a><br>
+          Last updated on
+<!-- #BeginDate format:fcAm1a -->Thursday, December 13, 2012 8:20 PM<!-- #EndDate --></p>
+    </div>
+    </div>
+	</body>
+</html>

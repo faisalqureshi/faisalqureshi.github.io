@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G9CWRQBRB0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-G9CWRQBRB0');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="pandoc">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Stream Algebra for Computer Vision Pipelines</title>
+    <meta name="author" content="">
+    <meta name="author" content="">
+    <meta name="author" content="">
+
+    <!-- css -->
+    <link rel="stylesheet" href="../../style/bootstrap-3.3.7-dist/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../style/my.css" type="text/css" />
+    <link rel="stylesheet" href="../../style/projects.css" type="text/css" />
+
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=BioRhyme:200,300,400,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=VT323:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Baloo:400,300,700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Averia+Serif+Libre" rel="stylesheet">
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="/style/my.js"></script>
+  </head>
+  <body style="background-color: white;">
+    <div class="container" style="background: white;">
+
+      <h1 class="project-title">Stream Algebra for Computer Vision Pipelines</h1>
+      
+
+      <hr>
+      <div class="row">
+        <div class="project-member"><a href="http://mohamed-helala.github.io/">Mohamed A. Helala</a><sup>1,2</sup></div>
+      </div>
+      <div class="row">
+        <div class="project-member"><a href="http://db.science.uoit.ca/">Ken Q. Pu</a><sup>2</sup></div>
+      </div>
+      <div class="row">
+        <div class="project-member"><a href="http://faculty.uoit.ca/qureshi">Faisal Z. Qureshi</a><sup>1</sup></div>
+      </div>
+      <div class="row">
+        <div class="project-lab-address">
+          <a href="http://vclab.science.uoit.ca">Visual Computing Lab</a><sup>1</sup>
+          <a href="http://db.science.uoit.ca/">Database Research Group</a><sup>2</sup>
+          <div class="project-institute">Faculty of Science<br>University of Ontario Institute of Technology<br>2000 Simcoe St. N., Oshawa ON L1G 0C5</div>
+        </div>
+      </div>
+      <hr>
+
+      <h1 id="introduction">Introduction</h1>
+<p>There is a large growth in hardware and software systems capable of
+producing vast amounts of image and video data. These systems are rich
+sources of continuous and possibly infinite image and video streams.
+This motivates researchers to build scalable computer vision systems
+that utilize data-streaming concepts for large-scale processing of
+visual data streams. We currently lack formal and scalable mechanisms
+and frameworks for building and optimizing large-scale visual
+processing. To address this issue we present a formal algebra framework
+for the mathematical description of computer vision pipelines for
+processing image and video streams. The algebra defines a set of
+abstract and concurrent operators with well-defined semantics for
+building scalable computer vision systems. It naturally describes
+feedback control and provides a formal and abstract method for
+data-stream manipulation, adaptive parameter selection, dynamic
+reconfiguration, incremental optimization, and defining common
+optimization and cost models.</p>
+<h2 id="examples">Examples</h2>
+<p>We demonstrate the efficacy of this algebra by implementing
+state-of-the-art <a href="../optical-flow/optical-flow.html">optical
+flow</a> and <a
+href="../road-boundary-detection/road-boundary-detection.html">road
+boundary detection</a> systems using this algebra.</p>
+<h2 id="operators">Operators</h2>
+<div class="row">
+<div class="col-lg-12">
+<div class="embed-responsive embed-responsive-16by9">
+<iframe class="embed-responsive-item" src="stream-algebra-showcase.mp4">
+</iframe>
+</div>
+</div>
+</div>
+<p>
+If you have trouble seeing this video, you can download it <a
+href="./stream-algebra-showcase.mp4">here</a>.
+</p>
+<h1 id="publications">Publications</h1>
+<script src="https://bibbase.org/show?bib=http://vclab.science.uoit.ca/faisal-qureshi.bib&jsonp=1&filter=keywords:stream-algebra&group0=type"></script>
+
+
+      <footer style="margin-top: 50px;">
+  <div class="container footer">
+    <div class="row">
+      <hr>
+      <div class="col-md-6 col-sm-12">
+        <img src="http://vclab.science.uoit.ca/imgs/vclab-ontariotech.png">
+      </div>
+      <div class="col-md-6 col-sm-12">
+        &copy; Faisal Qureshi<br>
+        Last updated <br>
+        Site generated using &copy; Webify (Ver. 4.1)
+      </div>
+</footer>
+      
+    </div>
+
+  </body>
+</html>

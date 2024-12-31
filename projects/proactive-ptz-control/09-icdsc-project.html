@@ -1,0 +1,88 @@
+<html>
+	<link rel="stylesheet" type="text/css" href="../../site.css" />
+	<link rel="stylesheet" type="text/css" href="../../project.css" />
+    
+    <link href="http://fonts.googleapis.com/css?family=Molengo"
+    rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Ubuntu:bold" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Vollkorn" rel="stylesheet" type="text/css">
+
+	<title>Proactive PTZ Camera Control</title>
+<head>
+    <meta name="keywords" content="multi-camera systems, camera networks, smart cameras, sensor networks, intelligent perception, computer vision">
+	<script type="text/javascript">
+
+ var _gaq = _gaq || [];
+ _gaq.push(['_setAccount', 'UA-28175853-1']);
+ _gaq.push(['_trackPageview']);
+
+ (function() {
+   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+ })();
+
+</script></head>
+
+    
+    
+<body class="oneColElsCtr">
+
+<div id="container">
+  <div id="mainContent">
+
+<div class="title">
+<h1>Proactive PTZ Camera Control</h1>
+<!-- <h2><a href="http://faculty.uoit.ca/qureshi/">Faisal Z. Qureshi</a>, Wiktor Starzyk, Demetri Terzopoulos</h2> -->
+</div>
+	<p align="center"><img src="proactive-ptz-control.png"
+	alt="Proactive PTZ Camera Assignments" width="500" height="335"
+	border="0"></p>
+  <p>In Fig. 1, assignment 1 is reactive. Here,
+  the cameras do not take into account the future effects of their
+  current assignments, which leads to observation failures when the
+  pedestrian depicted as the red circle is handed-off from camera 3 to
+  camera 1. Planning allows the three cameras to observe the two
+  individuals&mdash;depicted as red circle and green square&mdash;without any
+  interruptions (assignment 2).</p>
+<h2>Movies</h2>
+    <h3>Cameras Handoffs using Planning
+    [<a href="icdsc09-pretasking.mov">video1</a>, <a href="Planner4.wmv">video2</a>]</h3>
+    <p>Three cameras decide among themselves how best to observe two
+    pedestrians as they cross each other.  One of the three cameras assists the other two
+    in performing a successful handoff. It goes back to idle once the
+    handoff is complete. Its role is similar to that of a temporary
+    variable when values of two variables are swapped.</p>
+    <p align="center"><iframe width="425" height="349" src="http://www.youtube.com/embed/djDLhMpquek?hl=en&fs=1" frameborder="0" allowfullscreen></iframe></p>
+    <p align="center"><iframe width="425" height="349" src="http://www.youtube.com/embed/NaA-s0jMU60?hl=en&fs=1" frameborder="0" allowfullscreen></iframe></p>  
+
+    <h2>Planning Ahead for Camera Assignments</h2>
+    <p>&quot;<a href="http://vclab.ca/wp-content/papercite-data/pdf/09-icdsc-c.pdf" class="papertitle">Planning Ahead for PTZ Camera Assignment and Control</a>,'' <span class="paperauthfzq">F.Z. Qureshi</span>, Demetri Terzopoulos,<span class="papervenue"> Proc. Third ACM/IEEE International Conference on Distributed Smart Cameras (ICDSC 09</span>), Como, Italy, August, 2009, 1&mdash;8.</p>
+    <h3>Abstract</h3>
+    <p>We present a visual sensor network, comprising wide field-of-view (FOV) passive cameras and pan/tilt/zoom (PTZ) active cameras, which automatically captures high quality surveillance video of selected pedestrians during their prolonged presence in an area of interest. A wide-FOV static camera can track multiple pedestrians, while any PTZ active camera can follow a single pedestrian at a time. The proactive control of multiple PTZ cameras is required to record seamless, high quality video of a roaming individual despite the observational constraints of the different cameras. We formulate PTZ camera assignment and handoff as a planning problem whose solution achieves optimal camera assignment with respect to predefined observational goals.</p>
+    
+    <h2>Learning Proactive Control Strategies for PTZ Cameras</h2>
+    <p>&quot;<a href="http://vclab.ca/wp-content/papercite-data/pdf/11-icdsc-c.pdf" class="papertitle">Learning Proactive Control Strategies for PTZ Cameras</a>,'' <span class="paperauthfzq">F.Z. Qureshi</span>, W. Starzyk,<span class="papervenue"> Proc. 5th ACM/IEEE International Conference on Distributed Smart Cameras (ICDSC 11</span>), Ghent, Belgium, August, 2011, 1&mdash;6.</p>
+    <h3>Abstract</h3>
+    <p>
+                    This paper introduces a camera network capable of
+automatically learning proactive control strategies that enable
+a set of active pan/tilt/zoom (PTZ) cameras, supported by wideFOV passive cameras, to provide persistent coverage of the scene.
+When a situation is encountered for the ﬁrst time, a reasoning
+module performs PTZ camera assignments and handoffs. The
+results of this reasoning exercise are 1) generalized so as to
+be applicable to many other similar situations and 2) stored
+in a production system for later use. When a "similar” situation is encountered in the future, the production-system reacts
+instinctively and performs camera assignments and handoffs,
+bypassing the reasoning module. Over time the proposed camera
+network reduces its reliance on the reasoning module to perform
+camera assignments and handoffs, consequently becoming more
+responsive and computationally efficient.
+                </p>
+  
+  
+  
+    </div>
+    </div>
+    </body>
+</html>

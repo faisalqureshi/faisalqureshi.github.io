@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G9CWRQBRB0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-G9CWRQBRB0');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="pandoc">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Intelligent Perception and Control for Space Robotics - Autonomous Satellite Rendezvous and Docking</title>
+    <meta name="author" content="">
+    <meta name="author" content="">
+
+    <!-- css -->
+    <link rel="stylesheet" href="../../style/bootstrap-3.3.7-dist/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../style/my.css" type="text/css" />
+    <link rel="stylesheet" href="../../style/projects.css" type="text/css" />
+
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=BioRhyme:200,300,400,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=VT323:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Baloo:400,300,700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Averia+Serif+Libre" rel="stylesheet">
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="/style/my.js"></script>
+  </head>
+  <body style="background-color: white;">
+    <div class="container" style="background: white;">
+
+      <h1 class="project-title">Intelligent Perception and Control for Space Robotics - Autonomous Satellite Rendezvous and Docking</h1>
+      
+
+      <hr>
+      <div class="row">
+        <div class="project-member"><a href="http://faculty.uoit.ca/qureshi">Faisal Z. Qureshi</a></div>
+      </div>
+      <div class="row">
+        <div class="project-member"><a href="http://cs.ucla.edu/~dt">Demetri Terzopoulos</a></div>
+      </div>
+      <div class="row">
+        <div class="project-lab-address">
+          <a href="http://vclab.science.uoit.ca">Visual Computing Lab</a>
+          <br/>
+          <div class="project-institute">
+          <a href="http://science.uoit.ca">Faculty of Science</a><br/>
+          <a href="http://uoit.ca">University of Ontario Institute of Technology</a><br/>
+          UA4031, 2000 Simcoe St. N., Oshawa ON L1G OC5.</div>
+        </div>
+      </div>
+      <hr>
+
+      <!--
+# Intelligent Perception and Control for Space Robotics: Autonomous Satellite Rendezvous and Docking
+
+*F.Z. Qureshi and D. Terzopoulos*
+-->
+<h1 id="coco-in-action">CoCo in Action</h1>
+<p>The videos show how CoCo exhibited robust completion of goal in spite
+of repeated induced ‘failures’, showing the CoCo-controlled robotic arm
+capturing a free-flying satellite. The capture procedure is initiated by
+a single high-level command from the ground station. Upon receiving the
+command, the system initializes the long-range vision module to commence
+a visual search procedure. Once the satellite is found, and its identity
+confirmed, the systems guides the robotic arm to move closer to the
+satellite. The performance of the long-range vision module deteriorates
+as the separation between the robotic arm and the satellite becomes
+smaller; this is due to the fact that the cameras are mounted on top of
+the end-effector. The cognitive vision system, therefore, turns on the
+medium range vision module. The long-range vision processing is turned
+off (to conserve the power consumption) once the medium range system is
+fully initialized and is “reliably” tracking the satellite. At this
+stage the robotic is arm tries to match satellite’s linear and angular
+velocities, a procedure known is station keeping. Short-range vision
+processing is initiated, and a message is sent to the ground station to
+turn off the satellite’s attitude control system. The robotic arm should
+not capture a satellite whose attitude control system is functioning, as
+that might destroy the satellite, or the robotic arm, or both. When the
+attitude control system is not active, the satellite begins to drift;
+however, the robotic arm still follows it by relying upon the
+short-range vision system. Upon receiving a confirmation from the ground
+station that the attitude control system is off, the robotic arm goes in
+for the kill.</p>
+<p>When there is an error, such as a vision system failure, the reactive
+system responds immediately and tries to increase its separation from
+the satellite. In the absence any new perceptual information, the system
+relies upon its time-aware and context-sensitive mental state.
+Meanwhile, the deliberation module is using its knowledge base to 1)
+explain the error and 2) suggest a recovery.</p>
+<p>In the videos below, the inlay shows the view from Autonomous Agent
+Design &amp; Simulation Testbed—a software framework for designing
+cognitive vision systems. The wireframe represents the position of the
+satellite as estimated by the robotic arm. Notice, the estimated
+position of the satellite is more accurate when the satellite is closer
+to the robotic arm. Furthermore, the estimated position is maintained
+when no new perceptual information is available.</p>
+<div class="row">
+<div class="col-lg-6">
+<div class="embed-responsive embed-responsive-16by9">
+<iframe class="embed-responsive-item" src="failure-1.mp4">
+</iframe>
+</div>
+</div>
+<div class="col-lg-6">
+<div class="embed-responsive embed-responsive-16by9">
+<iframe class="embed-responsive-item" src="failure-2.mp4">
+</iframe>
+</div>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-6">
+<div class="embed-responsive embed-responsive-16by9">
+<iframe class="embed-responsive-item" src="no-failure.mp4">
+</iframe>
+</div>
+</div>
+<div class="col-lg-6">
+<div class="embed-responsive embed-responsive-16by9">
+<iframe class="embed-responsive-item" src="satcapture-19Dec01.mp4">
+</iframe>
+</div>
+</div>
+</div>
+<h1 id="background">Background</h1>
+<p>The work presented here was done as part of the ROSA (Remote
+Operation with Supervised Autonomy) project at MacDonald Dettwiler Space
+and Advanced Robotics Limited (then called MDRobotics, now MDA
+Corporation). MDRobotics is a Canadian company that specializes in space
+missions, and that has been supporting human space flight since early
+1980s through advanced robotic systems, such as Space Shuttle’s Canadarm
+and Mobile Servicing System for the International Space Station. Other
+partners included National Research Council of Canada–Institute for
+Information Technology (NRC-IIT), and Canadian Space Agency (CSA), and
+the University of Toronto and Saikl technologies (through MDRobotics).
+The project was funded in part by Precarn Inc.</p>
+<h2 id="on-orbit-satellite-servicing">On-orbit satellite servicing</h2>
+<p>On-orbit satellite servicing is the task of maintaining and repairing
+a satellite in orbit.</p>
+<p>It extends the operational life of the satellite</p>
+<ul>
+<li>Mitigates technical risks</li>
+<li>Reduces on-orbit losses</li>
+<li>Helps manage orbital debris</li>
+</ul>
+<p>As early as the 1980s, the National Aeronautics and Space
+Administration realized the importance of on-orbit servicing for
+protecting their assets in space.</p>
+<h2 id="the-need-for-autonomy">The Need for Autonomy</h2>
+<p>Currently, on-orbit satellite servicing operations are carried out
+manually; i.e., by an astronaut. However, manned missions are usually
+very costly and there are human safety concerns. Furthermore, it is
+currently impracticable to carry out manned on-orbit servicing missions
+for satellites in geosynchronous equatorial orbit (GEO), as the space
+shuttle can not reach them. Unmanned, tele-operated, ground-controlled
+missions are infeasible due to communications delays, intermittence, and
+limited bandwidth between the ground and the servicer. A viable
+alternative is to develop the capability of autonomous on-orbit
+satellite servicing.</p>
+<p>Autonomy entails that the on-board controller be capable of
+estimating and tracking the pose (position and orientation) of the
+target satellite and guiding the robotic manipulator as it 1) approaches
+the satellite, 2) maneuvers itself to get into docking position, and 3)
+docks with the satellite. The controller should also be able to handle
+anomalous situations, which might arise during an AR&amp;D operation,
+without jeopardizing its own safety or that of the satellite.</p>
+<h2 id="solution-cognitive-controller-coco-architecture">Solution:
+Cognitive Controller (CoCo) Architecture</h2>
+<p>We proposed CoCo architecture that combines an
+ethologically-inspired, reactive module with a deliberative unit to
+automatically capture a non-cooperative, free-flying satellite using
+only computer vision.</p>
+<ul>
+<li>Autonomous satellite capture controller developed in ROSA is the
+first of its kind. Other satellite capture controllers typically require
+other sensing modalities, such as GPS, radar, and laser range finders,
+and assume a cooperative target satellite.</li>
+<li>Besides, to the best of our knowledge, it is the only satellite
+capture controller capable of deliberative activity to resolve anomalous
+situations. Rosa is a large research effort and it uses target satellite
+pose estimation and servo routines developed by other partners.</li>
+</ul>
+<h1 id="success-stories">Success Stories</h1>
+<p><em>Rosa helped Boeing win the 12 million dollars Orbital Express
+contract!</em></p>
+<ul>
+<li>News Item: MDA Supports Boeing Team in Contract Win to Demonstrate
+Satellite Repair in Space <a
+href="http://www.mdacorporation.com/news/pr/pr2002051301.html">https://mdacorporation.com/news/pr/pr2002051301.html</a></li>
+</ul>
+<p>Other related links are (<em>this link don’t work anymore</em>)</p>
+<ul>
+<li>http://iit-iti.nrc-cnrc.gc.ca/successes-reussites/rosa-mdr-print_e.html</li>
+<li>http://webpal.net/precarn/web/pressroom/SuccessStories/MDRobotics_ROSA_Nov04/index_en.html</li>
+<li>http://www.exn.ca/ai/readstory.asp?story_id=2001070555</li>
+<li>http://www.futurescanada.ca/space.html</li>
+</ul>
+<p><em>About the CoCo satellite capture controller, says Ross Gillette,
+ROSA Project Leader, “It was just plain stubborn!”</em></p>
+<h1 id="stills">Stills</h1>
+<div class="row">
+<div class="col-lg-12">
+<figure class="figure">
+<p><a href="coco-seq.jpg"><img class="img-responsive" width="100%" src="coco-seq.jpg" alt=""></a></p>
+</figure>
+</div>
+</div>
+<p>In the abve figure despite a simulated vision system failure, the
+servicer robot captures the satellite using vision by making use of its
+cognitive abilities. On the right of each frame, we show the view from
+the simulation environment that runs the controller code. The simulation
+environment communicates with the physical robots over the network.
+Here, the wireframe represents the position of the satellite as
+estimated by the robotic arm. The 3D model of the satellite represents
+the actual position of the satellite according to the sensors on the
+Fanuc robot arm. The gray cylinder represents the position of the chaser
+robot end-effector according to the telemetry information. Note that the
+estimated position is maintained in the absence new perceptual
+information (Frame 3 and 4). A vision failure was induced by shutting
+off the ambient light.</p>
+<h1 id="publications">Publications</h1>
+<p>For technical details please look at the following publications</p>
+<script src="https://bibbase.org/show?bib=http%3A%2F%2Felf.science.uoit.ca%2F%7Efqureshi%2Ffaisal-qureshi.bib&jsonp=1&filter=keywords:coco&group0=type"></script>
+
+
+      <footer style="margin-top: 50px;">
+  <div class="container footer">
+    <div class="row">
+      <hr>
+      <div class="col-md-6 col-sm-12">
+        <img src="http://vclab.science.uoit.ca/imgs/vclab-ontariotech.png">
+      </div>
+      <div class="col-md-6 col-sm-12">
+        &copy; Faisal Qureshi<br>
+        Last updated <br>
+        Site generated using &copy; Webify (Ver. 4.1)
+      </div>
+</footer>
+      
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G9CWRQBRB0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-G9CWRQBRB0');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="pandoc">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>An Iterative Method for Hyperspectral Pixel Unmixing Leveraging Latent Dirichlet Variational Autoencoder</title>
+    <meta name="author" content="">
+    <meta name="author" content="">
+    <meta name="author" content="">
+    <meta name="author" content="">
+
+    <!-- css -->
+    <link rel="stylesheet" href="../../style/bootstrap-3.3.7-dist/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../style/my.css" type="text/css" />
+    <link rel="stylesheet" href="../../style/projects.css" type="text/css" />
+
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=BioRhyme:200,300,400,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=VT323:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Baloo:400,300,700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Averia+Serif+Libre" rel="stylesheet">
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="/style/my.js"></script>
+  </head>
+  <body style="background-color: white;">
+    <div class="container" style="background: white;">
+
+      <h1 class="project-title">An Iterative Method for Hyperspectral Pixel Unmixing Leveraging Latent Dirichlet Variational Autoencoder</h1>
+      
+
+      <hr>
+      <div class="row">
+        <div class="project-member">Kiran Mantripragada<sup>1</sup></div>
+      </div>
+      <div class="row">
+        <div class="project-member">Paul R. Adler<sup>2</sup></div>
+      </div>
+      <div class="row">
+        <div class="project-member">Peder A. Olsen<sup>3</sup></div>
+      </div>
+      <div class="row">
+        <div class="project-member"><a href="http://vclab.science.uoit.ca/">Faisal Z. Qureshi</a><sup>1</sup></div>
+      </div>
+      <div class="row">
+        <div class="project-lab-address">
+          <div class="project-institute">
+          Visual Computing Lab<sup>1</sup><br>Faculty of Science<br>University of Ontario Institute of Technology<br>2000 Simcoe St. N., Oshawa ON L1G 0C5</div>
+          <div class="project-institute">
+          USDA-ARS-Pasture Systems and Watershed Management Research Unit<sup>2</sup><br></div>
+          <div class="project-institute">
+          Microsoft Research<sup>3</sup><br></div>
+        </div>
+      </div>
+      <hr>
+
+      <h1 id="introduction">Introduction</h1>
+<p>Hyperspectral Images (HSIs) contain an order of magnitude more
+information than a typical RGB color image. HSI pixels contain hundreds
+of bands and capture integrated reflectances from materials or objects
+within the instantenous field-of-view subtended by that pixel. HSI
+images, therefore, present exciting opportunities for a number of
+downstream tasks involving materials, objects or scene analysis,
+segmentation, and classification [1, 2]. Concomittantly, HSI images pose
+unique challenges in terms of algorithms and system design due to their
+sheer scale [3]. Oftentimes multiple materials contribute to the
+observed pixel intensity and in these circumstances a pixel can be
+thought of as a mixture of these materials where both the materials in
+question and their mixing ratios are unknown. This is especially true
+for low-resolution Hyperspectral Images (HSIs) that are captured in a
+remote sensing setting where each pixel may cover a large region of
+space [2]. Therefore, in terms of methods and theory for HSI analysis,
+the problem of pixel unmixing has recieved extensive attention in the
+hyperspectral research community [4]. Pixel unmixing aims to identify
+the various materials and extract their mixing ratios represented within
+a given HSI pixel.1 Pixel unmixing is essential for a number of
+downstream tasks, such as those that aim to understand the composition,
+heterogeneity, and proportions of various materials using hyperspectral
+imaging [3, 5, 6, 7]. Within this context, this paper develops Iterative
+Latent Dirichlet Variational Autoencoder (ILDVAE), a novel method for
+hyperspectral pixel unmixing that aims to recover the “pure” spectral
+signal of each material (hereafter referred to as endmembers) and their
+mixing ratios (abundances) in a pixel given its spectral signature.</p>
+<h1 id="iterative-ldvae-in-action">Iterative LDVAE in Action</h1>
+<p>Iterative LDVAE (iLDVAE) is able to estimate endmembers and per-pixel
+abundances over time. The followign videos show the quality of
+segmentation w.r.t. to the ground truth. Note how iLDVAE improves
+segmentation over successive iterations.</p>
+<div class="row">
+<div class="col-lg-6">
+<div class="embed-responsive embed-responsive-16by9">
+<video controls autoplay loop playsinline preload="auto" muted >
+<source src="media/training-ldvae-1.mp4" type="video/mp4">
+<p>
+Sorry, this video cannot be displayed in your browser.
+</p>
+</video>
+</div>
+</div>
+<div class="col-lg-6">
+<div class="embed-responsive embed-responsive-16by9">
+<video controls autoplay loop playsinline preload="auto" muted >
+<source src="media/training-ldvae-2.mp4" type="video/mp4">
+<p>
+Sorry, this video cannot be displayed in your browser.
+</p>
+</video>
+</div>
+</div>
+</div>
+<h1 id="poster">Poster</h1>
+<center>
+<a href="23-igarss-poster.pdf"><img src="23-igarss-poster.png" width="100%"></a>
+</center>
+<h1 id="datasets">Datasets</h1>
+<ul>
+<li><a href="synthetic_hsi_mix_plants_6em_64x64x224.json.gz">UT HSI
+Unmixing Plants 6m</a></li>
+</ul>
+<h1 id="publication">Publication</h1>
+<p>For technical details please look at the following publications</p>
+<script src="https://bibbase.org/show?bib=http://vclab.science.uoit.ca/faisal-qureshi.bib&jsonp=1&filter=keywords:iterative-ldvae&group0=type"></script>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+      <footer style="margin-top: 50px;">
+  <div class="container footer">
+    <div class="row">
+      <hr>
+      <div class="col-md-6 col-sm-12">
+        <img src="http://vclab.science.uoit.ca/imgs/vclab-ontariotech.png">
+      </div>
+      <div class="col-md-6 col-sm-12">
+        &copy; Faisal Qureshi<br>
+        Last updated <br>
+        Site generated using &copy; Webify (Ver. 4.1)
+      </div>
+</footer>
+      
+    </div>
+
+  </body>
+</html>
