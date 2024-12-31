@@ -1,13 +1,2536 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- <meta http-equiv="refresh" content="0; url=http://vclab.science.uoit.ca" /> -->
-  </head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G9CWRQBRB0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
+      gtag('config', 'G-G9CWRQBRB0');
+    </script>
+    
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="Faisal Qureshi">
+<meta name="keywords" content="faisal qureshi, cs, vclab, ontario, uoit, professor, computer vision, camera networks, teaching">
+
+<!-- Bootstrap 4 -->
+<link rel="stylesheet" href="style/bootstrap-4.0.0-dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="style/my-bootstrap4.css" type="text/css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/4.4.0/font/octicons.min.css">
+<link rel="shortcut icon" type="image/png" href="favicon.png"/>
+
+<!-- scripts -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="style/bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>
+<script src="style/my-bootstrap4.js"></script>
+<script src="//bibbase.org/js/bibbase.min.js" type="text/javascript"></script>
+<script>
+   function setPhotoWidth() {
+       var a=$('.landing').height();
+       if (a > $('document').width()) {
+           a  = $('document').width()
+       }
+
+       $('#photo').css('max-height', a)
+   }
+   setPhotoWidth()
+   $(window).resize(setPhotoWidth);
+</script>
+  </head>
   <body>
-    <p>
-    <!--  <a href="http://vclab.science.uoit.ca">Redirect</a> -->
-    Hello world
-    </p>
+    <div class="container">
+      <div class="row" id="landing">
+    <div class="col-md-4 col-sm-4 col-xs-4">
+        <img id="photo" src="imgs/faisal-qureshi.png" class="img-fluid rounded" alt="Faisal Qureshi">
+    </div>
+    <div class="col-md-8 col-sm-8 col-xs-8 landing">
+        <div class="me">Faisal Qureshi</div>
+        <div class="my-pos">Professor<br/>Computer Science</div>
+
+        <address class="landing-address">
+            <span>Visual Computing Lab</span><br>
+            <a href="http://science.uoit.ca"><span style="color:rgb(0,0,0)">Faculty of Science</span></a><br>
+            <a href="http://www.ontariotechu.ca"><span style="color:rgb(0,0,0)">Ontario Tech University</span></a> (formerly UOIT)<br>
+            <span class="octicon octicon-pencil"></span> <span title="mailing-address">UA4000, 2000 Simcoe St. N., 
+            Oshawa, ON L1G OC5 Canada</span><br>
+            <abbr title="Email"><span class="octicon octicon-mail"></span></abbr> faisal.qureshi@uoit.ca<br>
+            <abbr title="Phone"><span class="octicon octicon-device-mobile"></span></abbr> (905) 721-8668 x 3626
+        </address> 
+    </div>
+</div> <!-- landing -->
+
+<div style="margin-top: 25px; margin-bottom: 25px;">
+    <ul class="nav justify-content-center">
+        
+        
+        <li class="nav-item">
+          <a class="nav-link" href="index.html#about">about</a>
+        </li>
+        
+        
+        
+        <li class="nav-item">
+          <a class="nav-link" href="index.html#research">research</a>
+        </li>
+        
+        
+        
+        <li class="nav-item">
+          <a class="nav-link" href="index.html#publications">publications</a>
+        </li>
+        
+        
+        
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">teaching <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+            <li><a class="dropdown-item nav-link" href="index.html#teaching">courses & teaching material</a></li>
+            
+            <li><a class="dropdown-item nav-link" href="http://csundergrad.science.uoit.ca/courses/cv-notes/">computer vision notebooks</a></li>
+            
+            <li><a class="dropdown-item nav-link" href="http://csundergrad.science.uoit.ca/courses/cpp-notes/">c++ notes</a></li>
+            
+            <li><a class="dropdown-item nav-link" href="http://csgrad.science.uoit.ca/courses/ist/">cnns for object detection</a></li>
+            
+            <li><a class="dropdown-item nav-link" href="http://csgrad.science.uoit.ca/courses/ist2/">deep learning primer</a></li>
+            
+            <li><a class="dropdown-item nav-link" href="https://github.com/faisalqureshi/python-dev-notes">python dev notes</a></li>
+            
+            <li><a class="dropdown-item nav-link" href="https://github.com/faisalqureshi/mnist-experiments">dl using pytorch notes</a></li>
+            
+          </ul>
+        </li>  
+        
+        
+        
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">students <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+            <li><a class="dropdown-item nav-link" href="students.html#students">current</a></li>
+            
+            <li><a class="dropdown-item nav-link" href="advice-for-students.html">prospective students</a></li>
+            
+            <li><a class="dropdown-item nav-link" href="honours-thesis.html">honour thesis</a></li>
+            
+            <li><a class="dropdown-item nav-link" href="https://www.overleaf.com/latex/templates/course-project-vclab-ontario-tech-university/qrtpysxydgqb">Technical report template (Overleaf)</a></li>
+            
+            <li><a class="dropdown-item nav-link" href="https://www.overleaf.com/latex/templates/thesis-template-vclab-ontario-tech-university/ryvpfpkdnfbf">Thesis template (Overleaf)</a></li>
+            
+            <li><a class="dropdown-item nav-link" href="ontariotechu-thesis">LaTeX thesis templates (Local copy)</a></li>
+            
+          </ul>
+        </li>  
+        
+        
+        
+        <li class="nav-item">
+          <a class="nav-link" href="index.html#code">code</a>
+        </li>
+        
+        
+        
+        <li class="nav-item">
+          <a class="nav-link" href="qureshi-cv.pdf">cv</a>
+        </li>
+        
+        
+        
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">conferences <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+            <li><a class="dropdown-item nav-link" href="conferences/wcnwasa11/index.html">wcnwasa 2011</a></li>
+            
+            <li><a class="dropdown-item nav-link" href="conferences/wcnwasa12/index.html">wcnwasa 2012</a></li>
+            
+            <li><a class="dropdown-item nav-link" href="conferences/wcnwasa13/index.html">wcnwasa 2013</a></li>
+            
+            <li><a class="dropdown-item nav-link" href="http://www.computerrobotvision.org/2015/index.html">crv 2015</a></li>
+            
+            <li><a class="dropdown-item nav-link" href="http://www.computerrobotvision.org/2016/index.html">crv 2016</a></li>
+            
+          </ul>
+        </li>  
+        
+        
+        
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">contact</a>
+        </li>
+        
+        
+        
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">personal <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+            <li><a class="dropdown-item nav-link" href="http://003beaf.netsolhost.com/aittios-and-elena/">Aittios and Elena</a></li>
+            
+            <li><a class="dropdown-item nav-link" href="http://zubairmasood.com">My dad's books</a></li>
+            
+            <li><a class="dropdown-item nav-link" href="personal/atut/default.html">ATUT (from when I was a graduate student...)</a></li>
+            
+          </ul>
+        </li>  
+        
+        
+    </ul>
+</div>
+
+      <h1 id="message">Messages</h1>
+
+      <p>Please read <a href="honours-thesis.html">this</a> if you are considering doing an <strong>honours thesis</strong> with me.</p>
+
+      <p>Please read <a href="advice-for-students.html">this</a> if you are considering doing <strong>graduate studies</strong> under my supervision.</p>
+      
+      <h1 id="news">News</h1>
+
+      <div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date ">
+                  Dec 18, 2023
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info ">
+                  Congratulations to Muhammad Salik Nadeem who successfully defended
+his thesis on <a
+href="http://vclab.science.uoit.ca/student-theses/2024-muhammad-salik-nadeem-msc.pdf">skeleton-based
+human action recognition</a>. <span class="news-highlight">Best thesis
+award nominee</span>
+
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date ">
+                  Nov 25, 2024
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info ">
+                  Check out our paper <a
+href="pubs/24-ieee-tgrs-j-hsi-compression.pdf">“Hyperspectral Image
+Compression Using Sampling and Implicit Neural Representations”</a> that
+is accepted to appear in IEEE TGRS.
+
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date ">
+                  Oct 24, 2024
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info ">
+                  Check out our paper <a href="https://doi.org/10.1093/nar/gkae920">“20
+years of the Bio-Analytic Resource for Plant Biology”</a> that is
+published in Nucleic Acids Research. This is joint work with colleagues
+at the Cell and Systems Biology department, University of Toronto.
+
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date ">
+                  Sep 23, 2024
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info ">
+                  Check out our paper <a href="pubs/24-dicta-c.pdf">“Attention Based
+Simple Primitives for Open-World Compositional Zero-Shot Learning”</a>
+that is accepted to appear in DICTA 2024. This is joint work with A.
+Munir and M. Ali from ITU, Lahore and M.H. Khan from <a
+href="https://mbzuai.ac.ae/">MBZUAI</a>, UAE.
+
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date ">
+                  Sep 3, 2024
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info ">
+                  VCLab welcomes four honors thesis students David Houle-Tymeczko, Chau Nguyen, Aaveg Shangari, and Daniel Zajac.
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date ">
+                  Sep 1, 2024
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info ">
+                  Welcome Alexie Linardatos who is joining visual computing lab to pursue M.Sc. in computer science.
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date ">
+                  May 8, 2024
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info ">
+                  Congratulations to Neha Ejaz who successfully defended her thesis on a few-shot learning method for single-object anomaly detection.
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date ">
+                  May 4, 2024
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info ">
+                  Congratulations to Negin Tabaraki who successfully defended her thesis on meta learning techniques for video matting.
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date ">
+                  May 1, 2024
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info ">
+                  Welcome Giancarlo Giannetti who is joining visual computing lab to pursue M.Sc. in computer science.
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date ">
+                  May 1, 2024
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info ">
+                  Check out our paper <a href="pubs/24-igarss-paper.pdf">“Spatial
+Attention Convolutional Latent Dirichlet Variational Autoencoder for
+hyperspectral pixel unmixing”</a> that is accepted to appear in IGARSS
+2024.
+
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date ">
+                  Apr 18, 2024
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info ">
+                  Congratulations to Matthew Chan who successfully defended his thesis on characterizing midair handwriting in virtual reality.
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date ">
+                  Feb 8, 2024
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info ">
+                  Check out our IEEE TGRS paper on <a
+href="https://ieeexplore.ieee.org/document/10414262">“Hyperspectral
+Pixel Unmixing with Latent Dirichlet Variational Autoencoder”</a>.
+
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date ">
+                  Dec 7, 2023
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info ">
+                  Congratulations to Chirag Karia who successfully defended his thesis
+on <a
+href="http://vclab.science.uoit.ca/student-theses/2024-chirag-karia-msc.pdf">predicting
+human dynamics</a>. <span class="news-highlight">Best thesis award
+nominee</span>
+
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date ">
+                  Oct 2, 2023
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info ">
+                  Congratulations to Roya Dehghani who successfully defended her thesis on a person re-identification using ConvNeXt architectures.
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date ">
+                  Sep 1, 2023
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info ">
+                  Checkout our journal paper <a
+href="https://ieeexplore.ieee.org/document/10235962">“An interactive
+threshold-setting procedure for improved multivariate anomaly detection
+in time series.”</a> This is joint work with Adam Lundstrom and Mattias
+O’Nils.
+
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date ">
+                  Sep 1, 2023
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info ">
+                  Welcome Hafiz Arslan Amjad who is joining visual computing lab to pursue M.Sc. in computer science.
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date ">
+                  May 29, 2023
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info ">
+                  Check out our new arXiv manuscript on <a
+href="https://arxiv.org/abs/2305.17245">error estimation in single image
+3d human mesh recovery</a>. Project page is available <a
+href="projects/error-estimation/error-estimation.html">here</a>. Code is
+available on <a
+href="https://github.com/Hamoon1987/meshConfidence">github</a>.
+
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date ">
+                  May 18, 2023
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info ">
+                  Hamoon Jafarian successfully defended his M.Sc. thesis on <a
+href="projects/error-estimation/error-estimation.html">error estimation
+in single image 3d human mesh recovery</a>. <span
+class="news-highlight">Best thesis award nominee</span>
+
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date ">
+                  Apr 17, 2023
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info ">
+                  Our paper on <a href="pubs/23-crv-c.pdf">Hyperspectral Image
+Compression using Implicit Neural Networks</a> has been accepted to
+appear in Conference on Robots and Computer (CRV 2023).
+
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  Apr 12, 2023
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  Check out our abstract that outlines <a
+href="pubs/23-igarss-abstract.pdf">an Iterative Method for Hyperspectral
+Pixel Unmixing Leveraging Latent Dirichlet Variational Autoencoder</a>
+that has been accepted to appear in International Geoscience and Remote
+Sensing Symposium (IGARSS).
+
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  Oct 11, 2022
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  Checkout our journal paper <a
+href="https://ieeexplore.ieee.org/document/9913974">“Improving deep
+learning based anomaly detection on multivariate time series through
+separated anomaly scoring”</a>. This is joint work with Adam Lundstrom,
+Mattias O’Nils, and Axel Jantsch.
+
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  Oct 6, 2022
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  Congratulations to Mir Afgan Talpur who successfully defended his thesis on a modular approach to image matting.
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  Sep 10, 2022
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  I gave a series of ai lectures titled <a
+href="http://csgrad.science.uoit.ca/courses/ist2/">“A Deep Learning
+Primer”</a> at <a href="https://www.ist.edu.pk">Institute of Space
+Technology (IST)</a>. Thank you IST for hosting me.
+
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  Jul 14, 2022
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  Checkout our journal paper <a
+href="https://dx.plos.org/10.1371/journal.pone.0269174">“The Effects of
+Spectral Dimensionality Reduction on Hyperspectral Image Classification.
+A Case Study.”</a> More information and the datasets used in this study
+can be found <a
+href="projects/hsi-spectral-reduction/hsi-spectral-reduction.html">here</a>.
+
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  Jun 19, 2022
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  I am excited to give a short-course on the <a
+href="http://csgrad.science.uoit.ca/courses/ist/">“Unreasonable
+Effectiveness of Convolutional Neural Networks for Object
+Recognition”</a> at the <a href="https://www.ist.edu.pk">Institute of
+Space Technology</a>.
+
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  Apr 2, 2022
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  Thank you <a
+href="https://www.miun.se/Personal/mattiasonils/">Prof. Mattias
+O’Nils</a> for hosting me at <a
+href="https://www.miun.se/en/Research/research-centers/stc/">Center for
+Sensible Things that Communicate</a>, Mid Sweden University. It was
+great fun! Check out my interview <a
+href="https://www.miun.se/en/Research/research-centers/stc/news-from-stc-research-center-eng/News-archive/2022-3/guest-professor-faisal-qureshi-from-the-university-of-ontario-institute-of-technology/">here</a>.
+
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  Apr 2, 2022
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  I am thrilled to be appointed as an adjunct faculty at the <a
+href="https://www.ist.edu.pk">Institute of Space Technology</a>,
+Pakistan.
+
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  Jan 6, 2022
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  Welcome Negin Tabaraki and Neha Ejaz who are joining visual computing lab to pursue M.Sc. in computer science.
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  Jan 6, 2022
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  Congratulations to Michael Lombardo for successfully defending his M.Sc. thesis on parsing genetic models.
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  Dec 1, 2021
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  I now have a status-only appoinment in the Department of Cell and Systems Biology (CSB) at the University of Toronto.  I am looking forward to working with my colleagues in CSB.
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  Nov 30, 2021
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  Checkout our journal paper <a
+href="https://www.mdpi.com/2313-433X/7/12/255">“Evaluation of
+2D-/3D-Feet-Detection Methods for Semi-Autonomous Powered Wheelchair
+Navigation”</a>. This is joint work with Cristian Gimenez, Silvia Krug,
+and Mattias O’Nils from <a
+href="https://www.miun.se/en/Research/research-centers/stc/">Mid Sweden
+University</a>. Dataset is available <a
+href="https://snd.gu.se/sv/catalogue/study/2021-303/1/1#dataset">here</a>.
+
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  Oct 28, 2021
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  Checkout our journal paper <a
+href="https://www.mdpi.com/2313-433X/7/11/227">“A Temporal Boosted
+YOLO-Based Model for Birds Detection around Wind Farms”</a>. This is
+joint work with Hiba Alqaysi, Igor Fedorov, and Mattias O’Nils from <a
+href="https://www.miun.se/en/Research/research-centers/stc/">Mid Sweden
+University</a>. (<em>Dataset coming soon</em>.)
+
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  Sep 2, 2021
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  Welcoming two new members. Hamoon Jafarian and Roya Dehghani are joining visual computing lab to pursue M.Sc. in computer science.
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  Jun 3, 2021
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  I am both honoured and excited to be nominated for the
+<strong>Student Choice Award</strong>. This year it is particularly
+meaningful given the larger COVID-19 context and the sudden shift to
+online teaching and learning. Though we do not see each other in
+physical spaces, my interactions with my students continue to be the
+most enjoyable part of my job. Thank you, my students!
+
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  Mar 9, 2021
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  Thank you <a href="https://www.soscip.org/">SOSCIP</a> for providing
+cloud and deep learning computing resources for our work with Mitacs and
+Axiom.
+
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  Jan 4, 2021
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  Welcome Mohamed Zayed who is joining visual computing lab to pursue M.Sc. in computer science.
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  Dec 11, 2020
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  Our journal paper <a
+href="https://www.sciencedirect.com/science/article/abs/pii/S0924271620303208">“Improving
+hyperspectral image segmentation by applying inverse noise weighting and
+outlier removal for optimal scale selection”</a> has been accepted to
+appear in ISPRS Journal of Photogrammetry and Remote Sensing. This is
+joint work with Phuong D. Dao, Kiran Mantripragada, and <a
+href="http://sites.utm.utoronto.ca/yuhong/">Yuhong He</a>.
+
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  Dec 08, 2020
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  Check out our <strong>c++</strong> notes <a
+href="http://csundergrad.science.uoit.ca/courses/cpp-notes">here</a>.
+
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  Oct 18, 2020
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  Check out our <strong>computer vision notebooks</strong> <a
+href="http://csundergrad.science.uoit.ca/courses/cv-notes">here</a>.
+
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  Sep 8, 2020
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  Welcome Shima Rezasoltani and Afgan Mir Talpur, who are joining visual computing lab to pursue graduate studies in computer science.  Shima will be working towards her Ph.D. in computer science, whereas Afgan is returning to VCLab to work towards his M.Sc. in computer science.
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  Jul 24, 2020
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  Our journal paper <a
+href="https://doi.org/10.1109/TPAMI.2020.3015867">“A Stream Algebra for
+Performance Optimization of Large Scale Computer Vision Pipelines”</a>
+has been accepted to appear in IEEE Transactions on Pattern Analysis and
+Machine Intelligence. Joint work with <a
+href="https://www.linkedin.com/in/mohamed-helala/?originalSubdomain=ca">Mohamed
+Helala</a> and <a href="http://db.science.uoit.ca">Ken Pu</a>.
+
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  Jul 21, 2020
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  Excited to report that my student <a
+href="https://www.linkedin.com/in/saliknadeem/?originalSubdomain=ca">Salik
+Nadeem</a> got selected for <a
+href="https://opencv.org/announcing-the-opencv-spatial-ai-competition-sponsored-by-intel-phase-1-winners/">Phase
+1 of the OpenCV Spatial AI Competition sponsored by Intel</a>. He will
+receive the OpenCV AI Kit OAK-D to further develop his work.
+
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  Jun 19, 2020
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  Check out <a
+href="http://vclab.science.uoit.ca/webify-manual/introduction.html">Webify
+v4.2</a>. A Python tool to convert plaintext to beautiful course notes
+and websites. Now it supports a live mode that can be used to maintain
+websites remotely.
+
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  Jun 01, 2020
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  I am now serving as the secretary for the Canadian Image Processing
+and Pattern Recognition Society (<a
+href="https://cipprs.org/">CIPPRS</a>).
+
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  Apr 24, 2020
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  Just got the official confirmation. I will be promoted to
+<strong>Full Professor</strong> starting July 1, 2020.
+
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  Apr 14, 2020
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  Our work <strong>Improving Hyperspectral Image Segmentation by
+Applying Inverse Noise Weighting and Outlier Removal for Optimal Scale
+Selection</strong> received the <strong>second place</strong> at the
+<em>2020 American Association of Geographers (AAG), Remote Sensing
+Specialty Group, Student Honors Competition</em>. This is joint work
+with my student Kiran Mantripragada and our colleagues Phuong D. Dao and
+<a
+href="http://sites.utm.utoronto.ca/yuhong/content/prof-yuhong-he">Yuhong
+He</a> at the <a
+href="http://sites.utm.utoronto.ca/yuhong/content/welcome-prof-yuhong-hes-webpage-rssem-lab">Remote
+Sensing and Spatial Ecosystem Modeling laboratory</a>, University of
+Toronto Mississauga. Phuong presented this work at the AAG meeting.
+
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  Mar 9, 2020
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  VCLab received a <strong>$120,000 Mitacs Accelerate Grant</strong> to
+develop a <em>data-driven framework for integrating visual inspection
+into injection moulding pipeline</em>. Our partner organization is <a
+href="https://www.axiomgroup.ca">Axiom Plastics Inc.</a>
+
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  Dec 17, 2019
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  I took part in the <a
+href="https://twitter.com/gfss_STEM/status/1207159745372659713">science
+information panel</a> organized by Glenforest Secondary School STEM
+team. The students asked some very interesting questions, and I had a
+blast.
+
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  Dec 1, 2019
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  I am visiting <a
+href="https://www.miun.se/Personal/mattiasonils/">Prof. OMattias
+O’Nils</a> at Mid Sweden University, Sundsvall, Sweden where I am
+scheduled to give two talks. First talk, is a public seminar titled
+“Deep learning meets computer vision,” and the second talk will discuss
+our recent work on <em>joint layer and spatial attention network</em>
+and <em>image inpainting</em>.
+
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  Oct 16, 2019
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  My student Tony Joseph is presenting our work on “Joint Spatial and
+Layer Attention for Convolutional Networks” at the <a
+href="https://toronto.eventful.com/events/evolution-deep-learning-symposium-/E0-001-130421445-1">Evolution
+of Deep Learning Symposia</a> organized by <a
+href="https://vectorinstitute.ai">Vector Institute</a> to celebrate the
+work and achievements of <a
+href="http://www.cs.toronto.edu/~hinton/">Prof. Geoff Hinton</a>, 2019
+Turing Award Winner. My co-author Martin Magill is also presenting our
+work on “Neural Networks for DNNs” at this symposia. <br/><em>I am
+particulary thrilled about this; my very first graduate course was with
+Prof. Hinton back when deep learning wasn’t a thing.</em>
+
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  Sep 23, 2019
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  Our paper <strong>A Residual-Dyad Encoder Discriminator Network for
+Remote Sensing Image Matching</strong> is accepted to appear in <a
+href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=36">IEEE
+Transactions on Geoscience and Remote Sensing</a>. This is joint work
+with our colleagues at <a
+href="https://lums.edu.pk/labs/graphics-and-computer-vision-lab">Graphics
+and Computer Vision Lab</a>, Lahore University of Management
+Sciences.
+
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  Sep 1, 2019
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  Welcome Chirag Karia and Michael Lombardo, who are joining visual computing lab to pursue graduate studies in computer science.
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  Aug 24, 2019
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  Our work on <strong>Structure Guided Image Inpainting using Edge
+Prediction</strong> is accepted to appear in the ICCV19 workshop on <a
+href="http://www.vision.ee.ethz.ch/aim19/">Advances in Image
+Manipulation</a>. This is joint work with our colleagues in the Imaging
+Lab.
+
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  Aug 15, 2019
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  I am now a <strong>Senior Member</strong> of
+<strong>IEEE</strong>.
+
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  Jul 1, 2019
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  Our paper <strong>Joint Spatial and Layer Attention for Convolutional
+Networks</strong> is accepted as a spotlight at <a
+href="https://bmvc2019.org">BMVC19</a>! This is joint work with Tony
+Joseph and Prof. Kosta Derpanis (Ryerson University and Samsung AI Lab
+Toronto).
+
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  Jul 1, 2019
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  Starting July 1st, 2019, I will be serving as the <strong>Graduate
+Program Director</strong> for Ontario Tech University Computer Science
+program.
+
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  June 14, 2019
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  Tony Joseph successfully defended his M.Sc. thesis.
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  Feb 27, 2019
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  I am both honoured and excited to be nominated for the
+<strong>Student Choice Award</strong>. My interactions with an amazing
+group of students is truly the most enjoyable part of my job. Thank you,
+my students!
+
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  Jan 7, 2019
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  Check out our <strong>EdgeConnect</strong> work on image inpainting
+on <a href="https://arxiv.org/abs/1901.00212">arXiv</a>. Code for this
+paper is available at <a
+href="https://github.com/knazeri/edge-connect">Github</a>.
+
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  Jan 7, 2019
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  Check out new project page on <strong>stream algebra for computer
+vision pipelines</strong> <a
+href="http://vclab.science.uoit.ca/projects/stream-algebra/stream-algebra.html">here</a>.
+
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  Jan 2, 2019
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  Welcome Salik Nadeem.  Salik has joined visual computing lab to pursue M.Sc. in computer science.  He did his undergraduate at Lahore University of Management Sciences (LUMS), Pakistan.
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  Dec 15, 2018
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  Check out our NeurIPS18 paper on <strong>neural networks for
+DNNs</strong> on <a
+href="https://arxiv.org/abs/1807.00042">arXiv</a>.
+
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  Nov 15, 2018
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  Our paper on <strong>compact representations on neural networks for
+solving Laplace’s equation</strong> has been accepted at appear at <a
+href="https://nips.cc/Conferences/2018/Schedule?showEvent=10941">NuerIPS
+2018 workshop on Compact Deep Neural Networks with Industrial
+Applications</a>.
+
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  Oct 2, 2018
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  Michael Lombardo was runner-up in the undergrad category at <a
+href="http://flux.cs.queensu.ca/news/2018/10/02/computing-student-research-conference-csearch/">CSearch
+2018</a>. Congrats Michael!
+
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  Sep 5, 2018
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  Our paper on <strong>neural networks for DNNs</strong> has been
+accepted at appear at <a
+href="https://nips.cc/Conferences/2018/">NuerIPS 2018</a>.
+
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  Sep 1, 2018
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  Welcome Michael Stergianis.  Michael has joined the visual computing lab to pursue M.Sc. computer science.
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  Jun 21, 2018
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  Our paper on <strong>video summarization on commodity
+hardware</strong> has been accepted to appear at 12th ACM International
+Conference on Distributed Smart Cameras 2018.
+
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  May 10, 2018
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  Welcome Hunter Thompson.  Hunter has joined the visual computing lab to pursue M.Sc. computer science.
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  May 10, 2018
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  Welcome Ghazal Reshad.  Ghazal has joined the visual computing lab to pursue M.Sc. computer science.
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  May 10, 2018
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  Welcome Michael Lombardo.  Michael will be spending his summer in the lab as an NSERC USRA.
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  Jan 24, 2018
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  Wesley Taylor successfully defended his M.Sc. thesis on <em>video
+summarization on commodity hardware</em>. Congratulations, Wesley!
+
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  Dec 8, 2017
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  Check out <a
+href="https://github.com/faisalqureshi/webify">webify</a>, a python
+wrapper and a little bit more than that to convert markdown, yaml and
+mustache content to websites and pdf documents using pandoc.
+
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  Sep 12, 2017
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  Welcome Miguel Jose Mendez. Miguel has joined the visual computing lab to pursue M.Sc. computer science.
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  Sep 12, 2017
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  Welcome Kiran Mantripragada. Kiran has joined the visual computing lab to pursue Ph.D. computer science.
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  Sep 11, 2017
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  Attending ITEA3 Project Outline Preparation Days 2017 in Berlin.
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  May 18, 2017
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  Our paper, &quot;Fast estimation of large displacement optical flow using dominant motion patterns and sub-volume patchmatch filtering&quot; received the <strong>Best Computer Vision Paper</strong> award at Computer Robot Vision 2017.
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  Apr 28, 2017
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  David Nemirovsky successfully defended his M.Sc. thesis.  Congrats, David!
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  Apr 14, 2017
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  Michael Stergianis will again spend the summer months at VCLab as NSERC USRA.  Welcome back, Michael!
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  Mar 20, 2017
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  Two papers accepted to CRV 2017.
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  Jul 3, 2016
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  Paper presenting formal algebra (for vision streams) implementation accepted to ICDSC 2016
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  Apr 1, 2016
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  Michael Stergianis receives NSERC USRA
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  Apr 1, 2016
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  Wesley Taylor receives Ontario Graduate Scholarship
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  Apr 1, 2016
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  Luis Zarrabeitia joined Google
+              </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-4">
+              <div class="news-date  old-news ">
+                  Feb 2, 2016
+              </div>
+            </div>
+            <div class="col-md-10 col-sm-8 col-8">
+              <div class="news-info  old-news ">
+                  Two papers accepted to WACV 2016
+              </div>
+            </div>
+          </div>
+        
+      </div>
+      <i id="toggle-news">more >>></i>
+
+      <h1 id="about">About</h1>
+<p>I am a professor of computer science at the University of Ontario
+Institute of Technology. I also direct the visual computing lab that
+focuses on problems residing at the intersection of pattern recognition,
+computer vision, visual sensor networks, large-scale processing and
+computer graphics.</p>
+<div class="about-more">
+<p>Visual computing lab is involved in number of exciting research
+problems:</p>
+<ul>
+<li>coordination and control in ad hoc networks of visual sensor
+nodes;</li>
+<li>integration of mobile cameras into traditional video surveillance
+networks;</li>
+<li>nano-scale image analysis;</li>
+<li>multi-object tracking;</li>
+<li>streaming frameworks for on-line vision systems;</li>
+<li>crowd synthesis and analysis;</li>
+<li>depth and motion estimation from image pairs; and</li>
+<li>virtual vision — 3D software laboratories for camera networks
+research.</li>
+</ul>
+</div>
+<p><i id="toggle-about">more &gt;&gt;&gt;</i></p>
+
+          
+      <h1 id="research">Research</h1>
+
+      <div class="row">
+      
+        <div class="col">
+          <div class="media">
+              <img class="mr-3 rounded" src="projects/image-matting/matting-thumb.png" alt="Project Thumbnail">
+              <div class="media-body">
+                  <h5 class="mt-0">A Modular Approach to Image Matting</h5>
+                  <p>A method that bridges the gap between the performance of trimap-based networks and the convenience of trimap-free networks.</p>
+                  
+                  <p><a href="projects/image-matting/image-matting.html">Project page</a></p>
+                  
+              </div>
+          </div>
+        </div>
+
+         
+        
+      
+        <div class="col">
+          <div class="media">
+              <img class="mr-3 rounded" src="projects/iterative-ldvae/iterative-ldvae-thumb.png" alt="Project Thumbnail">
+              <div class="media-body">
+                  <h5 class="mt-0">Iterative LDVAE for Hyperspectral Pixel Unmixing</h5>
+                  <p>A method for hyperspectral pixel unmixing that does not require labelled per-pixel "training" data.</p>
+                  
+                  <p><a href="projects/iterative-ldvae/iterative-ldvae.html">Project page</a></p>
+                  
+              </div>
+          </div>
+        </div>
+
+         
+        
+        
+        </div>
+        <div class="row">
+         
+        
+      
+        <div class="col">
+          <div class="media">
+              <img class="mr-3 rounded" src="projects/inr-hsi-compression/inr-hsi-compression-thumb.png" alt="Project Thumbnail">
+              <div class="media-body">
+                  <h5 class="mt-0">Implicit Neural Representations for HSI Compression</h5>
+                  <p>Using implicit neural representations for hyperspectral image compression.</p>
+                  
+                  <p><a href="projects/inr-hsi-compression/HSICompression.html">Project page</a></p>
+                  
+              </div>
+          </div>
+        </div>
+
+         
+        
+      
+        <div class="col">
+          <div class="media">
+              <img class="mr-3 rounded" src="projects/error-estimation/error-estimation-thumb.png" alt="Project Thumbnail">
+              <div class="media-body">
+                  <h5 class="mt-0">Human 3D Mesh Recovery</h5>
+                  <p>Error estimation for single image human 3D mesh recovery.</p>
+                  
+                  <p><a href="projects/error-estimation/error-estimation.html">Project page</a></p>
+                  
+              </div>
+          </div>
+        </div>
+
+         
+        
+        
+        </div>
+        <div class="row">
+         
+        
+      
+        <div class="col">
+          <div class="media">
+              <img class="mr-3 rounded" src="projects/visual-anomaly-detection/visual-anomaly-detection.png" alt="Project Thumbnail">
+              <div class="media-body">
+                  <h5 class="mt-0">Visual Anomaly Detection Package</h5>
+                  <p>A web-based system for deploying anomalib for visual anomaly detection.</p>
+                  
+                  <p><a href="https://github.com/faisalqureshi/visual-anomaly-detection/tree/main">Project page</a></p>
+                  
+              </div>
+          </div>
+        </div>
+
+         
+        
+      
+        <div class="col">
+          <div class="media">
+              <img class="mr-3 rounded" src="projects/hsi-spectral-reduction/hsi-spectral-reduction.png" alt="Project Thumbnail">
+              <div class="media-body">
+                  <h5 class="mt-0">Hyperspectral Pixel Classification</h5>
+                  <p>A systematic study of the effects of spectral compression on hyperspectral pixel classification.</p>
+                  
+                  <p><a href="projects/hsi-spectral-reduction/hsi-spectral-reduction.html">Project page</a></p>
+                  
+              </div>
+          </div>
+        </div>
+
+         
+        
+        
+        </div>
+        <div class="row">
+         
+        
+      
+        <div class="col">
+          <div class="media">
+              <img class="mr-3 rounded" src="projects/anomaly-detection-scoring/anomaly-detection-scoring.png" alt="Project Thumbnail">
+              <div class="media-body">
+                  <h5 class="mt-0">Multivariate Anomaly Detection</h5>
+                  <p>On aggregated vs. separating scoring methods for multivariate anomaly detection tasks.</p>
+                  
+                  <p><a href="projects/anomaly-detection-scoring/anomaly-detection-scoring.html">Project page</a></p>
+                  
+              </div>
+          </div>
+        </div>
+
+         
+        
+      
+        <div class="col">
+          <div class="media">
+              <img class="mr-3 rounded" src="projects/feet-localization/feet-localization-thumb.png" alt="Project Thumbnail">
+              <div class="media-body">
+                  <h5 class="mt-0">Feet Localization for Autonomous Wheelchair Navigation</h5>
+                  <p>Caregiver feet localization from wheelchair mounted cameras for autonomous navigation.</p>
+                  
+                  <p><a href="projects/feet-localization/feet-localization.html">Project page</a></p>
+                  
+              </div>
+          </div>
+        </div>
+
+         
+        
+        
+        </div>
+        <div class="row">
+         
+        
+      
+        <div class="col">
+          <div class="media">
+              <img class="mr-3 rounded" src="projects/bird-detection/bird-detection-thumb.png" alt="Project Thumbnail">
+              <div class="media-body">
+                  <h5 class="mt-0">Bird Detection in Wind Farms</h5>
+                  <p>A temporal boosted YOLOv4 model for bird detection around wind farms.</p>
+                  
+                  <p><a href="projects/bird-detection/bird-detection.html">Project page</a></p>
+                  
+              </div>
+          </div>
+        </div>
+
+         
+        
+      
+        <div class="col">
+          <div class="media">
+              <img class="mr-3 rounded" src="projects/hyperspectral-segmentation/hyperspectral-segmentation-thumb.gif" alt="Project Thumbnail">
+              <div class="media-body">
+                  <h5 class="mt-0">Hyperspectral Image Segmentation</h5>
+                  <p>Optimal scale selection for object-based image analysis and interpretation in hyperspectral images.</p>
+                  
+                  <p><a href="projects/hyperspectral-segmentation/hyperspectral-segmentation.html">Project page</a></p>
+                  
+              </div>
+          </div>
+        </div>
+
+         
+        
+        
+        </div>
+        <div class="row">
+         
+        
+      
+        <div class="col">
+          <div class="media">
+              <img class="mr-3 rounded" src="projects/residual-dyad/thumbnail-128x128.png" alt="Project Thumbnail">
+              <div class="media-body">
+                  <h5 class="mt-0">A Residual-Dyad Encoder Discriminator Network for Remote Sensing Image Matching</h5>
+                  <p>A new deep learning unit, residual-dyad, for remote sensing image matching.</p>
+                  
+                  <p><a href="projects/residual-dyad/residual-dyad.html">Project page</a></p>
+                  
+              </div>
+          </div>
+        </div>
+
+         
+        
+      
+        <div class="col">
+          <div class="media">
+              <img class="mr-3 rounded" src="projects/uan/uan-thumbnail-128x128.png" alt="Project Thumbnail">
+              <div class="media-body">
+                  <h5 class="mt-0">Joint Spatial and Layer Attention for Convolutional Networks</h5>
+                  <p>What and where attention for convolutional neural networks</p>
+                  
+                  <p><a href="projects/uan/uan.html">Project page</a></p>
+                  
+              </div>
+          </div>
+        </div>
+
+         
+        
+        
+        </div>
+        <div class="row">
+         
+        
+      
+        <div class="col">
+          <div class="media">
+              <img class="mr-3 rounded" src="projects/edge-connect/edge-connect-thumbnail.png" alt="Project Thumbnail">
+              <div class="media-body">
+                  <h5 class="mt-0">Image Inpainting using Edge Prediction</h5>
+                  <p>GANs for Structured Image Inpainting</p>
+                  
+                  <p><a href="projects/edge-connect/edge-connect.html">Project page</a></p>
+                  
+              </div>
+          </div>
+        </div>
+
+         
+        
+      
+        <div class="col">
+          <div class="media">
+              <img class="mr-3 rounded" src="projects/dnn/dnn-thumbnail-128x128.png" alt="Project Thumbnail">
+              <div class="media-body">
+                  <h5 class="mt-0">Neural Networks Solving PDEs</h5>
+                  <p>Neural networks learn general representations when trained to solve differential equations.</p>
+                  
+                  <p><a href="projects/dnn/dnn.html">Project page</a></p>
+                  
+              </div>
+          </div>
+        </div>
+
+         
+        
+        
+        </div>
+        <div class="row">
+         
+        
+      
+        <div class="col">
+          <div class="media">
+              <img class="mr-3 rounded" src="projects/stereo/stereo-cost-volume-thumbnail-128x128.png" alt="Project Thumbnail">
+              <div class="media-body">
+                  <h5 class="mt-0">Cost-Volume Filtering for Stereo Depth Estimation</h5>
+                  <p>Accelerated cost-volume filtering for depth analysis</p>
+                  
+                  <p><a href="projects/stereo/stereo.html">Project page</a></p>
+                  
+              </div>
+          </div>
+        </div>
+
+         
+        
+      
+        <div class="col">
+          <div class="media">
+              <img class="mr-3 rounded" src="projects/optical-flow/optical-flow-thumb-128x128.png" alt="Project Thumbnail">
+              <div class="media-body">
+                  <h5 class="mt-0">Cost-Volume Filtering for Optical Flow Estimation</h5>
+                  <p>Cost-volume filtering for fast optical flow estimation</p>
+                  
+                  <p><a href="projects/optical-flow/optical-flow.html">Project page</a></p>
+                  
+              </div>
+          </div>
+        </div>
+
+         
+        
+        
+        </div>
+        <div class="row">
+         
+        
+      
+        <div class="col">
+          <div class="media">
+              <img class="mr-3 rounded" src="projects/video-summarization/video-summarization-thumbnail.png" alt="Project Thumbnail">
+              <div class="media-body">
+                  <h5 class="mt-0">Video Summarization</h5>
+                  <p>Exploring various ways to summarize a video.</p>
+                  
+                  <p><a href="projects/video-summarization/video-summarization.html">Project page</a></p>
+                  
+              </div>
+          </div>
+        </div>
+
+         
+        
+      
+        <div class="col">
+          <div class="media">
+              <img class="mr-3 rounded" src="projects/virtual-vision/virtual-vision-269x269.png" alt="Project Thumbnail">
+              <div class="media-body">
+                  <h5 class="mt-0">Virtual Vision</h5>
+                  <p>Advanced computer graphics and vision simulation technologies to serve the needs of camera networks research.</p>
+                  
+                  <p><a href="projects/virtual-vision/">Project page</a></p>
+                  
+              </div>
+          </div>
+        </div>
+
+         
+        
+        
+        </div>
+        <div class="row">
+         
+        
+      
+        <div class="col">
+          <div class="media">
+              <img class="mr-3 rounded" src="projects/droplet-tracking/tracking-269x269.png" alt="Project Thumbnail">
+              <div class="media-body">
+                  <h5 class="mt-0">Tracking Blood Droplets in 3D</h5>
+                  <p>Extracting three-dimensional flight trajectories of liquid droplets from video data.</p>
+                  
+                  <p><a href="projects/droplet-tracking/">Project page</a></p>
+                  
+              </div>
+          </div>
+        </div>
+
+         
+        
+      
+        <div class="col">
+          <div class="media">
+              <img class="mr-3 rounded" src="projects/stream-algebra/stream-algebra-thumb.png" alt="Project Thumbnail">
+              <div class="media-body">
+                  <h5 class="mt-0">Computer Vision Pipelines</h5>
+                  <p>A formal algebraic framework for the mathematical description of computer vision pipelines.</p>
+                  
+                  <p><a href="projects/stream-algebra/stream-algebra.html">Project page</a></p>
+                  
+              </div>
+          </div>
+        </div>
+
+         
+        
+        
+        </div>
+        <div class="row">
+         
+        
+      
+        <div class="col">
+          <div class="media">
+              <img class="mr-3 rounded" src="projects/road-boundary-detection/road-boundary-detection-269x269.png" alt="Project Thumbnail">
+              <div class="media-body">
+                  <h5 class="mt-0">Road Boundary Detection</h5>
+                  <p>Road boundary detection adverse lighting and environmental conditions.</p>
+                  
+                  <p><a href="projects/road-boundary-detection/road-boundary-detection.html">Project page</a></p>
+                  
+              </div>
+          </div>
+        </div>
+
+         
+        
+      
+        <div class="col">
+          <div class="media">
+              <img class="mr-3 rounded" src="projects/vvs/vvs-269x269.png" alt="Project Thumbnail">
+              <div class="media-body">
+                  <h5 class="mt-0">Distributed Virtual Vision Simulator</h5>
+                  <p>Scalable virtual vision.</p>
+                  
+                  <p><a href="projects/vvs/index.html">Project page</a></p>
+                  
+              </div>
+          </div>
+        </div>
+
+         
+        
+        
+        </div>
+        <div class="row">
+         
+        
+      
+        <div class="col">
+          <div class="media">
+              <img class="mr-3 rounded" src="projects/aerial-mosaics/thumbnail-128x128.png" alt="Project Thumbnail">
+              <div class="media-body">
+                  <h5 class="mt-0">Aerial Mosaics</h5>
+                  <p>Mosaic of Near Ground UAV Videos Under Parallax Effects</p>
+                  
+                  <p><a href="projects/aerial-mosaics/aerial-mosaics.html">Project page</a></p>
+                  
+              </div>
+          </div>
+        </div>
+
+         
+        
+      
+        <div class="col">
+          <div class="media">
+              <img class="mr-3 rounded" src="projects/coco/coco-seq-269x269.jpg" alt="Project Thumbnail">
+              <div class="media-body">
+                  <h5 class="mt-0">Satellite Rendezvous and Docking</h5>
+                  <p>Cognitive/behavior visual serving controllers for capturing free-flying uncooperative satellites.</p>
+                  
+                  <p><a href="projects/coco/coco.html">Project page</a></p>
+                  
+              </div>
+          </div>
+        </div>
+
+         
+        
+        
+        </div>
+        <div class="row">
+         
+        
+      
+        <div class="col">
+          <div class="media">
+              <img class="mr-3 rounded" src="projects/camera-grouping/camera-grouping-269x269.png" alt="Project Thumbnail">
+              <div class="media-body">
+                  <h5 class="mt-0">Camera grouping via local negotiations</h5>
+                  <p>Collaborative sensing in camera networks.</p>
+                  
+                  <p><a href="projects/camera-grouping/07-dcoss-project.html">Project page</a></p>
+                  
+              </div>
+          </div>
+        </div>
+
+         
+        
+      
+        <div class="col">
+          <div class="media">
+              <img class="mr-3 rounded" src="projects/crowds/video-based-crowd-synthesis-jordan-msc-269x269.jpg" alt="Project Thumbnail">
+              <div class="media-body">
+                  <h5 class="mt-0">Video Driven Crowd Synthesis</h5>
+                  <p>Motion vectors extracted from crowd videos are used to synthesize artificial crowds.</p>
+                  
+                  <p><a href="projects/crowds/crowds.html">Project page</a></p>
+                  
+              </div>
+          </div>
+        </div>
+
+         
+        
+        
+        </div>
+        <div class="row">
+         
+        
+      
+        <div class="col">
+          <div class="media">
+              <img class="mr-3 rounded" src="imgs/research/camera-scheduling-269x269.png" alt="Project Thumbnail">
+              <div class="media-body">
+                  <h5 class="mt-0">PTZ Camera Scheduling</h5>
+                  <p>Multicamera control as an online scheduling problem.</p>
+                  
+              </div>
+          </div>
+        </div>
+
+         
+        
+      
+        <div class="col">
+          <div class="media">
+              <img class="mr-3 rounded" src="projects/proactive-ptz-control/proactive-ptz-control-1024x687-269x269.png" alt="Project Thumbnail">
+              <div class="media-body">
+                  <h5 class="mt-0">Proactive PTZ Camera Control</h5>
+                  <p>Planning ahead for camera handoff and control.</p>
+                  
+                  <p><a href="projects/proactive-ptz-control/09-icdsc-project.html">Project page</a></p>
+                  
+              </div>
+          </div>
+        </div>
+
+         
+        
+        
+        </div>
+        <div class="row">
+         
+        
+      
+        <div class="col">
+          <div class="media">
+              <img class="mr-3 rounded" src="projects/video-privacy/privacy-video-269x269.png" alt="Project Thumbnail">
+              <div class="media-body">
+                  <h5 class="mt-0">Object Video Streams</h5>
+                  <p>A privacy framework for video surveillance.</p>
+                  
+                  <p><a href="projects/video-privacy/video-privacy.html">Project page</a></p>
+                  
+              </div>
+          </div>
+        </div>
+
+         
+        
+      
+        <div class="col">
+          <div class="media">
+              <img class="mr-3 rounded" src="imgs/research/11-avss-c-cropped-269x269.png" alt="Project Thumbnail">
+              <div class="media-body">
+                  <h5 class="mt-0">Multi-Tasking PTZ Cameras</h5>
+                  <p>Behavior-based controllers for passive and active PTZ cameras.</p>
+                  
+              </div>
+          </div>
+        </div>
+
+         
+        
+        
+        </div>
+        <div class="row">
+         
+        
+      
+        <div class="col">
+          <div class="media">
+              <img class="mr-3 rounded" src="projects/trie-indexing/trie-128x128.png" alt="Project Thumbnail">
+              <div class="media-body">
+                  <h5 class="mt-0">Trie Indexing</h5>
+                  <p>An index structure for fast range searches in Hamming space.</p>
+                  
+                  <p><a href="projects/trie-indexing/trie-indexing.html">Project page</a></p>
+                  
+              </div>
+          </div>
+        </div>
+
+        
+        
+        <div class="col">
+        </div>
+         
+         
+        
+      
+    </div>
+
+      <h1 id="teaching">Teaching</h1>
+
+      
+
+      
+      
+      <h2>Notes</h2>
+      
+      
+      
+      <div class="row">
+      
+      <div class="col-sm-6">
+          <div class="media">
+            <img class="mr-3 rounded" src="http://csundergrad.science.uoit.ca/courses/cv-notes/thumb.png" alt="Teaching Notes Thumbnail">
+              <div class="media-body">
+                  <h5 class="mt-0"><a href="http://csundergrad.science.uoit.ca/courses/cv-notes/">Computer Vision</a></h5>
+                  
+                  <p>Covers topics discussed in both undergraduate and graduate computer vision courses.</p>
+                  
+              </div>
+          </div>
+      </div>
+      
+      
+      
+      
+      <div class="col-sm-6">
+          <div class="media">
+            <img class="mr-3 rounded" src="http://csundergrad.science.uoit.ca/courses/cpp-notes/thumb.png" alt="Teaching Notes Thumbnail">
+              <div class="media-body">
+                  <h5 class="mt-0"><a href="http://csundergrad.science.uoit.ca/courses/cpp-notes/">Programming in C++</a></h5>
+                  
+                  <p>Covers topics discussed in a first-year C++ programming courses.</p>
+                  
+              </div>
+          </div>
+      </div>
+      
+      </div>
+      <div class="row">
+      
+      
+      
+      
+      <div class="col-sm-6">
+          <div class="media">
+            <img class="mr-3 rounded" src="teaching/python-dev-notes.png" alt="Teaching Notes Thumbnail">
+              <div class="media-body">
+                  <h5 class="mt-0"><a href="https://github.com/faisalqureshi/python-dev-notes">Python Development Notes</a></h5>
+                  
+                  <p>Recipies for using Python for AI and data-science adjacent courses.</p>
+                  
+              </div>
+          </div>
+      </div>
+      
+      
+      
+      
+      <div class="col-sm-6">
+          <div class="media">
+            <img class="mr-3 rounded" src="teaching/pytorch-examples.png" alt="Teaching Notes Thumbnail">
+              <div class="media-body">
+                  <h5 class="mt-0"><a href="https://github.com/faisalqureshi/mnist-experiments">Deep Learning using PyTorch Notes</a></h5>
+                  
+                  <p>Recipes for deep learning development using PyTorch.</p>
+                  
+              </div>
+          </div>
+      </div>
+      
+      </div>
+      <div class="row">
+      
+      
+      
+      
+      <div class="col-sm-6">
+          <div class="media">
+            <img class="mr-3 rounded" src="http://csgrad.science.uoit.ca/courses/ist/thumb.png" alt="Teaching Notes Thumbnail">
+              <div class="media-body">
+                  <h5 class="mt-0"><a href="http://csgrad.science.uoit.ca/courses/ist">CNNs for Object Detection</a></h5>
+                  
+                  <p>Discusses the <i>unreasonable effectiveness of convolutional neural networks for object detection</i>.</p>
+                  
+              </div>
+          </div>
+      </div>
+      
+      
+      
+      
+      <div class="col-sm-6">
+          <div class="media">
+            <img class="mr-3 rounded" src="http://csgrad.science.uoit.ca/courses/ist2/thumb.png" alt="Teaching Notes Thumbnail">
+              <div class="media-body">
+                  <h5 class="mt-0"><a href="http://csgrad.science.uoit.ca/courses/ist2">Deep Learning Primer</a></h5>
+                  
+                  <p>Discusses topics, such as t-SNE, gradient descent, and variational and conditional autoencoders.</p>
+                  
+              </div>
+          </div>
+      </div>
+      
+      </div>
+      <div class="row">
+      
+      
+      
+      
+      <div class="col-sm-6">
+          <div class="media">
+            <img class="mr-3 rounded" src="http://csundergrad.science.uoit.ca/courses/sim-and-modeling-notes/thumb.png" alt="Teaching Notes Thumbnail">
+              <div class="media-body">
+                  <h5 class="mt-0"><a href="http://csundergrad.science.uoit.ca/courses/sim-and-modeling-notes/">Simulation and Modeling</a></h5>
+                  
+                  <p>Discusses topics covered in the undergraduate simulation and modeling course.</p>
+                  
+              </div>
+          </div>
+      </div>
+      
+      
+      
+      <div class="col"></div>
+      
+      </div>
+      
+      
+      
+      
+
+      
+      <h2>Courses</h2>
+      
+      
+
+      
+      
+      <h3>Current</h3>
+      
+      
+      
+      <div class="row">
+      
+      <div class="col-sm-6">
+        <p>CSCI 3240U
+          
+          [<a href="http://csundergrad.science.uoit.ca/courses/csci3240u/latest">Web</a>]
+          
+          <br>Computational Photography
+          
+          <br>
+          <span class="teaching_term">Fall 2024</span>
+          
+          </p>
+      </div>
+      
+      
+      
+      
+      <div class="col-sm-6">
+        <p>CSCI 4440U
+          
+          [<a href="http://csundergrad.science.uoit.ca/courses/csci4440u/latest">Web</a>]
+          
+          <br>Topics in Computer Science 1 (Human Action Recognition)
+          
+          <br>
+          <span class="teaching_term">Fall 2024</span>
+          
+          </p>
+      </div>
+      
+      </div>
+      <div class="row">
+      
+      
+      
+      </div>
+      
+      
+      
+      
+      
+      
+      <h3>Past</h3>
+      
+      
+      
+      <div class="row">
+      
+      <div class="col-sm-6">
+        <p>CSCI 3010U
+          
+          [<a href="http://csundergrad.science.uoit.ca/courses/csci3010u/latest">Web</a>]
+          
+          <br>Simulation and Modeling
+          
+          <br>
+          <span class="teaching_term">Last offered in Winter 2024</span>
+          
+          </p>
+      </div>
+      
+      
+      
+      
+      <div class="col-sm-6">
+        <p>CSCI 4420U
+          
+          [<a href="http://csundergrad.science.uoit.ca/courses/csci4220u/latest">Web</a>]
+          
+          <br>Computer Vision
+          
+          <br>
+          <span class="teaching_term">Last offered in Winter 2024</span>
+          
+          </p>
+      </div>
+      
+      </div>
+      <div class="row">
+      
+      
+      
+      
+      <div class="col-sm-6">
+        <p>CSCI 5770G
+          
+          [<a href="http://csgrad.science.uoit.ca/courses/csci5770g/">Web</a>]
+          
+          <br>Machine Learning (graduate course)
+          
+          <br>
+          <span class="teaching_term">Last offered in Winter 2023</span>
+          
+          </p>
+      </div>
+      
+      
+      
+      
+      <div class="col-sm-6">
+        <p>CSCI 5520G
+          
+          [<a href="http://csgrad.science.uoit.ca/courses/csci5520g/">Web</a>]
+          
+          <br>Computer Vision (graduate course)
+          
+          <br>
+          <span class="teaching_term">Last offered in Fall 2022</span>
+          
+          </p>
+      </div>
+      
+      </div>
+      <div class="row">
+      
+      
+      
+      
+      <div class="col-sm-6">
+        <p>MCSC 6230G/7230G
+          
+          [<a href="http://csgrad.science.uoit.ca/courses/mcsc-ml/">Web</a>]
+          
+          <br>Advanced Topics in High-Performance Computing
+          
+          <br>
+          <span class="teaching_term">Last offered in Fall 2017</span>
+          
+          </p>
+      </div>
+      
+      
+      
+      
+      <div class="col-sm-6">
+        <p>CSCI 1061U
+          
+          [<a href="http://csundergrad.science.uoit.ca/courses/csci1061u/">Web</a>]
+          
+          <br>Programming Workshop II
+          
+          <br>
+          <span class="teaching_term">Last offered in Winter 2021</span>
+          
+          </p>
+      </div>
+      
+      </div>
+      <div class="row">
+      
+      
+      
+      
+      <div class="col-sm-6">
+        <p>CSCI 2050U
+          
+          <br>Computer Architecture
+          
+          </p>
+      </div>
+      
+      
+      
+      
+      <div class="col-sm-6">
+        <p>CSCI 5550G
+          
+          [<a href="http://csgrad.science.uoit.ca/courses/csci5550g-f18/">Web</a>]
+          
+          <br>Topics in Digital Media
+          
+          <br>
+          <span class="teaching_term">Last offered in Fall 2018</span>
+          
+          </p>
+      </div>
+      
+      </div>
+      <div class="row">
+      
+      
+      
+      </div>
+      
+      
+      
+      
+      
+      <h1 id="code">Coding</h1>
+
+      <p>From time to time I find myself compelled to do some coding.  Below I list some open source software that I have written that you may find useful.</p>
+
+      <ul>
+      
+      <li>Webify, a python wrapper around pandoc to generate websites and pdf documents from markdown, yaml and mustache files.
+      
+      <br>
+      
+      [<a href="http://vclab.science.uoit.ca/webify-manual/introduction.html">Web</a>]
+      
+      
+      [<a href="https://github.com/faisalqureshi/webify">Github</a>]
+      
+      
+      
+      <li>Distributed virtual vision simulator
+      
+      <br>
+      
+      [<a href="projects/vvs">Web</a>]
+      
+      
+      [<a href="https://github.com/vclab/virtual-vision-simulator">Github</a>]
+      
+      
+      
+      <li>A python utility to export itunes playlists
+      
+      <br>
+      
+      
+      [<a href="https://github.com/faisalqureshi/itunes-xml-exporter">Github</a>]
+      
+      
+      
+      <li>A python utility for setting captions of images based upon their filenames
+      
+      <br>
+      
+      
+      [<a href="https://github.com/faisalqureshi/pictools">Github</a>]
+      
+      
+      
+      </ul>
+
+      <h1 id="publications">Publications</h1>
+
+      <div class="publications" style="margin-left: 25px; margin-right: 25px;">
+        <div class="row">
+                <script src="https://bibbase.org/show?bib=http%3A%2F%2Fvclab.science.uoit.ca%2Ffaisal-qureshi.bib&jsonp=1&css=bibbase.org/css/styles/default.css"></script>
+        </div>
+      </div>
+
+      <div class="footer">
+  <hr>  
+  <div class="row">
+    <div class="col">
+      <img src="imgs/vclab-ontariotech-56.png">
+    </div>
+    <div class="col">
+      &copy; Faisal Qureshi<br>
+      Last updated 2024-12-31 18:02<br>
+      &copy; Webify 4.1
+    </div>
+  </div>
+</div>
+      
+    </div>
   </body>
 </html>
