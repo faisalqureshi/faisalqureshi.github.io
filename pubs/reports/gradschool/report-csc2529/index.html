@@ -1,0 +1,845 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="Author" CONTENT="Faisal Zubair Qureshi">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (X11; U; SunOS 5.4 sun4m) [Netscape]">
+   <TITLE>CSC2529 Project Document: Faisal Zubair Qureshi</TITLE>
+<meta name="Microsoft Theme" content="strtedge 111, default">
+</HEAD>
+<BODY text="#000000" bgcolor="#999966" link="#003399" vlink="#660000" alink="#666666" background="../../_themes/strtedge/strbkgde.gif"><!--mstheme--><font face="Arial, Helvetica">
+
+<CENTER>
+<H1><!--mstheme--><font color="#003366">
+<I><FONT FACE="Times New Roman,Times"><FONT SIZE=+4><FONT COLOR="#33CCFF">Approximate
+Dynamics&nbsp;
+<!--msthemeseparator--><p align="center"><img src="../../_themes/strtedge/strrulee.gif" width="600" height="10"></p></FONT><FONT COLOR="#CC0000">Project CSC 2529</FONT></FONT></FONT></I><!--mstheme--></font></H1></CENTER>
+
+<CENTER><I><FONT FACE="Times New Roman,Times"><FONT COLOR="#33CCFF"><FONT SIZE=+4>Computer
+Animation.</FONT></FONT></FONT></I></CENTER>
+
+<CENTER><FONT FACE="Times New Roman,Times"><FONT SIZE=+4><I><FONT COLOR="#33CCFF">Michiel
+van de Panne</FONT></I>&nbsp;&nbsp;</FONT></FONT>
+<!--msthemeseparator--><p align="center"><img src="../../_themes/strtedge/strrulee.gif" width="600" height="10"></p></CENTER>
+
+<CENTER><I><FONT FACE="Times New Roman,Times"><FONT SIZE=+4><FONT COLOR="#3366FF">submitted
+by </FONT><FONT COLOR="#000099">Faisal Zubair Qureshi</FONT><FONT COLOR="#3366FF">
+on Friday 16th 98.</FONT></FONT></FONT></I></CENTER>
+
+<CENTER>
+<!--msthemeseparator--><p align="center"><img src="../../_themes/strtedge/strrulee.gif" width="600" height="10"></p></CENTER>
+
+<H2><!--mstheme--><font color="#003366">
+<FONT FACE="Courier New,Courier"><FONT SIZE=+1>Introduction</FONT></FONT><!--mstheme--></font></H2>
+
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%"><FONT FACE="Courier New,Courier"><FONT SIZE=+1>Dynamics have a major
+role in virtual characters and robots. Most often dynamics calculations
+are very costly in terms of cpu time since they usually involve solving
+a large system of linear equations. And what makes matters worse is that
+they can not be computed off line and mostly they have to be computed in
+real time. We would like to have a system in which we do not have to compute
+dynamics at every instance of time. In this project I have put forward
+a strategy, implementing which, we do not need to compute dynamics at every
+time step. I have also implemented the algorithm on luxo as a test case
+(the source code of luxo was provided by Micheal Van de Panne). The performance
+of this algorithm is highly problem dependent. It can be optimized for
+a given character for a given set of motion trajectories.</FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1>I have tried to take
+advantage of redundancy in motion. Imagine a man standing and then he starts
+walking (he takes one step and then another and so on). The following figure
+illustrates this.</FONT></FONT><!--msthemelist--></table><!--mstheme--><font face="Arial, Helvetica">
+
+<CENTER><FONT FACE="Courier New,Courier"><FONT SIZE=+1></FONT></FONT></CENTER>
+
+<CENTER><IMG SRC="phase.jpg" HSPACE=10 VSPACE=10 BORDER=2 HEIGHT=249 WIDTH=535></CENTER>
+
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%"><FONT FACE="Courier New,Courier"><FONT SIZE=+1>As you can see that
+the dynamics of the first three phases are radically different from each
+other but the dynamics of phase 4 is similar to that of 2. If we can tolerate
+errors it is better not to compute dynamics again at phase 4 rather we
+can substitute the the results from phase 2. By doing so we may introduce
+some error but we will save some time as well. As our system grows more
+and more complex, the improvement in performance will be both desired and
+significant. There are some issues like how should we save the results
+of dynamics for a phase and most important how can we decide that two phases
+are similar and that if we substitute the results of dynamics from one
+phase for the other the error will be reasonably low.</FONT></FONT>
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%"><FONT FACE="Courier New,Courier"><FONT SIZE=+1>&nbsp;</FONT></FONT><!--msthemelist--></table><!--mstheme--><font face="Arial, Helvetica">
+<FONT FACE="Courier New,Courier"><FONT SIZE=+1>I have tried to investigate
+these questions I ended up with few answers and even more questions.</FONT></FONT><!--msthemelist--></table><!--mstheme--><font face="Arial, Helvetica">
+
+<H1><!--mstheme--><font color="#003366">
+<FONT FACE="Courier New,Courier"><FONT SIZE=+1>Algorithm</FONT></FONT><!--mstheme--></font></H1>
+
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<H1><!--mstheme--><font color="#003366">
+<FONT FACE="Courier New,Courier"><FONT SIZE=+1>Dynamics</FONT></FONT><!--mstheme--></font></H1>
+<FONT FACE="Courier New,Courier"><FONT SIZE=+1>Dynamics is used to compute
+the accelerations of the body given the current state and the forces acting
+on the body. The forces can be internal (like body joint's torque) or external
+(like gravity or friction). More specifically Newton-Euler equations and
+constraint equations are used to come up with a system of the form:</FONT></FONT>
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%"><FONT FACE="Courier New,Courier"><FONT SIZE=+1>A x = b</FONT></FONT><!--msthemelist--></table><!--mstheme--><font face="Arial, Helvetica">
+<!--msthemelist--></table><!--mstheme--><font face="Arial, Helvetica">
+<!--msthemelist--></table><!--mstheme--><font face="Arial, Helvetica">
+<!--msthemelist--></table><!--mstheme--><font face="Arial, Helvetica">
+<FONT FACE="Courier New,Courier"><FONT SIZE=+1>Matrix A can be either sparse
+or dense, depending upon the state representation of the system (minimum
+-> dense, maximum -> sparse). Solving this system of equations gives us
+accelerations. For luxo A is a 5x5 dense matrix.</FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1>At every time step state
+of the body and the forces acting on the body (both internal and external)
+are fed to the dynamics module of the system. The dynamic's module then
+calculates the different accelerations of the body. Figure illustrates
+this:</FONT></FONT><!--msthemelist--></table><!--mstheme--><font face="Arial, Helvetica">
+
+<CENTER><IMG SRC="dyn.jpg" HSPACE=10 VSPACE=10 BORDER=2 HEIGHT=237 WIDTH=494></CENTER>
+
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<H1><!--mstheme--><font color="#003366">
+<FONT FACE="Courier New,Courier"><FONT SIZE=+1>Approximate Dynamics</FONT></FONT><!--mstheme--></font></H1>
+<FONT FACE="Courier New,Courier"><FONT SIZE=+1>What I purpose is to have
+a look-up table. For each time step instead of calling dynamic's routine,
+the system tries to get accelerations from the look-up table. If it could
+find an acceptable acceleration vector with in the look-up table it uses
+that vector to update the state using integration and if not, it calls
+the dynamic's procedure to compute accelerations. It then put the accelerations
+computed by the dynamic's procedure in to the look-up table and also uses
+them to update the state of the system.</FONT></FONT><FONT FACE="Courier New,Courier"><FONT SIZE=+1></FONT></FONT>
+
+<P><FONT FACE="Courier New,Courier"><FONT SIZE=+1>The block diagram representation
+of the algorithm is given in the following figure.</FONT></FONT><!--msthemelist--></table><!--mstheme--><font face="Arial, Helvetica">
+
+<CENTER><A HREF="flow.jpg"><IMG SRC="flow.jpg" HSPACE=10 VSPACE=10 BORDER=2 HEIGHT=40% WIDTH=40%></A></CENTER>
+
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%"><FONT FACE="Courier New,Courier"><FONT SIZE=+1>The main attraction
+of this algorithm is its simplicity. We can not afford to have a complex
+algorithm since it will take a lot of cpu time and thus it will defeat
+its own purpose. Needless to say that if this algorithm takes longer than
+calling the actual dynamics procedure it is no good. There are several
+things to be kept in mind about the algorithm e.g., design of look-up table,
+what do I mean by acceptable accelerations?, how can we define that two
+phases are similar?, searching the look-up table etc. The design of the
+look-up table is highly problem dependent so I will leave this discussion
+here and jump directly to the implementation. Things will become clear
+as I move along. Look-up table is in fact mapping complete state of the
+system to accelerations. (By complete state I mean state of the system
+- joint angles etc., plus internal torques and external forces). I would
+also like you to appreciate that it is a highly non-linear mapping.</FONT></FONT><!--msthemelist--></table><!--mstheme--><font face="Arial, Helvetica">
+
+<H1><!--mstheme--><font color="#003366">
+<FONT FACE="Courier New,Courier"><FONT SIZE=+1>Luxo</FONT></FONT><!--mstheme--></font></H1>
+
+<CENTER><IMG SRC="luxo.jpg" HSPACE=10 VSPACE=10 BORDER=2 HEIGHT=324 WIDTH=284></CENTER>
+
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<H1><!--mstheme--><font color="#003366">
+<FONT FACE="Courier New,Courier"><FONT SIZE=+1>State Representation</FONT></FONT><!--mstheme--></font></H1>
+<FONT FACE="Courier New,Courier"><FONT SIZE=+1>Luxo is 2D character, it
+lies in a 2D world. It uses the minimal state representation. x and y represent
+the position of luxo. Q1 represents the angle between the base and the
+global x-axis. Q2 represents the angle between the base and the link 1
+and Q3 represents the angle between the link 1 and link 2. So the state
+vector of luxo is:</FONT></FONT><!--msthemelist--></table><!--mstheme--><font face="Arial, Helvetica">
+
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%"><FONT FACE="Courier New,Courier"><FONT SIZE=+1>[x, y, Q1, Q2, Q3, dx,
+dy, dQ1, dQ2, dQ3]</FONT></FONT><!--msthemelist--></table><!--mstheme--><font face="Arial, Helvetica">
+<!--msthemelist--></table><!--mstheme--><font face="Arial, Helvetica">
+<!--msthemelist--></table><!--mstheme--><font face="Arial, Helvetica">
+<!--msthemelist--></table><!--mstheme--><font face="Arial, Helvetica">
+
+<H1><!--mstheme--><font color="#003366">
+<FONT FACE="Courier New,Courier"><FONT SIZE=+1>Internal Torques</FONT></FONT><!--mstheme--></font></H1>
+<FONT FACE="Courier New,Courier"><FONT SIZE=+1>Luxo is capable of exerting
+torques about the joints A and B. Luxo is an active character. By controlling
+these torques, luxo can move around, hop, perform somersault etc.</FONT></FONT>
+<H1><!--mstheme--><font color="#003366">
+<FONT FACE="Courier New,Courier"><FONT SIZE=+1>External Forces</FONT></FONT><!--mstheme--></font></H1>
+<FONT FACE="Courier New,Courier"><FONT SIZE=+1>Luxo also interacts with
+the outer world like the terrain. This interaction gives rise to external
+forces. For the sake of simplicity, monitor points are defined. At every
+instance in time an external force is calculated at each monitor point.
+Since luxo is in two dimension so each force has two components. In this
+implementation seven monitor points are defined so we have seven forces
+with two components each.</FONT></FONT><FONT FACE="Courier New,Courier"><FONT SIZE=+1></FONT></FONT>
+
+<P><FONT FACE="Courier New,Courier"><FONT SIZE=+1>Thus the complete state
+is a vector of the form:</FONT></FONT>
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%"><FONT FACE="Courier New,Courier"><FONT SIZE=+1>[ State, Internal Torques,
+External Forces ].</FONT></FONT><!--msthemelist--></table><!--mstheme--><font face="Arial, Helvetica">
+<!--msthemelist--></table><!--mstheme--><font face="Arial, Helvetica">
+<!--msthemelist--></table><!--mstheme--><font face="Arial, Helvetica">
+<!--msthemelist--></table><!--mstheme--><font face="Arial, Helvetica">
+<!--msthemelist--></table><!--mstheme--><font face="Arial, Helvetica">
+
+<H1><!--mstheme--><font color="#003366">
+<FONT FACE="Courier New,Courier"><FONT SIZE=+1>Implementation of Approximate
+Dynamics</FONT></FONT><!--mstheme--></font></H1>
+
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%"><FONT FACE="Courier New,Courier"><FONT SIZE=+1>At each time step the
+current state (6 parameters - since x, y and dx, dy are not used in the
+dynamic's procedure), the external forces (14 parameters) and the internal
+torques (3 parameters) are fed to the dynamics module of luxo. This dynamics
+module <I>dyn_luxo()</I> computes the five accelerations (d2x, d2y, d2Q1,
+d2Q2, d2Q3). These accelerations are then use by the integration module
+which updates the state of the luxo. In case of luxo the complete state
+vector of luxo has the following form:</FONT></FONT>
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%"><FONT FACE="Courier New,Courier"><FONT SIZE=+1>[ Q1, dQ1, Q2, dQ2,
+Q3, dQ3, Ta, Tb, Tc, Forces(1:14) ]*</FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1>&nbsp;</FONT></FONT><!--msthemelist--></table><!--mstheme--><font face="Arial, Helvetica">
+<!--msthemelist--></table><!--mstheme--><font face="Arial, Helvetica">
+<!--msthemelist--></table><!--mstheme--><font face="Arial, Helvetica">
+<!--msthemelist--></table><!--mstheme--><font face="Arial, Helvetica">
+<FONT FACE="Courier New,Courier"><FONT SIZE=+1>* because dynamic's procedure
+does not use x, y, dx, dy.</FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1>&nbsp; Ta &amp; Tb are
+internal torques, Tc = 0 (always).</FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1>&nbsp; Forces(1:14)
+= 7 forces at seven monitor points with two components each.</FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1>&nbsp; length of state
+vector = 23.</FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1>&nbsp;</FONT></FONT>
+<H1><!--mstheme--><font color="#003366">
+<FONT FACE="Courier New,Courier"><FONT SIZE=+1>Design of Look-up table</FONT></FONT><!--mstheme--></font></H1>
+<FONT FACE="Courier New,Courier"><FONT SIZE=+1>The first 23 columns of
+the look-up table hold the complete state vector where as the last 5 columns
+hold the values of corresponding accelerations as computed from the <I>dyn_luxo()</I>.
+Three variables are associated with the look-up table <I>'ent_lut'</I>,
+<I>'current_read'</I> and the <I>'current_index'</I>. The first one represents
+the total number of filled rows in the look-up table. 'current_read' points
+to the row most likely to satisfy the acceptability criteria where as the
+last one points to the next row to be filled in. The current size is hundred
+but then again the size of look table can be optimized for a given motion
+trajectory.</FONT></FONT>
+<H1><!--mstheme--><font color="#003366">
+<FONT FACE="Courier New,Courier"><FONT SIZE=+1>Searching</FONT></FONT><!--mstheme--></font></H1>
+<FONT FACE="Courier New,Courier"><FONT SIZE=+1>The first 23 entries of
+each row are compared to the current complete state vector. Accelerations
+are chosen from a row which best satisfies some criteria. This criterion
+is not trivial to choose. I have experimented with different criteria's
+and I will talk about them later. The functions <I>get_acc()</I>, searches
+the look-up table and if any row satisfies the criteria, this function
+returns the accelerations and also flags a hit. Since <I>'current_read'</I>
+points to the row most likely to satisfy the acceptability criteria so
+<I>get_acc()</I> first checks the row pointed to by <I>'current_read'</I>.
+get_acc() uses the procedure criteria() which implements the user defined
+criterion that two phases are so close to one and other that accelerations
+from one can be used for the other.</FONT></FONT>
+<H1><!--mstheme--><font color="#003366">
+<FONT FACE="Courier New,Courier"><FONT SIZE=+1>Filling</FONT></FONT><!--mstheme--></font></H1>
+<FONT FACE="Courier New,Courier"><FONT SIZE=+1>If <I>get_acc()</I> flags
+a miss, <I>dyn_luxo()</I> is called and the accelerations computed by <I>dyn_luxo()</I>
+are put in the look-up table in the row pointed to by <I>'current_index'</I>.
+Routine <I>put_lut()</I> performs this task.</FONT></FONT>
+<H1><!--mstheme--><font color="#003366">
+<FONT FACE="Courier New,Courier"><FONT SIZE=+1>Approximate Dynamics</FONT></FONT><!--mstheme--></font></H1>
+<FONT FACE="Courier New,Courier"><FONT SIZE=+1>The integration of this
+algorithm with the existing luxo code was simple. I just call function
+<I>approx_dyn()</I> in place of the original <I>dyn_luxo()</I> procedure.
+<I>approx_dyn()</I> uses the routines <I>get_acc()</I>, <I>put_lut()</I>
+and <I>dyn_luxo()</I> to implements this algorithm. Every other thing remains
+unchanged. The arguments of <I>approx_luxo()</I> are same as that of <I>dyn_luxo()</I>.</FONT></FONT><!--msthemelist--></table><!--mstheme--><font face="Arial, Helvetica">
+
+<H1><!--mstheme--><font color="#003366">
+<A NAME="Code"></A><FONT FACE="Courier New,Courier"><FONT SIZE=+1>Code</FONT></FONT><!--mstheme--></font></H1>
+
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%"><FONT FACE="Courier New,Courier"><FONT SIZE=+1>Here is the code. Following
+links will take you the code. ( The code is supposed to be self explanatory.
+)</FONT></FONT><!--msthemelist--></table><!--mstheme--><font face="Arial, Helvetica">
+
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/strtedge/strbul2e.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Helvetica">
+<I><FONT FACE="Courier New,Courier"><FONT SIZE=+1><A HREF="#Variables">Variables</A></FONT></FONT></I><!--mstheme--></font><!--msthemelist--></td></tr>
+
+<!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/strtedge/strbul2e.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Helvetica">
+<B><FONT FACE="Courier New,Courier"><FONT SIZE=+1><A HREF="tol.txt">tol.txt</A>
+(File contains the threshold values for different elements)</FONT></FONT></B><!--mstheme--></font><!--msthemelist--></td></tr>
+
+<!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/strtedge/strbul2e.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Helvetica">
+<I><FONT FACE="Courier New,Courier"><FONT SIZE=+1><A HREF="#approx_dyn">approx_dyn()</A></FONT></FONT></I><!--mstheme--></font><!--msthemelist--></td></tr>
+
+<!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/strtedge/strbul2e.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Helvetica">
+<I><FONT FACE="Courier New,Courier"><FONT SIZE=+1><A HREF="#get_acc">get_acc()</A></FONT></FONT></I><!--mstheme--></font><!--msthemelist--></td></tr>
+
+<!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/strtedge/strbul2e.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Helvetica">
+<I><FONT FACE="Courier New,Courier"><FONT SIZE=+1><A HREF="#put_lut">put_lut()</A></FONT></FONT></I><!--mstheme--></font><!--msthemelist--></td></tr>
+
+<!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/strtedge/strbul2e.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Helvetica">
+<I><FONT FACE="Courier New,Courier"><FONT SIZE=+1><A HREF="#criterion">criterion()</A></FONT></FONT></I><!--mstheme--></font><!--msthemelist--></td></tr>
+
+<!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/strtedge/strbul2e.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Helvetica">
+<B><FONT FACE="Courier New,Courier"><FONT SIZE=+1><A HREF="approx_dyn.c">approx_dyn.c</A></FONT></FONT></B><!--mstheme--></font><!--msthemelist--></td></tr>
+<!--msthemelist--></table><!--mstheme--><font face="Arial, Helvetica">
+<!--msthemelist--></table><!--mstheme--><font face="Arial, Helvetica">
+
+<H1><!--mstheme--><font color="#003366">
+<FONT FACE="Courier New,Courier"><FONT SIZE=+1>Feel the difference</FONT></FONT><!--mstheme--></font></H1>
+
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%"><FONT FACE="Courier New,Courier"><FONT SIZE=+1>Here is the ultimate
+test of the algorithm. You can down load the two executable files by clicking
+the following links. The first executable uses the actual dynamics routine
+to compute accelerations where as the second uses this algorithm to compute
+accelerations. At the end the program will display total number of iterations,
+number of hits and percentage hit ratio.</FONT></FONT>
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/strtedge/strbul2e.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Helvetica">
+<FONT FACE="Courier New,Courier"><FONT SIZE=+1><B><A HREF="mmc.tar.gz">executable
+1</A></B> (uses <I>dyn_luxo()</I>)</FONT></FONT><!--mstheme--></font><!--msthemelist--></td></tr>
+
+<!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/strtedge/strbul2e.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Helvetica">
+<FONT FACE="Courier New,Courier"><FONT SIZE=+1><B><A HREF="approx.tar.gz">executable
+2</A></B> (uses <I>approx_dyn()</I>)</FONT></FONT><!--mstheme--></font><!--msthemelist--></td></tr>
+<!--msthemelist--></table><!--mstheme--><font face="Arial, Helvetica">
+<!--msthemelist--></table><!--mstheme--><font face="Arial, Helvetica">
+
+<H1><!--mstheme--><font color="#003366">
+<FONT FACE="Courier New,Courier"><FONT SIZE=+1>Criterion</FONT></FONT><!--mstheme--></font></H1>
+
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%"><FONT FACE="Courier New,Courier"><FONT SIZE=+1>The most difficult part
+of the project was to come up with a reasonable acceptability criteria.
+This criteria is used to see how close the two phases of luxo are. And
+if they are close enough, we can substitute the values of acceleration
+from one phase in the other phase. I experimented with many different ways
+of judging this closeness. Mathematically we are trying to see the closeness
+of two vectors in 23 dimensional hyper space. The most intuitive criteria
+was the Euclidean distance. It was rejected mainly because it was inefficient
+to compute (in our case it requires 23 squares and 1 square root). The
+other choice I had was 1 norm, it was faster to compute than the euclidean
+distance since it only involves additions and subtractions, but experimentally
+I observed that the performance of this norm was not good. The main problem
+was with the choice of threshold. If threshold was large, the error was
+un-acceptable. Where as, if threshold is small the number of hits reduced
+significantly. Therefore, it was also rejected.</FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1>Experimentally, it was
+seen that we can not treat all the elements of complete state vector equally.
+They have different range of values and each of them describe different
+physical phenomenon. Both the euclidean distance and the 1 norm implicitly
+treat them identically. So I thought that it would be better to treat them
+differently. By trial and error and by experimentation I choose some threshold
+values of different elements. These threshold values are stored in file
+<B>tol.txt</B>. The program reads these values from these files and used
+them. If the absolute distance between any of the element in the two (23
+dimensional) vectors is greater than the corresponding</FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1>threshold value for
+that element, the criteria rejects the two vectors.</FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1>By no means these threshold
+values are ideal. One can optimize these threshold values for a given set
+of motion trajectories. One general rule is: a small threshold value results
+in small number of hits where as a large threshold represents greater error
+and large number of hits. When I speak of error, I mean error between the
+actual value of acceleration (as computed from dyn_luxo()) and that of
+retrieved from the look-up table.</FONT></FONT><!--msthemelist--></table><!--mstheme--><font face="Arial, Helvetica">
+
+<H1><!--mstheme--><font color="#003366">
+<FONT FACE="Courier New,Courier"><FONT SIZE=+1>Results</FONT></FONT><!--mstheme--></font></H1>
+
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%"><FONT FACE="Courier New,Courier"><FONT SIZE=+1>Now I will put forward
+some results and I will try to explain them. I will also point out some
+strategies by which we can further improve result. The following figure
+represents the plot of the actual x (state) variable of luxo and the approximated
+x variables of the luxo. As you can see that the error is pretty small.</FONT></FONT>
+<CENTER><FONT FACE="Courier New,Courier"><FONT SIZE=+1>Figure 1 [Case 1:
+State errors]</FONT></FONT></CENTER>
+
+<CENTER><A HREF="c2.jpg"><IMG SRC="c2.jpg" HSPACE=10 VSPACE=10 BORDER=2 HEIGHT=40% WIDTH=40% ALIGN=TEXTTOP></A></CENTER>
+
+<CENTER><FONT FACE="Courier New,Courier"><FONT SIZE=+1>&nbsp;</FONT></FONT></CENTER>
+<FONT FACE="Courier New,Courier"><FONT SIZE=+1>The settings when this graph
+was obtained were: (Simulation Time = 5 second)</FONT></FONT>
+<!--mstheme--></font><TABLE BORDER COLS=5 WIDTH="100%" NOSAVE >
+<TR>
+<TD><!--mstheme--><font face="Arial, Helvetica">
+<CENTER><FONT FACE="Courier New,Courier"><FONT SIZE=+1>Case Number</FONT></FONT></CENTER>
+<!--mstheme--></font></TD>
+
+<TD><!--mstheme--><font face="Arial, Helvetica">
+<CENTER><FONT FACE="Courier New,Courier"><FONT SIZE=+1>Total Iterations</FONT></FONT></CENTER>
+<!--mstheme--></font></TD>
+
+<TD><!--mstheme--><font face="Arial, Helvetica">
+<CENTER><FONT FACE="Courier New,Courier"><FONT SIZE=+1>Hits</FONT></FONT></CENTER>
+<!--mstheme--></font></TD>
+
+<TD><!--mstheme--><font face="Arial, Helvetica">
+<CENTER><FONT FACE="Courier New,Courier"><FONT SIZE=+1>Percentage Hits</FONT></FONT></CENTER>
+<!--mstheme--></font></TD>
+
+<TD><!--mstheme--><font face="Arial, Helvetica">
+<CENTER><FONT FACE="Courier New,Courier"><FONT SIZE=+1>DTSim</FONT></FONT></CENTER>
+<!--mstheme--></font></TD>
+</TR>
+
+<TR>
+<TD><!--mstheme--><font face="Arial, Helvetica">
+<CENTER><FONT FACE="Courier New,Courier"><FONT SIZE=+1>1</FONT></FONT></CENTER>
+<!--mstheme--></font></TD>
+
+<TD><!--mstheme--><font face="Arial, Helvetica">
+<CENTER><FONT FACE="Courier New,Courier"><FONT SIZE=+1>50005</FONT></FONT></CENTER>
+<!--mstheme--></font></TD>
+
+<TD><!--mstheme--><font face="Arial, Helvetica">
+<CENTER><FONT FACE="Courier New,Courier"><FONT SIZE=+1>47965</FONT></FONT></CENTER>
+<!--mstheme--></font></TD>
+
+<TD><!--mstheme--><font face="Arial, Helvetica">
+<CENTER><FONT FACE="Courier New,Courier"><FONT SIZE=+1>95.9204%</FONT></FONT></CENTER>
+<!--mstheme--></font></TD>
+
+<TD><!--mstheme--><font face="Arial, Helvetica">
+<CENTER><FONT FACE="Courier New,Courier"><FONT SIZE=+1>0.0001</FONT></FONT></CENTER>
+<!--mstheme--></font></TD>
+</TR>
+</TABLE><!--mstheme--><font face="Arial, Helvetica">
+<FONT FACE="Courier New,Courier"><FONT SIZE=+1>&nbsp; The above is an extremely
+good hit ratio. And it is not often that one gets such a high hit ratio.
+The reason for such a high hit ratio was that the torques where created
+by a periodic function and luxo never left the ground. In a more realistic
+scenario you can have same sort of errors but the hit ratio will be down
+to 40 of 30 percent. In case when luxo's motion is controlled by hand using
+the mouse, the hit ratio is further reduced to 15% (Well that is bad).
+If you see the plot of acceleration error, you will observe that the acceleration
+error is significantly higher than the state error. That is bad news. But
+the good news is that in spite of having a large acceleration error, the
+state error is relatively small. In a moment I will discuss the cause of
+this behavior. Following figure gives the acceleration errors.</FONT></FONT>
+<CENTER><FONT FACE="Courier New,Courier"><FONT SIZE=+1>Figure 2 [Case 1:
+Acceleration errors]</FONT></FONT></CENTER>
+
+<CENTER><A HREF="c4.jpg"><IMG SRC="c4.jpg" HSPACE=10 VSPACE=10 BORDER=2 HEIGHT=40% WIDTH=40%></A></CENTER>
+
+<H1><!--mstheme--><font color="#003366">
+<FONT FACE="Courier New,Courier"><FONT SIZE=+1>Good News</FONT></FONT><!--mstheme--></font></H1>
+<FONT FACE="Courier New,Courier"><FONT SIZE=+1>The good news is that we
+can have large acceleration errors, but still we have nice little state
+errors. This is very logical. If we closely observes the integration module,
+we will see that:</FONT></FONT>
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%"><I><FONT FACE="Courier New,Courier"><FONT SIZE=+1>x_new = x_old + dx_old
+* Dtsim + acc_new * t * t / 2, and</FONT></FONT></I><FONT FACE="Courier New,Courier"><FONT SIZE=+1></FONT></FONT>
+<BR><I><FONT FACE="Courier New,Courier"><FONT SIZE=+1>dx_new = dx_old +
+acc_new * Dtsim.</FONT></FONT></I><!--msthemelist--></table><!--mstheme--><font face="Arial, Helvetica">
+<!--msthemelist--></table><!--mstheme--><font face="Arial, Helvetica">
+<!--msthemelist--></table><!--mstheme--><font face="Arial, Helvetica">
+<FONT FACE="Courier New,Courier"><FONT SIZE=+1>The above two equations
+say it all. Even if the acceleration error is large, it does not affect
+the state that badly since it is multiplied by Dtsim which is a very small
+value. It also suggests us a way of improving the performance: Reduce Dtsim.
+Another advantage of a small DTsim will be increased number of hits. Since
+in a small time the change in the phase of the system will not be too large
+so the acceleration from one phase can be substituted for the other phase.
+To prove what I have said, I am presenting two other figures. The first
+figure is the state error where as the second figure shows a plot of acceleration
+errors. Everything was same except that the Dtsim in this case was increased
+from 0.0001 to 0.0005.</FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1>&nbsp;</FONT></FONT>
+<CENTER><FONT FACE="Courier New,Courier"><FONT SIZE=+1>Figure 3 [Case 2:
+State errors]</FONT></FONT></CENTER>
+<!--msthemelist--></table><!--mstheme--><font face="Arial, Helvetica">
+
+<CENTER><A HREF="c1.jpg"><IMG SRC="c1.jpg" HSPACE=10 VSPACE=10 BORDER=2 HEIGHT=40% WIDTH=40%></A></CENTER>
+
+<CENTER><FONT FACE="Courier New,Courier"><FONT SIZE=+1></FONT></FONT></CENTER>
+
+<CENTER><FONT FACE="Courier New,Courier"><FONT SIZE=+1>Figure 4 [Case 2:
+Acceleration errors]</FONT></FONT></CENTER>
+
+<CENTER><A HREF="c3.jpg"><IMG SRC="c3.jpg" HSPACE=10 VSPACE=10 BORDER=2 HEIGHT=40% WIDTH=40%></A></CENTER>
+
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%"><FONT FACE="Courier New,Courier"><FONT SIZE=+1>The settings for above
+figures (3,4) were: (Simulation time = 5 sec)</FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1>&nbsp;</FONT></FONT>
+<!--mstheme--></font><TABLE BORDER COLS=4 WIDTH="100%" NOSAVE >
+<TR>
+<TD><!--mstheme--><font face="Arial, Helvetica">
+<CENTER><FONT FACE="Courier New,Courier"><FONT SIZE=+1>Iterations</FONT></FONT></CENTER>
+<!--mstheme--></font></TD>
+
+<TD><!--mstheme--><font face="Arial, Helvetica">
+<CENTER><FONT FACE="Courier New,Courier"><FONT SIZE=+1>Hits</FONT></FONT></CENTER>
+<!--mstheme--></font></TD>
+
+<TD><!--mstheme--><font face="Arial, Helvetica">
+<CENTER><FONT FACE="Courier New,Courier"><FONT SIZE=+1>Percentage Hits</FONT></FONT></CENTER>
+<!--mstheme--></font></TD>
+
+<TD><!--mstheme--><font face="Arial, Helvetica">
+<CENTER><FONT FACE="Courier New,Courier"><FONT SIZE=+1>DtSim</FONT></FONT></CENTER>
+<!--mstheme--></font></TD>
+</TR>
+
+<TR>
+<TD><!--mstheme--><font face="Arial, Helvetica">
+<CENTER><FONT FACE="Courier New,Courier"><FONT SIZE=+1>10000</FONT></FONT></CENTER>
+<!--mstheme--></font></TD>
+
+<TD><!--mstheme--><font face="Arial, Helvetica">
+<CENTER><FONT FACE="Courier New,Courier"><FONT SIZE=+1>7718</FONT></FONT></CENTER>
+<!--mstheme--></font></TD>
+
+<TD><!--mstheme--><font face="Arial, Helvetica">
+<CENTER><FONT FACE="Courier New,Courier"><FONT SIZE=+1>77.18%</FONT></FONT></CENTER>
+<!--mstheme--></font></TD>
+
+<TD><!--mstheme--><font face="Arial, Helvetica">
+<CENTER><FONT FACE="Courier New,Courier"><FONT SIZE=+1>0.0005</FONT></FONT></CENTER>
+<!--mstheme--></font></TD>
+</TR>
+</TABLE><!--mstheme--><font face="Arial, Helvetica">
+<FONT FACE="Courier New,Courier"><FONT SIZE=+1>Thus it is clear that increasing
+Dtsim not only increase the acceleration and state errors but also reduces
+the number of hits. Both of these things are unwanted. Here, I would also
+like to mention reducing DTsim also increases performance in case of actual
+dynamics as well.</FONT></FONT><!--msthemelist--></table><!--mstheme--><font face="Arial, Helvetica">
+
+<H1><!--mstheme--><font color="#003366">
+<FONT FACE="Courier New,Courier"><FONT SIZE=+1>Is this faster?</FONT></FONT><!--mstheme--></font></H1>
+
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%"><FONT FACE="Courier New,Courier"><FONT SIZE=+1>Well...the most important
+thing is, is this algorithm faster than actually computing dynamics at
+each time step. I really don't know. Due to time constraints I could not
+profile the whole system. But the following relation can be used to see
+how efficient or for that matter how inefficient the system is.</FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1>T_d = time taken by
+dyn_luxo(),</FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1>T_s = time taken by
+get_acc(),</FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1>T_f = time taken by
+put_lut().</FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1>If we run the system
+for n iterations and we acquire p percent hit ratio. Than if</FONT></FONT>
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%"><I><FONT FACE="Courier New,Courier"><FONT SIZE=+1>n*T_d*100 > p*n*T_s
++ (100-p)*n*(T_s+T_d+T_f)</FONT></FONT></I><FONT FACE="Courier New,Courier"><FONT SIZE=+1>,
+is true. we have won.</FONT></FONT><!--msthemelist--></table><!--mstheme--><font face="Arial, Helvetica">
+<!--msthemelist--></table><!--mstheme--><font face="Arial, Helvetica">
+<!--msthemelist--></table><!--mstheme--><font face="Arial, Helvetica">
+<FONT FACE="Courier New,Courier"><FONT SIZE=+1>The above relation shows
+that to improve the performance of this algorithm we need to increase p,
+and decrease T_s and T_f. Now, here is a contradiction. we can increase
+p by increasing the size of the look-up table but than T_s will also increase.
+Therefore, we have to balance all the parameters. In this implementation
+the size of look-up table (number of rows in the look-up table) is 100.
+I experimented with different sizes. I found 100 to be reasonable. Here,
+I would again mention that like threshold, it is by no way ideal and size
+of the look-up table can be optimized for a given set of motion trajectories.</FONT></FONT><!--msthemelist--></table><!--mstheme--><font face="Arial, Helvetica">
+
+<H1><!--mstheme--><font color="#003366">
+<FONT FACE="Courier New,Courier"><FONT SIZE=+1>DrawBacks</FONT></FONT><!--mstheme--></font></H1>
+
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%"><FONT FACE="Courier New,Courier"><FONT SIZE=+1>The biggest drawback
+of this algorithm is that it is difficult to say with certainty about its
+performance. We can speak probabilistically. It might turn out that for
+a certain state space trajectory it is slower than the actual dynamics.
+But those instances will be rare. Since at times the acceleration errors
+are high, it is better not to use in robotics where accuracy is crucial
+i.e., it should not be used in scenario where error tolerance is low. But
+I think that for animation purposes it is ok.</FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1>Another thing that limits
+its application is that for a simple 2D creature like luxo the complete
+state vector has 23 elements. Imagine the size of state vector in case
+of a 3D human. The size will just explode.</FONT></FONT><!--msthemelist--></table><!--mstheme--><font face="Arial, Helvetica">
+
+<H1><!--mstheme--><font color="#003366">
+<FONT FACE="Courier New,Courier"><FONT SIZE=+1>Suggestions</FONT></FONT><!--mstheme--></font></H1>
+
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<OL>
+<LI>
+<FONT FACE="Courier New,Courier"><FONT SIZE=+1>Instead of specifying fixed
+threshold system, let the system learn these values as it moves. A module
+will take into consideration the acceleration errors, state errors and
+hit rates to come up with optimized threshold values. These threshold values
+will be updated on-line.</FONT></FONT></LI>
+
+<LI>
+<FONT FACE="Courier New,Courier"><FONT SIZE=+1>Instead of initializing
+the look-up table directly from scratch, it will be better to store so
+that it can be used next time.</FONT></FONT></LI>
+
+<LI>
+<FONT FACE="Courier New,Courier"><FONT SIZE=+1>It will be better if the
+system can change the size of the look-up table so that it can optimize
+the size of the look-up table given the current conditions.</FONT></FONT></LI>
+
+<LI>
+<FONT FACE="Courier New,Courier"><FONT SIZE=+1>Suppose in place of one
+luxo you are dealing with a scene of 50 luxo's. Yon can maintain a common
+look-up table and I tell you in that case the improvement will be significant.</FONT></FONT></LI>
+</OL>
+<!--msthemelist--></table><!--mstheme--><font face="Arial, Helvetica">
+
+<H1><!--mstheme--><font color="#003366">
+<FONT FACE="Courier New,Courier"><FONT SIZE=+1>Conclusions</FONT></FONT><!--mstheme--></font></H1>
+
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%"><FONT FACE="Courier New,Courier"><FONT SIZE=+1>Dynamics is an essential
+part of virtual creatures and it is costly to compute. So it will be nice
+if we can some how approximate it. The algorithm provided above is by no
+means an ideal algorithm. But it is small step in the direction. As I have
+suggested better systems can be built on this algorithm. The main advantage
+of this algorithm is its simplicity. Moreover, this algorithm suggests
+that after all it is not necessary to compute dynamics at every step and
+that there is some redundancy involved. If we can some how come up with
+a system, that can exploit this redundancy optimally, we can come with
+a very good dynamics approximation. Moreover, I strongly believe that in
+the field of computer animation, approximate dynamics can be used.</FONT></FONT><!--msthemelist--></table><!--mstheme--><font face="Arial, Helvetica">
+
+<H1><!--mstheme--><font color="#003366">
+<FONT FACE="Courier New,Courier"><FONT SIZE=+1>Source Code</FONT></FONT><!--mstheme--></font></H1>
+
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<!--msthemeseparator--><p align="center"><img src="../../_themes/strtedge/strrulee.gif" width="600" height="10"></p>
+<BR><A NAME="get_acc"></A><FONT FACE="Courier New,Courier"><FONT SIZE=+1><B><FONT COLOR="#009900">int
+get_acc(state, torq, fext, ac)&nbsp; </FONT></B><I><FONT COLOR="#330000">Searches
+look up table and returns a valid acceleration.</FONT></I></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">float
+*state;</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">float
+*torq;</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">float
+*fext;</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">float
+*ac;</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">{</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;
+register int i;</FONT></FONT></FONT><FONT FACE="Courier New,Courier"><FONT SIZE=+1></FONT></FONT>
+
+<P><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;
+if (criterion(state,torq,fext,current_read)) {</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ac[0] = lut[current_read][23];</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ac[1] = lut[current_read][24];</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ac[2] = lut[current_read][25];</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ac[3] = lut[current_read][26];</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ac[4] = lut[current_read][27];</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+return 1;</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;
+}</FONT></FONT></FONT><FONT FACE="Courier New,Courier"><FONT SIZE=+1></FONT></FONT>
+
+<P><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;
+for(i=0; i&lt;lut_ent; i++) {</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+if (i == current_read)</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+continue;</FONT></FONT></FONT><FONT FACE="Courier New,Courier"><FONT SIZE=+1></FONT></FONT>
+
+<P><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+if (criterion(state,torq,fext,i)) {</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ac[0] = lut[i][23];</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ac[1] = lut[i][24];</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ac[2] = lut[i][25];</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ac[3] = lut[i][26];</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ac[4] = lut[i][27];</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+current_read = i;</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+return 1;</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+}</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;
+}</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;
+return 0;</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">}</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><B><FONT COLOR="#FF0000"><A HREF="#Code">Back</A></FONT></B></FONT></FONT>
+<BR>
+<!--msthemeseparator--><p align="center"><img src="../../_themes/strtedge/strrulee.gif" width="600" height="10"></p>
+<BR><A NAME="criterion"></A><FONT FACE="Courier New,Courier"><FONT SIZE=+1><B><FONT COLOR="#009900">int
+criterion(state, torq, fext, i)</FONT></B><FONT COLOR="#3333FF">&nbsp;
+</FONT><I><FONT COLOR="#330000">Implements the user defined criteria</FONT></I></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">float
+*state;</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">float
+*torq;</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">float
+*fext;</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">int
+i;</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">{</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;
+if(fabs(lut[i][0] - state[4]) > tol[0] ||</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;
+fabs(lut[i][1] - state[5]) > tol[1] ||</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;
+fabs(lut[i][2] - state[6]) > tol[2] ||</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;
+fabs(lut[i][3] - state[7]) > tol[3] ||</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;
+fabs(lut[i][4] - state[8]) > tol[4] ||</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;
+fabs(lut[i][5] - state[9]) > tol[5] ||</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;
+fabs(lut[i][6] - torq[0]) > tol[6] ||</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;
+fabs(lut[i][7] - torq[1]) > tol[7] ||</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;
+fabs(lut[i][8] - torq[2]) > tol[8] ||</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;
+fabs(lut[i][9] - fext[0]) > tol[9] ||</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;
+fabs(lut[i][10] - fext[1]) > tol[10] ||</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;
+fabs(lut[i][11] - fext[2]) > tol[11] ||</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;
+fabs(lut[i][12] - fext[3]) > tol[12] ||</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;
+fabs(lut[i][13] - fext[4]) > tol[13] ||</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;
+fabs(lut[i][14] - fext[5]) > tol[14] ||</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;
+fabs(lut[i][15] - fext[6]) > tol[15] ||</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;
+fabs(lut[i][16] - fext[7]) > tol[16] ||</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;
+fabs(lut[i][17] - fext[8]) > tol[17] ||</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;
+fabs(lut[i][18] - fext[9]) > tol[18] ||</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;
+fabs(lut[i][19] - fext[10]) > tol[19] ||</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;
+fabs(lut[i][20] - fext[11]) > tol[20] ||</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;
+fabs(lut[i][21] - fext[12]) > tol[21] ||</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;
+fabs(lut[i][22] - fext[13]) > tol[22])</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+return 0;</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;
+return 1;</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">}</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><B><FONT COLOR="#FF0000"><A HREF="#Code">Back</A></FONT></B></FONT></FONT>
+<BR>
+<!--msthemeseparator--><p align="center"><img src="../../_themes/strtedge/strrulee.gif" width="600" height="10"></p>
+<BR><A NAME="approx_dyn"></A><FONT FACE="Courier New,Courier"><FONT SIZE=+1><B><FONT COLOR="#009900">approx_dyn(State,
+torq, fext, ac)&nbsp; </FONT></B><I><FONT COLOR="#330000">Replaces dyn_luxo()
+and implements the algorithm on luxo.</FONT></I></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">float
+*State;</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">float
+*torq;</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">float
+*fext;</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">float
+*ac;</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">{</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;
+int retval = 0;</FONT></FONT></FONT><FONT FACE="Courier New,Courier"><FONT SIZE=+1></FONT></FONT>
+
+<P><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;
+if(get_acc(State,torq,fext,ac)) {</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+retval = 1;</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;
+}</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;
+else {</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+dyn_luxo(State,torq,fext,ac);</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+put_lut(State,torq,fext,ac);</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;
+}</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">}</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><B><FONT COLOR="#FF0000"><A HREF="#Code">Back</A></FONT></B></FONT></FONT>
+<BR>
+<!--msthemeseparator--><p align="center"><img src="../../_themes/strtedge/strrulee.gif" width="600" height="10"></p><A NAME="put_lut"></A><FONT FACE="Courier New,Courier"><FONT SIZE=+1><B><FONT COLOR="#009900">put_lut(state,
+torq, fext, ac)&nbsp;&nbsp; </FONT></B><I><FONT COLOR="#330000">Put the
+complete state vector in the look-up table.</FONT></I></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">float
+*state;</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">float
+*torq;</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">float
+*fext;</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">float
+*ac;</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">{</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT COLOR="#3333FF"><FONT SIZE=+1>&nbsp;&nbsp;&nbsp;
+register int i;</FONT></FONT></FONT><!--msthemelist--></table><!--mstheme--><font face="Arial, Helvetica">
+
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%"><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;
+if (lut_ent &lt; 100) {</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+lut_ent++;</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;
+}</FONT></FONT></FONT><FONT FACE="Courier New,Courier"><FONT SIZE=+1></FONT></FONT>
+
+<P><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;
+for (i=0; i&lt;6; i++)</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+lut[current_index][i] = state[i+4];</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;
+for (i=0; i&lt;3; i++)</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+lut[current_index][i+6] = torq[i];</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;
+for (i=0; i&lt;14; i++)</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+lut[current_index][i+9] = fext[i];</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;
+for (i=0; i&lt;5; i++)</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+lut[current_index][i+23] = ac[i];</FONT></FONT></FONT><FONT FACE="Courier New,Courier"><FONT SIZE=+1></FONT></FONT>
+
+<P><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;
+ret_val = current_index;</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;
+if (current_index &lt; 99)</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+current_index++;</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;
+else</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+current_index = 0;</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">}</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><B><FONT COLOR="#FF0000"><A HREF="#Code">Back</A></FONT></B></FONT></FONT>
+<BR>
+<!--msthemeseparator--><p align="center"><img src="../../_themes/strtedge/strrulee.gif" width="600" height="10"></p>
+<BR><A NAME="Variables"></A><FONT FACE="Courier New,Courier"><FONT SIZE=+1><B><FONT COLOR="#009900">Variables</FONT></B></FONT></FONT><FONT FACE="Courier New,Courier"><FONT SIZE=+1></FONT></FONT>
+
+<P><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">float
+lut[100][28];&nbsp;&nbsp;&nbsp;&nbsp; </FONT><I><FONT COLOR="#330000">100x28
+look-up table.</FONT></I></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">int
+current_index;</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">int
+current_read;</FONT></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">int
+lut_ent;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</FONT><I><FONT COLOR="#330000">Number of filled rows in the look-up table.</FONT></I></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><FONT COLOR="#3333FF">int
+tol[23];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</FONT><I><FONT COLOR="#330000">Array containing threshhold values for
+the acceptibility criteria.</FONT></I></FONT></FONT>
+<BR><FONT FACE="Courier New,Courier"><FONT SIZE=+1><B><FONT COLOR="#FF0000"><A HREF="#Code">Back</A></FONT></B></FONT></FONT>
+<BR>
+<!--msthemeseparator--><p align="center"><img src="../../_themes/strtedge/strrulee.gif" width="600" height="10"></p><!--msthemelist--></table><!--mstheme--><font face="Arial, Helvetica">
+
+<!--mstheme--></font></BODY>
+</HTML>
