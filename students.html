@@ -1,464 +1,2002 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="generator" content="pandoc">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="Faisal Qureshi">
-    <meta name="keywords" content="faisal qureshi, cs, vclab, uoit, professor, computer vision, camera networks, teaching">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G9CWRQBRB0"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+gtag('config', 'G-G9CWRQBRB0');
+</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="Faisal Qureshi">
-<meta name="keywords" content="faisal qureshi, cs, vclab, uoit, professor, computer vision, camera networks, teaching">
+<meta name="keywords" content="faisal qureshi, cs, vclab, ontario, uoit, professor, computer vision, camera networks, teaching">
 
-<!-- css -->
-<link rel="stylesheet" href="style/bootstrap-3.3.7-dist/css/bootstrap.min.css" type="text/css" />
-<link rel="stylesheet" href="style/my.css" type="text/css" />
+<!-- Bootstrap 4 -->
+<link rel="stylesheet" href="style/bootstrap-4.0.0-dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="style/my-bootstrap4.css" type="text/css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/4.4.0/font/octicons.min.css">
+<link rel="shortcut icon" type="image/png" href="favicon.png"/>
 
-<!-- Google Fonts -->
-<link href='https://fonts.googleapis.com/css?family=BioRhyme:200,300,400,700,800' rel='stylesheet' type='text/css'> 
-<link href='https://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'> 
-<link href='https://fonts.googleapis.com/css?family=VT323:400,300,700' rel='stylesheet' type='text/css'> 
-<link href='https://fonts.googleapis.com/css?family=Baloo:400,300,700' rel='stylesheet' type='text/css'> 
-<link href="https://fonts.googleapis.com/css?family=Averia+Serif+Libre" rel="stylesheet">
-<!-- Scripts -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-<script src="style/my.js"></script>
+<!-- scripts -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="style/bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>
+<script src="style/my-bootstrap4.js"></script>
+<script src="//bibbase.org/js/bibbase.min.js" type="text/javascript"></script>
+<script>
+   function setPhotoWidth() {
+       var a=$('.landing').height();
+       if (a > $('document').width()) {
+           a  = $('document').width()
+       }
 
-
+       $('#photo').css('max-height', a)
+   }
+   setPhotoWidth()
+   $(window).resize(setPhotoWidth);
+</script>
   </head>
-
   <body>
     <div class="container">
+      <div class="row" id="landing">
+    <div class="col-md-4 col-sm-4 col-xs-4">
+        <img id="photo" src="imgs/faisal-qureshi.png" class="img-fluid rounded" alt="Faisal Qureshi">
+    </div>
+    <div class="col-md-8 col-sm-8 col-xs-8 landing">
+        <div class="me">Faisal Qureshi</div>
+        <div class="my-pos">Professor<br/>Computer Science</div>
 
-      <div class="row" id="nav">
+        <address class="landing-address">
+            <span>Visual Computing Lab</span><br>
+            <a href="http://science.uoit.ca"><span style="color:rgb(0,0,0)">Faculty of Science</span></a><br>
+            <a href="http://www.ontariotechu.ca"><span style="color:rgb(0,0,0)">Ontario Tech University</span></a> (formerly UOIT)<br>
+            <span class="octicon octicon-pencil"></span> <span title="mailing-address">UA4000, 2000 Simcoe St. N., 
+            Oshawa, ON L1G OC5 Canada</span><br>
+            <abbr title="Email"><span class="octicon octicon-mail"></span></abbr> faisal.qureshi@uoit.ca<br>
+            <abbr title="Phone"><span class="octicon octicon-device-mobile"></span></abbr> (905) 721-8668 x 3626
+        </address> 
+    </div>
+</div> <!-- landing -->
 
-<div class="row text-center" id="landing">
-  
-  <img src="imgs/faisal-qureshi.png" class="responsive-image center-block img-circle" width="120" alt="Responsive image">
-  
-  <div style="margin-top:10px"> 
-    <p><span class="me">Faisal Qureshi</span><br>
-    <span class="my-pos">Associate Professor of Computer Science</span><p>
-
-    <address class="landing-address">
-      <a href="http://science.uoit.ca">Faculty of Science</a><br>
-      <a href="http://www.uoit.ca">University of Ontario Institute of Technology</a><br>
-      UA4000, 2000 Simcoe Street North<br>
-      Oshawa, ON L1H 7K4<br>
-      <abbr title="Email"><span class="glyphicon glyphicon-envelope"></span></abbr> faisal.qureshi@uoit.ca<br>
-      <abbr title="Phone"><span class="glyphicon glyphicon-phone-alt"></span></abbr> (905) 721-8668 x 3626
-    </address>
-  </div>
-
-  <nav class="nav nav-justified nav-text">
+<div style="margin-top: 25px; margin-bottom: 25px;">
+    <ul class="nav justify-content-center">
         
-    <a class="nav-link" href="index.html#about" style="margin-right: 10px; margin-left: 10px;">about</a>
-    
-    <a class="nav-link" href="index.html#research" style="margin-right: 10px; margin-left: 10px;">research</a>
-    
-    <a class="nav-link" href="index.html#teaching" style="margin-right: 10px; margin-left: 10px;">teaching</a>
-    
-    <a class="nav-link" href="students.html#students" style="margin-right: 10px; margin-left: 10px;">students</a>
-    
-    <a class="nav-link" href="index.html#code" style="margin-right: 10px; margin-left: 10px;">code</a>
-    
-    <a class="nav-link" href="index.html#publications" style="margin-right: 10px; margin-left: 10px;">publications</a>
-    
-    <a class="nav-link" href="advice-for-students.html" style="margin-right: 10px; margin-left: 10px;">prospective students</a>
-    
-    <a class="nav-link" href="contact.html" style="margin-right: 10px; margin-left: 10px;">contact</a>
-  </nav>
-
-</div> <!-- row -->
-
+        
+        <li class="nav-item">
+          <a class="nav-link" href="index.html#about">about</a>
+        </li>
+        
+        
+        
+        <li class="nav-item">
+          <a class="nav-link" href="index.html#research">research</a>
+        </li>
+        
+        
+        
+        <li class="nav-item">
+          <a class="nav-link" href="index.html#publications">publications</a>
+        </li>
+        
+        
+        
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">teaching <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+            <li><a class="dropdown-item nav-link" href="index.html#teaching">courses & teaching material</a></li>
+            
+            <li><a class="dropdown-item nav-link" href="http://csundergrad.science.uoit.ca/courses/cv-notes/">computer vision notebooks</a></li>
+            
+            <li><a class="dropdown-item nav-link" href="http://csundergrad.science.uoit.ca/courses/cpp-notes/">c++ notes</a></li>
+            
+            <li><a class="dropdown-item nav-link" href="http://csgrad.science.uoit.ca/courses/ist/">cnns for object detection</a></li>
+            
+            <li><a class="dropdown-item nav-link" href="http://csgrad.science.uoit.ca/courses/ist2/">deep learning primer</a></li>
+            
+            <li><a class="dropdown-item nav-link" href="https://github.com/faisalqureshi/python-dev-notes">python dev notes</a></li>
+            
+            <li><a class="dropdown-item nav-link" href="https://github.com/faisalqureshi/mnist-experiments">dl using pytorch notes</a></li>
+            
+          </ul>
+        </li>  
+        
+        
+        
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">students <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+            <li><a class="dropdown-item nav-link" href="students.html#students">current</a></li>
+            
+            <li><a class="dropdown-item nav-link" href="advice-for-students.html">prospective students</a></li>
+            
+            <li><a class="dropdown-item nav-link" href="honours-thesis.html">honour thesis</a></li>
+            
+            <li><a class="dropdown-item nav-link" href="https://www.overleaf.com/latex/templates/course-project-vclab-ontario-tech-university/qrtpysxydgqb">Technical report template (Overleaf)</a></li>
+            
+            <li><a class="dropdown-item nav-link" href="https://www.overleaf.com/latex/templates/thesis-template-vclab-ontario-tech-university/ryvpfpkdnfbf">Thesis template (Overleaf)</a></li>
+            
+            <li><a class="dropdown-item nav-link" href="ontariotechu-thesis">LaTeX thesis templates (Local copy)</a></li>
+            
+          </ul>
+        </li>  
+        
+        
+        
+        <li class="nav-item">
+          <a class="nav-link" href="index.html#code">code</a>
+        </li>
+        
+        
+        
+        <li class="nav-item">
+          <a class="nav-link" href="qureshi-cv.pdf">cv</a>
+        </li>
+        
+        
+        
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">conferences <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+            <li><a class="dropdown-item nav-link" href="conferences/wcnwasa11/index.html">wcnwasa 2011</a></li>
+            
+            <li><a class="dropdown-item nav-link" href="conferences/wcnwasa12/index.html">wcnwasa 2012</a></li>
+            
+            <li><a class="dropdown-item nav-link" href="conferences/wcnwasa13/index.html">wcnwasa 2013</a></li>
+            
+            <li><a class="dropdown-item nav-link" href="http://www.computerrobotvision.org/2015/index.html">crv 2015</a></li>
+            
+            <li><a class="dropdown-item nav-link" href="http://www.computerrobotvision.org/2016/index.html">crv 2016</a></li>
+            
+          </ul>
+        </li>  
+        
+        
+        
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">contact</a>
+        </li>
+        
+        
+        
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">personal <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+            <li><a class="dropdown-item nav-link" href="http://003beaf.netsolhost.com/aittios-and-elena/">Aittios and Elena</a></li>
+            
+            <li><a class="dropdown-item nav-link" href="http://zubairmasood.com">My dad's books</a></li>
+            
+            <li><a class="dropdown-item nav-link" href="personal/atut/default.html">ATUT (from when I was a graduate student...)</a></li>
+            
+          </ul>
+        </li>  
+        
+        
+    </ul>
 </div>
 
+      <h1 id="news">Students</h1>
 
-      <div class="row students">
+      <p>I have been very fortunate to have the opportunity to work with an
+exceptional group of students.</p>
 
-        <h1 id="students">Students</h1>
-<p>I have been very fortunate to have the opportunity to work with an exceptional group of students.</p>
 
-        
-      <div id="students" class="row">
+      <h1>Current</h1>
 
-      <div class="col-sm-6">
+      
 
-      <h2>Current</h2>
-
+      
+      
       <h3>Ph.D.</h3>
-
-      <ul class="media-list">
-      <li class="media">
-        <a class="pull-left" href="#"><img class="media-object" src="imgs/students/Luis-Zarrabeitia.jpg" alt="Luis Zarrabeitia"></a>
+      
+      
+      <div class="row">
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/Kiran.png" alt="Kiran Mantriprigada">
         <div class="media-body">
-          <span class="student-name">Luis Zarrabeitia</span> Currently at Google<br><span class="student-thesis">3D Multi-target Tracking in High-Speed Cameras (ABD)</span>
+          
+          <span class="student-name">Kiran Mantriprigada</span>
+          
+          
+          
+          <br><span class="student-thesis">Hyperspectral imaging</span> <br><span class="student-thesis-date"></span>
+          
+        </div>
       </div>
-      </li>
-      <li class="media">
-        <a class="pull-left" href="#"><img class="media-object" src="imgs/students/Kiran.png" alt="Kiran Mantriprigada"></a>
-        <div class="media-body">
-          <span class="student-name">Kiran Mantriprigada</span> <br><span class="student-thesis">Hyperspectral imaging</span>
-      </div>
-      </li>
-
-      </ul>
-
-      <h3>M.Sc.</h3>
-
-      <ul class="media-list">
-
-      <li class="media">
-        <a class="pull-left" href="#"><img class="media-object" src="imgs/students/Tony-Joseph.jpg" alt="Tony Joseph"></a>
-        <div class="media-body">
-          <span class="student-name">Tony Joseph</span> 
-      </div>
-      </li>
-      <li class="media">
-        <a class="pull-left" href="#"><img class="media-object" src="imgs/students/Ahmad-Mohammad.jpg" alt="Ahmad Mohammad"></a>
-        <div class="media-body">
-          <span class="student-name">Ahmad Mohammad</span> 
-      </div>
-      </li>
-      <li class="media">
-        <a class="pull-left" href="#"><img class="media-object" src="imgs/students/Mohammed-Baennh.jpg" alt="Mohammed Baeenh"></a>
-        <div class="media-body">
-          <span class="student-name">Mohammed Baeenh</span> 
-      </div>
-      </li>
-      <li class="media">
-        <a class="pull-left" href="#"><img class="media-object" src="imgs/students/2018-05-ghazal-reshad.jpg" alt="Ghazal Reshad"></a>
-        <div class="media-body">
-          <span class="student-name">Ghazal Reshad</span> 
-      </div>
-      </li>
-      <li class="media">
-        <a class="pull-left" href="#"><img class="media-object" src="imgs/students/2018-05-hunter-thompson.jpg" alt="Hunter Thompson"></a>
-        <div class="media-body">
-          <span class="student-name">Hunter Thompson</span> 
-      </div>
-      </li>
-
-      </ul>
-
-      <h3>Undergraduate</h3>
-
-      <ul class="media-list">
-
-      <li class="media">
-        <a class="pull-left" href="#"><img class="media-object" src="imgs/students/2018-05-michael-lombardo.jpg" alt="Michael Lombardo"></a>
-        <div class="media-body">
-          <span class="student-name">Michael Lombardo</span> NSERC USRA
-      </div>
-      </li>
-
-      </ul>
-
-      </div>
-
-      <div class="col-sm-6">
-
-      <h2>Alumni</h2>
-
-      <h3>Ph.D.</h3>
-
-      <ul class="media-list">
-
-      <li class="media">
-        <a class="pull-left" href="#"><img class="media-object" src="imgs/students/Mohammad-Helala-May-2015.png" alt="Mohamed Helala"></a>
-        <div class="media-body">
-          <span class="student-name">Mohamed Helala</span> Ph.D. CS<br><span class="student-thesis">Towards Efficient and Scalable Computer Vision Systems</span>, August 2018
-           [<a href="student-theses/helala-phd-thesis.pdf">link</a>]
-      </div>
-      </li>
-
-      </ul>
-
-      <h3>M.Sc.</h3>
-
-      <ul class="media-list">
-
-      <li class="media">
-        <a class="pull-left" href="#"><img class="media-object" src="imgs/students/20130515-wesley-taylor.jpg" alt="Wesley Taylor"></a>
-        <div class="media-body">
-          <span class="student-name">Wesley Taylor</span> M.Sc. CS<br><span class="student-thesis">Achieving real-rime video summarization on commodity hardware</span>, January 2018
-      </div>
-      </li>
-      <li class="media">
-        <a class="pull-left" href="#"><img class="media-object" src="imgs/students/David-Nemirovsky.jpg" alt="David Nemirovsky"></a>
-        <div class="media-body">
-          <span class="student-name">David Nemirovsky</span> M.Sc. CS<br><span class="student-thesis">Analyzing atomic structure in nano-scale imagery</span>, April 2017
-      </div>
-      </li>
-      <li class="media">
-        <a class="pull-left" href="#"><img class="media-object" src="imgs/students/none.png" alt="Ryan Shanks"></a>
-        <div class="media-body">
-          <span class="student-name">Ryan Shanks</span> M.Sc. CS<br><span class="student-thesis">Towards parallax-based unencumbered displays</span>, Dec. 2015
-      </div>
-      </li>
-      <li class="media">
-        <a class="pull-left" href="#"><img class="media-object" src="imgs/students/Ernesto-Reina.jpg" alt="Ernesto Reina"></a>
-        <div class="media-body">
-          <span class="student-name">Ernesto Reina</span> M.Sc. CS<br><span class="student-thesis">An index structure for fast range search in hamming space</span>, November 2014
-      </div>
-      </li>
-      <li class="media">
-        <a class="pull-left" href="#"><img class="media-object" src="imgs/students/jordan-stadler-2012-10-22.jpeg" alt="Jordan Stadler"></a>
-        <div class="media-body">
-          <span class="student-name">Jordan Stadler</span> M.Sc. CS<br><span class="student-thesis">A framework for video driven crowd synthesis</span>, October 2014
-      </div>
-      </li>
-      <li class="media">
-        <a class="pull-left" href="#"><img class="media-object" src="imgs/students/Wiktor-Starzyk.jpg" alt="Wiktor Starzyk"></a>
-        <div class="media-body">
-          <span class="student-name">Wiktor Starzyk</span> M.Sc. CS<br><span class="student-thesis">A negotiation protocol with conditional offers for camera handoffs</span>, October 2014
-      </div>
-      </li>
-      <li class="media">
-        <a class="pull-left" href="#"><img class="media-object" src="imgs/students/nurjahan-parvin-2012-10-22.jpeg" alt="Nurjahan Parvin"></a>
-        <div class="media-body">
-          <span class="student-name">Nurjahan Parvin</span> M.Sc. CS<br><span class="student-thesis">Robust curved eoad boundary detection using hierarchical clustering</span>, October 2013
-      </div>
-      </li>
-      <li class="media">
-        <a class="pull-left" href="#"><img class="media-object" src="imgs/students/Zheng-Wang.jpg" alt="Zheng Wang"></a>
-        <div class="media-body">
-          <span class="student-name">Zheng Wang</span> M.Sc. CS<br><span class="student-thesis">Topic models for image localization</span>, August 2013
-      </div>
-      </li>
-      <li class="media">
-        <a class="pull-left" href="#"><img class="media-object" src="imgs/students/Raquel-Murray.jpg" alt="Raquel Murray"></a>
-        <div class="media-body">
-          <span class="student-name">Raquel Murray</span> MCS<br><span class="student-thesis">Computational and laboratory investigations of a model of blood droplet flight for forensic applications</span>, August 2012
-      </div>
-      </li>
-      <li class="media">
-        <a class="pull-left" href="#"><img class="media-object" src="imgs/students/none.png" alt="Christopher Little"></a>
-        <div class="media-body">
-          <span class="student-name">Christopher Little</span> M.Sc. CS<br><span class="student-thesis">Ray tracing large distributed Datasets using ray caches</span>, December 2011
-      </div>
-      </li>
-      <li class="media">
-        <a class="pull-left" href="#"><img class="media-object" src="imgs/students/Gavin-Lobo.jpg" alt="Gavin Lobo"></a>
-        <div class="media-body">
-          <span class="student-name">Gavin Lobo</span> MCS<br><span class="student-thesis">Investigation into Smoothed Particle Hydrodynamics for Non-Newtonian Droplet Modelling</span>, August 2011
-      </div>
-      </li>
-
-      </ul>
-
-      <h3>Undergraduate</h3>
-
-      <h4>Honor Thesis</h4>
-
-      <ul class="media-list">
-
-      <li class="media">
-        <a class="pull-left" href="#"><img class="media-object" src="imgs/students/2016-02-02-Michael-Stergianis.jpg" alt="Michael Stergianis"></a>
-        <div class="media-body">
-          <span class="student-name">Michael Stergianis</span> <br><span class="student-thesis">Stereo vision: Cost-volume filtering meets deep learning</span>, April 2018
-      </div>
-      </li>
-      <li class="media">
-        <a class="pull-left" href="#"><img class="media-object" src="imgs/students/2018-05-hunter-thompson.jpg" alt="Hunter Thompson"></a>
-        <div class="media-body">
-          <span class="student-name">Hunter Thompson</span> <br><span class="student-thesis">Video summarization with early superframe segmentation</span>, April 2018
-      </div>
-      </li>
-      <li class="media">
-        <a class="pull-left" href="#"><img class="media-object" src="imgs/students/none.png" alt="Jose Miguel Mendez"></a>
-        <div class="media-body">
-          <span class="student-name">Jose Miguel Mendez</span> <br><span class="student-thesis">A Cloud-based Service for Comparative Genomics</span>, April 2017
-      </div>
-      </li>
-      <li class="media">
-        <a class="pull-left" href="#"><img class="media-object" src="imgs/students/none.png" alt="Robert de Bruyn"></a>
-        <div class="media-body">
-          <span class="student-name">Robert de Bruyn</span> <br><span class="student-thesis">An iOS app for Document Scanning</span>, April 2017
-      </div>
-      </li>
-      <li class="media">
-        <a class="pull-left" href="#"><img class="media-object" src="imgs/students/20130515-wesley-taylor.jpg" alt="Wesley Taylor"></a>
-        <div class="media-body">
-          <span class="student-name">Wesley Taylor</span> <br><span class="student-thesis">Vision-Based High-Performance Highway Vehicles Analytics</span>, April 2015
-      </div>
-      </li>
-      <li class="media">
-        <a class="pull-left" href="#"><img class="media-object" src="imgs/students/none.png" alt="Pat Goebel"></a>
-        <div class="media-body">
-          <span class="student-name">Pat Goebel</span> <br><span class="student-thesis">Fast Image Matching using ORB and Multi-Index Hashing</span>, April 2014
-      </div>
-      </li>
-      <li class="media">
-        <a class="pull-left" href="#"><img class="media-object" src="imgs/students/none.png" alt="Carly Marshall"></a>
-        <div class="media-body">
-          <span class="student-name">Carly Marshall</span> <br><span class="student-thesis">Privacy Protected Video Surveillance</span>, April 2014
-      </div>
-      </li>
-      <li class="media">
-        <a class="pull-left" href="#"><img class="media-object" src="imgs/students/David-Nemirovsky.jpg" alt="David Nemirovsky"></a>
-        <div class="media-body">
-          <span class="student-name">David Nemirovsky</span> <br><span class="student-thesis">Object Detection and Annotation in Videos for Location Recall</span>, April 2014
-      </div>
-      </li>
-      <li class="media">
-        <a class="pull-left" href="#"><img class="media-object" src="imgs/students/stephanie-gloin-2012-10-22.jpeg" alt="Stephanie Gloin"></a>
-        <div class="media-body">
-          <span class="student-name">Stephanie Gloin</span> <br><span class="student-thesis">Blood Droplet Analysis Using Image Processing and Ellipse Fitting Techniques</span>, April 2013
-      </div>
-      </li>
-      <li class="media">
-        <a class="pull-left" href="#"><img class="media-object" src="imgs/students/jordan-stadler-2012-10-22.jpeg" alt="Jordan Stadler"></a>
-        <div class="media-body">
-          <span class="student-name">Jordan Stadler</span> <br><span class="student-thesis">Interactive Online Image Stitching for Panoramic Image Generation</span>, April 2012
-      </div>
-      </li>
-      <li class="media">
-        <a class="pull-left" href="#"><img class="media-object" src="imgs/students/none.png" alt="Tony Chuang"></a>
-        <div class="media-body">
-          <span class="student-name">Tony Chuang</span> <br><span class="student-thesis">Dynamic Crowd Simulation</span>, April 2012
-      </div>
-      </li>
-      <li class="media">
-        <a class="pull-left" href="#"><img class="media-object" src="imgs/students/jon-elliot.jpg" alt="Jonathan Elliot"></a>
-        <div class="media-body">
-          <span class="student-name">Jonathan Elliot</span> <br><span class="student-thesis">Regression of Graph Images using Piecewise Interpolation</span>, April 2012
-      </div>
-      </li>
-      <li class="media">
-        <a class="pull-left" href="#"><img class="media-object" src="imgs/students/Wiktor-Starzyk.jpg" alt="Wiktor Starzyk"></a>
-        <div class="media-body">
-          <span class="student-name">Wiktor Starzyk</span> <br><span class="student-thesis">Virtual Vision Simulator for Smart Camera Network Research</span>, April 2011
-      </div>
-      </li>
-      <li class="media">
-        <a class="pull-left" href="#"><img class="media-object" src="imgs/students/Tanvir-Kaykobad.png" alt="M. Tanvir Kaykobad"></a>
-        <div class="media-body">
-          <span class="student-name">M. Tanvir Kaykobad</span> <br><span class="student-thesis">A Study on Simulating Formation and Movement of a Group of Agents</span>, April 2011
-      </div>
-      </li>
-      <li class="media">
-        <a class="pull-left" href="#"><img class="media-object" src="imgs/students/none.png" alt="Alex Wijtowych"></a>
-        <div class="media-body">
-          <span class="student-name">Alex Wijtowych</span> <br><span class="student-thesis">A Sliding Model for Estimating Traffic Density</span>, April 2010
-      </div>
-      </li>
-      <li class="media">
-        <a class="pull-left" href="#"><img class="media-object" src="imgs/students/none.png" alt="Bradley Chicoine"></a>
-        <div class="media-body">
-          <span class="student-name">Bradley Chicoine</span> <br><span class="student-thesis">An Online System for Visualizing UOIT Class Schedules</span>, April 2010
-      </div>
-      </li>
-
-      </ul>
-
-      <h4>Research Assistants</h4>
-
-      <ul class="media-list">
-
-      <li class="media">
-        <a class="pull-left" href="#"><img class="media-object" src="imgs/students/2018-05-michael-lombardo.jpg" alt="Michael Lombardo"></a>
-        <div class="media-body">
-          <span class="student-name">Michael Lombardo</span> NSERC USRA, Summer 2018<br><span class="student-thesis">Content Aware Video Segmentation</span>
-      </div>
-      </li>
-      <li class="media">
-        <a class="pull-left" href="#"><img class="media-object" src="imgs/students/2016-02-02-Michael-Stergianis.jpg" alt="Michael Stergianis"></a>
-        <div class="media-body">
-          <span class="student-name">Michael Stergianis</span> NSERC USRA, Summer 2016; NSERC USRA Summer 2017<br><span class="student-thesis">Long-term Activity Recognition in Construction Sites (2016); Depth Map Estimation using Slanted Windows (2017)</span>
-      </div>
-      </li>
-      <li class="media">
-        <a class="pull-left" href="#"><img class="media-object" src="imgs/students/none.png" alt="Seyed Kamyar"></a>
-        <div class="media-body">
-          <span class="student-name">Seyed Kamyar</span> UTRECS, UofT, Summer 2015<br><span class="student-thesis">Surface proposals</span>
-      </div>
-      </li>
-      <li class="media">
-        <a class="pull-left" href="#"><img class="media-object" src="imgs/students/none.png" alt="Ekaterian Datensko"></a>
-        <div class="media-body">
-          <span class="student-name">Ekaterian Datensko</span> UTRECS, UofT, Summer 2015<br><span class="student-thesis">Surface proposals</span>
-      </div>
-      </li>
-      <li class="media">
-        <a class="pull-left" href="#"><img class="media-object" src="imgs/students/Piyush-Dugar.png" alt="Piyush Dugar"></a>
-        <div class="media-body">
-          <span class="student-name">Piyush Dugar</span> <br><span class="student-thesis">Machine Learning Approaches to Action Recognition</span>
-      </div>
-      </li>
-      <li class="media">
-        <a class="pull-left" href="#"><img class="media-object" src="imgs/students/Shubham-Singhal-May-2015.png" alt="Subham Singhal"></a>
-        <div class="media-body">
-          <span class="student-name">Subham Singhal</span> <br><span class="student-thesis">Temporal superpixels</span>
-      </div>
-      </li>
-      <li class="media">
-        <a class="pull-left" href="#"><img class="media-object" src="imgs/students/20130515-wesley-taylor.jpg" alt="Wesley Taylor"></a>
-        <div class="media-body">
-          <span class="student-name">Wesley Taylor</span> Summer 2013; NSERC USRA, Summer 2014; Summer 2015<br><span class="student-thesis">Intelligent context-aware video editing; New tools for automatic video editing; Vehicle detection and tracking in traffic cameras</span>
-      </div>
-      </li>
-      <li class="media">
-        <a class="pull-left" href="#"><img class="media-object" src="imgs/students/none.png" alt="Ryan Shanks"></a>
-        <div class="media-body">
-          <span class="student-name">Ryan Shanks</span> Summer 2013<br><span class="student-thesis">Investigations into High-Performance Rendering Using CUDA</span>
-      </div>
-      </li>
-      <li class="media">
-        <a class="pull-left" href="#"><img class="media-object" src="imgs/students/David-Nemirovsky.jpg" alt="David Nemrovsky"></a>
-        <div class="media-body">
-          <span class="student-name">David Nemrovsky</span> Summer 2013<br><span class="student-thesis">LED based indoor localization</span>
-      </div>
-      </li>
-      <li class="media">
-        <a class="pull-left" href="#"><img class="media-object" src="imgs/students/jordan-stadler-2012-10-22.jpeg" alt="Jordan Stadler"></a>
-        <div class="media-body">
-          <span class="student-name">Jordan Stadler</span> Summer 2011<br><span class="student-thesis">Vision-based lift analysis using Microsoft Kinect</span>
-      </div>
-      </li>
-      <li class="media">
-        <a class="pull-left" href="#"><img class="media-object" src="imgs/students/Wiktor-Starzyk.jpg" alt="Wiktor Starzyk"></a>
-        <div class="media-body">
-          <span class="student-name">Wiktor Starzyk</span> Summer 2010; Summer 2011<br><span class="student-thesis">A Cognitive Camera Network; Learning proactive control strategies for PTZ cameras</span>
-      </div>
-      </li>
-      <li class="media">
-        <a class="pull-left" href="#"><img class="media-object" src="imgs/students/Adam-Domurad.jpg" alt="Adam Domurad"></a>
-        <div class="media-body">
-          <span class="student-name">Adam Domurad</span> Summer 2010; NSERC USRA, Summer 2011, Best poster, Student research showcase, Faculty of Science<br><span class="student-thesis">Color based pedestrian tracking; Pedestrian tracking using a visual analysis pipeline</span>
-      </div>
-      </li>
-      <li class="media">
-        <a class="pull-left" href="#"><img class="media-object" src="imgs/students/Tanvir-Kaykobad.png" alt="Tanvir Kaykobad"></a>
-        <div class="media-body">
-          <span class="student-name">Tanvir Kaykobad</span> Summer 2010<br><span class="student-thesis">Dynamic path planning for crowd simulation</span>
-      </div>
-      </li>
-
-      </ul>
-      </div>
-      </div>  
       </div>
       
-      <div class="row footer">
-        <footer style="margin-top: 50px;">
-  <div class="container footer">
-    <div class="row">
-      <hr>
-      <div class="col-md-4 col-sm-12">
-	2018-09-27 21:33
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/2020-08 - Shima.Rezasoltani.jpeg" alt="Shima Rezasoltani">
+        <div class="media-body">
+          
+          <span class="student-name">Shima Rezasoltani</span>
+          
+          
+          
+          <br><span class="student-thesis">Hyperspectral image compression</span> <br><span class="student-thesis-date"></span>
+          
+        </div>
       </div>
-      <div class="col-md-4 col-sm-12">
-        &copy; Faisal Qureshi
       </div>
-      <div class="col-md-4 col-sm-12">
-        Site generated using &copy; Webify.
+      
+      
+      
+      
+      <div class="col"></div>
+      
       </div>
-</footer>
+      
+      
+      
+      
 
+      
+      
+      <h3>M.Sc.</h3>
+      
+      
+      <div class="row">
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/20230907-hafiz-arslan-amjad.jpg" alt="Hafiz Arslan Amjad">
+        <div class="media-body">
+          
+          <span class="student-name">Hafiz Arslan Amjad</span>
+          
+          
+          <br> <span class="student-info">M.Sc. CS</span>
+          
+          
+        </div>
       </div>
+      </div>
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/giancarlo-giannetti.jpg" alt="Giancarlo Giannetti">
+        <div class="media-body">
+          
+          <span class="student-name">Giancarlo Giannetti</span>
+          
+          
+          <br> <span class="student-info">M.Sc. CS</span>
+          
+          
+        </div>
+      </div>
+      </div>
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/2024-03-alexie-linardatos.jpg" alt="Alexie Linardatos">
+        <div class="media-body">
+          
+          <span class="student-name">Alexie Linardatos</span>
+          
+          
+          <br> <span class="student-info">M.Sc. CS</span>
+          
+          
+        </div>
+      </div>
+      </div>
+      
+      </div>
+      <div class="row">
+      
+      
+      
+      
+      </div>
+      
+      
+      
+      
 
-    </div> <!-- container -->
+      
+      
+      <h3>Undergraduate students</h3>
+      
+      
+      <div class="row">
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/2024-09-srivathsan-sivakumar.jpg" alt="Srivathsan Sivakumar">
+        <div class="media-body">
+          
+          <span class="student-name">Srivathsan Sivakumar</span>
+          
+          
+          <br> <span class="student-info">Honors thesis student</span>
+          
+          
+        </div>
+      </div>
+      </div>
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/2024-09-david-houle-tymeczko.jpg" alt="David Houle-Tymeczko">
+        <div class="media-body">
+          
+          <span class="student-name">David Houle-Tymeczko</span>
+          
+          
+          <br> <span class="student-info">Honors thesis student, co-supervised with Prof. S. Livingstone</span>
+          
+          
+        </div>
+      </div>
+      </div>
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/2024-09-chau-nguyen.jpg" alt="Chau Nguyen">
+        <div class="media-body">
+          
+          <span class="student-name">Chau Nguyen</span>
+          
+          
+          <br> <span class="student-info">Honors thesis student</span>
+          
+          
+        </div>
+      </div>
+      </div>
+      
+      </div>
+      <div class="row">
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/2024-09-aaveg-shangari.jpg" alt="Aaveg Shangari">
+        <div class="media-body">
+          
+          <span class="student-name">Aaveg Shangari</span>
+          
+          
+          <br> <span class="student-info">Honors thesis student</span>
+          
+          
+        </div>
+      </div>
+      </div>
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/none.png" alt="Daniel Zajac">
+        <div class="media-body">
+          
+          <span class="student-name">Daniel Zajac</span>
+          
+          
+          <br> <span class="student-info">Honors thesis student</span>
+          
+          
+        </div>
+      </div>
+      </div>
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/2024-bohdan-perederei.png" alt="Bohdan Perederei">
+        <div class="media-body">
+          
+          <span class="student-name">Bohdan Perederei</span>
+          
+          
+          <br> <span class="student-info">Mitacs Globalink Research Intern, Summer 2024 (National Technical University of Ukraine "Igor Sikorsky Kyiv Polytechnic Institute")</span>
+          
+          
+          <br><span class="student-thesis">Hyperspectral Image Super-Resolution</span> <br><span class="student-thesis-date"></span>
+          
+        </div>
+      </div>
+      </div>
+      
+      </div>
+      <div class="row">
+      
+      
+      
+      
+      </div>
+      
+      
+      
+      
+
+      <h1>Past</h1>
+
+      
+      
+      <h3>Ph.D.</h3>
+      
+      
+      <div class="row">
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/Mohammad-Helala-May-2015.png" alt="Mohamed Helala">
+        <div class="media-body">
+          
+          <a href="http://mohamed-helala.github.io/">
+          
+          <span class="student-name">Mohamed Helala</span>
+          
+          </a>
+          
+          
+          <br> <span class="student-info">Ph.D. CS, last at CIBC</span>
+          
+          
+          <br><a href="./student-theses/2018-08-helala-phd.pdf"> <span class="student-thesis">Towards Efficient and Scalable Computer Vision Systems</span> </a><br><span class="student-thesis-date">August 2018</span>
+          
+        </div>
+      </div>
+      </div>
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/Luis-Zarrabeitia.jpg" alt="Luis Zarrabeitia">
+        <div class="media-body">
+          
+          <span class="student-name">Luis Zarrabeitia</span>
+          
+          
+          <br> <span class="student-info">last at Google</span>
+          
+          
+          <br><span class="student-thesis">3D Multi-target Tracking in High-Speed Cameras (ABD)</span> <br><span class="student-thesis-date"></span>
+          
+        </div>
+      </div>
+      </div>
+      
+      
+      
+      
+      <div class="col"></div>
+      
+      </div>
+      
+      
+      
+      
+
+      
+      
+      <h3>M.Sc.</h3>
+      
+      
+      <div class="row">
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/salik-nadeem.png" alt="Muhammad Salik Nadeem">
+        <div class="media-body">
+          
+          <a href="https://www.linkedin.com/in/saliknadeem/">
+          
+          <span class="student-name">Muhammad Salik Nadeem</span>
+          
+          </a>
+          
+          
+          <br> <span class="student-info">M.Sc. CS</span>
+          
+          
+          <br><a href="./student-theses/2024-muhammad-salik-nadeem-msc.pdf"> <span class="student-thesis">Hybrid architecture for human action recognition using skeleton data <span class="news-highlight">(Best thesis award nominee)</span></span> </a><br><span class="student-thesis-date">Decemeber 2024</span>
+          
+        </div>
+      </div>
+      </div>
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/2022-01-06-neha-ejaz.jpg" alt="Neha Ejaz">
+        <div class="media-body">
+          
+          <span class="student-name">Neha Ejaz</span>
+          
+          
+          <br> <span class="student-info">M.Sc. CS, last at Magnify Access</span>
+          
+          
+          <br><a href="./student-theses/2024-neha-ejaz-msc.pdf"> <span class="student-thesis">A Few-Shot Learning Method for Single-Object Visual Anomaly Detection</span> </a><br><span class="student-thesis-date">May 2024</span>
+          
+        </div>
+      </div>
+      </div>
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/2022-01-06-negin-tabaraki.jpg" alt="Negin Tabaraki">
+        <div class="media-body">
+          
+          <span class="student-name">Negin Tabaraki</span>
+          
+          
+          <br> <span class="student-info">M.Sc. CS</span>
+          
+          
+          <br><a href="./student-theses/2024-negin-tabaraki-msc.pdf"> <span class="student-thesis">A Study of Meta-Learning Methods on the Problem of Video Matting</span> </a><br><span class="student-thesis-date">May 2024</span>
+          
+        </div>
+      </div>
+      </div>
+      
+      </div>
+      <div class="row">
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/2024-matthew-chan.png" alt="Matthew Chan">
+        <div class="media-body">
+          
+          <a href="https://www.linkedin.com/in/kermattc/?originalSubdomain=ca">
+          
+          <span class="student-name">Matthew Chan</span>
+          
+          </a>
+          
+          
+          <br> <span class="student-info">M.Sc. CS</span>
+          
+          
+          <br><a href="./student-theses/2024-matthew-chan-msc.pdf"> <span class="student-thesis">Characterizing midair handwriting in virtual reality</span> </a><br><span class="student-thesis-date">April 2024</span>
+          
+        </div>
+      </div>
+      </div>
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/2019-05-chiragkaria-thumb.jpg" alt="Chirag Karia">
+        <div class="media-body">
+          
+          <a href="https://kych.dev/">
+          
+          <span class="student-name">Chirag Karia</span>
+          
+          </a>
+          
+          
+          <br> <span class="student-info">M.Sc. CS, last at TerraSense Analytics Ltd.</span>
+          
+          
+          <br><a href="./student-theses/2023-chirag-karia-msc.pdf"> <span class="student-thesis">Predicting multi-person dynamics <span class="news-highlight">(Best thesis award nominee)</span></span> </a><br><span class="student-thesis-date">December 2023</span>
+          
+        </div>
+      </div>
+      </div>
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/2021-08-Roya-Dehghani.jpg" alt="Roya Dehghani">
+        <div class="media-body">
+          
+          <a href="https://ca.linkedin.com/in/rdehghani73">
+          
+          <span class="student-name">Roya Dehghani</span>
+          
+          </a>
+          
+          
+          <br> <span class="student-info">M.Sc. CS</span>
+          
+          
+          <br><a href="./student-theses/2023-roya-dehghani-msc.pdf"> <span class="student-thesis">An investigation into the use of ConvNext within IICS/IIDS framework for person re-id</span> </a><br><span class="student-thesis-date">October 2023</span>
+          
+        </div>
+      </div>
+      </div>
+      
+      </div>
+      <div class="row">
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/20210831-Hamoon-Jafarian.png" alt="Hamoon Jafarian">
+        <div class="media-body">
+          
+          <a href="https://ca.linkedin.com/in/hamoon-jafarian">
+          
+          <span class="student-name">Hamoon Jafarian</span>
+          
+          </a>
+          
+          
+          <br> <span class="student-info">M.Sc. CS, last at Thompson Reuters</span>
+          
+          
+          <br><a href="./student-theses/2023-hamoon-jafarian-msc.pdf"> <span class="student-thesis">Error Estimation for Single-Image Human Body Mesh Reconstruction  <span class="news-highlight">(Best thesis award nominee)</span></span> </a><br><span class="student-thesis-date">May 2023</span>
+          
+        </div>
+      </div>
+      </div>
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/2021-01-14-mohamed-zayed-64.jpg" alt="Mohamed Zayed">
+        <div class="media-body">
+          
+          <span class="student-name">Mohamed Zayed</span>
+          
+          
+          <br> <span class="student-info">M.Sc. CS</span>
+          
+          
+          <br><span class="student-thesis">ABD</span> <br><span class="student-thesis-date"></span>
+          
+        </div>
+      </div>
+      </div>
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/2019-04-18-afgan-64.jpg" alt="Mir Afgan Talpur">
+        <div class="media-body">
+          
+          <a href="https://www.linkedin.com/in/mirafgantalpur?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BOuYQk91SQ0%2B%2BLsECw%2B%2B5fQ%3D%3D">
+          
+          <span class="student-name">Mir Afgan Talpur</span>
+          
+          </a>
+          
+          
+          <br> <span class="student-info">M.Sc. CS, last at Twilio</span>
+          
+          
+          <br><a href="./student-theses/2022-mir-afgan-talpur-msc.pdf"> <span class="student-thesis">A Modular Approach to Image Matting</span> </a><br><span class="student-thesis-date">November 2022</span>
+          
+        </div>
+      </div>
+      </div>
+      
+      </div>
+      <div class="row">
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/2018-05-michael-lombardo.jpg" alt="Michael Lombardo">
+        <div class="media-body">
+          
+          <a href="https://www.linkedin.com/in/michael-lombardo-78650a107/">
+          
+          <span class="student-name">Michael Lombardo</span>
+          
+          </a>
+          
+          
+          <br> <span class="student-info">M.Sc. CS, last at TerraSense Analytics Ltd.</span>
+          
+          
+          <br><a href="./student-theses/2022-michael-lombardo-msc.pdf"> <span class="student-thesis">Parsing Genetic Models</span> </a><br><span class="student-thesis-date">January 2022</span>
+          
+        </div>
+      </div>
+      </div>
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/Mohammed-Baeenh.jpg" alt="Mohammed Baeenh">
+        <div class="media-body">
+          
+          <span class="student-name">Mohammed Baeenh</span>
+          
+          
+          <br> <span class="student-info">M.Sc. CS</span>
+          
+          
+          <br><a href="./student-theses/2020-mohmmed-baeenh-msc.pdf"> <span class="student-thesis">Multi-character Prediction Using Attention</span> </a><br><span class="student-thesis-date">February 2020</span>
+          
+        </div>
+      </div>
+      </div>
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/Tony-Joseph.jpg" alt="Tony Joseph">
+        <div class="media-body">
+          
+          <a href="https://www.linkedin.com/in/tony-joseph/">
+          
+          <span class="student-name">Tony Joseph</span>
+          
+          </a>
+          
+          
+          <br> <span class="student-info">M.Sc. CS, last at Patagona Technologies</span>
+          
+          
+          <br><a href="./student-theses/2019-tony-joseph-msc.pdf"> <span class="student-thesis">Joint Spatial and Layer Attention for Convolutional Networks</span> </a><br><span class="student-thesis-date">June 2019</span>
+          
+        </div>
+      </div>
+      </div>
+      
+      </div>
+      <div class="row">
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/20130515-wesley-taylor.jpg" alt="Wesley Taylor">
+        <div class="media-body">
+          
+          <span class="student-name">Wesley Taylor</span>
+          
+          
+          <br> <span class="student-info">M.Sc. CS, last at Legion Development Group</span>
+          
+          
+          <br><a href="./student-theses/2018-taylor-msc.pdf"> <span class="student-thesis">Achieving real-rime video summarization on commodity hardware</span> </a><br><span class="student-thesis-date">April 2018</span>
+          
+        </div>
+      </div>
+      </div>
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/David-Nemirovsky.jpg" alt="David Nemirovsky">
+        <div class="media-body">
+          
+          <a href="https://www.linkedin.com/in/david-nemirovsky-88818b8a/">
+          
+          <span class="student-name">David Nemirovsky</span>
+          
+          </a>
+          
+          
+          <br> <span class="student-info">M.Sc. CS, last at Terranet</span>
+          
+          
+          <br><a href="./student-theses/2017-david-nemirovsky-msc.pdf"> <span class="student-thesis">Analyzing atomic structure in nano-scale imagery</span> </a><br><span class="student-thesis-date">April 2017</span>
+          
+        </div>
+      </div>
+      </div>
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/none.png" alt="Ryan Shanks">
+        <div class="media-body">
+          
+          <a href="https://www.linkedin.com/in/ryan-shanks/">
+          
+          <span class="student-name">Ryan Shanks</span>
+          
+          </a>
+          
+          
+          <br> <span class="student-info">M.Sc. CS, last at Softcom Technologies Corporation</span>
+          
+          
+          <br><a href="./student-theses/2015-ryan-msc.pdf"> <span class="student-thesis">Towards parallax-based unencumbered displays</span> </a><br><span class="student-thesis-date">Dec. 2015</span>
+          
+        </div>
+      </div>
+      </div>
+      
+      </div>
+      <div class="row">
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/Ernesto-Reina.jpg" alt="Ernesto Reina">
+        <div class="media-body">
+          
+          <a href="https://www.linkedin.com/in/erreina/">
+          
+          <span class="student-name">Ernesto Reina</span>
+          
+          </a>
+          
+          
+          <br> <span class="student-info">M.Sc. CS, last at Amazon</span>
+          
+          
+          <br><a href="./student-theses/2014-ernesto-msc.pdf"> <span class="student-thesis">An index structure for fast range search in hamming space</span> </a><br><span class="student-thesis-date">November 2014</span>
+          
+        </div>
+      </div>
+      </div>
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/jordan-stadler-2012-10-22.jpeg" alt="Jordan Stadler">
+        <div class="media-body">
+          
+          <a href="https://www.linkedin.com/in/jordanjstadler/">
+          
+          <span class="student-name">Jordan Stadler</span>
+          
+          </a>
+          
+          
+          <br> <span class="student-info">M.Sc. CS, last at Teknion</span>
+          
+          
+          <br><a href="./student-theses/2014-stadler-msc.pdf"> <span class="student-thesis">A framework for video driven crowd synthesis</span> </a><br><span class="student-thesis-date">October 2014</span>
+          
+        </div>
+      </div>
+      </div>
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/Wiktor-Starzyk.jpg" alt="Wiktor Starzyk">
+        <div class="media-body">
+          
+          <span class="student-name">Wiktor Starzyk</span>
+          
+          
+          <br> <span class="student-info">M.Sc. CS</span>
+          
+          
+          <br><a href="./student-theses/2014-starzyk-msc.pdf"> <span class="student-thesis">A negotiation protocol with conditional offers for camera handoffs</span> </a><br><span class="student-thesis-date">October 2014</span>
+          
+        </div>
+      </div>
+      </div>
+      
+      </div>
+      <div class="row">
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/nurjahan-parvin-2012-10-22.jpeg" alt="Nurjahan Parvin">
+        <div class="media-body">
+          
+          <span class="student-name">Nurjahan Parvin</span>
+          
+          
+          <br> <span class="student-info">M.Sc. CS</span>
+          
+          
+          <br><a href="./student-theses/2013-parvin-msc.pdf"> <span class="student-thesis">Robust curved road boundary detection using hierarchical clustering</span> </a><br><span class="student-thesis-date">October 2013</span>
+          
+        </div>
+      </div>
+      </div>
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/Zheng-Wang.jpg" alt="Zheng Wang">
+        <div class="media-body">
+          
+          <a href="https://www.linkedin.com/in/zheng-wang-2797a558/">
+          
+          <span class="student-name">Zheng Wang</span>
+          
+          </a>
+          
+          
+          <br> <span class="student-info">M.Sc. CS, last at Calibration Technologies Ltd.</span>
+          
+          
+          <br><a href="./student-theses/2013-wang-msc.pdf"> <span class="student-thesis">Topic models for image localization</span> </a><br><span class="student-thesis-date">August 2013</span>
+          
+        </div>
+      </div>
+      </div>
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/Raquel-Murray.jpg" alt="Raquel Murray">
+        <div class="media-body">
+          
+          <a href="https://www.linkedin.com/in/rvm/">
+          
+          <span class="student-name">Raquel Murray</span>
+          
+          </a>
+          
+          
+          <br> <span class="student-info">MCS, last in British Army</span>
+          
+          
+          <br><a href="./student-theses/2012-murray-mcs.pdf"> <span class="student-thesis">Computational and laboratory investigations of a model of blood droplet flight for forensic applications</span> </a><br><span class="student-thesis-date">August 2012</span>
+          
+        </div>
+      </div>
+      </div>
+      
+      </div>
+      <div class="row">
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/chris-little-64.jpg" alt="Christopher Little">
+        <div class="media-body">
+          
+          <a href="https://www.linkedin.com/in/chris-little-5477a923/">
+          
+          <span class="student-name">Christopher Little</span>
+          
+          </a>
+          
+          
+          <br> <span class="student-info">M.Sc. CS, last at Ericsson</span>
+          
+          
+          <br><a href="./student-theses/2011-little-msc.pdf"> <span class="student-thesis">Ray tracing large distributed Datasets using ray caches</span> </a><br><span class="student-thesis-date">December 2011</span>
+          
+        </div>
+      </div>
+      </div>
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/Gavin-Lobo.jpg" alt="Gavin Lobo">
+        <div class="media-body">
+          
+          <a href="https://www.linkedin.com/in/gavinnl/">
+          
+          <span class="student-name">Gavin Lobo</span>
+          
+          </a>
+          
+          
+          <br> <span class="student-info">MCS, last at General Dynamics</span>
+          
+          
+          <br><a href="./student-theses/2011-lobo-mcs.pdf"> <span class="student-thesis">Investigation into Smoothed Particle Hydrodynamics for Non-Newtonian Droplet Modelling</span> </a><br><span class="student-thesis-date">August 2011</span>
+          
+        </div>
+      </div>
+      </div>
+      
+      
+      
+      
+      <div class="col"></div>
+      
+      </div>
+      
+      
+      
+      
+
+      
+      
+      <h3>Undergraduate students</h3>
+      
+      
+      <div class="row">
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/2023-08-ghazi-shazan-ahmed.jpg" alt="Ghazi Shazan Ahmed">
+        <div class="media-body">
+          
+          <span class="student-name">Ghazi Shazan Ahmed</span>
+          
+          
+          <br> <span class="student-info">Mitacs Globalink Research Intern, Summer 2023 (IIIT Bangalore Electronics City)</span>
+          
+          
+          <br><span class="student-thesis">Deep Learning for Cloud Removal in Hyperspectral Imagery</span> <br><span class="student-thesis-date"></span>
+          
+        </div>
+      </div>
+      </div>
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/2023-06-soham-chitnis.jpg" alt="Soham Chitnis">
+        <div class="media-body">
+          
+          <span class="student-name">Soham Chitnis</span>
+          
+          
+          <br> <span class="student-info">Mitacs Globalink Research Intern, Summer 2023 (BITS Pilani)</span>
+          
+          
+          <br><span class="student-thesis">Deep Learning for Hyperspectral Analysis</span> <br><span class="student-thesis-date"></span>
+          
+        </div>
+      </div>
+      </div>
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/none.png" alt="Priyadharshini Ramalingam">
+        <div class="media-body">
+          
+          <span class="student-name">Priyadharshini Ramalingam</span>
+          
+          
+          <br> <span class="student-info">Workstudy student</span>
+          
+          
+        </div>
+      </div>
+      </div>
+      
+      </div>
+      <div class="row">
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/2019-05-mohammad-mushfequr-rahman-thumb.png" alt="Mohammad Mushfequr Rahman">
+        <div class="media-body">
+          
+          <span class="student-name">Mohammad Mushfequr Rahman</span>
+          
+          
+          <br> <span class="student-info">Research Assistant</span>
+          
+          
+        </div>
+      </div>
+      </div>
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/2018-05-michael-lombardo.jpg" alt="Michael Lombardo">
+        <div class="media-body">
+          
+          <span class="student-name">Michael Lombardo</span>
+          
+          
+          <br> <span class="student-info">NSERC USRA, Summer 2018</span>
+          
+          
+          <br><span class="student-thesis">Content Aware Video Segmentation</span> <br><span class="student-thesis-date"></span>
+          
+        </div>
+      </div>
+      </div>
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/2016-02-02-Michael-Stergianis.jpg" alt="Michael Stergianis">
+        <div class="media-body">
+          
+          <span class="student-name">Michael Stergianis</span>
+          
+          
+          <br> <span class="student-info">NSERC USRA, Summer 2016; NSERC USRA Summer 2017</span>
+          
+          
+          <br><span class="student-thesis">Long-term Activity Recognition in Construction Sites (2016); Depth Map Estimation using Slanted Windows (2017)</span> <br><span class="student-thesis-date"></span>
+          
+        </div>
+      </div>
+      </div>
+      
+      </div>
+      <div class="row">
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/sksg.png" alt="Seyed Kamyar Seyed Ghasemipour">
+        <div class="media-body">
+          
+          <a href="http://www.cs.utoronto.ca/~kamyar/">
+          
+          <span class="student-name">Seyed Kamyar Seyed Ghasemipour</span>
+          
+          </a>
+          
+          
+          <br> <span class="student-info">UTRECS, UofT, Summer 2015, last graduate student at Vector Institute</span>
+          
+          
+          <br><span class="student-thesis">Surface proposals</span> <br><span class="student-thesis-date"></span>
+          
+        </div>
+      </div>
+      </div>
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/ekaterina-datensko.jpeg" alt="Ekaterian Datensko">
+        <div class="media-body">
+          
+          <span class="student-name">Ekaterian Datensko</span>
+          
+          
+          <br> <span class="student-info">UTRECS, UofT, Summer 2015, last Software Engineer at Google</span>
+          
+          
+          <br><span class="student-thesis">Surface proposals</span> <br><span class="student-thesis-date"></span>
+          
+        </div>
+      </div>
+      </div>
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/Piyush-Dugar.png" alt="Piyush Dugar">
+        <div class="media-body">
+          
+          <span class="student-name">Piyush Dugar</span>
+          
+          
+          <br> <span class="student-info">Mitacs Globalink Research Intern, Summer 2015 (IIT, Jodhpur)</span>
+          
+          
+          <br><span class="student-thesis">Machine Learning Approaches to Action Recognition</span> <br><span class="student-thesis-date"></span>
+          
+        </div>
+      </div>
+      </div>
+      
+      </div>
+      <div class="row">
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/Shubham-Singhal-May-2015.png" alt="Subham Singhal">
+        <div class="media-body">
+          
+          <span class="student-name">Subham Singhal</span>
+          
+          
+          <br> <span class="student-info">Mitacs Globalink Research Intern, Summer 2015, (BITS, Pilani)</span>
+          
+          
+          <br><span class="student-thesis">Temporal superpixels</span> <br><span class="student-thesis-date"></span>
+          
+        </div>
+      </div>
+      </div>
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/20130515-wesley-taylor.jpg" alt="Wesley Taylor">
+        <div class="media-body">
+          
+          <span class="student-name">Wesley Taylor</span>
+          
+          
+          <br> <span class="student-info">Summer 2013; NSERC USRA, Summer 2014; Summer 2015</span>
+          
+          
+          <br><span class="student-thesis">Intelligent context-aware video editing; New tools for automatic video editing; Vehicle detection and tracking in traffic cameras</span> <br><span class="student-thesis-date"></span>
+          
+        </div>
+      </div>
+      </div>
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/none.png" alt="Ryan Shanks">
+        <div class="media-body">
+          
+          <span class="student-name">Ryan Shanks</span>
+          
+          
+          <br> <span class="student-info">Summer 2013</span>
+          
+          
+          <br><span class="student-thesis">Investigations into High-Performance Rendering Using CUDA</span> <br><span class="student-thesis-date"></span>
+          
+        </div>
+      </div>
+      </div>
+      
+      </div>
+      <div class="row">
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/David-Nemirovsky.jpg" alt="David Nemrovsky">
+        <div class="media-body">
+          
+          <span class="student-name">David Nemrovsky</span>
+          
+          
+          <br> <span class="student-info">Summer 2013</span>
+          
+          
+          <br><span class="student-thesis">LED based indoor localization</span> <br><span class="student-thesis-date"></span>
+          
+        </div>
+      </div>
+      </div>
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/jordan-stadler-2012-10-22.jpeg" alt="Jordan Stadler">
+        <div class="media-body">
+          
+          <span class="student-name">Jordan Stadler</span>
+          
+          
+          <br> <span class="student-info">Summer 2011</span>
+          
+          
+          <br><span class="student-thesis">Vision-based lift analysis using Microsoft Kinect</span> <br><span class="student-thesis-date"></span>
+          
+        </div>
+      </div>
+      </div>
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/Wiktor-Starzyk.jpg" alt="Wiktor Starzyk">
+        <div class="media-body">
+          
+          <span class="student-name">Wiktor Starzyk</span>
+          
+          
+          <br> <span class="student-info">Summer 2010; Summer 2011</span>
+          
+          
+          <br><span class="student-thesis">A Cognitive Camera Network; Learning proactive control strategies for PTZ cameras</span> <br><span class="student-thesis-date"></span>
+          
+        </div>
+      </div>
+      </div>
+      
+      </div>
+      <div class="row">
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/Adam-Domurad.jpg" alt="Adam Domurad">
+        <div class="media-body">
+          
+          <span class="student-name">Adam Domurad</span>
+          
+          
+          <br> <span class="student-info">Summer 2010; NSERC USRA, Summer 2011, Best poster, Student research showcase, Faculty of Science</span>
+          
+          
+          <br><span class="student-thesis">Color based pedestrian tracking; Pedestrian tracking using a visual analysis pipeline</span> <br><span class="student-thesis-date"></span>
+          
+        </div>
+      </div>
+      </div>
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/Tanvir-Kaykobad.png" alt="M. Tanvir Kaykobad">
+        <div class="media-body">
+          
+          <span class="student-name">M. Tanvir Kaykobad</span>
+          
+          
+          <br> <span class="student-info">Summer 2010, last graduate student at CGLab, Carleton University</span>
+          
+          
+          <br><span class="student-thesis">Dynamic path planning for crowd simulation</span> <br><span class="student-thesis-date"></span>
+          
+        </div>
+      </div>
+      </div>
+      
+      
+      
+      
+      <div class="col"></div>
+      
+      </div>
+      
+      
+      
+      
+
+      
+      
+      <h3>Honor Thesis Students</h3>
+      
+      
+      <div class="row">
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/2019-05-mohammad-mushfequr-rahman-thumb.png" alt="Mohammad Mushfequr Rahman">
+        <div class="media-body">
+          
+          <span class="student-name">Mohammad Mushfequr Rahman</span>
+          
+          
+          <br> <span class="student-info">Undergraduate Honour Thesis Student, co-supervised with <a
+href="http://db.science.uoit.ca/">Prof. K. Pu</a>, last at Deloitte
+</span>
+          
+          
+          <br><span class="student-thesis">Visualizing Zero-Shot Learning</span> <br><span class="student-thesis-date">April 2022</span>
+          
+        </div>
+      </div>
+      </div>
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/2019-04-18-KathrynChen.jpg" alt="Kathryn Mei-Yu Chen">
+        <div class="media-body">
+          
+          <span class="student-name">Kathryn Mei-Yu Chen</span>
+          
+          
+          <br> <span class="student-info">Undergraduate honor thesis student, last at Scotiabank</span>
+          
+          
+          <br><span class="student-thesis">Something-Somthing Human-Object-Interaction Detection In Video Reasoning</span> <br><span class="student-thesis-date">April 2021</span>
+          
+        </div>
+      </div>
+      </div>
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/pic_pulkit.png" alt="Pulkit Madan">
+        <div class="media-body">
+          
+          <span class="student-name">Pulkit Madan</span>
+          
+          
+          <br> <span class="student-info">Undergraduate honor thesis student, last at Qualcomm</span>
+          
+          
+          <br><span class="student-thesis">Skeleton-Based Action Recognition Using Attention Mechanisms</span> <br><span class="student-thesis-date">April 2021</span>
+          
+        </div>
+      </div>
+      </div>
+      
+      </div>
+      <div class="row">
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/pic-harry.jpg" alt="Harrish Thasarathan">
+        <div class="media-body">
+          
+          <a href="https://harry-thasarathan.github.io/">
+          
+          <span class="student-name">Harrish Thasarathan</span>
+          
+          </a>
+          
+          
+          <br> <span class="student-info">Undergraduate honor thesis student, last at York University</span>
+          
+          
+          <br><span class="student-thesis">A Kinematic Framework for the Analysis and Visualization of Motion Discontinuities</span> <br><span class="student-thesis-date">April 2021</span>
+          
+        </div>
+      </div>
+      </div>
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/none.png" alt="Raphael Nation">
+        <div class="media-body">
+          
+          <span class="student-name">Raphael Nation</span>
+          
+          
+          <br> <span class="student-info">Undergraduate honor thesis student, last at LeapTools</span>
+          
+          
+          <br><span class="student-thesis">Point Cloud Reconstruction Using Deep Learning Techniques</span> <br><span class="student-thesis-date">April 2021</span>
+          
+        </div>
+      </div>
+      </div>
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/2019-04-18-afgan-64.jpg" alt="Mir Afgan Talpur">
+        <div class="media-body">
+          
+          <a href="https://github.com/MirAfganTalpur/Pastiche-UndergraduateThesis">
+          
+          <span class="student-name">Mir Afgan Talpur</span>
+          
+          </a>
+          
+          
+          <br> <span class="student-info">Undergraduate Honour Thesis Student</span>
+          
+          
+          <br><span class="student-thesis">Deep Learning on the Go.  Pastiche.</span> <br><span class="student-thesis-date">April 2020</span>
+          
+        </div>
+      </div>
+      </div>
+      
+      </div>
+      <div class="row">
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/nathan-beals.jpg" alt="Nathan Beals">
+        <div class="media-body">
+          
+          <span class="student-name">Nathan Beals</span>
+          
+          
+          <br> <span class="student-info">Undergraduate Honour Thesis Student, co-supervised with <a
+href="http://vialab.science.uoit.ca/">Prof. C. Collins</a>
+</span>
+          
+          
+          <br><span class="student-thesis">A Vision-Based System for Non-Intrusive Posture Correction Notifications</span> <br><span class="student-thesis-date">April 2020</span>
+          
+        </div>
+      </div>
+      </div>
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/jonathan-perry.png" alt="Jonathan Perry">
+        <div class="media-body">
+          
+          <span class="student-name">Jonathan Perry</span>
+          
+          
+          <br> <span class="student-info">Undergraduate Honour Thesis Student, co-supervised with <a
+href="http://vialab.science.uoit.ca/">Prof. C. Collins</a>
+</span>
+          
+          
+          <br><span class="student-thesis">Gamer Skill Prediction using Gaze Tracking</span> <br><span class="student-thesis-date">April 2020</span>
+          
+        </div>
+      </div>
+      </div>
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/2018-05-michael-lombardo.jpg" alt="Michael Lombardo">
+        <div class="media-body">
+          
+          <span class="student-name">Michael Lombardo</span>
+          
+          
+          
+          <br><span class="student-thesis">Exploring LSTMs for Video Analysis</span> <br><span class="student-thesis-date">April 2019</span>
+          
+        </div>
+      </div>
+      </div>
+      
+      </div>
+      <div class="row">
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/2019-01-matt-mccoleman.jpg" alt="Matt McColeman">
+        <div class="media-body">
+          
+          <span class="student-name">Matt McColeman</span>
+          
+          
+          <br> <span class="student-info">Software Developer at TD Bank</span>
+          
+          
+          <br><span class="student-thesis">Human Joint Prediction using Fully Convolutional Neural Networks</span> <br><span class="student-thesis-date">April 2019</span>
+          
+        </div>
+      </div>
+      </div>
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/2016-02-02-Michael-Stergianis.jpg" alt="Michael Stergianis">
+        <div class="media-body">
+          
+          <span class="student-name">Michael Stergianis</span>
+          
+          
+          
+          <br><span class="student-thesis">Stereo vision: Cost-volume filtering meets deep learning</span> <br><span class="student-thesis-date">April 2018</span>
+          
+        </div>
+      </div>
+      </div>
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/2018-05-hunter-thompson.jpg" alt="Hunter Thompson">
+        <div class="media-body">
+          
+          <span class="student-name">Hunter Thompson</span>
+          
+          
+          
+          <br><span class="student-thesis">Video summarization with early superframe segmentation</span> <br><span class="student-thesis-date">April 2018</span>
+          
+        </div>
+      </div>
+      </div>
+      
+      </div>
+      <div class="row">
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/none.png" alt="Jose Miguel Mendez">
+        <div class="media-body">
+          
+          <span class="student-name">Jose Miguel Mendez</span>
+          
+          
+          
+          <br><span class="student-thesis">A Cloud-based Service for Comparative Genomics</span> <br><span class="student-thesis-date">April 2017</span>
+          
+        </div>
+      </div>
+      </div>
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/none.png" alt="Robert de Bruyn">
+        <div class="media-body">
+          
+          <span class="student-name">Robert de Bruyn</span>
+          
+          
+          
+          <br><span class="student-thesis">An iOS app for Document Scanning</span> <br><span class="student-thesis-date">April 2017</span>
+          
+        </div>
+      </div>
+      </div>
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/20130515-wesley-taylor.jpg" alt="Wesley Taylor">
+        <div class="media-body">
+          
+          <span class="student-name">Wesley Taylor</span>
+          
+          
+          
+          <br><span class="student-thesis">Vision-Based High-Performance Highway Vehicles Analytics</span> <br><span class="student-thesis-date">April 2015</span>
+          
+        </div>
+      </div>
+      </div>
+      
+      </div>
+      <div class="row">
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/none.png" alt="Pat Goebel">
+        <div class="media-body">
+          
+          <span class="student-name">Pat Goebel</span>
+          
+          
+          
+          <br><span class="student-thesis">Fast Image Matching using ORB and Multi-Index Hashing</span> <br><span class="student-thesis-date">April 2014</span>
+          
+        </div>
+      </div>
+      </div>
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/none.png" alt="Carly Marshall">
+        <div class="media-body">
+          
+          <span class="student-name">Carly Marshall</span>
+          
+          
+          
+          <br><span class="student-thesis">Privacy Protected Video Surveillance</span> <br><span class="student-thesis-date">April 2014</span>
+          
+        </div>
+      </div>
+      </div>
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/David-Nemirovsky.jpg" alt="David Nemirovsky">
+        <div class="media-body">
+          
+          <span class="student-name">David Nemirovsky</span>
+          
+          
+          
+          <br><span class="student-thesis">Object Detection and Annotation in Videos for Location Recall</span> <br><span class="student-thesis-date">April 2014</span>
+          
+        </div>
+      </div>
+      </div>
+      
+      </div>
+      <div class="row">
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/stephanie-gloin-2012-10-22.jpeg" alt="Stephanie Gloin">
+        <div class="media-body">
+          
+          <span class="student-name">Stephanie Gloin</span>
+          
+          
+          
+          <br><span class="student-thesis">Blood Droplet Analysis Using Image Processing and Ellipse Fitting Techniques</span> <br><span class="student-thesis-date">April 2013</span>
+          
+        </div>
+      </div>
+      </div>
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/jordan-stadler-2012-10-22.jpeg" alt="Jordan Stadler">
+        <div class="media-body">
+          
+          <span class="student-name">Jordan Stadler</span>
+          
+          
+          
+          <br><span class="student-thesis">Interactive Online Image Stitching for Panoramic Image Generation</span> <br><span class="student-thesis-date">April 2012</span>
+          
+        </div>
+      </div>
+      </div>
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/none.png" alt="Tony Chuang">
+        <div class="media-body">
+          
+          <span class="student-name">Tony Chuang</span>
+          
+          
+          
+          <br><span class="student-thesis">Dynamic Crowd Simulation</span> <br><span class="student-thesis-date">April 2012</span>
+          
+        </div>
+      </div>
+      </div>
+      
+      </div>
+      <div class="row">
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/jon-elliot.jpg" alt="Jonathan Elliot">
+        <div class="media-body">
+          
+          <span class="student-name">Jonathan Elliot</span>
+          
+          
+          
+          <br><span class="student-thesis">Regression of Graph Images using Piecewise Interpolation</span> <br><span class="student-thesis-date">April 2012</span>
+          
+        </div>
+      </div>
+      </div>
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/Wiktor-Starzyk.jpg" alt="Wiktor Starzyk">
+        <div class="media-body">
+          
+          <span class="student-name">Wiktor Starzyk</span>
+          
+          
+          
+          <br><span class="student-thesis">Virtual Vision Simulator for Smart Camera Network Research</span> <br><span class="student-thesis-date">April 2011</span>
+          
+        </div>
+      </div>
+      </div>
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/Tanvir-Kaykobad.png" alt="M. Tanvir Kaykobad">
+        <div class="media-body">
+          
+          <span class="student-name">M. Tanvir Kaykobad</span>
+          
+          
+          <br> <span class="student-info">last graduate student at CGLab, Carleton University</span>
+          
+          
+          <br><span class="student-thesis">A Study on Simulating Formation and Movement of a Group of Agents</span> <br><span class="student-thesis-date">April 2011</span>
+          
+        </div>
+      </div>
+      </div>
+      
+      </div>
+      <div class="row">
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/none.png" alt="Alex Wijtowych">
+        <div class="media-body">
+          
+          <span class="student-name">Alex Wijtowych</span>
+          
+          
+          
+          <br><span class="student-thesis">A Sliding Model for Estimating Traffic Density</span> <br><span class="student-thesis-date">April 2010</span>
+          
+        </div>
+      </div>
+      </div>
+      
+      
+      
+      
+      <div class="col-md-4">
+      <div class="media">
+        <img class="mr-3 rounded" src="imgs/students/none.png" alt="Bradley Chicoine">
+        <div class="media-body">
+          
+          <span class="student-name">Bradley Chicoine</span>
+          
+          
+          
+          <br><span class="student-thesis">An Online System for Visualizing UOIT Class Schedules</span> <br><span class="student-thesis-date">April 2010</span>
+          
+        </div>
+      </div>
+      </div>
+      
+      
+      
+      
+      <div class="col"></div>
+      
+      </div>
+      
+      
+      
+      
+
+      <h1 id="student-theses">Student Theses</h1>
+
+      <div style="margin-left: 25px; margin-right: 25px;">
+        <div class="row">
+          <script src="https://bibbase.org/show?bib=http://vclab.science.uoit.ca/student-theses/student-theses.bib&jsonp=1"></script>
+        </div>
+      </div>
+      
+      <div class="footer">
+  <hr>  
+  <div class="row">
+    <div class="col">
+      <img src="imgs/vclab-ontariotech-56.png">
+    </div>
+    <div class="col">
+      &copy; Faisal Qureshi<br>
+      Last updated 2025-01-02 14:04<br>
+      &copy; Webify 4.1
+    </div>
+  </div>
+</div>
+
+     </div>
   </body>
 </html>
