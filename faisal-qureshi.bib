@@ -1,4 +1,16 @@
 @InProceedings{PQ25,
+  author = {Ans Munir and Faisal Z. Qureshi and Muhammad Haris Khan and Mohsen Ali},
+  title =        {TLAC: Two-stage LMM Augmented CLIP for Zero-Shot Classification},
+  year =         {2025},
+  booktitle = {Proc. 8th Multimodel Learning and Applications Workshop (co-located with CVPR 2025)},
+  address =   {Nashville, TN},
+  month =     {June},
+  pages = {11pp},
+  keywords = {tlac},
+  url_Paper = {pubs/25-cvpr-w.pdf}
+}
+
+@InProceedings{PQ25,
   author = {Bohdan Perederei and Faisal Z. Qureshi},
   title =        {Single Hyperspectral Image Super-Resolution utilizing Implicit Neural Representations},
   year =         {2025},
@@ -26,7 +38,9 @@
     author = {Lundström, Adam and O’Nils, Mattias and Qureshi, Faisal Z.},
     title = {Contextual knowledge-informed deep domain generalization for bearing fault diagnosis},
     journal = {IEEE Access},
+    month = {December},
     year = {2024},
+    pages = {196842--196854},
     keywords = {bearing-fault-diagnosis}, 
     url_Paper = {pubs/24-ieee-access-j.pdf},
     doi = {10.1109/ACCESS.2024.3520624}
@@ -37,24 +51,30 @@
     title = {Hyperspectral Image Compression Using Sampling and Implicit Neural Representations},
     journal = {IEEE Transactions on Geoscience and Remote Sensing},
     pages = {12pp},
+    volume = {63},
+    month = {December},
     year = {2024},
+    issn = {1558-0644},
     keywords = {hsi-inr-compression}, 
     doi = {10.1109/TGRS.2024.3509718},
-    url_Paper = {pubs/24-ieee-tgrs-j-hsi-compression}
+    url_Paper = {pubs/24-ieee-tgrs-j-hsi-compression.pdf}
 }
 
 @article{10.1093/nar/gkae920,
     author = {Sullivan, Alexander and Lombardo, Michael N and Pasha, Asher and Lau, Vincent and Zhuang, Jian Yun and Christendat, Ashley and Pereira, Bruno and Zhao, Tianhui and Li, Youyang and Wong, Rachel and Qureshi, Faisal Z and Provart, Nicholas J},
     title = "{20 years of the Bio-Analytic Resource for Plant Biology}",
     journal = {Nucleic Acids Research},
-    pages = {gkae920},
+    pages = {1576--1586},
+    volume = {53},
+    issue = {D1},
     year = {2024},
-    month = {10},
+    month = {October},
     abstract = "{The Bio-Analytic Resource for Plant Biology (‘the BAR’, at https://bar.utoronto.ca) is celebrating its 20th year in operation in 2025. The BAR encompasses and provides visualization tools for large ‘omics data sets from plants. The BAR covers data from Arabidopsis, tomato, wheat, barley and 29 other plant species (with data for 2 others to be released soon). These data include nucleotide and protein sequence data, gene expression data, protein-protein and protein–DNA interactions, protein structures, subcellular localizations, and polymorphisms. The data are stored in more than 200 relational databases holding 186 GB of data and are presented to the researchers via web apps. These web apps provide data analysis and visualization tools. Some of the most popular tools are eFP (‘electronic fluorescent pictograph’) Browsers, ePlants and ThaleMine (an Arabidopsis-specific instance of InterMine). The BAR was designated a Global Core Biodata Resource in 2023. Like other GCBRs, the BAR has excellent operational stability, provides access without login requirement, and provides an API for researchers to be able to access BAR data programmatically. We present in this update a new overarching search tool called Gaia that permits easy access to all BAR data, powered by machine learning and artificial intelligence.}",
     issn = {0305-1048},
     doi = {10.1093/nar/gkae920},
     url = {https://doi.org/10.1093/nar/gkae920},
-    eprint = {https://academic.oup.com/nar/advance-article-pdf/doi/10.1093/nar/gkae920/59995839/gkae920.pdf}
+    eprint = {https://academic.oup.com/nar/advance-article-pdf/doi/10.1093/nar/gkae920/59995839/gkae920.pdf},
+    note = {Journal published in January 2025}
 }
 
 @InProceedings{24-dicta-c,
@@ -79,7 +99,7 @@
   address={Athens},
   booktitle={Proceedings International Geoscience and Remote Sensing Symposium (IGARSS)},
   url_Paper={pubs/24-igarss-paper.pdf},
-  keywords={spacnn-ldvae}
+  keywords={hsi-unmixing,hsi-unmixing-spacnn}
 }
 
 @ARTICLE{24-ieee-igrs-j,
@@ -87,14 +107,14 @@
   journal={IEEE Transactions on Geoscience and Remote Sensing}, 
   title={Hyperspectral Pixel Unmixing with Latent Dirichlet Variational Autoencoder}, 
   year={2024},
-  volume={},
+  volume={62},
   number={},
   pages={13pp},
   abstract={We present a method for hyperspectral pixel unmixing. The proposed method assumes that (1) abundances can be encoded as Dirichlet distributions and (2) spectra of endmembers can be represented as multivariate Normal distributions. The method solves the problem of abundance estimation and endmember extraction within a variational autoencoder setting where a Dirichlet bottleneck layer models the abundances, and the decoder performs endmember extraction. The proposed method can also leverage transfer learning paradigm, where the model is only trained on synthetic data containing pixels that are linear combinations of one or more endmembers of interest. In this case, we retrieve endmembers (spectra) from the United States Geological Survey Spectral Library. The model thus trained can be subsequently used to perform pixel unmixing on “real data” that contains a subset of the endmembers used to generated the synthetic data. The model achieves state-of-the-art results on several benchmarks: Cuprite, Urban Hydice and Samson. We also present new synthetic dataset, OnTech-HSI-Syn-21, that can be used to study hyperspectral pixel unmixing methods. We showcase the transfer learning capabilities of the proposed model on Cuprite and OnTech-HSI-Syn-21 datasets. In summary, the proposed method can be applied for pixel unmixing a variety of domains, including agriculture, forestry, mineralogy, analysis of materials, healthcare, etc. Additionally, the proposed method eschews the need for labelled data for training by leveraging the transfer learning paradigm, where the model is trained on synthetic data generated using the endmembers present in the “real” data.},
   doi={10.1109/TGRS.2024.3357589},
-  ISSN={},
-  month={},
-  keywords = {hyperspectral-unmixing},
+  ISSN={1558-0644},
+  month={January},
+  keywords = {hsi-unmixing},
   url_Paper = {pubs/24-ieee-tgrs-j.pdf}
 }
 
@@ -103,7 +123,8 @@
   journal={IEEE Access}, 
   title={An interactive threshold-setting procedure for improved multivariate anomaly detection in time series}, 
   year={2023},
-  volume={},
+  volume={10},
+  month={October},
   number={},
   pages={11pp},
   abstract={Anomaly detection in multivariate time series is valuable for many applications. In this context, unsupervised and semi-supervised deep learning methods that estimate how normal a new observation is have shown promising results on benchmark datasets. These methods are dependent on a threshold that determines which points should be regarded as anomalous and not be anomalous. However, finding the optimal threshold is not easy since no information about the ground truth is known in advance, which implies that there are limitations to automatic threshold-setting methods available today. An alternative is to utilize the expertise of users that can interact in a threshold-setting procedure, but for this to be practically feasible, the method needs to be both accurate and efficient in relation to the state-of-the-art automatic methods. Therefore, this study develops an interactive threshold-setting schema and examines to what extent it can outperform the current state-of-the-art automatic threshold-setting methods. The result of the study strongly indicates that the suggested method with little effort can provide higher accuracy than the automatic threshold-setting methods on a general basis.},
@@ -134,7 +155,7 @@
   month={July},
   howpublished={International Geoscience and Remote Sensing Symposium (IGARSS)},
   url_Paper={pubs/23-igarss-paper.pdf},
-  keywords={iterative-ldvae}
+  keywords={hsi-unmixing-iterative}
 }
 
 @misc{23-igarss-abstract,
@@ -145,7 +166,7 @@
   month={May},
   howpublished={International Geoscience and Remote Sensing Symposium (IGARSS) Abstracts},
   url_Paper={pubs/23-igarss-abstract.pdf},
-  keywords={iterative-ldvae}
+  keywords={hsi-unmixing-iterative}
 }
 
 @InProceedings{23-crv-c,
@@ -184,7 +205,7 @@
   pages =     {24pp},
   month =     {July},
   url = {https://doi.org/10.1371/journal.pone.0269174},
-  keywords = {hsi},
+  keywords = {hsi-dim-reduction},
   url_Paper = {pubs/22-plos-one-j.pdf}
 }
 
@@ -231,7 +252,7 @@ issn = {0924-2716},
 doi = {https://doi.org/10.1016/j.isprsjprs.2020.11.013},
 url = {http://www.sciencedirect.com/science/article/pii/S0924271620303208},
 author = {Phuong D. Dao and Kiran Mantripragada and Yuhong He and Faisal Z. Qureshi},
-keywords = {hyperspectral-segmentation},
+keywords = {hsi-segmentation},
 abstract = {Optimal scale selection for image segmentation is an essential component of the Object-Based Image Analysis (OBIA) and interpretation. An optimal segmentation scale is a scale at which image objects, overall, best represent real-world ground objects and features across the entire image. At this scale, the intra-object variance is ideally lowest and the inter-object spatial autocorrelation is ideally highest, and a change in the scale could cause an abrupt change in these measures. Unsupervised parameter optimization methods typically use global measures of spatial and spectral properties calculated from all image objects in all bands as the target criteria to determine the optimal segmentation scale. However, no studies consider the effect of noise in image spectral bands on the segmentation assessment and scale selection. Furthermore, these global measures could be affected by outliers or extreme values from a small number of objects. These issues may lead to incorrect assessment and selection of optimal scales and cause the uncertainties in subsequent segmentation and classification results. These issues become more pronounced when segmenting hyperspectral data with large spectral variability across the spectrum. In this study, we propose an enhanced method that 1) incorporates the band’s inverse noise weighting in the segmentation and 2) detects and removes outliers before determining segmentation scale parameters. The proposed method is evaluated on three well-established segmentation approaches – k-means, mean-shift, and watershed. The generated segments are validated by comparing them with reference polygons using normalized over-segmentation (OS), under-segmentation (US), and the Euclidean Distance (ED) indices. The results demonstrate that this proposed scale selection method produces more accurate and reliable segmentation results. The approach can be applied to other segmentation selection criteria and are useful for automatic multi-parameter tuning and optimal scale parameter selections in OBIA methods in remote sensing.}
 }
 

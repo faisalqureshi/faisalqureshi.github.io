@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G9CWRQBRB0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-G9CWRQBRB0');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="pandoc">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hyperspectral Image compression using Implicit Neural Representation</title>
+    <meta name="author" content="">
+    <meta name="author" content="">
+
+    <!-- css -->
+    <link rel="stylesheet" href="../../style/bootstrap-3.3.7-dist/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../style/my.css" type="text/css" />
+    <link rel="stylesheet" href="../../style/projects.css" type="text/css" />
+
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=BioRhyme:200,300,400,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=VT323:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Baloo:400,300,700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Averia+Serif+Libre" rel="stylesheet">
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="/style/my.js"></script>
+  </head>
+  <body style="background-color: white;">
+    <div class="container" style="background: white;">
+
+      <h1 class="project-title">Hyperspectral Image compression using Implicit Neural Representation</h1>
+      
+
+      <hr>
+      <div class="row">
+        <div class="project-member"><a href="https://github.com/ShimaRezasoltani">Shima Rezasoltani</a></div>
+      </div>
+      <div class="row">
+        <div class="project-member"><a href="http://vclab.science.uoit.ca/">Faisal Z. Qureshi</a></div>
+      </div>
+      <div class="row">
+        <div class="project-lab-address">
+          <div class="project-institute">
+          Visual Computing Lab<br>Faculty of Science<br>University of Ontario Institute of Technology<br>2000 Simcoe St. N., Oshawa ON L1G 0C5</div>
+        </div>
+      </div>
+      <hr>
+
+      <h1 id="abstract">Abstract</h1>
+<p>Hyperspectral images, which record the electromagnetic spectrum for a
+pixel in the image of a scene, often store hundreds of channels per
+pixel and contain an order of magnitude more information than a
+similarly-sized RBG color image. Consequently, concomitant with the
+decreasing cost of capturing these images, there is a need to develop
+efficient techniques for storing, transmitting, and analyzing
+hyperspectral images. This paper develops a method for hyperspectral
+image compression using implicit neural representations where a
+multi-layer perceptron network fΘ with sinusoidal activation functions
+“learns” to map pixel locations to pixel intensities for a given
+hyperspectral image I. <span class="math inline">\(f_\Theta\)</span>
+thus acts as a compressed encoding of this image, and the original image
+is reconstructed by evaluating <span
+class="math inline">\(f_\Theta\)</span> at each pixel location. We have
+evaluated our method on four benchmarks—Indian Pines, Jasper Ridge,
+Pavia University, and Cuprite—and we show that the proposed method
+achieves better compression than JPEG, JPEG2000, and PCA-DCT at low
+bitrates.</p>
+<h1 id="methodology">Methodology</h1>
+<p>This work investigates the use of INRs for hyperspectral image
+compression and shows that it is possible to achieve high rates of
+compression while maintaining acceptable Peak Signal-to-Noise Ratio
+(PSNR) values. Figure 1 provides an overview of the proposed compression
+and decompression pipeline.</p>
+<hr>
+<p align="center">
+<img width="80%" src="media/compression-and-decompression.png">
+</p>
+Figure 1. Compression and Decompression Pipeline. (left) An MLP with a
+periodic activation function is trained to map pixel locations to the
+pixel’s spectral signature. (right) Once fitted, MLP is used to
+reconstruct the hyperspectral image by performing inference at various
+pixel locations
+<hr>
+<p>The proposed compression method consists of two steps. Step 1
+performs an architecture search. The goal here is to find an MLP that
+achieves the highest reconstruction accuracy for a given bpppb budget.
+Architecture search is performed by overfitting multiple MLPs having
+different numbers of hidden layers and hidden layers’ widths to the
+hyperspectral image. Architecture search, however, means longer
+compression times. Step 2 involves quantizing and storing the parameters
+of the overfitted MLP on disk.</p>
+<h1 id="results-and-discussion">Results and discussion</h1>
+<p>We have used four datasets to evaluate our approach: Indian Pines,
+Jasper Ridge, Pavia University, and Cuprite. We compare our work with
+three hyperspectral image compression methods: 1) JPEG, 2) PCA-DCT, and
+3) JPEG2000. Figure 2 shows PSNR values at various compression rates for
+different methods. Our method stores MLP weights as 32-bit floating
+point values, whereas hp ours stores MLP weights at half-precision as
+16-bit floating point values that are constructed by quantizing the MLP
+weights. These plots illustrate that our methods achieve higher
+compression quality, i.e., better PSNR, for a given value of bpppb. This
+is especially true for lower bpppb values.</p>
+<hr>
+<p align="center">
+<img width="40%" src="media/paviaComparison.jpg">
+<img width="40%" src="media/cupriteComparison.jpg">
+</p>
+<p align="center">
+<img width="40%" src="media/jasperComparison.jpg">
+<img width="40%" src="media/indianComparison.jpg">
+</p>
+Figure 2. Compression results. (clockwise, from top left) Pavia
+University, Cuprite, Indian Pines, and Jasper Ridge. PSNR values
+achieved at various bpppb for our method, along with those obtained by
+JPEG, JPEG2000, and PCA-DCT schemes. Here “ours” refer to our method
+where parameters are stored at 32-bit precision, and “HP ours” refer to
+results when parameters are stored at 16-bit precision.
+<hr>
+<p>Figure 3 shows some original and reconstructed images in the datasets
+used in this project.</p>
+<hr>
+<p align="center">
+<img width="30%" src="media/cupriteOriginalMagnified.png">
+<img width="30%" src="media/cupriteReconMagnified.png">
+</p>
+<p align="center">
+<img width="30%" src="media/indianOriginalMagnified.png">
+<img width="30%" src="media/indianReconMagnified.png">
+</p>
+<p align="center">
+<img width="30%" src="media/jasperOriginalMagnified.png">
+<img width="30%" src="media/jasperReconMagnified.png">
+</p>
+<p align="center">
+<img width="30%" src="media/paviaUOriginalMagnified.png">
+<img width="30%" src="media/paviaUReconMagnified.png">
+</p>
+Figure 3. Reconstructed images are shown in pseudo-color. (Up to bottom)
+Cuprite, Indian Pines, Jasper Ridge, and Pavia University. The image on
+the left in each pair is the original hyperspectral image, whereas the
+image on the right is the reconstructed, i.e., decompressed,
+hyperspectral image. The zoomed-in portions show that the structure is
+preserved in the reconstructed image. Images are shown in pseudo-color.
+<hr>
+<h1 id="publication">Publication</h1>
+<p>For technical details please look at the following arXiv
+manuscript</p>
+<script src="https://bibbase.org/show?bib=http://vclab.science.uoit.ca/faisal-qureshi.bib&jsonp=1&filter=keywords:hsi-superresolution&group0=type"></script>
+
+
+      <footer style="margin-top: 50px;">
+  <div class="container footer">
+    <div class="row">
+      <hr>
+      <div class="col-md-6 col-sm-12">
+        <img src="http://vclab.science.uoit.ca/imgs/vclab-ontariotech.png">
+      </div>
+      <div class="col-md-6 col-sm-12">
+        &copy; Faisal Qureshi<br>
+        Last updated <br>
+        Site generated using &copy; Webify (Ver. 4.1)
+      </div>
+</footer>
+      
+    </div>
+
+  </body>
+</html>
