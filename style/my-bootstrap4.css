@@ -107,6 +107,11 @@ strong,
     color: blue;
 }
 
+.last-at {
+    font-style: underline;
+    color: darkgreen;
+}
+
 .about-more {
     display: none;
 }
