@@ -99,12 +99,14 @@ strong,
     color: maroon;
 }
 
-.old-news {
-    display: none;
+.news-row:last-child {
+    margin-bottom: 0;
 }
 
 #toggle-news {
     color: blue;
+    display: inline-block;
+    padding-top: 15px;
 }
 
 .last-at {
@@ -171,6 +173,14 @@ h1 {
   font-size: 36px;
   color: #34495E;
   border-bottom: solid 1px #34495E;
+}
+
+h2.research-topic {
+  margin-top: 24px;
+  font-size: 20px;
+  color: #ad0940;
+  text-transform: uppercase;
+  font-style: italic;
 }
 
 h2 {
@@ -286,7 +296,6 @@ td.lineNumbers {
     margin-left: 20px;
 }
 
-
 img.bibbase_icon {
     width: 20px;
     max-height: 16px;
@@ -370,4 +379,12 @@ img.bibbase_icon {
 .teaching_term {
     font-style: italic;
     color: gray;
+}
+
+.color-rolex-green {
+    color: #005326;
+}
+
+.color-off-white {
+    color: #f5f5f5;
 }

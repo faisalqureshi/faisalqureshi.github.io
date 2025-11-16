@@ -3,26 +3,21 @@ $(document).ready(function(){
     $("#toggle-news").css('cursor', 'pointer');
     $("#toggle-about").css('cursor', 'pointer');
 
-    // toggle news
-    $("#toggle-news").click( function() {
-        
-        if ( $("#toggle-news").text() == "more >>>" ) {
-            $([id="old-news"]).each( function(){
-                $(this).show()
-            });
-            $("#toggle-news").text("<<< less");
+    $("#toggle-news").on("click", function () {
+        const $toggle = $(this);
+        const $rows = $("#news-container .row.old-news")
+        const isHidden = $rows.first().is(":hidden");
+        if (isHidden) {
+            $rows.css("display","flex");
+            $toggle.text("<<< less")
         }
         else {
-            $([id="old-news"]).each( function(){
-                $(this).hide()
-            });
-            $("#toggle-news").text("more >>>");
+            $rows.css("display","none")
+            $toggle.text("more >>>")
         }
     });
 
-    // toggle about
     $("#toggle-about").click(function(){
-
         if ( $("#toggle-about").text() == "more >>>" ) {
             $(".about-more").each( function() {
                 $(this).show()
