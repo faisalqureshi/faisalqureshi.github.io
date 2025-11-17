@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G9CWRQBRB0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-G9CWRQBRB0');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="pandoc">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Latent Dirichlet Variational Autoencoder for Hyperspectral Pixel Unmixing</title>
+    <meta name="author" content="">
+    <meta name="author" content="">
+
+    <!-- css -->
+    <link rel="stylesheet" href="../../style/bootstrap-3.3.7-dist/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../style/my.css" type="text/css" />
+    <link rel="stylesheet" href="../../style/projects.css" type="text/css" />
+
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=BioRhyme:200,300,400,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=VT323:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Baloo:400,300,700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Averia+Serif+Libre" rel="stylesheet">
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="/style/my.js"></script>
+  </head>
+  <body style="background-color: white;">
+    <div class="container" style="background: white;">
+
+      <h1 class="project-title">Latent Dirichlet Variational Autoencoder for Hyperspectral Pixel Unmixing</h1>
+      
+      <hr>
+          
+          
+      <div class="row members-row">
+      <div class="col">
+        <div class="project-member">
+          Kiran Mantripragada
+        </div>
+      </div>
+      <div class="col">
+        <div class="project-member">
+          <a href="http://vclab.science.uoit.ca/">Faisal Z. Qureshi</a>
+        </div>
+      </div>
+      </div>
+
+
+      <div class="row">
+      <div class="col">
+         <div class="project-institute">
+           Visual Computing Lab<br>Faculty of Science<br>University of Ontario Institute of Technology<br>2000 Simcoe St. N., Oshawa ON L1G 0C5
+         </div>
+      </div>
+      </div>
+      
+      <hr>
+
+      <h1 id="introduction">Introduction</h1>
+<p>We present a method for hyperspectral pixel unmixing. The proposed
+method assumes that 1) abundances can be encoded as Dirichlet
+distributions and 2) spectra of endmembers can be represented as
+multivariate normal distributions. The method solves the problem of
+abundance estimation and endmember extraction within a variational
+autoencoder setting where a Dirichlet bottleneck layer models the
+abundances, and the decoder performs endmember extraction. The proposed
+method can also leverage the transfer learning paradigm, where the model
+is only trained on synthetic data containing pixels that are linear
+combinations of one or more endmembers of interest. In this case, we
+retrieve endmembers (spectra) from the United States Geological Survey
+Spectral Library. The model thus trained can be subsequently used to
+perform pixel unmixing on “real data” that contains a subset of the
+endmembers used to generate the synthetic data. The model achieves
+state-of-theart results on several benchmarks: Cuprite, Urban Hydice,
+and Samson. We also present a new synthetic dataset, OnTech-HSISyn-21,
+that can be used to study hyperspectral pixel unmixing methods. We
+showcase the transfer learning capabilities of the proposed model on
+Cuprite and OnTech-HSI-Syn-21 datasets. In summary, the proposed method
+can be applied for pixel unmixing in a variety of domains, including
+agriculture, forestry, mineralogy, analysis of materials, and
+healthcare. In addition, the proposed method eschews the need for
+labeled data for training by leveraging the transfer learning paradigm,
+where the model is trained on synthetic data generated using the
+endmembers present in the “real” data.</p>
+<!-- <div class="row">
+<div class="col-lg-12">
+<figure class="figure" style="margin-top: 15px; margin-bottom: 20px;">
+<center>
+<a href="ldvae.png"><img class="img-responsive" width="50%"src="ldvae.png" alt="f"></a>
+<figcaption class="figure-caption" style="font-style: italic; font-weight: bold;">f</figcaption>
+</center>
+</figure>
+</div>
+</div>
+ -->
+<!-- <div class="row">
+<div class="col-lg-4"  style="padding: 15px; margin: 0px;">
+<figure class="figure"><a href=ldvae.png><img src="ldvae.png" class="figure-img img-fluid rounded img-responsive"></a></figure>
+</div>
+<div class="col-lg-4"  style="padding: 15px; margin: 0px;">
+<figure class="figure"><a href=ldvae-backprop.png><img src="ldvae-backprop.png" class="figure-img img-fluid rounded img-responsive"></a></figure>
+</div>
+<div class="col-lg-4"  style="padding: 15px; margin: 0px;">
+<figure class="figure"><a href=ldvae-backprop.png><img src="ldvae-backprop.png" class="figure-img img-fluid rounded img-responsive"></a></figure>
+</div>
+</div> -->
+<h2 id="estimating-abundances">Estimating Abundances</h2>
+<figure class="figure">
+<center>
+<img class="img-responsive" width="70%" src="abundance-estimation.png">
+<figcaption>
+Latent Dirichlet bottleneck layer forces the network to predict
+Dirichlet concentration parameters. A sample from the corresponding
+Dirichlet distribution constructs abundances.
+</figcaption>
+</center>
+</figure>
+<h2 id="endmember-extraction">Endmember Extraction</h2>
+<figure class="figure">
+<center>
+<img class="img-responsive" width="70%" src="endmember-extraction.png">
+<figcaption>
+It is also straightforward to perform endmember extraction (or to
+generate mixed pixels) by providing the desired abundances to the
+encoder.
+</figcaption>
+</center>
+</figure>
+<h1 id="abundance-maps">Abundance Maps</h1>
+<figure class="figure">
+<center>
+<img class="img-responsive" width="100%" src="abundances-ontech-hsisyn-21.png">
+<figcaption>
+Abundance maps of the OnTech-HSISyn-21 dataset (top row: LDVAE and
+bottom row: ground truth). From left to right: Adularia, Jarosite gds99,
+Jarosite gds101, Anorthite, Calcite, Alunite, Howlite, Corrensite, and
+Fassaite.
+</figcaption>
+</center>
+</figure>
+<h1 id="transfer-learning">Transfer Learning</h1>
+<p>The Cuprite HSI dataset covers a region around Las Vegas, Nevada,
+USA, and comprises a 512×614, 188-channel HSI. The area under
+observation contains 12 minerals (or, for our purposes, endmembers):
+Alunite, Andradite, Buddingtonite, Dumortierite, Kaolinite1, Kaolinite2,
+Muscovite, Montmorillonite, Nontronite, Pyrope, Sphene, and Chalcedony.
+The Cuprite dataset lacks pixel-level abundance information that the
+proposed model needs for training. We explored transfer learning to deal
+with this issue. We constructed a Cuprite Synthetic dataset that uses
+the same materials as those found in the Cuprite dataset. The spectra
+for these materials were taken from the USGS spectral library. The model
+was trained on the Cuprite Synthetic dataset only, and the trained model
+was subsequently used to analyze the original Cuprite dataset.</p>
+<figure class="figure">
+<center>
+<img class="img-responsive" width="100%" src="abundances-cuprite.png">
+<figcaption>
+Abundance maps of the Cuprite dataset estimated by LDVAE (ground truth
+not available). From left to right: Alunite, Andradite, Buddingtonite,
+Chalcedony, Dumortierite, Kaolinite1, Kaolinite2, Montmorillonite,
+Muscovite Nontronite, Pyrope, and Sphene.
+</figcaption>
+</center>
+</figure>
+<h1 id="datasets">Datasets</h1>
+<p>The datasets used in this study are: OnTech-HSISyn-21, Cuprite (and
+Cuprite Synthetic), Samson, and Urban HYDICE dataset. Cuprite, Samson,
+and Urban HYDICE are standard benchmarks and these can be obtained from
+their respective sources. We provide OnTech-HSISyn-21 and Cuprite
+Synthetic below.</p>
+<ul>
+<li><a
+href="__root__/datasets/ontech-hsisyn-21">OnTech-HSISyn-21</a></li>
+<li><a href="__root__/datasets/cuprite-synthetic">Cuprite
+Synthetic</a></li>
+</ul>
+<h1 id="publications">Publications</h1>
+<p>For technical details please look at the following publications</p>
+<script src="https://bibbase.org/show?bib=http://vclab.science.uoit.ca/faisal-qureshi.bib&jsonp=1&filter=keywords:hsi-unmixing&group0=type"></script>
+
+
+      <footer style="margin-top: 50px;">
+  <div class="container footer">
+    <div class="row">
+      <hr>
+      <div class="col-md-6 col-sm-12">
+        <img src="http://vclab.science.uoit.ca/imgs/vclab-ontariotech.png">
+      </div>
+      <div class="col-md-6 col-sm-12">
+        &copy; Faisal Qureshi<br>
+        Last updated <br>
+        Site generated using &copy; Webify (Ver. 4.1)
+      </div>
+</footer>
+      
+    </div>
+
+  </body>
+</html>
