@@ -126,6 +126,11 @@ strong,
     font-weight: light;
 }
 
+.student-pic {
+  width: 64px;
+  height: 64px;
+}
+
 .student-thesis {
     margin-top: 5px;
     font-size: small;
