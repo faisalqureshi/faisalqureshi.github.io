@@ -122,6 +122,11 @@ strong,
     color: blue;
 }
 
+.research-pic {
+  width: 128px;
+  height: 128px;
+}
+
 .student-name {
     font-weight: light;
 }
@@ -320,8 +325,6 @@ img.bibbase_icon:hover {
     filter: none;
     -webkit-filter: grayscale(0);
 }
-
-
 
 /* span.bibbase_icon_text { */
 /*     display: none; */
