@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G9CWRQBRB0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-G9CWRQBRB0');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="pandoc">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Infomate DOS</title>
+    <meta name="author" content="">
+
+    <!-- css -->
+    <link rel="stylesheet" href="../../style/bootstrap-3.3.7-dist/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../style/my.css" type="text/css" />
+    <link rel="stylesheet" href="../../style/projects.css" type="text/css" />
+
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=BioRhyme:200,300,400,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=VT323:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Baloo:400,300,700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Averia+Serif+Libre" rel="stylesheet">
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="/style/my.js"></script>
+  </head>
+  <body style="background-color: white;">
+    <div class="container" style="background: white;">
+
+      <h1 class="project-title">Infomate DOS</h1>
+      <div class="project-subtitle">A dos-based robotic manipulator kinematic software from mid 1990s</div>
+      <hr>
+          
+          
+      <div class="row members-row">
+      <div class="col">
+        <div class="project-member">
+          <a href="http://www.vclab.ca">Faisal Z. Qureshi</a>
+        </div>
+      </div>
+      </div>
+
+
+      
+      <hr>
+
+      <h1 id="this-is-offered-for-the-sake-of-nostalgia.-nothing-more.">This
+is offered for the sake of <em>Nostalgia</em>. Nothing more.</h1>
+<p class="cursive-text" style="font-style: bolder;">
+I worked on this piece of software in mid 1990s. I was able to recover
+the source code and I used Claude to examine the source code and provide
+me with a short description. What you read below is what Claude
+returned. The coolest bit is that I was able to run the code (the .EXE)
+file in <a href="https://www.dosbox.com/">DOSBox</a>. I screen recorded
+the program in action.
+</p>
+<div class="container" style="margin-top: 45px;">
+<div class="row">
+<div class="col-md-4">
+<video width="320" height="240" controls>
+<source src="infomatewire-forward.mp4" type="video/mp4" />
+Your browser does not support the video tag.
+</video>
+<p>
+Infomate Wireframe – Forward kinematics
+</p>
+</div>
+<div class="col-md-4">
+<video width="320" height="240" controls>
+<source src="infomatewire-inverse.mp4" type="video/mp4" />
+Your browser does not support the video tag.
+</video>
+<p>
+Infomate Wireframe – Forward kinematics
+</p>
+</div>
+</div>
+<div class="row">
+<div class="col-md-4">
+<video width="320" height="240" controls>
+<source src="infomate3d.mp4" type="video/mp4" />
+Your browser does not support the video tag.
+</video>
+<p>
+Infomate 3D that implements shading and hidden surface removal
+</p>
+</div>
+</div>
+</div>
+<h2 id="description-provided-by-claude">Description (provided by
+Claude)</h2>
+<p>InfoMate DOS is a sophisticated robotics kinematics analysis and
+simulation application developed in the mid-1990s, representing a
+remarkable achievement in DOS-era software engineering. Built entirely
+with Borland C/C++ across just 23 source files, this compact application
+demonstrates the ingenuity required to create advanced technical
+software within the constraints of early 1990s computing.</p>
+<p>The application models a cylindrical coordinate robot (with
+rotational joint θ and prismatic joints d2, d3) and provides
+comprehensive kinematics analysis through forward and inverse solvers.
+Users can specify joint parameters to visualize the resulting
+end-effector position, or input a desired Cartesian position and let the
+inverse kinematics solver calculate the necessary joint
+configurations—complete with multiple solution analysis for ambiguous
+poses.</p>
+<p>InfoMate comes in two versions: InfoWire.exe (89KB), featuring
+wire-frame visualization, and Info3D1.exe (91KB), an enhanced simulator
+with solid 3D rendering and smooth animation using double-buffered
+page-flipping techniques. The 3D engine implements custom transformation
+matrices, perspective projection, and back-face culling—all using
+software rendering through the Borland Graphics Interface (BGI) for
+EGA/VGA displays.</p>
+<p>What’s particularly impressive is the custom GUI framework built from
+scratch, predating modern UI libraries. The developers implemented their
+own complete windowing system with mouse event handling (via direct BIOS
+interrupts using int86), 3D-styled buttons with highlighting effects,
+modal dialog boxes, text input fields, and real-time parameter displays.
+The system even includes audio feedback with PC speaker beeps during
+robot motion, creating a more engaging user experience.</p>
+<p>This application represents both a technical accomplishment and an
+educational tool, making complex robotics concepts accessible through
+interactive visualization during an era when such educational software
+was rare and typically required expensive workstations.</p>
+<h3 id="running-infomate-dos-today">Running InfoMate DOS Today</h3>
+<p>Despite being developed over 30 years ago, both DOS versions of
+InfoMate remain fully functional and playable today through DOSBox, the
+popular DOS emulation software. The applications launch seamlessly via
+provided shell scripts (run-infowire.sh for wire-frame mode,
+run-info3d.sh for 3D simulation), requiring no modifications to the
+original executables. Modern users can experience the complete
+interface: clicking through the custom-built GUI with mouse support,
+opening dialog boxes to input joint parameters or Cartesian coordinates,
+watching the real-time 3D wire-frame or solid robot visualization
+respond to forward kinematics calculations, and hearing the authentic PC
+speaker beeps that accompany robot motion. The InfoWire.exe version
+(89KB) provides the core kinematics analysis experience with its clean
+wire-frame graphics running smoothly in EGA/VGA mode, while Info3D1.exe
+(91KB) showcases the more advanced 3D simulation with solid rendering
+and smooth animation through double-buffered graphics.</p>
+<h3 id="preservation-and-accessibility">Preservation and
+Accessibility</h3>
+<p>The fact that these applications run flawlessly in emulation
+demonstrates the value of software preservation and the robustness of
+well-engineered DOS programs. All required dependencies—the EGAVGA.BGI
+graphics driver and LITT.CHR/TRIP.CHR font files—are included and
+properly configured. Users can interact with the original button-based
+interface, experiment with different robot configurations, observe how
+inverse kinematics computes multiple solutions, and appreciate the
+engineering achievement of delivering sophisticated 3D graphics and
+real-time kinematics calculations on early 1990s hardware (486 or early
+Pentium processors). This accessibility transforms InfoMate from merely
+archived code into living educational software that students, robotics
+enthusiasts, and software historians can explore firsthand—experiencing
+both the robotics concepts it teaches and the ingenuity of early PC
+application development. The applications serve as interactive museum
+pieces, demonstrating that thoughtfully designed software can transcend
+its original platform and remain functional and valuable decades
+later.</p>
+<h2 id="code">Code</h2>
+<p>Unfortunately, I am unable to share the code widely. Feel free to
+send me a message and we can figure out if there is a way for me to
+share the code.</p>
+
+
+      <footer style="margin-top: 50px;">
+  <div class="container footer">
+    <div class="row">
+      <hr>
+      <div class="col-md-6 col-sm-12">
+        <img src="/imgs/vclab-ontariotech-64.png" width="70%" max-width: 200px; height: auto; display: block; margin: 0 auto;">
+      </div>
+      <div class="col-md-6 col-sm-12">
+        &copy; Faisal Qureshi<br>
+        Last updated <br>
+        Site generated using &copy; Webify (Ver. 4.1)
+      </div>
+</footer>
+      
+    </div>
+
+  </body>
+</html>

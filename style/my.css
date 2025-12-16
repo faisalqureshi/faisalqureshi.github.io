@@ -213,3 +213,10 @@ td.lineNumbers {
 .news-highlight {
   color: red;
 }
+
+.cursive-text {
+  /* Use a web-safe cursive font, or specify one you have loaded */
+  font-family: 'Georgia', serif; /* Placeholder, true cursive requires specific fonts */
+  font-style: italic; /* Can help simulate a flowing style */
+  /* For true cursive, you would use a font like 'Sacramento' or 'Dancing Script' */
+}

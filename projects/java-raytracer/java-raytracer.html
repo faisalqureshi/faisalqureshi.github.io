@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G9CWRQBRB0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-G9CWRQBRB0');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="pandoc">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ray Tracer</title>
+    <meta name="author" content="">
+
+    <!-- css -->
+    <link rel="stylesheet" href="../../style/bootstrap-3.3.7-dist/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../style/my.css" type="text/css" />
+    <link rel="stylesheet" href="../../style/projects.css" type="text/css" />
+
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=BioRhyme:200,300,400,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=VT323:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Baloo:400,300,700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Averia+Serif+Libre" rel="stylesheet">
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="/style/my.js"></script>
+  </head>
+  <body style="background-color: white;">
+    <div class="container" style="background: white;">
+
+      <h1 class="project-title">Ray Tracer</h1>
+      <div class="project-subtitle">My Java-based Ray Tracer Assignment from 1999</div>
+      <hr>
+          
+          
+      <div class="row members-row">
+      <div class="col">
+        <div class="project-member">
+          <a href="http://www.vclab.ca">Faisal Z. Qureshi</a>
+        </div>
+      </div>
+      </div>
+
+
+      
+      <hr>
+
+      <h1 id="this-is-offered-for-the-sake-of-nostalgia.-nothing-more.">This
+is offered for the sake of <em>Nostalgia</em>. Nothing more.</h1>
+<p>This ray tracer was built as a course project to explore the
+fundamentals of physically-based rendering. It implements recursive ray
+tracing with support for reflections, refraction, and shadows using the
+classic Phong illumination model. The renderer handles both sphere and
+polygon primitives, supports point lights and spotlights, and produces
+images with “realistic” lighting effects including specular highlights
+and colored reflections.</p>
+<h3 id="beyond-basic-ray-tracing">Beyond Basic Ray Tracing</h3>
+<p>While many introductory ray tracers only handle opaque surfaces, this
+implementation includes refraction through transparent materials with
+proper refractive index calculations and internal reflections. The
+shadow computation handles translucent objects by accumulating
+transmission coefficients, allowing light to pass through glass-like
+surfaces with appropriate attenuation. Materials can be configured with
+separate coefficients for local lighting, reflection, and transmission,
+giving control over how surfaces interact with light.</p>
+<h3 id="learning-java-the-hard-way">Learning Java the Hard Way</h3>
+<p>The code is written in pure Java—admittedly not the ideal choice for
+a computationally intensive ray tracer, but it served as my introduction
+to the language. The implementation uses an object-oriented design with
+abstract base classes for geometric objects and a straightforward
+rendering pipeline: parse scene files, transform everything to camera
+coordinates, then recursively trace rays through each pixel. The
+recursive tracing terminates based on both maximum depth and a weight
+threshold to avoid computing negligible light contributions. It
+demonstrates the core concepts of ray tracing clearly, even if rendering
+times are longer than a C++ implementation would be.</p>
+<div class="container" style="margin-top: 30px;">
+<div class="row">
+<div class="col-lg-6 col-md-12 mb-4 mb-lg-0">
+<img src="1.png" width="90%" class="w-100 mb-4 shadow-1-strong rounded">
+</div>
+<div class="col-lg-6 col-md-12 mb-4 mb-lg-0">
+<img src="2.png" width="90%" class="w-100 mb-4 shadow-1-strong rounded">
+</div>
+</div>
+</div>
+<h2 id="code">Code</h2>
+<p>You can find the code at <a
+href="https://github.com/faisalqureshi/java-raytracer">https://github.com/faisalqureshi/java-raytracer</a>.</p>
+
+
+      <footer style="margin-top: 50px;">
+  <div class="container footer">
+    <div class="row">
+      <hr>
+      <div class="col-md-6 col-sm-12">
+        <img src="/imgs/vclab-ontariotech-64.png" width="70%" max-width: 200px; height: auto; display: block; margin: 0 auto;">
+      </div>
+      <div class="col-md-6 col-sm-12">
+        &copy; Faisal Qureshi<br>
+        Last updated <br>
+        Site generated using &copy; Webify (Ver. 4.1)
+      </div>
+</footer>
+      
+    </div>
+
+  </body>
+</html>
