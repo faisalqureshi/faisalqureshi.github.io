@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G9CWRQBRB0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-G9CWRQBRB0');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="pandoc">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Infomate Win95</title>
+    <meta name="author" content="">
+    <meta name="author" content="">
+
+    <!-- css -->
+    <link rel="stylesheet" href="../../style/bootstrap-3.3.7-dist/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../style/my.css" type="text/css" />
+    <link rel="stylesheet" href="../../style/projects.css" type="text/css" />
+
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=BioRhyme:200,300,400,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=VT323:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Baloo:400,300,700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Averia+Serif+Libre" rel="stylesheet">
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="/style/my.js"></script>
+  </head>
+  <body style="background-color: white;">
+    <div class="container" style="background: white;">
+
+      <h1 class="project-title">Infomate Win95</h1>
+      <div class="project-subtitle">A Win95 based robotic manipulator simulation software from mid 1990s</div>
+      <hr>
+          
+          
+      <div class="row members-row">
+      <div class="col">
+        <div class="project-member">
+          <a href="http://www.vclab.ca">Faisal Z. Qureshi</a>
+        </div>
+      </div>
+      <div class="col">
+        <div class="project-member">
+          and others
+        </div>
+      </div>
+      </div>
+
+
+      
+      <hr>
+
+      <h1 id="this-is-offered-for-the-sake-of-nostalgia.-nothing-more.">This
+is offered for the sake of <em>Nostalgia</em>. Nothing more.</h1>
+<p class="cursive-text" style="font-style: bolder;">
+I worked on this piece of software in mid 1990s. I was able to recover
+the source code and I used Claude to examine the source code and provide
+me with a short description. What you read below is what Claude
+returned. The coolest bit is that I was able to run the code (the .EXE)
+file in <a
+href="https://github.com/felixrieseberg/windows95">windows95</a>. I
+screen recorded the program in action.
+</p>
+<p class="cursive-text" style="font-style: bolder;">
+This was a collaborative effort. I was part of a team led by Syed
+Mahmood Ahmad Sahib. My role was in developing the application, the
+underlying 3D graphics engine, and the UI elements. My colleagues were
+largely responsible for wrangling the kinematics equations and
+trajectory planning mathematics One of my favorite memories from those
+times were the tea that we would have each day, sharply at 10:30 am and
+at 3:30 pm. The tea was covered by our employer.
+</p>
+<p class="cursive-text" style="font-style: bolder;">
+We published this work back in 1997.
+</p>
+<div class="container" style="margin-top: 45px;">
+<div class="row">
+<div class="col-md-6">
+<video width="320" height="240" controls>
+<source src="infomate-win95.mp4" type="video/mp4" />
+Your browser does not support the video tag.
+</video>
+<p>
+Infomate Simulator for Win 95
+</p>
+</div>
+</div>
+</div>
+<h2 id="description-provided-by-claude">Description (provided by
+Claude)</h2>
+<p>InfoMate for Windows 95 represents a major evolutionary leap from the
+DOS version, transforming a compact kinematics analyzer into a
+sophisticated, production-quality engineering application. Built with
+Microsoft Visual C++ 4.0 and the MFC (Microsoft Foundation Classes) 4.0
+framework, this 564KB executable demonstrates professional software
+architecture and engineering practices from the mid-1990s Windows
+development era. The application comprises over 217 source files
+organized into a carefully structured four-layer architecture,
+showcasing the complexity possible even before modern development
+frameworks and tools.</p>
+<h3 id="architecture-and-technical-foundation">Architecture and
+Technical Foundation</h3>
+<p>The codebase exhibits remarkable modularity through its layered
+design. At the foundation lies a comprehensive custom 3D graphics
+library (62 .CPP and 75 .H files) implementing a complete actor-based
+rendering system with support for animations, sprite management, polygon
+rendering, camera systems, scene graphs, and sophisticated color
+management through lookup tables (CLUTs) supporting 8-bit palette mode,
+15-bit, and 24-bit true color rendering. This graphics layer interfaces
+with WinG (Windows Graphics Library), Microsoft’s pre-DirectX graphics
+API from 1994-1996 designed for fast bitmap graphics. Above this sits a
+simulation layer with custom 3D body representations (F3dBody), polygon
+objects (FPolyObj), world/scene management (FWorld), camera controllers
+(FCamera), and graphing subsystems (FGraph, FGraphData). The domain
+layer implements the robotics-specific mathematics through InfoMath,
+InfoMotion, trajectory planning classes (JointTraj, CarTraj), and
+parameter management, while the application layer provides the MFC-based
+user interface with document/view architecture and 46+ specialized
+dialog boxes.</p>
+<h3 id="core-kinematics-and-analysis-features">Core Kinematics and
+Analysis Features</h3>
+<p>The Windows version retains and enhances all DOS capabilities for
+robot kinematics analysis. The forward kinematics solver (ForwardDlg)
+calculates end-effector position and orientation from joint parameters,
+while the inverse kinematics solver (InvDlg) computes joint
+configurations needed to achieve a desired Cartesian position—a
+computationally intensive task involving solving nonlinear equations. A
+unique feature is the multiple solution analysis system (2SoluDlg,
+2SoluSeeDlg) that identifies and visualizes different robot
+configurations (elbow-up vs. elbow-down, for example) that can achieve
+the same end-effector position, allowing engineers to select optimal
+configurations based on workspace constraints, singularity avoidance, or
+energy efficiency. The application provides real-time numerical displays
+of joint parameters (θ₁, d₂, d₃, θ₄, θ₅, θ₆), Cartesian positions (x, y,
+z), and orientation angles with synchronized 3D visualization.</p>
+<h3 id="advanced-trajectory-planning-and-motion-analysis">Advanced
+Trajectory Planning and Motion Analysis</h3>
+<p>Beyond static position analysis, InfoMate excels at trajectory
+planning and motion simulation—critical capabilities for programming
+industrial robots. The joint space trajectory planner (JointTDlg)
+generates smooth motion paths using cubic polynomial interpolation,
+quintic polynomials, or optimal trajectory algorithms, allowing users to
+specify initial and final joint configurations, motion time, and
+velocity/acceleration constraints. The Cartesian trajectory planner
+(CarTraj) is even more sophisticated, planning paths in 3D Cartesian
+space (straight lines, curves) and automatically computing the joint
+space trajectories needed to execute them—a computationally demanding
+process involving continuous inverse kinematics calculations and
+interpolation. The application includes motion statistics analysis
+(MotionStatDlg) displaying velocity and acceleration profiles over time,
+graphing subsystems that plot joint positions, velocities, and
+accelerations as functions of time, and trajectory violation detection
+that warns when planned motions exceed joint limits or
+velocity/acceleration constraints. Users can replay trajectories forward
+or backward, pause during execution, and visualize the robot’s path with
+animated 3D trail rendering showing the end-effector’s trajectory
+through space.</p>
+<h3 id="d-graphics-and-visualization">3D Graphics and Visualization</h3>
+<p>The visualization system represents a substantial technical
+achievement for mid-1990s software rendering. The application implements
+a complete 3D rendering pipeline with perspective projection, hidden
+surface removal via back-face culling, and support for both wire-frame
+and solid polygon rendering modes. The camera system (CameraDlg)
+provides extensive control with six degrees of freedom: translation
+along X/Y/Z axes, rotation (heading, pitch, bank/roll), and zoom—all
+controllable via menu commands, keyboard shortcuts, or toolbar buttons
+with real-time visual feedback. Users can toggle display of the global
+coordinate frame, end-effector coordinate frame, and a ground grid for
+spatial reference. The world can be rendered in multiple modes: robot
+hidden, wire-frame only, or fully shaded solid rendering. The animation
+system uses double-buffered page flipping for smooth motion without
+flicker, a sophisticated technique requiring careful memory management
+and synchronization with the display hardware.</p>
+<h3 id="user-interface-and-interaction-design">User Interface and
+Interaction Design</h3>
+<p>The application showcases professional-quality GUI design using MFC’s
+full capabilities. Beyond standard menus and toolbars, InfoMate features
+modal and modeless dialogs for different analysis modes, allowing users
+to keep camera controls or parameter displays visible while working with
+other features. The interface includes real-time parameter displays
+showing current joint angles, Cartesian positions, and orientations that
+update dynamically during motion or camera movement. Dialog boxes for
+trajectory planning (TrajSpcDlg) include input validation, range
+checking, and visual feedback. The application implements comprehensive
+menu command state management—menu items and toolbar buttons
+enable/disable appropriately based on application state (motion running,
+trajectory defined, etc.)—demonstrating attention to professional UI/UX
+design. Context menus provide quick access to common operations, and
+keyboard shortcuts (with visual indicators) accelerate expert user
+workflows. The splash screen, About dialog, and consistent visual
+styling create a polished, commercial-grade appearance.</p>
+<h3 id="historical-and-educational-significance">Historical and
+Educational Significance</h3>
+<p>InfoMate for Windows 95 represents both a technical accomplishment
+and valuable educational tool from an era when specialized engineering
+software was rare and expensive. Developed during the mid-1990s
+transition from DOS to Windows, it demonstrates the challenges and
+opportunities of that period: moving from text-mode and simple graphics
+to rich GUIs, from single-tasking to multitasking environments, and from
+direct hardware access to API-mediated graphics. The reliance on WinG
+rather than DirectX (released in late 1995) places this precisely in the
+early Windows 95 era, using one of Microsoft’s first attempts at
+accelerated graphics before gaming APIs matured. The application makes
+complex robotics concepts—forward/inverse kinematics, trajectory
+planning, workspace analysis—accessible through interactive
+visualization at a time when such tools typically required expensive
+Silicon Graphics workstations or CAD systems. As preserved software, it
+offers insights into 1990s development practices: MFC’s document/view
+patterns, resource files for UI definition, ClassWizard-generated code,
+and the substantial effort required to build custom 3D graphics engines
+before modern libraries and GPU acceleration. The complete distribution
+with runtime DLLs (MFC40.DLL at 900KB, MSVCRT40.DLL at 306KB)
+illustrates the deployment challenges of that era, when developers had
+to bundle substantial runtimes with applications—a stark contrast to
+today’s lightweight web applications or containerized deployment.</p>
+<h2 id="code">Code</h2>
+<p>Unfortunately, I am unable to share the code widely. Feel free to
+send me a message and we can figure out if there is a way for me to
+share the code.</p>
+<h2 id="publication">Publication</h2>
+<script src="https://bibbase.org/show?bib=http://vclab.science.uoit.ca/faisal-qureshi.bib&jsonp=1&filter=keywords:infomate&group0=type"></script>
+
+
+      <footer style="margin-top: 50px;">
+  <div class="container footer">
+    <div class="row">
+      <hr>
+      <div class="col-md-6 col-sm-12">
+        <img src="/imgs/vclab-ontariotech-64.png" width="70%" max-width: 200px; height: auto; display: block; margin: 0 auto;">
+      </div>
+      <div class="col-md-6 col-sm-12">
+        &copy; Faisal Qureshi<br>
+        Last updated <br>
+        Site generated using &copy; Webify (Ver. 4.1)
+      </div>
+</footer>
+      
+    </div>
+
+  </body>
+</html>
