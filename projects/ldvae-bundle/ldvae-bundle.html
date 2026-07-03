@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G9CWRQBRB0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-G9CWRQBRB0');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="pandoc">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Latent Dirichlet Transformer VAE for Hyperspectral Unmixing with Bundled Endmembers</title>
+    <meta name="author" content="">
+    <meta name="author" content="">
+
+    <!-- css -->
+    <link rel="stylesheet" href="../../style/bootstrap-3.3.7-dist/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../style/my.css" type="text/css" />
+    <link rel="stylesheet" href="../../style/projects.css" type="text/css" />
+
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=BioRhyme:200,300,400,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=VT323:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Baloo:400,300,700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Averia+Serif+Libre" rel="stylesheet">
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="/style/my.js"></script>
+  </head>
+  <body style="background-color: white;">
+    <div class="container" style="background: white;">
+
+      <h1 class="project-title">Latent Dirichlet Transformer VAE for Hyperspectral Unmixing with Bundled Endmembers</h1>
+      
+      <hr>
+          
+          
+      <div class="row members-row">
+      <div class="col">
+        <div class="project-member">
+          Giancarlo Giannetti
+        </div>
+      </div>
+      <div class="col">
+        <div class="project-member">
+          <a href="http://vclab.science.uoit.ca/">Faisal Z. Qureshi</a>
+        </div>
+      </div>
+      </div>
+
+
+      <div class="row">
+      <div class="col">
+         <div class="project-institute">
+           Visual Computing Lab<br>Faculty of Science<br>University of Ontario Institute of Technology<br>2000 Simcoe St. N., Oshawa ON L1G 0C5
+         </div>
+      </div>
+      </div>
+      
+      <hr>
+
+      <h1 id="introduction">Introduction</h1>
+<p>This work proposes a deep generative model and two ``stepping ston’’
+models for hyperspectral unmixing that integrate transformer
+architectures with variational autoencoders. The proposed approach
+leverages self-attention mechanisms to capture global spectral–spatial
+dependencies within image patches, while a Dirichlet latent distribution
+enforces the physical constraints of abundance estimation. Building on
+this foundation, we introduce the Latent Dirichlet Transformer VAE
+(LDVAE-T), which models endmembers as distributions rather than fixed
+spectra, enabling the representation of intrinsic spectral variability
+through learned mean and covariance structures. We evaluate the proposed
+models on multiple benchmark datasets, including Samson, Jasper Ridge,
+and HYDICE Urban, and compare their performance against SOTA methods.
+Experimental results demonstrate improved accuracy in both abundance
+estimation and endmember extraction. Overall, this work presents a
+physically grounded and flexible framework for hyperspectral unmixing
+that effectively captures both global structure and material
+variability.</p>
+<!-- <div class="row">
+<div class="col-lg-12">
+<figure class="figure" style="margin-top: 15px; margin-bottom: 20px;">
+<center>
+<a href="ldvae.png"><img class="img-responsive" width="50%"src="ldvae.png" alt="f"></a>
+<figcaption class="figure-caption" style="font-style: italic; font-weight: bold;">f</figcaption>
+</center>
+</figure>
+</div>
+</div>
+ -->
+<!-- <div class="row">
+<div class="col-lg-4"  style="padding: 15px; margin: 0px;">
+<figure class="figure"><a href=ldvae.png><img src="ldvae.png" class="figure-img img-fluid rounded img-responsive"></a></figure>
+</div>
+<div class="col-lg-4"  style="padding: 15px; margin: 0px;">
+<figure class="figure"><a href=ldvae-backprop.png><img src="ldvae-backprop.png" class="figure-img img-fluid rounded img-responsive"></a></figure>
+</div>
+<div class="col-lg-4"  style="padding: 15px; margin: 0px;">
+<figure class="figure"><a href=ldvae-backprop.png><img src="ldvae-backprop.png" class="figure-img img-fluid rounded img-responsive"></a></figure>
+</div>
+</div> -->
+<h2 id="model-architecture">Model Architecture</h2>
+<figure class="figure">
+<center>
+<img class="img-responsive" width="70%" src="model2_diagram.png">
+<figcaption>
+Transformer based encoder constructs a latent encoding and concentration
+parameters for the Dirichlet distribution that represents abundances for
+the center pixel. The decoder takes the latent representation and
+abundances, sampled from the Dirichlet distribution, and predicts mean
+and covariances for each each endmember (modelled as a Gaussian
+distribution) and combine these with the abundances to reconstruct the
+center pixel.
+</figcaption>
+</center>
+</figure>
+<h1 id="abundance-maps">Abundance Maps</h1>
+<figure class="figure">
+<center>
+<img class="img-responsive" width="100%" src="hydice_heatmaps.png">
+<figcaption>
+Abundance maps for Hydice Urban Dataset.
+</figcaption>
+</center>
+</figure>
+<hr/>
+<figure class="figure">
+<center>
+<img class="img-responsive" width="70%" src="jasper_heatmaps.png">
+<figcaption>
+Abundance maps for Jasper Ridge Dataset.
+</figcaption>
+</center>
+</figure>
+<hr/>
+<figure class="figure">
+<center>
+<img class="img-responsive" width="50%" src="samson_heatmaps.png">
+<figcaption>
+Abundance maps for Samson Dataset.
+</figcaption>
+</center>
+</figure>
+<h1 id="so-called-pure-pixels">(So called) Pure Pixels</h1>
+<p>The need for modeling endmembers variability. These plots showcase
+the endmembers extracted from pure pixels, i.e., pixels that are
+dominated by a single endmember. Note how even within a single image,
+endmembers exhibit variation. This suggests that we need techniques and
+methods that explicitly model for variability in endmembers when
+performing pixel unmixing.</p>
+<hr/>
+<figure class="figure">
+<center>
+<img class="img-responsive" width="80%" src="hydice_pure_pixel_graph.png">
+<figcaption>
+Pure pixels in Hydice Urban Datasets.
+</figcaption>
+</center>
+</figure>
+<hr/>
+<figure class="figure">
+<center>
+<img class="img-responsive" width="80%" src="jasper_pure_pixel_graph.png">
+<figcaption>
+Pure pixels in Jasper Datasets.
+</figcaption>
+</center>
+</figure>
+<hr/>
+<figure class="figure">
+<center>
+<img class="img-responsive" width="80%" src="samson_pure_pixel_graph.png">
+<figcaption>
+Pure pixels in Samson Datasets.
+</figcaption>
+</center>
+</figure>
+<h1 id="publications">Publications</h1>
+<p>For technical details please look at the following publications</p>
+<script src="https://bibbase.org/show?bib=http://vclab.science.uoit.ca/faisal-qureshi.bib&jsonp=1&filter=keywords:hsi-unmixing&group0=type"></script>
+
+
+      <footer style="margin-top: 50px;">
+  <div class="container footer">
+    <div class="row">
+      <hr>
+      <div class="col-md-6 col-sm-12">
+        <img src="/imgs/vclab-ontariotech-64.png" width="70%" max-width: 200px; height: auto; display: block; margin: 0 auto;">
+      </div>
+      <div class="col-md-6 col-sm-12">
+        &copy; Faisal Qureshi<br>
+        Last updated <br>
+        Site generated using &copy; Webify (Ver. 4.1)
+      </div>
+</footer>
+      
+    </div>
+
+  </body>
+</html>
