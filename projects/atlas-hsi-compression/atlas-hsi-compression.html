@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G9CWRQBRB0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-G9CWRQBRB0');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="pandoc">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ATLAS: Hyperspectral Image Compression with 2D Gaussian Splatting</title>
+    <meta name="author" content="">
+    <meta name="author" content="">
+
+    <!-- css -->
+    <link rel="stylesheet" href="../../style/bootstrap-3.3.7-dist/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../style/my.css" type="text/css" />
+    <link rel="stylesheet" href="../../style/projects.css" type="text/css" />
+
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=BioRhyme:200,300,400,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=VT323:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Baloo:400,300,700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Averia+Serif+Libre" rel="stylesheet">
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="/style/my.js"></script>
+  </head>
+  <body style="background-color: white;">
+    <div class="container" style="background: white;">
+
+      <h1 class="project-title">ATLAS: Hyperspectral Image Compression with 2D Gaussian Splatting</h1>
+      <div class="project-subtitle">What transfers from RGB Gaussian splatting to hyperspectral data, and what does not?</div>
+      <hr>
+          
+          
+      <div class="row members-row">
+      <div class="col">
+        <div class="project-member">
+          <a href="https://github.com/jacobh3ll0">Jacob Rempel</a><sup>1</sup>
+        </div>
+      </div>
+      <div class="col">
+        <div class="project-member">
+          <a href="https://vclab.ca/">Faisal Z. Qureshi</a><sup>1</sup>
+        </div>
+      </div>
+      </div>
+
+
+      <div class="row">
+      <div class="col">
+         <div class="project-institute">
+           <a href="https://vclab.ca/">Visual Computing Lab</a><sup>1</sup><br>Faculty of Science<br>Ontario Tech University<br>2000 Simcoe St. N., Oshawa ON L1G 0C5
+         </div>
+      </div>
+      </div>
+      
+      <hr>
+
+      <!-- ATLAS acronym, spelled out with the initials emphasized. Inline styles so it
+     renders regardless of the lab template CSS. -->
+<center>
+<p style="font-family: Helvetica, Arial, sans-serif; color: #6a6a6a; letter-spacing: .01em; margin: 0 0 1.4em;">
+<b style="color: #0e6f88">A</b>daptive
+<b style="color: #0e6f88">T</b>ransfer of
+<b style="color: #0e6f88">L</b>ow-rank
+<b style="color: #0e6f88">A</b>bundance
+<b style="color: #0e6f88">S</b>platting
+</p>
+</center>
+<!-- Hero figure: pipeline diagram or rate-distortion overview. Replace pipeline.png. -->
+<center>
+<a href="images/pipeline.png"><img src="images/pipeline.png" width="90%"></a>
+</center>
+<hr>
+<h1 id="introduction">Introduction</h1>
+<p>Hyperspectral images capture hundreds of narrow spectral bands per
+pixel, which makes them large: a single 340 x 340 x 103 cube such as
+Pavia University holds over 11 million values. This work compresses
+hyperspectral cubes with 2D Gaussian splatting. The cube is first
+factored by non-negative matrix factorization into a small set of
+endmember spectra and per-pixel abundance maps, and a set of 2D
+Gaussians is then fit to the low-rank abundance maps. Decoding is a
+single splatting pass and runs at over 600 frames per second on an RTX
+3080.</p>
+<p>Recent Gaussian splatting compression techniques were developed for
+RGB images. Hyperspectral abundance maps have a different structure:
+they are spatially smooth, low-rank, and every Gaussian parameter error
+propagates through all spectral bands at reconstruction. We
+systematically evaluate nine techniques from RGB Gaussian splatting
+compression on four hyperspectral benchmarks and report which transfer
+and which fail.</p>
+<p>Five techniques transfer: learned step-size quantization (LSQ+) for
+abundances and covariances, distortion-driven densification, two-stage
+quantization-aware training, gradient-guided initialization, and a
+hyperspectral-specific addition, learnable endmembers, which adds 0.34
+to 1.68 dB at no bitrate cost. Four techniques fail: content-aware
+filters (-0.7 to -1.7 dB), position quantization (-5 dB), progressive
+quantization, and spatial delta coding. The failures share a root cause:
+methods designed for high-frequency, channel-independent RGB data
+degrade quality in smooth, spectrally coupled abundance space.</p>
+<h1 id="results">Results</h1>
+<p>The method beats the published LoR-SGS results on 6 of 8 targets (4
+datasets at 2 bitrates each), with an average gain of +1.20 dB PSNR at
+matched bitrates. Results are averaged over 5 runs.</p>
+<div class="table-responsive">
+<table class="table table-striped">
+<thead>
+<tr>
+<th>
+Dataset
+</th>
+<th class="text-right">
+bpppb
+</th>
+<th class="text-right">
+Published PSNR
+</th>
+<th class="text-right">
+Ours
+</th>
+<th class="text-right">
+Delta
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+Jasper Ridge
+</td>
+<td class="text-right">
+0.103
+</td>
+<td class="text-right">
+37.19
+</td>
+<td class="text-right">
+38.10
+</td>
+<td class="text-right">
++0.91
+</td>
+</tr>
+<tr>
+<td>
+Jasper Ridge
+</td>
+<td class="text-right">
+0.064
+</td>
+<td class="text-right">
+30.79
+</td>
+<td class="text-right">
+34.56
+</td>
+<td class="text-right">
++3.77
+</td>
+</tr>
+<tr>
+<td>
+Pavia University
+</td>
+<td class="text-right">
+0.096
+</td>
+<td class="text-right">
+38.95
+</td>
+<td class="text-right">
+38.86
+</td>
+<td class="text-right">
+-0.09
+</td>
+</tr>
+<tr>
+<td>
+Pavia University
+</td>
+<td class="text-right">
+0.058
+</td>
+<td class="text-right">
+35.76
+</td>
+<td class="text-right">
+36.48
+</td>
+<td class="text-right">
++0.72
+</td>
+</tr>
+<tr>
+<td>
+Salinas
+</td>
+<td class="text-right">
+0.098
+</td>
+<td class="text-right">
+41.41
+</td>
+<td class="text-right">
+43.11
+</td>
+<td class="text-right">
++1.70
+</td>
+</tr>
+<tr>
+<td>
+Salinas
+</td>
+<td class="text-right">
+0.049
+</td>
+<td class="text-right">
+37.83
+</td>
+<td class="text-right">
+40.03
+</td>
+<td class="text-right">
++2.20
+</td>
+</tr>
+<tr>
+<td>
+Urban
+</td>
+<td class="text-right">
+0.096
+</td>
+<td class="text-right">
+38.22
+</td>
+<td class="text-right">
+38.61
+</td>
+<td class="text-right">
++0.39
+</td>
+</tr>
+<tr>
+<td>
+Urban
+</td>
+<td class="text-right">
+0.047
+</td>
+<td class="text-right">
+34.24
+</td>
+<td class="text-right">
+34.20
+</td>
+<td class="text-right">
+-0.04
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Figure row: reconstructions or rate-distortion curves per dataset.
+     Replace the three image files below. -->
+<div class="container">
+<div class="row">
+<div class="col-lg-6 col-md-12 mb-4 mb-lg-0">
+<img src="images/rd_jasperridge.png" width="100%" class="w-100 mb-4 shadow-1-strong rounded">
+<p>
+Rate-distortion, Jasper Ridge
+</p>
+</div>
+<div class="col-lg-6 col-md-12 mb-4 mb-lg-0">
+<img src="images/rd_salinas.png" width="100%" class="w-100 mb-4 shadow-1-strong rounded">
+<p>
+Rate-distortion, Salinas
+</p>
+</div>
+</div>
+<div class="row">
+<div
+class="col-lg-10 col-lg-offset-1 offset-lg-1 col-md-12 mb-4 mb-lg-0">
+<img src="images/recon_paviau_diff.jpg" width="100%" class="w-100 mb-4 shadow-1-strong rounded">
+<p>
+Pavia University at 0.096 bpppb, 38.85 dB: ground truth, our
+reconstruction, and the per-pixel absolute error averaged over all
+bands. Error concentrates at building edges, roads, and material
+boundaries, while smooth regions are near-lossless, consistent with the
+low-rank abundance structure the method relies on.
+</p>
+</div>
+</div>
+</div>
+<h1 id="scaling-to-larger-scenes">Scaling to larger scenes</h1>
+<p>The four benchmarks above are small crops (0.01 to 0.12 megapixels).
+The identical pipeline applies unchanged to three larger scenes, up to
+the 5.2 megapixel Chikusei cube (2372 x 2196 x 128, 45 times the pixels
+of the largest benchmark crop). Quality holds, and the Gaussian budget
+grows sublinearly with pixel count: Chikusei has 45 times the pixels of
+Pavia University but only 11 times the Gaussians, a density of 30 per
+kilopixel against 125. It compresses to 0.034 bpppb at 40.1 dB,
+comparable to the small benchmarks, and trains on a single 40 GB GPU
+with no tiling in 34 minutes.</p>
+<div class="table-responsive">
+<table class="table table-striped">
+<thead>
+<tr>
+<th>
+Scene
+</th>
+<th>
+H x W x C
+</th>
+<th class="text-right">
+Gaussians
+</th>
+<th class="text-right">
+N/kpx
+</th>
+<th class="text-right">
+PSNR
+</th>
+<th class="text-right">
+bpppb
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+Pavia University (ref.)
+</td>
+<td>
+340 x 340 x 103
+</td>
+<td class="text-right">
+14,469
+</td>
+<td class="text-right">
+125
+</td>
+<td class="text-right">
+41.01
+</td>
+<td class="text-right">
+0.151
+</td>
+</tr>
+<tr>
+<td>
+Pavia Centre
+</td>
+<td>
+1096 x 715 x 102
+</td>
+<td class="text-right">
+71,506
+</td>
+<td class="text-right">
+91
+</td>
+<td class="text-right">
+38.99
+</td>
+<td class="text-right">
+0.110
+</td>
+</tr>
+<tr>
+<td>
+WHU-Hi-HongHu
+</td>
+<td>
+940 x 475 x 270
+</td>
+<td class="text-right">
+55,934
+</td>
+<td class="text-right">
+125
+</td>
+<td class="text-right">
+35.32
+</td>
+<td class="text-right">
+0.058
+</td>
+</tr>
+<tr>
+<td>
+Chikusei
+</td>
+<td>
+2372 x 2196 x 128
+</td>
+<td class="text-right">
+157,579
+</td>
+<td class="text-right">
+30
+</td>
+<td class="text-right">
+40.09
+</td>
+<td class="text-right">
+0.034
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Single run per scene at one operating point, using the final
+benchmark configuration (NMF rank 16 for Chikusei, rank 12 otherwise).
+No published results exist at these rates, so Pavia University is
+repeated as a reference point.</p>
+<h1 id="what-fails-to-transfer">What fails to transfer</h1>
+<p>Content-aware filters allow late-added Gaussians to become narrower
+than the fixed low-pass bound, and they overfit the smooth abundance
+maps. Position quantization at 12 bits costs over 5 dB because position
+noise propagates through every reconstructed band, unlike RGB where it
+affects 3 channels independently. Progressive quantization destabilizes
+the learned LSQ+ scale and offset parameters. Spatial delta coding
+splits the entropy coder into one stream per abundance channel, and the
+per-stream overhead exceeds the entropy saved.</p>
+<h1 id="publication">Publication</h1>
+<p>For technical details please look at the following publication(s)</p>
+<script src="https://bibbase.org/show?bib=http://vclab.science.uoit.ca/student-theses/student-theses.bib&jsonp=1&filter=keywords:hsi-compression&group0=type"></script>
+
+
+      <footer style="margin-top: 50px;">
+  <div class="container footer">
+    <div class="row">
+      <hr>
+      <div class="col-md-6 col-sm-12">
+        <img src="/imgs/vclab-ontariotech-64.png" width="70%" max-width: 200px; height: auto; display: block; margin: 0 auto;">
+      </div>
+      <div class="col-md-6 col-sm-12">
+        &copy; Faisal Qureshi<br>
+        Last updated <br>
+        Site generated using &copy; Webify (Ver. 4.1)
+      </div>
+</footer>
+      
+    </div>
+
+  </body>
+</html>
