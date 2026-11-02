@@ -5,20 +5,14 @@ $(document).ready(function(){
     $("#toggle-projects").css('cursor', 'pointer');
 
     // toggle news
+    // the button sits at the bottom of #news-scroll; its labels come from data-more / data-less
+    var newsExpanded = false;
     $("#toggle-news").click( function() {
-        
-        if ( $("#toggle-news").text() == "more >>>" ) {
-            $(".old-news").each( function(){
-                $(this).show()
-            });
-            $("#toggle-news").text("<<< less");
-        }
-        else {
-            $(".old-news").each( function(){
-                $(this).hide()
-            });
-            $("#toggle-news").text("more >>>");
-        }
+        newsExpanded = !newsExpanded;
+        $(".old-news").toggle(newsExpanded);
+        $(this).html( newsExpanded ? $(this).data("less") : $(this).data("more") );
+        // revealed items are interleaved by date, many near the top, so jump there
+        $("#news-scroll").scrollTop(0);
     });
 
     // toggle about

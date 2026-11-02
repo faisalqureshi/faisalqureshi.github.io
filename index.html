@@ -18,7 +18,7 @@
 
 <!-- Bootstrap 4 -->
 <link rel="stylesheet" href="style/bootstrap-4.0.0-dist/css/bootstrap.min.css">
-<link rel="stylesheet" href="style/my-bootstrap4.css" type="text/css" />
+<link rel="stylesheet" href="style/my-bootstrap4.css?v=4" type="text/css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/4.4.0/font/octicons.min.css">
 <link rel="shortcut icon" type="image/png" href="favicon.png"/>
 
@@ -26,7 +26,7 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="style/bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>
-<script src="style/my-bootstrap4.js"></script>
+<script src="style/my-bootstrap4.js?v=2"></script>
 <script src="//bibbase.org/js/bibbase.min.js" type="text/javascript"></script>
 <script>
    function setPhotoWidth() {
@@ -192,341 +192,440 @@
       
       <h1 id="news">News</h1>
 
+      
+
       <div id="news-container">
         
-          <div class="row  ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Nov 2, 2026
-              </div>
+        
+          
+        
+        <div class="row news-row news-honor">
+          <div class="news-date-col">
+            <div class="news-date">
+                <span class="news-pin" title="pinned">📌</span>Nov 1, 2026
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Check out our paper <a href="pubs/26-reo2-w.pdf">“ATLAS:
-Hyperspectral Image Compression via Adaptive Transfer of Low-rank
-Abundance Splatting”</a> that is accepted to appear in <a
-href="https://reo-workshop.org/2026/">REO 2026</a>. Code is available at
-<a
-href="https://github.com/vclab/atlas-hsi">https://github.com/vclab/atlas-hsi</a>.
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                <span class="news-icon" title="honor">🏆</span>
+                Elected a <a href="imgs/sigma-xi-faisal-qureshi.pdf">Full Member</a>
+of <a href="https://www.sigmaxi.org/">Sigma Xi</a>, The Scientific
+Research Honor Society.
 
-              </div>
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
         
-          <div class="row  ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Nov 1, 2026
-              </div>
+        <div id="news-scroll">
+          
+            
+        
+        <div class="row news-row news-paper">
+          <div class="news-date-col">
+            <div class="news-date">
+                Nov 2, 2026
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  I am deeply honored to be elected a <a
-href="imgs/sigma-xi-faisal-qureshi.pdf">Full Member</a> of
-<a class="color-rolex-green" href="https://www.sigmaxi.org/" style="text-transform: uppercase; font-weight: bold;">Sigma
-Xi: The Scientific Research Honor Society</a>.
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                <span class="news-icon" title="paper">📄</span>
+                "ATLAS: Hyperspectral Image Compression via Adaptive Transfer of Low-rank Abundance Splatting"
 
-              </div>
+                <span class="news-venue">REO 2026</span>
+                <a class="news-link" href="pubs/26-reo2-w.pdf">paper</a>
+                <a class="news-link" href="https://github.com/vclab/atlas-hsi">code</a>
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Sep 1, 2026
-              </div>
-            </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Welcome Jacob Rempel and Graeme Lamain who are joining VCLab to pursue M.Sc. in Computer Science.
-              </div>
+        <div class="row news-row news-people old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Sep 1, 2026
             </div>
           </div>
-        
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Sep 1, 2026
-              </div>
-            </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Welcome Ellie Cunningham, Wei Cui, Bach Nguyen, and Devarsh Vanditkumar Joshi who are joining VCLab to persue their honors thesis.
-              </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                <span class="news-icon" title="people">👋</span>
+                Welcome Jacob Rempel and Graeme Lamain, who are joining VCLab to pursue an M.Sc. in Computer Science.
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Aug 1, 2026
-              </div>
-            </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Welcome to Mumtaz Ali who is visiting VCLab as Mitacs Globalink Research intern.  Mumtaz is exploring LLMs in service of HSI analysis.
-              </div>
+        <div class="row news-row news-people old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Sep 1, 2026
             </div>
           </div>
-        
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Jul 6, 2026
-              </div>
-            </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  VCLab is hosting Dr. Hyam Ali and she will be giving a CS Seminar titled, "Self-Supervised Super-Resolution for Sentinel-5P Hyperspectral Images" on Monday, July 13, 11 am in SCI 4170.
-              </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                <span class="news-icon" title="people">👋</span>
+                Welcome Ellie Cunningham, Wei Cui, Bach Nguyen, and Devarsh Vanditkumar Joshi, who are joining VCLab for their honours theses.
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Jun 15, 2026
-              </div>
+        <div class="row news-row news-people old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Aug 1, 2026
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  VCLab is hosting Prof. Murtaza Taj and he will be giving a CS Seminar
-titled, “Beyond End-to-End Learning: Embedding Structure, and
-Constraints into AI Systems” on Wednesday, July 15, 11 am in SCI
-4170.
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                <span class="news-icon" title="people">👋</span>
+                Welcome Mumtaz Ali, who is visiting VCLab as a Mitacs Globalink Research intern.  Mumtaz is exploring LLMs in service of HSI analysis.
+                
+                
+                
+                
+            </div>
+          </div>
+        </div>
+      
+          
+            
+        
+        <div class="row news-row news-talk old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Jul 6, 2026
+            </div>
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                <span class="news-icon" title="talk">🎤</span>
+                VCLab is hosting Dr. Hyam Ali, who will give a CS Seminar titled "Self-Supervised Super-Resolution for Sentinel-5P Hyperspectral Images" on Monday, July 13, 11 am in SCI 4170.
+                
+                
+                
+                
+            </div>
+          </div>
+        </div>
+      
+          
+            
+        
+        <div class="row news-row news-talk old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Jun 15, 2026
+            </div>
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                <span class="news-icon" title="talk">🎤</span>
+                VCLab is hosting Prof. Murtaza Taj, who will give a CS Seminar titled "Beyond End-to-End Learning: Embedding Structure, and Constraints into AI Systems" on Wednesday, July 15, 11 am in SCI 4170.
 
-              </div>
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Jun 5, 2026
-              </div>
-            </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Congratulations to Giancarlo Gianetti, who successfully defended his M.Sc. thesis on hyperspectral unmixing.
-              </div>
+        <div class="row news-row news-people old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Jun 5, 2026
             </div>
           </div>
-        
-          <div class="row  ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Jun 2, 2026
-              </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                <span class="news-icon" title="people">👋</span>
+                Congratulations to Giancarlo Giannetti, who successfully defended his M.Sc. thesis on hyperspectral unmixing.
+                
+                
+                
+                
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Congratulations to VCLab alumni Shima Rezasoltani for receiving <span
-class="news-highlight">Ontario Tech’s Outstanding Doctoral Thesis Award
-2026</span><sup><a href="imgs/students/2026-06-shima-doctoral-thesis-award.pdf">1</a></sup>
-for her thesis on <a
-href="student-theses/2025-shima-rezasoltani-phd.phd">Implicit Neural
-Representations for Hyperspectral Image Compression</a>.
+          </div>
+        </div>
+      
+          
+            
+        
+        <div class="row news-row news-honor">
+          <div class="news-date-col">
+            <div class="news-date">
+                Jun 2, 2026
+            </div>
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                <span class="news-icon" title="honor">🏆</span>
+                VCLab alumna Shima Rezasoltani received <a
+href="imgs/students/2026-06-shima-doctoral-thesis-award.pdf">Ontario
+Tech’s Outstanding Doctoral Thesis Award 2026</a> for her thesis on <a
+href="student-theses/2025-shima-rezasoltani-phd.pdf">implicit neural
+representations for hyperspectral image compression</a>.
 
-              </div>
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  May 4, 2026
-              </div>
-            </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Welcome Hira Butt who is joining VCLab to pursue her doctorate.
-              </div>
+        <div class="row news-row news-people old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                May 4, 2026
             </div>
           </div>
-        
-          <div class="row  ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Apr 23, 2026
-              </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                <span class="news-icon" title="people">👋</span>
+                Welcome Hira Butt, who is joining VCLab to pursue her doctorate.
+                
+                
+                
+                
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  <a
+          </div>
+        </div>
+      
+          
+            
+        
+        <div class="row news-row news-honor">
+          <div class="news-date-col">
+            <div class="news-date">
+                Apr 23, 2026
+            </div>
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                <span class="news-icon" title="honor">🏆</span>
+                <a
 href="imgs/misc/2026-04-22-jacob-rempel-best-honors-thesis-award.jpg">Jacob
-Rempel’s</a> work on hyperspectral image compression received the <span
-class="news-highlight">Best Honors Thesis Award</span> in the Data
-Science and AI category.
+Rempel</a> received the Best Honours Thesis Award (Data Science and AI)
+for his work on hyperspectral image compression.
 
-              </div>
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Apr 23, 2026
-              </div>
+        <div class="row news-row news-people old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Apr 23, 2026
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Congratulations to VCLab members <a
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                <span class="news-icon" title="people">👋</span>
+                Congratulations to VCLab members <a
 href="imgs/misc/2026-04-22-honors-theses.jpeg">Alan Zheng, Graeme
-Lamain, and Jacob Rempel</a> who successfully completed their honors
+Lamain, and Jacob Rempel</a>, who successfully completed their honours
 theses.
 
-              </div>
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Apr 14, 2026
-              </div>
+        <div class="row news-row news-paper">
+          <div class="news-date-col">
+            <div class="news-date">
+                Apr 14, 2026
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Check out our paper <a href="pubs/26-crv-c.pdf">“CascadedViT:
-Cascaded Chunk-FeedForward and Cascaded Group Attention Vision
-Transformer”</a> that is accepted to appear in <a
-href="https://www.computerrobotvision.org/">CRV 2026</a>. <em>This paper
-extends Sri’s honors thesis work</em>. Related code is available at <a
-href="https://github.com/vclab/cascaded-vit">https://github.com/vclab/cascaded-vit</a>.
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                <span class="news-icon" title="paper">📄</span>
+                "CascadedViT: Cascaded Chunk-FeedForward and Cascaded Group Attention Vision Transformer," extending Sri's honours thesis.
 
-              </div>
+                <span class="news-venue">CRV 2026</span>
+                <a class="news-link" href="pubs/26-crv-c.pdf">paper</a>
+                <a class="news-link" href="https://github.com/vclab/cascaded-vit">code</a>
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Mar 30, 2023
-              </div>
+        <div class="row news-row news-paper">
+          <div class="news-date-col">
+            <div class="news-date">
+                Feb 10, 2026
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  I was delighted to hear that I was <span
-class="news-highlight">nominated by my students, both past and present,
-for the <i>Excellence in Graduate Supervision</i></span>. It was such a
-pleasure to see some of the things that they have to say about lab
-culture and how they enjoyed their time here.
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                <span class="news-icon" title="paper">📄</span>
+                "Self-Attention Enhanced Student-Teacher Framework for Visual Anomaly Detection in Industrial Images," led by alumnus Hafiz A. Amjad with colleagues at Mid Sweden University.
 
-              </div>
+                <span class="news-venue">IEEE Access</span>
+                <a class="news-link" href="pubs/26-ieee-access-j.pdf">paper</a>
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Feb 10, 2026
-              </div>
-            </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Check out our paper <a
-href="pubs/26-ieee-access-j.pdf">“Self-Attention Enhanced
-Student-Teacher Framework for Visual Anomaly Detection in Industrial
-Images”</a> that is accepted to appear in <a
-href="https://ieeeaccess.ieee.org/">IEEE Access</a>. This is also joint
-work with colleagues in Mid Sweden University. VCLab M.Sc. alumni Hafiz
-A. Amjad is the first author.
-
-              </div>
+        <div class="row news-row news-honor old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Jan 24, 2026
             </div>
           </div>
-        
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Jan 24, 2026
-              </div>
-            </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  VCLab grad students (Alexie, co-supervised with <a
+          <div class="news-info-col">
+            <div class="news-info">
+                <span class="news-icon" title="honor">🏆</span>
+                VCLab grad students Alexie (co-supervised with <a
 href="https://science.ontariotechu.ca/computer-science/people/undergraduate-faculty/kourosh-davoudi.php">Prof. Davoudi</a>),
-Giancarlo, Neal (co-supervised with <a
-href="https://vialab.ca/">Prof. Collins</a>) and Daniel who submitted an
-entry in uOttaHack8 in a category sponsored by Survey Monkey got the
-<span class="news-highlight">first prize</span>. You can find there demo
-at <a
-href="https://devpost.com/software/gorilla-survey">https://devpost.com/software/gorilla-survey</a>
-and here is a <a
-href="imgs/misc/2026-01-uottawa-hack-first-place.png">group snapshot</a>
-(second from left: Daniel, Neel, Giancarlo, and Alexie).
+Giancarlo, Neel (co-supervised with <a
+href="https://vialab.ca/">Prof. Collins</a>) and Daniel won first prize
+at uOttaHack8 in the Survey Monkey category. See their <a
+href="https://devpost.com/software/gorilla-survey">demo</a> and a <a
+href="imgs/misc/2026-01-uottawa-hack-first-place.png">group
+snapshot</a>.
 
-              </div>
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Dec 17, 2025
-              </div>
-            </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Check out our paper <a href="pubs/26-icpram-reid-c.pdf">Revisiting
-Person Re-ID: ConvNeXt with AIBN and TNorm in IICS/IIDS Frameworks</a>
-that is accepted to appear in <a
-href="https://icpram.scitevents.org/Home.aspx">ICPRAM 2026</a>. <em>Such
-work raises serious ethical and societal concerns that require robust
-legal and ethical frameworks to counteract negative outcomes.</em> More
-information about this work can be found at <a
-href="projects/person-reid-using-convnext/person-reid-using-convnext.html">here</a>.
-
-              </div>
+        <div class="row news-row news-paper">
+          <div class="news-date-col">
+            <div class="news-date">
+                Dec 17, 2025
             </div>
           </div>
-        
-          <div class="row  ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Dec 16, 2025
-              </div>
-            </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  For a strong dose of <span class="news-highlight">nostalgia</span>,
-check out <a href="https://vclab.ca/index.html#nostalgia">this</a>. I
-was able to recover some code that I wrote for DOS and Windows 95 in mid
-1990s. It still works!
+          <div class="news-info-col">
+            <div class="news-info">
+                <span class="news-icon" title="paper">📄</span>
+                “Revisiting Person Re-ID: ConvNeXt with AIBN and TNorm in IICS/IIDS
+Frameworks.” <em>Such work raises serious ethical and societal concerns
+that require robust legal and ethical frameworks.</em>
 
-              </div>
+                <span class="news-venue">ICPRAM 2026</span>
+                <a class="news-link" href="pubs/26-icpram-reid-c.pdf">paper</a>
+                
+                <a class="news-link" href="projects/person-reid-using-convnext/person-reid-using-convnext.html">project</a>
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Dec 15, 2025
-              </div>
-            </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Check out our arXiv paper <a
-href="pubs/25-arxiv-j-prompt-cczsl.pdf">Prompt-Based Continual
-Compositional Zero-Shot Learning</a> that proposes a new approach for
-compositional zero-shot learning under continual learning setting. This
-is joint work with colleagues in Information Technology University,
-Lahore.
-
-              </div>
+        <div class="row news-row news-code">
+          <div class="news-date-col">
+            <div class="news-date">
+                Dec 16, 2025
             </div>
           </div>
-        
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Dec 5, 2025
-              </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                <span class="news-icon" title="code">💻</span>
+                A strong dose of <a
+href="https://vclab.ca/index.html#nostalgia">nostalgia</a>: I recovered
+some code I wrote for DOS and Windows 95 in the mid 1990s. It still
+works!
+
+                
+                
+                
+                
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Check out <a
-href="https://vclab.github.io/cascaded-vit">CascadedViT</a>—a
+          </div>
+        </div>
+      
+          
+            
+        
+        <div class="row news-row news-paper">
+          <div class="news-date-col">
+            <div class="news-date">
+                Dec 15, 2025
+            </div>
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                <span class="news-icon" title="paper">📄</span>
+                "Prompt-Based Continual Compositional Zero-Shot Learning," joint work with colleagues at the Information Technology University, Lahore.
+
+                <span class="news-venue">arXiv</span>
+                <a class="news-link" href="pubs/25-arxiv-j-prompt-cczsl.pdf">paper</a>
+                
+                
+            </div>
+          </div>
+        </div>
+      
+          
+            
+        
+        <div class="row news-row news-code old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Dec 5, 2025
+            </div>
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                <span class="news-icon" title="code">💻</span>
+                Check out <a
+href="https://vclab.github.io/cascaded-vit">CascadedViT</a>, a
 lightweight and compute-efficient vision transformer architecture
 featuring a novel feedforward network design called <em>Cascaded-Chunk
 Feed Forward Network</em>. As compared to EfficientViT variants, across
@@ -534,196 +633,267 @@ various model sizes, CascadedViT family consistently exhibits the lowest
 energy consumption, making it suitable for deployment on
 battery-constrained devices such as mobile phones and drones.
 
-              </div>
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Dec 1, 2025
-              </div>
+        <div class="row news-row news-code">
+          <div class="news-date-col">
+            <div class="news-date">
+                Dec 1, 2025
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Check out <a href="https://github.com/vclab/worm-tracker">code</a>
-for tracking <em>C. elegans</em> in video data.
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                <span class="news-icon" title="code">💻</span>
+                Code for tracking <em>C. elegans</em> in video data.
 
-              </div>
+                
+                
+                <a class="news-link" href="https://github.com/vclab/worm-tracker">code</a>
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Nov 24, 2025
-              </div>
+        <div class="row news-row news-paper">
+          <div class="news-date-col">
+            <div class="news-date">
+                Nov 24, 2025
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Check out our arXiv paper <a
-href="pubs/25-arxiv-j-ldvae-t.pdf">Latent Dirichlet Transformer VAE for
-Hyperspectral Unmixing with Bundled Endmembers</a>.
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                <span class="news-icon" title="paper">📄</span>
+                "Latent Dirichlet Transformer VAE for Hyperspectral Unmixing with Bundled Endmembers."
 
-              </div>
+                <span class="news-venue">arXiv</span>
+                <a class="news-link" href="pubs/25-arxiv-j-ldvae-t.pdf">paper</a>
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Nov 19, 2025
-              </div>
+        <div class="row news-row news-paper old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Nov 19, 2025
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Check out our arXiv paper <a
-href="pubs/25-arxiv-j-cascaded-vit.pdf">CascadedViT: Cascaded
-Chunk-Feedforward and Cascaded Group Attention Vision
-Transformer</a>.
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                <span class="news-icon" title="paper">📄</span>
+                "CascadedViT: Cascaded Chunk-Feedforward and Cascaded Group Attention Vision Transformer."
 
-              </div>
+                <span class="news-venue">arXiv</span>
+                <a class="news-link" href="pubs/25-arxiv-j-cascaded-vit.pdf">paper</a>
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Nov 18, 2025
-              </div>
+        <div class="row news-row news-honor">
+          <div class="news-date-col">
+            <div class="news-date">
+                Nov 18, 2025
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  VCLab ShazNet (Ajay, Daniel, Giancarlo, Neel) took part in <a
-href="https://www.theicebreaker.ca/p/shazam-for-drones-hackathon">Defense
-Tech Hackathon</a> over the weekend and secured <a
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                <span class="news-icon" title="honor">🏆</span>
+                VCLab ShazNet (Ajay, Daniel, Giancarlo, Neel) won <a
 href="imgs/misc/2025-11-18-vclab-shaznet-hackathon-2.png">second
-place</a>, winning $6000. A total of 162 teams had applied to be a part
-of this hackathon and only 10 were accepted to be a part of this
-hackathon. Go ShazNet, go!
+place</a> and $6000 at the <a
+href="https://www.theicebreaker.ca/p/shazam-for-drones-hackathon">Defense
+Tech Hackathon</a>, one of 10 teams selected from 162 applicants. Go
+ShazNet, go!
 
-              </div>
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Nov 11, 2025
-              </div>
-            </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Check out our paper on <a
-href="pubs/25-lncs-j-meta-hsi-compression.pdf">Meta-Learning INR for
-Hyperspectral Image Compression</a> that is accepted to appear in
-Lecture Notes in Computer Science (LNCS).
-
-              </div>
+        <div class="row news-row news-paper">
+          <div class="news-date-col">
+            <div class="news-date">
+                Nov 11, 2025
             </div>
           </div>
-        
-          <div class="row  ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Oct 15, 2025
-              </div>
-            </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Check out our survey paper on <a
-href="pubs/25-arxiv-j.pdf">Compositional Zero-Shot Learning</a>. This is
-joint work with colleagues at <a href="https://itu.edu.pk/">ITU</a>,
-Lahore, Pakistan and <a href="https://mbzuai.ac.ae/">MBZUAI</a>, United
-Arab Emirates.
+          <div class="news-info-col">
+            <div class="news-info">
+                <span class="news-icon" title="paper">📄</span>
+                "Meta-Learning INR for Hyperspectral Image Compression."
 
-              </div>
+                <span class="news-venue">Lecture Notes in Computer Science (LNCS)</span>
+                <a class="news-link" href="pubs/25-lncs-j-meta-hsi-compression.pdf">paper</a>
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Jun 25, 2025
-              </div>
-            </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Check out our paper <a href="pubs/25-mla-j.pdf">“AdVision: An
-efficient and effective deep learning based advertisement detector for
-printed media”</a> that is accepted to appear in Elsevier’s Machine
-Learning with Applications journal. This is joint work with colleagues
-in Mid Sweden University.
-
-              </div>
+        <div class="row news-row news-paper">
+          <div class="news-date-col">
+            <div class="news-date">
+                Oct 15, 2025
             </div>
           </div>
-        
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Jun 17, 2025
-              </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                <span class="news-icon" title="paper">📄</span>
+                Survey on compositional zero-shot learning, joint work with
+colleagues at <a href="https://itu.edu.pk/">ITU</a>, Lahore, and <a
+href="https://mbzuai.ac.ae/">MBZUAI</a>, UAE.
+
+                <span class="news-venue">arXiv</span>
+                <a class="news-link" href="pubs/25-arxiv-j.pdf">paper</a>
+                
+                
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Congratulations to Shima Rezasoltani who successfully defended her
+          </div>
+        </div>
+      
+          
+            
+        
+        <div class="row news-row news-paper">
+          <div class="news-date-col">
+            <div class="news-date">
+                Jun 25, 2025
+            </div>
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                <span class="news-icon" title="paper">📄</span>
+                "AdVision: An efficient and effective deep learning based advertisement detector for printed media," joint work with colleagues at Mid Sweden University.
+
+                <span class="news-venue">Machine Learning with Applications</span>
+                <a class="news-link" href="pubs/25-mla-j.pdf">paper</a>
+                
+                
+            </div>
+          </div>
+        </div>
+      
+          
+            
+        
+        <div class="row news-row news-people old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Jun 17, 2025
+            </div>
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                <span class="news-icon" title="people">👋</span>
+                Congratulations to Shima Rezasoltani who successfully defended her
 doctoral thesis on <a
 href="http://vclab.science.uoit.ca/student-theses/2025-shima-rezasoltani-phd-talk.pdf">“Hyperspectral
 Image Compression using Implicit Neural Networks”</a>. <span
 class="news-highlight">Best thesis award nominee</span>
 
-              </div>
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Jun 16, 2025
-              </div>
+        <div class="row news-row news-people old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Jun 16, 2025
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Congratulations to Adam Lycksam who successfully defended his
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                <span class="news-icon" title="people">👋</span>
+                Congratulations to Adam Lycksam who successfully defended his
 doctoral thesis on <a
 href="https://www.miun.se/en/Research/research-centers/stc/events-seminars/calendar/2025-5/defence-of-doctoral-thesis-with-adam-lycksam/">“From
 Concepts to Conditions: Bridging the Gap in AI-Based Maintenance
 Systems”</a>. Adam completed his PhD at Mid Sweden University, and he is
 co-supervised with Prof. Mattias O Nils.
 
-              </div>
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  May 29, 2025
-              </div>
+        <div class="row news-row news-honor">
+          <div class="news-date-col">
+            <div class="news-date">
+                May 29, 2025
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  I am deeply honored and humbled to receive the
-<a class="color-rolex-green" href="imgs/2025-05-29-lifetime-achievement-award-service-cipprs.jpeg" style="text-transform: uppercase; font-weight: bold;">Lifetime
-Achievement (Service) Award</a> from the <span class="color-rolex-green"
-style="font-weight: bold;">Canadian Information Processing and Pattern
-Recognition Society</span>. Grateful for the recognition and inspired to
-continue contributing to our community.
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                <span class="news-icon" title="honor">🏆</span>
+                Received the <a
+href="imgs/2025-05-29-lifetime-achievement-award-service-cipprs.jpeg">Lifetime
+Achievement (Service) Award</a> from the Canadian Image Processing and
+Pattern Recognition Society. Grateful for the recognition and inspired
+to keep contributing to our community.
 
-              </div>
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  May 21, 2025
-              </div>
+        <div class="row news-row news-people old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                May 21, 2025
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Congratulations to Kiran Mantripragada who successfully defended his
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                <span class="news-icon" title="people">👋</span>
+                Congratulations to Kiran Mantripragada who successfully defended his
 doctoral thesis on <a
 href="http://vclab.science.uoit.ca/student-theses/2025-kiran-mantripragada-phd-talk.pdf">“Latent
 Dirichlet Variational Autoencoder: A Novel Approach for Hyperspectral
@@ -731,485 +901,739 @@ Image Analysis and Pixel Unmixing Exploring Deep Learning
 Architectures”</a>. <span class="news-highlight">Best thesis award
 nominee</span>
 
-              </div>
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Apr 20, 2025
-              </div>
+        <div class="row news-row news-paper">
+          <div class="news-date-col">
+            <div class="news-date">
+                Apr 20, 2025
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Check out our paper <a href="pubs/25-cvpr-w.pdf">“TLAC: Two-stage LMM
-Augmented CLIP for Zero-Shot Classification”</a> that is accepted to
-appear in Multimodel Learning and Applications Workshop, co-located with
-CVPR 2025.
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                <span class="news-icon" title="paper">📄</span>
+                "TLAC: Two-stage LMM Augmented CLIP for Zero-Shot Classification."
 
-              </div>
+                <span class="news-venue">Multimodal Learning and Applications Workshop, CVPR 2025</span>
+                <a class="news-link" href="pubs/25-cvpr-w.pdf">paper</a>
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Apr 17, 2025
-              </div>
+        <div class="row news-row news-honor old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Apr 17, 2025
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Honour thesis students Srivathsan Sivakumar, David Houle-Tymeczko,
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                <span class="news-icon" title="honor">🏆</span>
+                Honours thesis students Srivathsan Sivakumar, David Houle-Tymeczko,
 Aaveg Shangari, Daniel Zajac successfully completed their theses.
-David’s thesis recevied the <span class="news-highlight">Best CS
-Undergradute Honours Thesis Award 2025, Data Science Track</span>.
+David’s thesis received the <span class="news-highlight">Best CS
+Undergraduate Honours Thesis Award 2025, Data Science Track</span>.
 
-              </div>
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Jan 2, 2025
-              </div>
-            </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Check out our paper <a
-href="pubs/25-icpram-c-hsi-compression.pdf">“Hyperspectral Image
-Compression Using Implicit Neural Representation and Meta-Learned Based
-Network”</a> that is accepted to appear in ICPRAM 2025.
-
-              </div>
+        <div class="row news-row news-paper">
+          <div class="news-date-col">
+            <div class="news-date">
+                Jan 2, 2025
             </div>
           </div>
-        
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Jan 2, 2025
-              </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                <span class="news-icon" title="paper">📄</span>
+                "Hyperspectral Image Compression Using Implicit Neural Representation and Meta-Learned Based Network."
+
+                <span class="news-venue">ICPRAM 2025</span>
+                <a class="news-link" href="pubs/25-icpram-c-hsi-compression.pdf">paper</a>
+                
+                
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Check out our paper <a
+          </div>
+        </div>
+      
+          
+            
+        
+        <div class="row news-row news-paper old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Jan 2, 2025
+            </div>
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                <span class="news-icon" title="paper">📄</span>
+                Check out our paper <a
 href="pubs/25-icpram-c-hsi-superresolution.pdf">“Single Hyperspectral
 Image Super-Resolution utilizing Implicit Neural Representations”</a>
 that is accepted to appear in ICPRAM 2025.
 
-              </div>
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Dec 18, 2024
-              </div>
+        <div class="row news-row news-people old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Dec 18, 2024
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Congratulations to Muhammad Salik Nadeem who successfully defended
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                <span class="news-icon" title="people">👋</span>
+                Congratulations to Muhammad Salik Nadeem who successfully defended
 his thesis on <a
 href="http://vclab.science.uoit.ca/student-theses/2024-muhammad-salik-nadeem-msc.pdf">skeleton-based
 human action recognition</a>. <span class="news-highlight">Best thesis
 award nominee</span>
 
-              </div>
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Nov 25, 2024
-              </div>
+        <div class="row news-row news-paper old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Nov 25, 2024
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Check out our paper <a
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                <span class="news-icon" title="paper">📄</span>
+                Check out our paper <a
 href="pubs/24-ieee-tgrs-j-hsi-compression.pdf">“Hyperspectral Image
 Compression Using Sampling and Implicit Neural Representations”</a> that
 is accepted to appear in IEEE TGRS.
 
-              </div>
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Oct 24, 2024
-              </div>
+        <div class="row news-row news-paper old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Oct 24, 2024
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Check out our paper <a href="https://doi.org/10.1093/nar/gkae920">“20
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                <span class="news-icon" title="paper">📄</span>
+                Check out our paper <a href="https://doi.org/10.1093/nar/gkae920">“20
 years of the Bio-Analytic Resource for Plant Biology”</a> that is
 published in Nucleic Acids Research. This is joint work with colleagues
 at the Cell and Systems Biology department, University of Toronto.
 
-              </div>
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Sep 23, 2024
-              </div>
+        <div class="row news-row news-paper old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Sep 23, 2024
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Check out our paper <a href="pubs/24-dicta-c.pdf">“Attention Based
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                <span class="news-icon" title="paper">📄</span>
+                Check out our paper <a href="pubs/24-dicta-c.pdf">“Attention Based
 Simple Primitives for Open-World Compositional Zero-Shot Learning”</a>
 that is accepted to appear in DICTA 2024. This is joint work with A.
 Munir and M. Ali from ITU, Lahore and M.H. Khan from <a
 href="https://mbzuai.ac.ae/">MBZUAI</a>, UAE.
 
-              </div>
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Sep 3, 2024
-              </div>
-            </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  VCLab welcomes four honors thesis students David Houle-Tymeczko, Chau Nguyen, Aaveg Shangari, and Daniel Zajac.
-              </div>
+        <div class="row news-row news-people old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Sep 3, 2024
             </div>
           </div>
-        
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Sep 1, 2024
-              </div>
-            </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Welcome Alexie Linardatos who is joining visual computing lab to pursue M.Sc. in computer science.
-              </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                <span class="news-icon" title="people">👋</span>
+                VCLab welcomes four honours thesis students David Houle-Tymeczko, Chau Nguyen, Aaveg Shangari, and Daniel Zajac.
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  May 8, 2024
-              </div>
-            </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Congratulations to Neha Ejaz who successfully defended her thesis on a few-shot learning method for single-object anomaly detection.
-              </div>
+        <div class="row news-row news-people old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Sep 1, 2024
             </div>
           </div>
-        
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  May 4, 2024
-              </div>
-            </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Congratulations to Negin Tabaraki who successfully defended her thesis on meta learning techniques for video matting.
-              </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                <span class="news-icon" title="people">👋</span>
+                Welcome Alexie Linardatos who is joining visual computing lab to pursue M.Sc. in computer science.
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  May 1, 2024
-              </div>
-            </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Welcome Giancarlo Giannetti who is joining visual computing lab to pursue M.Sc. in computer science.
-              </div>
+        <div class="row news-row news-people old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                May 8, 2024
             </div>
           </div>
-        
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  May 1, 2024
-              </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                <span class="news-icon" title="people">👋</span>
+                Congratulations to Neha Ejaz who successfully defended her thesis on a few-shot learning method for single-object anomaly detection.
+                
+                
+                
+                
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Check out our paper <a href="pubs/24-igarss-paper.pdf">“Spatial
+          </div>
+        </div>
+      
+          
+            
+        
+        <div class="row news-row news-people old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                May 4, 2024
+            </div>
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                <span class="news-icon" title="people">👋</span>
+                Congratulations to Negin Tabaraki who successfully defended her thesis on meta learning techniques for video matting.
+                
+                
+                
+                
+            </div>
+          </div>
+        </div>
+      
+          
+            
+        
+        <div class="row news-row news-people old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                May 1, 2024
+            </div>
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                <span class="news-icon" title="people">👋</span>
+                Welcome Giancarlo Giannetti who is joining visual computing lab to pursue M.Sc. in computer science.
+                
+                
+                
+                
+            </div>
+          </div>
+        </div>
+      
+          
+            
+        
+        <div class="row news-row news-paper old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                May 1, 2024
+            </div>
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                <span class="news-icon" title="paper">📄</span>
+                Check out our paper <a href="pubs/24-igarss-paper.pdf">“Spatial
 Attention Convolutional Latent Dirichlet Variational Autoencoder for
 hyperspectral pixel unmixing”</a> that is accepted to appear in IGARSS
 2024.
 
-              </div>
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Apr 18, 2024
-              </div>
-            </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Congratulations to Matthew Chan who successfully defended his thesis on characterizing midair handwriting in virtual reality.
-              </div>
+        <div class="row news-row news-people old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Apr 18, 2024
             </div>
           </div>
-        
-          <div class="row  ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Feb 8, 2024
-              </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                <span class="news-icon" title="people">👋</span>
+                Congratulations to Matthew Chan who successfully defended his thesis on characterizing midair handwriting in virtual reality.
+                
+                
+                
+                
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Check out our IEEE TGRS paper on <a
-href="https://ieeexplore.ieee.org/document/10414262">“Hyperspectral
-Pixel Unmixing with Latent Dirichlet Variational Autoencoder”</a>.
+          </div>
+        </div>
+      
+          
+            
+        
+        <div class="row news-row news-paper">
+          <div class="news-date-col">
+            <div class="news-date">
+                Feb 8, 2024
+            </div>
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                <span class="news-icon" title="paper">📄</span>
+                "Hyperspectral Pixel Unmixing with Latent Dirichlet Variational Autoencoder."
 
-              </div>
+                <span class="news-venue">IEEE TGRS</span>
+                <a class="news-link" href="https://ieeexplore.ieee.org/document/10414262">paper</a>
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Dec 7, 2023
-              </div>
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Dec 7, 2023
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Congratulations to Chirag Karia who successfully defended his thesis
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                Congratulations to Chirag Karia who successfully defended his thesis
 on <a
 href="http://vclab.science.uoit.ca/student-theses/2024-chirag-karia-msc.pdf">predicting
 human dynamics</a>. <span class="news-highlight">Best thesis award
 nominee</span>
 
-              </div>
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Oct 2, 2023
-              </div>
-            </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Congratulations to Roya Dehghani who successfully defended her thesis on a person re-identification using ConvNeXt architectures.
-              </div>
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Oct 2, 2023
             </div>
           </div>
-        
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Sep 1, 2023
-              </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                Congratulations to Roya Dehghani who successfully defended her thesis on a person re-identification using ConvNeXt architectures.
+                
+                
+                
+                
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Checkout our journal paper <a
+          </div>
+        </div>
+      
+          
+            
+        
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Sep 1, 2023
+            </div>
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                Checkout our journal paper <a
 href="https://ieeexplore.ieee.org/document/10235962">“An interactive
 threshold-setting procedure for improved multivariate anomaly detection
 in time series.”</a> This is joint work with Adam Lundstrom and Mattias
 O’Nils.
 
-              </div>
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Sep 1, 2023
-              </div>
-            </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Welcome Hafiz Arslan Amjad who is joining visual computing lab to pursue M.Sc. in computer science.
-              </div>
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Sep 1, 2023
             </div>
           </div>
-        
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  May 29, 2023
-              </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                Welcome Hafiz Arslan Amjad who is joining visual computing lab to pursue M.Sc. in computer science.
+                
+                
+                
+                
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Check out our new arXiv manuscript on <a
+          </div>
+        </div>
+      
+          
+            
+        
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                May 29, 2023
+            </div>
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                Check out our new arXiv manuscript on <a
 href="https://arxiv.org/abs/2305.17245">error estimation in single image
 3d human mesh recovery</a>. Project page is available <a
 href="projects/error-estimation/error-estimation.html">here</a>. Code is
 available on <a
 href="https://github.com/Hamoon1987/meshConfidence">github</a>.
 
-              </div>
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  May 18, 2023
-              </div>
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                May 18, 2023
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Hamoon Jafarian successfully defended his M.Sc. thesis on <a
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                Hamoon Jafarian successfully defended his M.Sc. thesis on <a
 href="projects/error-estimation/error-estimation.html">error estimation
 in single image 3d human mesh recovery</a>. <span
 class="news-highlight">Best thesis award nominee</span>
 
-              </div>
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Apr 17, 2023
-              </div>
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Apr 17, 2023
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Our paper on <a href="pubs/23-crv-c.pdf">Hyperspectral Image
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                Our paper on <a href="pubs/23-crv-c.pdf">Hyperspectral Image
 Compression using Implicit Neural Networks</a> has been accepted to
 appear in Conference on Robots and Computer (CRV 2023).
 
-              </div>
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Apr 12, 2023
-              </div>
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Apr 12, 2023
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Check out our abstract that outlines <a
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                Check out our abstract that outlines <a
 href="pubs/23-igarss-abstract.pdf">an Iterative Method for Hyperspectral
 Pixel Unmixing Leveraging Latent Dirichlet Variational Autoencoder</a>
 that has been accepted to appear in International Geoscience and Remote
 Sensing Symposium (IGARSS).
 
-              </div>
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Oct 11, 2022
-              </div>
+        <div class="row news-row news-honor">
+          <div class="news-date-col">
+            <div class="news-date">
+                Mar 30, 2023
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Checkout our journal paper <a
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                <span class="news-icon" title="honor">🏆</span>
+                Nominated for the Excellence in Graduate Supervision Award by past and present graduate students.  It was a pleasure to read what they had to say about the lab's culture and their time here.
+
+                
+                
+                
+                
+            </div>
+          </div>
+        </div>
+      
+          
+            
+        
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Oct 11, 2022
+            </div>
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                Checkout our journal paper <a
 href="https://ieeexplore.ieee.org/document/9913974">“Improving deep
 learning based anomaly detection on multivariate time series through
 separated anomaly scoring”</a>. This is joint work with Adam Lundstrom,
 Mattias O’Nils, and Axel Jantsch.
 
-              </div>
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Oct 6, 2022
-              </div>
-            </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Congratulations to Mir Afgan Talpur who successfully defended his thesis on a modular approach to image matting.
-              </div>
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Oct 6, 2022
             </div>
           </div>
-        
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Sep 10, 2022
-              </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                Congratulations to Mir Afgan Talpur who successfully defended his thesis on a modular approach to image matting.
+                
+                
+                
+                
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  I gave a series of ai lectures titled <a
+          </div>
+        </div>
+      
+          
+            
+        
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Sep 10, 2022
+            </div>
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                I gave a series of ai lectures titled <a
 href="http://csgrad.science.uoit.ca/courses/ist2/">“A Deep Learning
 Primer”</a> at <a href="https://www.ist.edu.pk">Institute of Space
 Technology (IST)</a>. Thank you IST for hosting me.
 
-              </div>
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Jul 14, 2022
-              </div>
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Jul 14, 2022
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Checkout our journal paper <a
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                Checkout our journal paper <a
 href="https://dx.plos.org/10.1371/journal.pone.0269174">“The Effects of
 Spectral Dimensionality Reduction on Hyperspectral Image Classification.
 A Case Study.”</a> More information and the datasets used in this study
 can be found <a
 href="projects/hsi-spectral-reduction/hsi-spectral-reduction.html">here</a>.
 
-              </div>
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Jun 19, 2022
-              </div>
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Jun 19, 2022
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  I am excited to give a short-course on the <a
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                I am excited to give a short-course on the <a
 href="http://csgrad.science.uoit.ca/courses/ist/">“Unreasonable
 Effectiveness of Convolutional Neural Networks for Object
 Recognition”</a> at the <a href="https://www.ist.edu.pk">Institute of
 Space Technology</a>.
 
-              </div>
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Apr 2, 2022
-              </div>
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Apr 2, 2022
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Thank you <a
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                Thank you <a
 href="https://www.miun.se/Personal/mattiasonils/">Prof. Mattias
 O’Nils</a> for hosting me at <a
 href="https://www.miun.se/en/Research/research-centers/stc/">Center for
@@ -1217,74 +1641,114 @@ Sensible Things that Communicate</a>, Mid Sweden University. It was
 great fun! Check out my interview <a
 href="https://www.miun.se/en/Research/research-centers/stc/news-from-stc-research-center-eng/News-archive/2022-3/guest-professor-faisal-qureshi-from-the-university-of-ontario-institute-of-technology/">here</a>.
 
-              </div>
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Apr 2, 2022
-              </div>
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Apr 2, 2022
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  I am thrilled to be appointed as an adjunct faculty at the <a
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                I am thrilled to be appointed as an adjunct faculty at the <a
 href="https://www.ist.edu.pk">Institute of Space Technology</a>,
 Pakistan.
 
-              </div>
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Jan 6, 2022
-              </div>
-            </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Welcome Negin Tabaraki and Neha Ejaz who are joining visual computing lab to pursue M.Sc. in computer science.
-              </div>
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Jan 6, 2022
             </div>
           </div>
-        
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Jan 6, 2022
-              </div>
-            </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Congratulations to Michael Lombardo for successfully defending his M.Sc. thesis on parsing genetic models.
-              </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                Welcome Negin Tabaraki and Neha Ejaz who are joining visual computing lab to pursue M.Sc. in computer science.
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Dec 1, 2021
-              </div>
-            </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  I now have a status-only appoinment in the Department of Cell and Systems Biology (CSB) at the University of Toronto.  I am looking forward to working with my colleagues in CSB.
-              </div>
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Jan 6, 2022
             </div>
           </div>
-        
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Nov 30, 2021
-              </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                Congratulations to Michael Lombardo for successfully defending his M.Sc. thesis on parsing genetic models.
+                
+                
+                
+                
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Checkout our journal paper <a
+          </div>
+        </div>
+      
+          
+            
+        
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Dec 1, 2021
+            </div>
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                I now have a status-only appoinment in the Department of Cell and Systems Biology (CSB) at the University of Toronto.  I am looking forward to working with my colleagues in CSB.
+                
+                
+                
+                
+            </div>
+          </div>
+        </div>
+      
+          
+            
+        
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Nov 30, 2021
+            </div>
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                Checkout our journal paper <a
 href="https://www.mdpi.com/2313-433X/7/12/255">“Evaluation of
 2D-/3D-Feet-Detection Methods for Semi-Autonomous Powered Wheelchair
 Navigation”</a>. This is joint work with Cristian Gimenez, Silvia Krug,
@@ -1293,99 +1757,147 @@ href="https://www.miun.se/en/Research/research-centers/stc/">Mid Sweden
 University</a>. Dataset is available <a
 href="https://snd.gu.se/sv/catalogue/study/2021-303/1/1#dataset">here</a>.
 
-              </div>
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Oct 28, 2021
-              </div>
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Oct 28, 2021
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Checkout our journal paper <a
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                Checkout our journal paper <a
 href="https://www.mdpi.com/2313-433X/7/11/227">“A Temporal Boosted
 YOLO-Based Model for Birds Detection around Wind Farms”</a>. This is
 joint work with Hiba Alqaysi, Igor Fedorov, and Mattias O’Nils from <a
 href="https://www.miun.se/en/Research/research-centers/stc/">Mid Sweden
 University</a>. (<em>Dataset coming soon</em>.)
 
-              </div>
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Sep 2, 2021
-              </div>
-            </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Welcoming two new members. Hamoon Jafarian and Roya Dehghani are joining visual computing lab to pursue M.Sc. in computer science.
-              </div>
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Sep 2, 2021
             </div>
           </div>
-        
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Jun 3, 2021
-              </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                Welcoming two new members. Hamoon Jafarian and Roya Dehghani are joining visual computing lab to pursue M.Sc. in computer science.
+                
+                
+                
+                
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  I am both honoured and excited to be nominated for the
+          </div>
+        </div>
+      
+          
+            
+        
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Jun 3, 2021
+            </div>
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                I am both honoured and excited to be nominated for the
 <strong>Student Choice Award</strong>. This year it is particularly
 meaningful given the larger COVID-19 context and the sudden shift to
 online teaching and learning. Though we do not see each other in
 physical spaces, my interactions with my students continue to be the
 most enjoyable part of my job. Thank you, my students!
 
-              </div>
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Mar 9, 2021
-              </div>
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Mar 9, 2021
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Thank you <a href="https://www.soscip.org/">SOSCIP</a> for providing
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                Thank you <a href="https://www.soscip.org/">SOSCIP</a> for providing
 cloud and deep learning computing resources for our work with Mitacs and
 Axiom.
 
-              </div>
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Jan 4, 2021
-              </div>
-            </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Welcome Mohamed Zayed who is joining visual computing lab to pursue M.Sc. in computer science.
-              </div>
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Jan 4, 2021
             </div>
           </div>
-        
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Dec 11, 2020
-              </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                Welcome Mohamed Zayed who is joining visual computing lab to pursue M.Sc. in computer science.
+                
+                
+                
+                
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Our journal paper <a
+          </div>
+        </div>
+      
+          
+            
+        
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Dec 11, 2020
+            </div>
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                Our journal paper <a
 href="https://www.sciencedirect.com/science/article/abs/pii/S0924271620303208">“Improving
 hyperspectral image segmentation by applying inverse noise weighting and
 outlier removal for optimal scale selection”</a> has been accepted to
@@ -1393,62 +1905,94 @@ appear in ISPRS Journal of Photogrammetry and Remote Sensing. This is
 joint work with Phuong D. Dao, Kiran Mantripragada, and <a
 href="http://sites.utm.utoronto.ca/yuhong/">Yuhong He</a>.
 
-              </div>
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Dec 08, 2020
-              </div>
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Dec 08, 2020
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Check out our <strong>c++</strong> notes <a
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                Check out our <strong>c++</strong> notes <a
 href="http://csundergrad.science.uoit.ca/courses/cpp-notes">here</a>.
 
-              </div>
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Oct 18, 2020
-              </div>
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Oct 18, 2020
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Check out our <strong>computer vision notebooks</strong> <a
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                Check out our <strong>computer vision notebooks</strong> <a
 href="http://csundergrad.science.uoit.ca/courses/cv-notes">here</a>.
 
-              </div>
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Sep 8, 2020
-              </div>
-            </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Welcome Shima Rezasoltani and Afgan Mir Talpur, who are joining visual computing lab to pursue graduate studies in computer science.  Shima will be working towards her Ph.D. in computer science, whereas Afgan is returning to VCLab to work towards his M.Sc. in computer science.
-              </div>
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Sep 8, 2020
             </div>
           </div>
-        
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Jul 24, 2020
-              </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                Welcome Shima Rezasoltani and Afgan Mir Talpur, who are joining visual computing lab to pursue graduate studies in computer science.  Shima will be working towards her Ph.D. in computer science, whereas Afgan is returning to VCLab to work towards his M.Sc. in computer science.
+                
+                
+                
+                
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Our journal paper <a
+          </div>
+        </div>
+      
+          
+            
+        
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Jul 24, 2020
+            </div>
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                Our journal paper <a
 href="https://doi.org/10.1109/TPAMI.2020.3015867">“A Stream Algebra for
 Performance Optimization of Large Scale Computer Vision Pipelines”</a>
 has been accepted to appear in IEEE Transactions on Pattern Analysis and
@@ -1456,87 +2000,127 @@ Machine Intelligence. Joint work with <a
 href="https://www.linkedin.com/in/mohamed-helala/?originalSubdomain=ca">Mohamed
 Helala</a> and <a href="http://db.science.uoit.ca">Ken Pu</a>.
 
-              </div>
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Jul 21, 2020
-              </div>
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Jul 21, 2020
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Excited to report that my student <a
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                Excited to report that my student <a
 href="https://www.linkedin.com/in/saliknadeem/?originalSubdomain=ca">Salik
 Nadeem</a> got selected for <a
 href="https://opencv.org/announcing-the-opencv-spatial-ai-competition-sponsored-by-intel-phase-1-winners/">Phase
 1 of the OpenCV Spatial AI Competition sponsored by Intel</a>. He will
 receive the OpenCV AI Kit OAK-D to further develop his work.
 
-              </div>
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Jun 19, 2020
-              </div>
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Jun 19, 2020
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Check out <a
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                Check out <a
 href="http://vclab.science.uoit.ca/webify-manual/introduction.html">Webify
 v4.2</a>. A Python tool to convert plaintext to beautiful course notes
 and websites. Now it supports a live mode that can be used to maintain
 websites remotely.
 
-              </div>
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Jun 01, 2020
-              </div>
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Jun 01, 2020
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  I am now serving as the secretary for the Canadian Image Processing
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                I am now serving as the secretary for the Canadian Image Processing
 and Pattern Recognition Society (<a
 href="https://cipprs.org/">CIPPRS</a>).
 
-              </div>
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Apr 24, 2020
-              </div>
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Apr 24, 2020
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Just got the official confirmation. I will be promoted to
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                Just got the official confirmation. I will be promoted to
 <strong>Full Professor</strong> starting July 1, 2020.
 
-              </div>
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Apr 14, 2020
-              </div>
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Apr 14, 2020
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Our work <strong>Improving Hyperspectral Image Segmentation by
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                Our work <strong>Improving Hyperspectral Image Segmentation by
 Applying Inverse Noise Weighting and Outlier Removal for Optimal Scale
 Selection</strong> received the <strong>second place</strong> at the
 <em>2020 American Association of Geographers (AAG), Remote Sensing
@@ -1549,54 +2133,78 @@ href="http://sites.utm.utoronto.ca/yuhong/content/welcome-prof-yuhong-hes-webpag
 Sensing and Spatial Ecosystem Modeling laboratory</a>, University of
 Toronto Mississauga. Phuong presented this work at the AAG meeting.
 
-              </div>
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Mar 9, 2020
-              </div>
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Mar 9, 2020
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  VCLab received a <strong>$120,000 Mitacs Accelerate Grant</strong> to
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                VCLab received a <strong>$120,000 Mitacs Accelerate Grant</strong> to
 develop a <em>data-driven framework for integrating visual inspection
 into injection moulding pipeline</em>. Our partner organization is <a
 href="https://www.axiomgroup.ca">Axiom Plastics Inc.</a>
 
-              </div>
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Dec 17, 2019
-              </div>
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Dec 17, 2019
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  I took part in the <a
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                I took part in the <a
 href="https://twitter.com/gfss_STEM/status/1207159745372659713">science
 information panel</a> organized by Glenforest Secondary School STEM
 team. The students asked some very interesting questions, and I had a
 blast.
 
-              </div>
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Dec 1, 2019
-              </div>
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Dec 1, 2019
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  I am visiting <a
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                I am visiting <a
 href="https://www.miun.se/Personal/mattiasonils/">Prof. OMattias
 O’Nils</a> at Mid Sweden University, Sundsvall, Sweden where I am
 scheduled to give two talks. First talk, is a public seminar titled
@@ -1604,19 +2212,27 @@ scheduled to give two talks. First talk, is a public seminar titled
 our recent work on <em>joint layer and spatial attention network</em>
 and <em>image inpainting</em>.
 
-              </div>
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Oct 16, 2019
-              </div>
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Oct 16, 2019
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  My student Tony Joseph is presenting our work on “Joint Spatial and
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                My student Tony Joseph is presenting our work on “Joint Spatial and
 Layer Attention for Convolutional Networks” at the <a
 href="https://toronto.eventful.com/events/evolution-deep-learning-symposium-/E0-001-130421445-1">Evolution
 of Deep Learning Symposia</a> organized by <a
@@ -1628,19 +2244,27 @@ work on “Neural Networks for DNNs” at this symposia. <br/><em>I am
 particulary thrilled about this; my very first graduate course was with
 Prof. Hinton back when deep learning wasn’t a thing.</em>
 
-              </div>
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Sep 23, 2019
-              </div>
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Sep 23, 2019
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Our paper <strong>A Residual-Dyad Encoder Discriminator Network for
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                Our paper <strong>A Residual-Dyad Encoder Discriminator Network for
 Remote Sensing Image Matching</strong> is accepted to appear in <a
 href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=36">IEEE
 Transactions on Geoscience and Remote Sensing</a>. This is joint work
@@ -1649,489 +2273,766 @@ href="https://lums.edu.pk/labs/graphics-and-computer-vision-lab">Graphics
 and Computer Vision Lab</a>, Lahore University of Management
 Sciences.
 
-              </div>
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Sep 1, 2019
-              </div>
-            </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Welcome Chirag Karia and Michael Lombardo, who are joining visual computing lab to pursue graduate studies in computer science.
-              </div>
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Sep 1, 2019
             </div>
           </div>
-        
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Aug 24, 2019
-              </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                Welcome Chirag Karia and Michael Lombardo, who are joining visual computing lab to pursue graduate studies in computer science.
+                
+                
+                
+                
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Our work on <strong>Structure Guided Image Inpainting using Edge
+          </div>
+        </div>
+      
+          
+            
+        
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Aug 24, 2019
+            </div>
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                Our work on <strong>Structure Guided Image Inpainting using Edge
 Prediction</strong> is accepted to appear in the ICCV19 workshop on <a
 href="http://www.vision.ee.ethz.ch/aim19/">Advances in Image
 Manipulation</a>. This is joint work with our colleagues in the Imaging
 Lab.
 
-              </div>
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Aug 15, 2019
-              </div>
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Aug 15, 2019
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  I am now a <strong>Senior Member</strong> of
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                I am now a <strong>Senior Member</strong> of
 <strong>IEEE</strong>.
 
-              </div>
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Jul 1, 2019
-              </div>
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Jul 1, 2019
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Our paper <strong>Joint Spatial and Layer Attention for Convolutional
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                Our paper <strong>Joint Spatial and Layer Attention for Convolutional
 Networks</strong> is accepted as a spotlight at <a
 href="https://bmvc2019.org">BMVC19</a>! This is joint work with Tony
 Joseph and Prof. Kosta Derpanis (Ryerson University and Samsung AI Lab
 Toronto).
 
-              </div>
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Jul 1, 2019
-              </div>
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Jul 1, 2019
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Starting July 1st, 2019, I will be serving as the <strong>Graduate
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                Starting July 1st, 2019, I will be serving as the <strong>Graduate
 Program Director</strong> for Ontario Tech University Computer Science
 program.
 
-              </div>
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  June 14, 2019
-              </div>
-            </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Tony Joseph successfully defended his M.Sc. thesis.
-              </div>
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                June 14, 2019
             </div>
           </div>
-        
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Feb 27, 2019
-              </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                Tony Joseph successfully defended his M.Sc. thesis.
+                
+                
+                
+                
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  I am both honoured and excited to be nominated for the
+          </div>
+        </div>
+      
+          
+            
+        
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Feb 27, 2019
+            </div>
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                I am both honoured and excited to be nominated for the
 <strong>Student Choice Award</strong>. My interactions with an amazing
 group of students is truly the most enjoyable part of my job. Thank you,
 my students!
 
-              </div>
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Jan 7, 2019
-              </div>
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Jan 7, 2019
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Check out our <strong>EdgeConnect</strong> work on image inpainting
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                Check out our <strong>EdgeConnect</strong> work on image inpainting
 on <a href="https://arxiv.org/abs/1901.00212">arXiv</a>. Code for this
 paper is available at <a
 href="https://github.com/knazeri/edge-connect">Github</a>.
 
-              </div>
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Jan 7, 2019
-              </div>
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Jan 7, 2019
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Check out new project page on <strong>stream algebra for computer
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                Check out new project page on <strong>stream algebra for computer
 vision pipelines</strong> <a
 href="http://vclab.science.uoit.ca/projects/stream-algebra/stream-algebra.html">here</a>.
 
-              </div>
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Jan 2, 2019
-              </div>
-            </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Welcome Salik Nadeem.  Salik has joined visual computing lab to pursue M.Sc. in computer science.  He did his undergraduate at Lahore University of Management Sciences (LUMS), Pakistan.
-              </div>
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Jan 2, 2019
             </div>
           </div>
-        
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Dec 15, 2018
-              </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                Welcome Salik Nadeem.  Salik has joined visual computing lab to pursue M.Sc. in computer science.  He did his undergraduate at Lahore University of Management Sciences (LUMS), Pakistan.
+                
+                
+                
+                
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Check out our NeurIPS18 paper on <strong>neural networks for
+          </div>
+        </div>
+      
+          
+            
+        
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Dec 15, 2018
+            </div>
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                Check out our NeurIPS18 paper on <strong>neural networks for
 DNNs</strong> on <a
 href="https://arxiv.org/abs/1807.00042">arXiv</a>.
 
-              </div>
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Nov 15, 2018
-              </div>
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Nov 15, 2018
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Our paper on <strong>compact representations on neural networks for
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                Our paper on <strong>compact representations on neural networks for
 solving Laplace’s equation</strong> has been accepted at appear at <a
 href="https://nips.cc/Conferences/2018/Schedule?showEvent=10941">NuerIPS
 2018 workshop on Compact Deep Neural Networks with Industrial
 Applications</a>.
 
-              </div>
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Oct 2, 2018
-              </div>
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Oct 2, 2018
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Michael Lombardo was runner-up in the undergrad category at <a
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                Michael Lombardo was runner-up in the undergrad category at <a
 href="http://flux.cs.queensu.ca/news/2018/10/02/computing-student-research-conference-csearch/">CSearch
 2018</a>. Congrats Michael!
 
-              </div>
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Sep 5, 2018
-              </div>
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Sep 5, 2018
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Our paper on <strong>neural networks for DNNs</strong> has been
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                Our paper on <strong>neural networks for DNNs</strong> has been
 accepted at appear at <a
 href="https://nips.cc/Conferences/2018/">NuerIPS 2018</a>.
 
-              </div>
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Sep 1, 2018
-              </div>
-            </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Welcome Michael Stergianis.  Michael has joined the visual computing lab to pursue M.Sc. computer science.
-              </div>
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Sep 1, 2018
             </div>
           </div>
-        
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Jun 21, 2018
-              </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                Welcome Michael Stergianis.  Michael has joined the visual computing lab to pursue M.Sc. computer science.
+                
+                
+                
+                
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Our paper on <strong>video summarization on commodity
+          </div>
+        </div>
+      
+          
+            
+        
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Jun 21, 2018
+            </div>
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                Our paper on <strong>video summarization on commodity
 hardware</strong> has been accepted to appear at 12th ACM International
 Conference on Distributed Smart Cameras 2018.
 
-              </div>
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  May 10, 2018
-              </div>
-            </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Welcome Hunter Thompson.  Hunter has joined the visual computing lab to pursue M.Sc. computer science.
-              </div>
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                May 10, 2018
             </div>
           </div>
-        
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  May 10, 2018
-              </div>
-            </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Welcome Ghazal Reshad.  Ghazal has joined the visual computing lab to pursue M.Sc. computer science.
-              </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                Welcome Hunter Thompson.  Hunter has joined the visual computing lab to pursue M.Sc. computer science.
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  May 10, 2018
-              </div>
-            </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Welcome Michael Lombardo.  Michael will be spending his summer in the lab as an NSERC USRA.
-              </div>
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                May 10, 2018
             </div>
           </div>
-        
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Jan 24, 2018
-              </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                Welcome Ghazal Reshad.  Ghazal has joined the visual computing lab to pursue M.Sc. computer science.
+                
+                
+                
+                
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Wesley Taylor successfully defended his M.Sc. thesis on <em>video
+          </div>
+        </div>
+      
+          
+            
+        
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                May 10, 2018
+            </div>
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                Welcome Michael Lombardo.  Michael will be spending his summer in the lab as an NSERC USRA.
+                
+                
+                
+                
+            </div>
+          </div>
+        </div>
+      
+          
+            
+        
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Jan 24, 2018
+            </div>
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                Wesley Taylor successfully defended his M.Sc. thesis on <em>video
 summarization on commodity hardware</em>. Congratulations, Wesley!
 
-              </div>
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Dec 8, 2017
-              </div>
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Dec 8, 2017
             </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Check out <a
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                Check out <a
 href="https://github.com/faisalqureshi/webify">webify</a>, a python
 wrapper and a little bit more than that to convert markdown, yaml and
 mustache content to websites and pdf documents using pandoc.
 
-              </div>
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Sep 12, 2017
-              </div>
-            </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Welcome Miguel Jose Mendez. Miguel has joined the visual computing lab to pursue M.Sc. computer science.
-              </div>
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Sep 12, 2017
             </div>
           </div>
-        
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Sep 12, 2017
-              </div>
-            </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Welcome Kiran Mantripragada. Kiran has joined the visual computing lab to pursue Ph.D. computer science.
-              </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                Welcome Miguel Jose Mendez. Miguel has joined the visual computing lab to pursue M.Sc. computer science.
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Sep 11, 2017
-              </div>
-            </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Attending ITEA3 Project Outline Preparation Days 2017 in Berlin.
-              </div>
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Sep 12, 2017
             </div>
           </div>
-        
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  May 18, 2017
-              </div>
-            </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Our paper, &quot;Fast estimation of large displacement optical flow using dominant motion patterns and sub-volume patchmatch filtering&quot; received the <strong>Best Computer Vision Paper</strong> award at Computer Robot Vision 2017.
-              </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                Welcome Kiran Mantripragada. Kiran has joined the visual computing lab to pursue Ph.D. computer science.
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Apr 28, 2017
-              </div>
-            </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  David Nemirovsky successfully defended his M.Sc. thesis.  Congrats, David!
-              </div>
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Sep 11, 2017
             </div>
           </div>
-        
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Apr 14, 2017
-              </div>
-            </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Michael Stergianis will again spend the summer months at VCLab as NSERC USRA.  Welcome back, Michael!
-              </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                Attending ITEA3 Project Outline Preparation Days 2017 in Berlin.
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Mar 20, 2017
-              </div>
-            </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Two papers accepted to CRV 2017.
-              </div>
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                May 18, 2017
             </div>
           </div>
-        
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Jul 3, 2016
-              </div>
-            </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Paper presenting formal algebra (for vision streams) implementation accepted to ICDSC 2016
-              </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                Our paper, &quot;Fast estimation of large displacement optical flow using dominant motion patterns and sub-volume patchmatch filtering&quot; received the <strong>Best Computer Vision Paper</strong> award at Computer Robot Vision 2017.
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Apr 1, 2016
-              </div>
-            </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Michael Stergianis receives NSERC USRA
-              </div>
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Apr 28, 2017
             </div>
           </div>
-        
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Apr 1, 2016
-              </div>
-            </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Wesley Taylor receives Ontario Graduate Scholarship
-              </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                David Nemirovsky successfully defended his M.Sc. thesis.  Congrats, David!
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Apr 1, 2016
-              </div>
-            </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Luis Zarrabeitia joined Google
-              </div>
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Apr 14, 2017
             </div>
           </div>
-        
-          <div class="row  old-news"  style="display:none" ">
-            <div class="col-md-2 col-sm-4 col-4">
-              <div class="news-date">
-                  Feb 2, 2016
-              </div>
-            </div>
-            <div class="col-md-10 col-sm-8 col-8">
-              <div class="news-info">
-                  Two papers accepted to WACV 2016
-              </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                Michael Stergianis will again spend the summer months at VCLab as NSERC USRA.  Welcome back, Michael!
+                
+                
+                
+                
             </div>
           </div>
+        </div>
+      
+          
+            
         
-        <i id="toggle-news">more >>></i>
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Mar 20, 2017
+            </div>
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                Two papers accepted to CRV 2017.
+                
+                
+                
+                
+            </div>
+          </div>
+        </div>
+      
+          
+            
+        
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Jul 3, 2016
+            </div>
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                Paper presenting formal algebra (for vision streams) implementation accepted to ICDSC 2016
+                
+                
+                
+                
+            </div>
+          </div>
+        </div>
+      
+          
+            
+        
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Apr 1, 2016
+            </div>
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                Michael Stergianis receives NSERC USRA
+                
+                
+                
+                
+            </div>
+          </div>
+        </div>
+      
+          
+            
+        
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Apr 1, 2016
+            </div>
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                Wesley Taylor receives Ontario Graduate Scholarship
+                
+                
+                
+                
+            </div>
+          </div>
+        </div>
+      
+          
+            
+        
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Apr 1, 2016
+            </div>
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                Luis Zarrabeitia joined Google
+                
+                
+                
+                
+            </div>
+          </div>
+        </div>
+      
+          
+            
+        
+        <div class="row news-row old-news" style="display:none">
+          <div class="news-date-col">
+            <div class="news-date">
+                Feb 2, 2016
+            </div>
+          </div>
+          <div class="news-info-col">
+            <div class="news-info">
+                
+                Two papers accepted to WACV 2016
+                
+                
+                
+                
+            </div>
+          </div>
+        </div>
+      
+          
+          
+          
+            <div class="news-toggle-row">
+              <span id="toggle-news" class="news-link"
+                    data-more="Show all news (99 more) &#9662;"
+                    data-less="Show fewer &#9652;">Show all news (99 more) &#9662;</span>
+            </div>
+          
+        </div>
       </div>
 
       <h1 id="about">About</h1>
@@ -3809,7 +4710,7 @@ research.</li>
     </div>
     <div class="col">
       &copy; Faisal Qureshi<br>
-      Last updated 2026-11-02 15:51<br>
+      Last updated 2026-11-02 16:54<br>
       &copy; Webify 4.1
     </div>
   </div>
