@@ -148,12 +148,8 @@ strong,
 }
 
 #news-container .news-honor {
-    background: #fdf8e8;
+    background: #f4f4f4;
     border-left: 3px solid #c9a227;
-}
-
-#news-container .news-honor .news-info {
-    font-weight: 600;
 }
 
 .news-toggle-row {
